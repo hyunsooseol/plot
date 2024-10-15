@@ -1,17 +1,21 @@
 ---
-title: What the Package Does (Title Case)
+title: Yet Another jamovi Plotting Module
 name: vijPlots
-version: 0.0.0
+version: 0.0.1
 jms: '1.0'
 authors:
-  - Who wrote it
-maintainer: The package maintainer <yourself@somewhere.net>
-date: '1970-01-01'
+  - Vincent Jalby
+maintainer: Vincent Jalby <vincent.jalby@unilim.fr>
+date: '2024-10-10'
 type: R
 description: >-
-  More about what it does (maybe more than one line) Use four spaces when
-  indenting paragraphs within the Description.
-analyses: []
+  A wrapper for ggstats2 main geom (histogram, boxplot, point, bar).
+analyses:
+  - title: Histogram
+    name: histogram
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Histogram
 usesNative: true
 minApp: 1.0.8
 

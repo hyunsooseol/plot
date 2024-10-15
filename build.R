@@ -7,7 +7,7 @@ jmvtools::check()
 
 jmvtools::create('vijPlots') # Module Name
 
-jmvtools::addAnalysis(name='likertplot', title='Likert Plot') # name = function/files name, title = menu item name
+jmvtools::addAnalysis(name='histogram', title='Histogram') # name = function/files name, title = menu item name
 
 jmvtools::install()
 

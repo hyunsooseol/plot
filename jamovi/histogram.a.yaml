@@ -1,0 +1,226 @@
+---
+name:  histogram
+title: Histogram
+menuGroup: vijPlots
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+
+    - name: aVar
+      title: Dependent Variable
+      type: Variable
+      suggested:
+        - continuous
+      permitted:
+        - numeric
+
+    - name: group
+      title: Grouping Variable
+      type: Variable
+      suggested:
+        - nominal
+        - ordinal
+      permitted:
+        - factor
+
+    - name: panel
+      title: Panel Variable
+      type: Variable
+      suggested:
+        - nominal
+        - ordinal
+      permitted:
+        - factor
+
+    - name: histtype
+      title: Histogram
+      type: List
+      options:
+        - title: Count
+          name:  count
+        - title: Density
+          name:  density
+      default: count
+
+    - name: normalCurve
+      title: Show Normal Curve
+      type: Bool
+      default: false
+
+    - name: binWidth
+      type: Number
+      title: Width
+      min: 0
+      default: 0
+
+    - name: binBoundary
+      type: Number
+      title: Position
+      min: 0
+      default: 0
+
+    - name: fillColor
+      title: Fill
+      type: List
+      options:
+        - title: None
+          name:  none
+        - title: White
+          name:  white
+        - title: Black
+          name:  black
+        - title: Red
+          name: "#E41A1C"
+        - title: Blue
+          name: "#377EB8"
+        - title: Green
+          name: "#4DAF4A"
+        - title: Purple
+          name:  "#984EA3"
+        - title: Orange
+          name:  "#FF7F00"
+        - title: Yellow
+          name:  "#FFFF33"
+        - title: Brown
+          name:  "#A65628"
+        - title: Pink
+          name:  "#F781BF"
+        - title: Gray
+          name:  "#999999"
+        - title: Light Red
+          name: "#FBB4AE"
+        - title: Light Blue
+          name: "#B3CDE3"
+        - title: Light Green
+          name: "#CCEBC5"
+        - title: Light Purple
+          name:  "#DECBE4"
+        - title: Light Orange
+          name:  "#FED9A6"
+        - title: Light Yellow
+          name:  "#FFFFCC"
+        - title: Light Brown
+          name:  "#E5D8BD"
+        - title: Light Pink
+          name:  "#FDDAEC"
+        - title: Light Gray
+          name:  "#F2F2F2"
+      default: "#E41A1C"
+
+    - name: borderColor
+      title: Border
+      type: List
+      options:
+        - title: None
+          name:  none
+        - title: Black
+          name:  black
+        - title: White
+          name:  white
+        - title: Gray
+          name:  gray
+      default: black
+
+    - name: grouping
+      title: Grouping
+      type: List
+      options:
+        - title: None
+          name:  none
+        - title: Overlapping
+          name:  identity
+        - title: Stacked
+          name:  stack
+        - title: Dodged
+          name:  dodge
+      default: none
+
+    - name: colorPalette
+      title: Color Palette
+      type: List
+      options:
+        - title: Set 1
+          name:  Set1
+        - title: Set 2
+          name:  Set2
+        - title: Set 3
+          name:  Set3
+        - title: Pastel 1
+          name:  Pastel1
+        - title: Pastel 2
+          name:  Pastel2
+        - title: Accent
+          name:  Accent
+        - title: Paired
+          name:  Paired
+        - title: Dark 2
+          name:  Dark2
+        - title: Spectral
+          name:  Spectral
+        - title: Red, Yellow, Green
+          name:  RdYlGn
+        - title: Red, Yellow, Blue
+          name:  RdYlBu
+        - title: Red and Gray
+          name:  RdGy
+        - title: Red and Blue
+          name:  RdBu
+        - title: Orange and Purple
+          name:  PuOr
+        - title: Purple and Green
+          name:  PRGn
+        - title: Pink and Green
+          name:  PiYG
+        - title: Brown and Green
+          name:  BrBG
+        - title: Blues
+          name:  Blues
+        - title: Greens
+          name:  Greens
+        - title: Greys
+          name:  Greys
+        - title: Oranges
+          name:  Oranges
+        - title: Purples
+          name:  Purples
+        - title: Reds
+          name:  Reds
+        - title: Blue to Green
+          name:  BuGn
+        - title: Blue to Purple
+          name:  BuPu
+        - title: Green to Blue
+          name:  GnBu
+        - title: Orange to Red
+          name:  OrRd
+        - title: Purple to Blue
+          name:  PuBu
+        - title: Purple to Green
+          name:  PuBuGn
+        - title: Purple to Red
+          name:  PuRd
+        - title: Red to Purple
+          name:  RdPu
+        - title: Yellow to Green
+          name:  YlGn
+        - title: Yellow to Blue
+          name:  YlGnBu
+        - title: Yellow to Brown
+          name:  YlOrBr
+        - title: Yellow to Red
+          name:  YlOrRd
+
+    - name: usePalette
+      title: Use Palette
+      type: List
+      options:
+        - title: For Filling
+          name:  forFilling
+        - title: For Border
+          name:  forBorder
+      default: forFilling
+
+...
