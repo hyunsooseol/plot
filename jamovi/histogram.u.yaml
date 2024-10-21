@@ -35,7 +35,7 @@ children:
     children:
       - type: CheckBox
         name: normalCurve
-        enable: (histtype_density)
+        enable: (histtype_density && grouping_none)
   - type: LayoutBox
     margin: large
     style: inline

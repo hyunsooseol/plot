@@ -15,6 +15,7 @@ histogramClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
         .run = function() {
             if( ! is.null(self$options$aVar) ) {
                 plotData <- self$data[c(self$options$aVar, self$options$group, self$options$panel)]
+                plotData[[self$options$aVar]] <- jmvcore::toNumeric(plotData[[self$options$aVar]])
                 image <- self$results$plot
                 image$setState(plotData)
             }
@@ -40,6 +41,8 @@ histogramClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
           } else {
             panelVar <- NULL
           }
+
+          plotData <- jmvcore::naOmit(plotData)
 
           # Set bin width and boundary
           if( self$options$binWidth == 0 )
@@ -70,7 +73,7 @@ histogramClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
           } else {
               hist_arg = list()
           }
-          if( self$options$grouping != "none" ) {
+          if( self$options$grouping != "none" && !is.null(groupVar)) {
               hist_arg[["position"]] <- self$options$grouping
               if( self$options$grouping == "identity" && ( fillColor != "white" || self$options$usePalette == "forFilling" ) ) {
                   hist_arg[["alpha"]] <- 0.5
@@ -92,7 +95,7 @@ histogramClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
 
           plot <- plot + labs(x=self$options$aVar)
 
-          if (self$options$normalCurve && self$options$grouping == "none" && self$options$histtype == "density")
+          if (self$options$normalCurve && (self$options$grouping == "none" || is.null(groupVar)) && self$options$histtype == "density")
               plot <- plot + stat_function(fun = dnorm, #dlnorm
                         args = list(mean = mean(plotData[[1]], na.rm=TRUE),
                                     sd = sd(plotData[[1]], na.rm=TRUE)),
@@ -107,9 +110,11 @@ histogramClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
               plot <- plot + facet_wrap(vars(!!panelVar), ncol=1)
 
           }
-
-          plot <- plot + ggtheme + scale_fill_brewer(palette = self$options$colorPalette) + scale_colour_brewer(palette = self$options$colorPalette)
-
+          # Theme and colors
+          plot <- plot + ggtheme
+          if( self$options$colorPalette != 'jmv' ) {
+              plot <- plot + scale_fill_brewer(palette = self$options$colorPalette) + scale_colour_brewer(palette = self$options$colorPalette)
+          }
           return(plot)
         })
 )

@@ -2,6 +2,7 @@
 name:  histogram
 title: Histogram
 menuGroup: vijPlots
+menuSubgroup: Continuous
 version: '1.0.0'
 jas: '1.2'
 
@@ -10,7 +11,7 @@ options:
       type: Data
 
     - name: aVar
-      title: Dependent Variable
+      title: Variable
       type: Variable
       suggested:
         - continuous
@@ -72,6 +73,16 @@ options:
           name:  white
         - title: Black
           name:  black
+        - title: jmv Blue
+          name:  "#A6C4F1"
+        - title: jmv Gray
+          name:  "#C5C5C5"
+        - title: jmv Yellow
+          name:  "#F0CD8C"
+        - title: jmv Green
+          name:  "#88C38B"
+        - title: jmv Red
+          name:  "#E18A8A"
         - title: Red
           name: "#E41A1C"
         - title: Blue
@@ -142,6 +153,8 @@ options:
       title: Color Palette
       type: List
       options:
+        - title: jmv Default
+          name:  jmv
         - title: Set 1
           name:  Set1
         - title: Set 2

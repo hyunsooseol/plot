@@ -1,0 +1,75 @@
+title: Pie Chart
+name: piechart
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+  - type: VariableSupplier
+    persistentItems: false
+    stretchFactor: 1
+    children:
+      - type: TargetLayoutBox
+        label: Variable
+        children:
+          - type: VariablesListBox
+            name: aVar
+            maxItemCount: 1
+            isTarget: true
+      - type: TargetLayoutBox
+        label: Panel Variable
+        children:
+          - type: VariablesListBox
+            name: panel
+            maxItemCount: 1
+            isTarget: true
+  - type: LayoutBox
+    margin: large
+    style: inline
+    children:
+      - type: LayoutBox
+        cell:
+          column: 0
+          row: 0
+        stretchFactor: 1
+        children:
+          - type: Label
+            label: Boxplot Options
+            children:
+              - type: LayoutBox
+                children:
+                  - type: CheckBox
+                    name: donut
+                  - type: CheckBox
+                    name: legendBottom
+                  - type: CheckBox
+                    name: showLabels
+                    children:
+                      - type: RadioButton
+                        name: labels_count
+                        optionName: labels
+                        optionPart: count
+                        label: "Count"
+                        enable: (showLabels)
+                      - type: RadioButton
+                        name: labels_percent
+                        optionName: labels
+                        optionPart: percent
+                        label: "Percent"
+                        enable: (showLabels && !panel)
+      - type: LayoutBox
+        cell:
+          column: 1
+          row: 0
+        stretchFactor: 1
+        children:
+          - type: Label
+            label: Color Options
+            children:
+              - type: LayoutBox
+                children:
+                  - type: ComboBox
+                    name: colorPalette
+                  - type: ComboBox
+                    name: borderColor
+                  - type: ComboBox
+                    name: textColor

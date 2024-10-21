@@ -1,7 +1,7 @@
 ---
 title: Yet Another jamovi Plotting Module
 name: vijPlots
-version: 0.1.0
+version: 0.2.0
 jms: '1.0'
 authors:
   - Vincent Jalby
@@ -15,6 +15,19 @@ analyses:
     ns: vijPlots
     menuGroup: vijPlots
     menuTitle: Histogram
+    menuSubgroup: Continuous
+  - title: Box Plot
+    name: boxplot
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Box Plot
+    menuSubgroup: Continuous
+  - title: Pie Chart
+    name: piechart
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Pie Chart
+    menuSubgroup: Categorical
 usesNative: true
 minApp: 1.0.8
 
