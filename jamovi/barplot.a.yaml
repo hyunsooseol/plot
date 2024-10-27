@@ -1,6 +1,6 @@
 ---
-name:  piechart
-title: Pie Chart
+name:  barplot
+title: Bar Plot
 menuGroup: vijPlots
 menuSubgroup: Categorical
 version: '1.0.0'
@@ -10,16 +10,8 @@ options:
     - name: data
       type: Data
 
-    - name: aVar
-      title: Variable
-      type: Variable
-      suggested:
-        - nominal
-      permitted:
-        - factor
-
-    - name: panel
-      title: Panel Variable
+    - name: rows
+      title: Category Axis
       type: Variable
       suggested:
         - nominal
@@ -27,27 +19,84 @@ options:
       permitted:
         - factor
 
-    - name: donut
-      title: I prefer Donuts!
+    - name: columns
+      title: Group
+      type: Variable
+      suggested:
+        - nominal
+        - ordinal
+      permitted:
+        - factor
+
+    - name: panel
+      title: Panel
+      type: Variable
+      suggested:
+        - nominal
+        - ordinal
+      permitted:
+        - factor
+
+    - name: ignoreNA
+      title: Ignore NA
+      type: Bool
+      default: true
+
+    - name: horizontal
+      title: Horizontal plot
       type: Bool
       default: false
 
-    - name: legendBottom
-      title: Legend at Bottom
+    - name: legendAtBottom
+      title: Legend at bottom
       type: Bool
       default: false
 
-    - name: labels
-      title: Labels
+    - name: showLabels
+      title: Show count labels
+      type: Bool
+      default: true
+
+    - name: order
+      title: Sorting
       type: List
       options:
+        - title: Decreasing
+          name:  decreasing
+        - title: Increasing
+          name:  increasing
         - title: None
-          name: none
+          name:  none
+      default: none
+
+    - name: yaxis1var
+      title: Y-axis (1-variable)
+      type: List
+      options:
         - title: Count
           name:  count
         - title: Percent
           name:  percent
-      default: none
+      default: count
+
+    - name: singleColor
+      title: Same color for all bars
+      type: Bool
+      default: true
+
+    - name: position
+      title: Bar Type
+      type: List
+      options:
+        - title: Side by side
+          name:  dodge
+        - title: Side by side 2
+          name:  dodge2
+        - title: Stacked
+          name:  stack
+        - title: "Stacked 100%"
+          name:  fill
+      default: dodge
 
     - name: colorPalette
       title: Palette
@@ -127,7 +176,7 @@ options:
           name:  YlOrRd
 
     - name: borderColor
-      title: Border
+      title: Border Color
       type: List
       options:
         - title: None
@@ -138,10 +187,10 @@ options:
           name:  white
         - title: Gray
           name:  gray
-      default: black
+      default: none
 
     - name: textColor
-      title: Label
+      title: Text Color
       type: List
       options:
         - title: Black
@@ -150,7 +199,7 @@ options:
           name:  white
         - title: Gray
           name:  gray
-      default: black
+      default: white
 
     - name: accuracy
       title: "% accuracy"

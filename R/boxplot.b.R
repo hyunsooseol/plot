@@ -56,7 +56,7 @@ boxplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                 aVar <- ensym(varName)
                 if( is.null(groupVar)) {
                     plot <- plot + geom_boxplot(aes(y = !!aVar, x = !!varName), outliers = self$options$showOutliers,
-                                                 fill = jmvcore::colorPalette(n = 5, pal = self$options$colorPalette, type = "fill")[((i-1) %% 5)+1])
+                                                fill = jmvcore::colorPalette(n = length(depVarNames), pal = self$options$colorPalette, type = "fill")[i])
                     if( self$options$showMean ) {
                         plot <- plot + stat_summary(aes(y = !!aVar, x = !!varName), fun = mean, geom = "point",
                                                     color='red', size=2)

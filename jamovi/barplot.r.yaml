@@ -1,6 +1,6 @@
 ---
-name:  piechart
-title: Pie Chart
+name:  barplot
+title: Bar Plot
 jrs:   '1.1'
 
 items:
@@ -11,17 +11,24 @@ items:
       height: 400
       renderFun: .plot
       clearWith:
-        - aVar
+        - rows
+        - columns
         - panel
-        - donut
-        - legendBottom
-        - labels
+        - ignoreNA
+        - horizontal
+        - legendAtBottom
+        - showLabels
+        - position
+        - order
+        - yaxis1var
+        - singleColor
         - colorPalette
-        - borderColor
         - textColor
+        - borderColor
         - accuracy
         - plotWidth
         - plotHeight
         - facetBy
         - facetNumber
+
 ...

@@ -1,2 +1,6 @@
 exportPattern("^[[:alpha:]]+")
 import(ggplot2)
+import(scales)
+import(ggstats)
+import(jmvcore)
+import(tidyr)

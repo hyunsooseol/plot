@@ -230,9 +230,9 @@ options:
       title: Use Palette
       type: List
       options:
-        - title: For Filling
+        - title: For fill colors
           name:  forFilling
-        - title: For Border
+        - title: For border colors
           name:  forBorder
       default: forFilling
 

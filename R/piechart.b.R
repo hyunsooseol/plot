@@ -7,16 +7,35 @@ piechartClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
     private = list(
         .init = function() {
             # Set the size of the plot
-            width <- 600
-            if( !is.null(self$options$panel)) {
-                height <- max(400,350*nlevels(self$data[[self$options$panel]]))
-            } else {
-                height <- 400
+            userWidth <- as.numeric(self$options$plotWidth)
+            userHeight <- as.numeric(self$options$plotHeight)
+            # Compute the size according to facet
+            if( userWidth * userHeight == 0 ) {
+                if( !is.null(self$options$panel)) {
+                    nbOfFacet <- nlevels(self$data[[self$options$panel]])
+                    nbOfColumn <-self$options$facetNumber
+                    nbOfRow <- ceiling(nbOfFacet / nbOfColumn )
+
+                    if( self$options$facetBy == "column" ) {
+                        height <- max(400,300*nbOfRow)
+                        width <- max(600, 200*nbOfColumn)
+                    } else {
+                        height <- max(400,300*nbOfColumn)
+                        width <- max(600, 200*nbOfRow)
+                    }
+                } else {
+                    width <- 600
+                    height <- 400
+                }
+                if(self$options$legendBottom) {
+                    height <- height + 50
+                    width <- width - 50
+                }
             }
-            if(self$options$legendBottom) {
-                height <- height + 50
-                width <- width - 50
-            }
+            if( userWidth >0 )
+                width = userWidth
+            if( userHeight >0 )
+                height = userHeight
             image <- self$results$plot
             image$setSize(width, height)
         },
@@ -37,63 +56,70 @@ piechartClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             aVar <- ensym(aVar)
 
             if( !is.null(self$options$panel) ) {
-              panelVar <- self$options$panel
-              panelVar <- ensym(panelVar)
+                panelVar <- self$options$panel
+                panelVar <- ensym(panelVar)
             } else {
-              panelVar <- NULL
+                panelVar <- NULL
             }
 
             # set the border color
             if( self$options$borderColor == "none") {
-              borderColor <- NA
+                borderColor <- NA
             } else {
-              borderColor = self$options$borderColor
+                borderColor = self$options$borderColor
             }
+
+            # Percent format (scales)
+            doPercent <- label_percent(accuracy = as.numeric(self$options$accuracy))
 
             if(self$options$donut) {
-                plot <- ggplot(plotData, aes(x=10, fill= !!aVar)) + xlim(c(8.5,10.5))
+                plot <- ggplot(plotData, aes(x = 10, fill = !!aVar, by = 1)) + xlim(c(8.5,10.5))
             } else {
-                plot <- ggplot(plotData, aes(x="", fill= !!aVar))
+                plot <- ggplot(plotData, aes(x = "", fill = !!aVar, by = 1))
             }
 
-            plot <- plot + geom_bar(color=borderColor) + coord_polar("y")
+            plot <- plot + geom_bar(position = "fill", color = borderColor) + coord_polar("y")
 
             # Labels
-            if( self$options$showLabels && self$options$labels == "count" ) {
+            if( self$options$labels == "count" ) {
                 plot <- plot + geom_text(aes(label = after_stat(count)), stat = "count",
-                                    position = position_stack(vjust = 0.5),
-                                    color=self$options$textColor, fontface = "bold", size = 5)
-            } else if( self$options$showLabels && self$options$labels == "percent" ) {
-                plot <- plot + geom_text(aes(label = paste(100*round(after_stat(count/sum(count)),2),"%", sep="")),
-                                        stat = "count", position = position_stack(vjust = 0.5),
-                                        color=self$options$textColor, fontface = "bold", size = 5)
-            }
-
-
-            if( !is.null(panelVar) ) {
-              plot <- plot + facet_wrap(vars(!!panelVar), ncol=1, scales = "free")
+                                         position = position_fill(vjust = 0.5),
+                                         color = self$options$textColor, fontface = "bold", size = 5)
+            } else if( self$options$labels == "percent" ) {
+                # plot <- plot + geom_text(stat = StatProp, position = position_fill(vjust = 0.5),
+                #                              color = self$options$textColor, fontface = "bold", size = 5)
+                plot <- plot + geom_text(aes(label = doPercent(after_stat(prop))), stat = StatProp, position = position_fill(vjust = 0.5),
+                                         color = self$options$textColor, fontface = "bold", size = 5)
 
             }
+
+            # Panel
+            if( !is.null(self$options$panel) ) {
+                panelVar <- self$options$panel
+                panelVar <- ensym(panelVar)
+                if( self$options$facetBy == "column")
+                    plot <- plot + facet_wrap(vars(!!panelVar), ncol = as.numeric(self$options$facetNumber), scales = "free")
+                else
+                    plot <- plot + facet_wrap(vars(!!panelVar), nrow = as.numeric(self$options$facetNumber), scales = "free")
+            }
+
 
             # Theme and colors
             plot <- plot + ggtheme + labs(x = "", y = "")
             plot <- plot + theme(axis.ticks = element_blank(),
                                  axis.line.x = element_blank(), axis.line.y = element_blank(),
-                                 axis.text.x=element_blank(),axis.text.y=element_blank(),
-                                 panel.grid.major = element_blank(),panel.grid.minor = element_blank())
+                                 axis.text.x = element_blank(),axis.text.y = element_blank(),
+                                 panel.grid.major = element_blank(), panel.grid.minor = element_blank())
             if( self$options$colorPalette != 'jmv' ) {
-              plot <- plot + scale_fill_brewer(palette = self$options$colorPalette)
+                plot <- plot + scale_fill_brewer(palette = self$options$colorPalette)
             }
 
             if(self$options$legendBottom) {
-              plot <- plot + theme(legend.position="bottom")
+                plot <- plot + theme(legend.position = "bottom")
             }
 
             return(plot)
         }
 
-
-
-
-        )
+    )
 )

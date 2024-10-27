@@ -1,0 +1,109 @@
+title: Multiple Response Frequencies
+name: mrfrequencies
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+  - type: VariableSupplier
+    persistentItems: false
+    stretchFactor: 1
+    children:
+      - type: TargetLayoutBox
+        label: Option Variables
+        children:
+          - type: VariablesListBox
+            name: resps
+            isTarget: true
+  - type: Label
+    label: Option Variables
+    children:
+      - type: LayoutBox
+        stretchFactor: 1
+        style: inline
+        children:
+          - type: TextBox
+            name: endorsed
+            format: number
+            stretchFactor: 1
+          - type: TextBox
+            name: optionname
+            format: string
+            stretchFactor: 1
+  - type: LayoutBox
+    margin: large
+    stretchFactor: 1
+    children:
+      - type: LayoutBox
+        cell:
+          column: 0
+          row: 0
+        stretchFactor: 1
+        children:
+          - type: Label
+            label: Table
+            children:
+              - type: CheckBox
+                name: showTotal
+              - type: CheckBox
+                name: showCounts
+              - type: CheckBox
+                name: showResponses
+              - type: CheckBox
+                name: showCases
+      - type: LayoutBox
+        cell:
+          column: 1
+          row: 0
+        stretchFactor: 1
+        children:
+          - type: Label
+            label: Sorting
+            children:
+              - type: RadioButton
+                name: order_increasing
+                optionName: order
+                optionPart: increasing
+                label: Increasing
+              - type: RadioButton
+                name: order_decreasing
+                optionName: order
+                optionPart: decreasing
+                label: Decreasing
+              - type: RadioButton
+                name: order_none
+                optionName: order
+                optionPart: none
+                label: None
+      - type: LayoutBox
+        cell:
+          column: 2
+          row: 0
+        stretchFactor: 1
+        children:
+          - type: Label
+            label: Plot
+            children:
+              - type: RadioButton
+                name: yaxis_counts
+                optionName: yaxis
+                optionPart: counts
+                label: 'Counts'
+              - type: RadioButton
+                name: yaxis_responses
+                optionName: yaxis
+                optionPart: responses
+                label: '% of Responses'
+              - type: RadioButton
+                name: yaxis_cases
+                optionName: yaxis
+                optionPart: cases
+                label: '% of Cases'
+  - type: Label
+    label: "Plot Size"
+    children:
+      - type: LayoutBox
+        stretchFactor: 1
+        style: inline
+        children:
+          - type: ComboBox
+            name: size

@@ -1,0 +1,664 @@
+{
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "1": [
+                ""
+            ],
+            "": {
+                "domain": "messages",
+                "plural_forms": "nplurals=2; plural=(n != 1)",
+                "lang": "fr"
+            },
+            "# of rows/columns": [
+                ""
+            ],
+            "% accuracy": [
+                ""
+            ],
+            "% Accuracy": [
+                ""
+            ],
+            "% by Row": [
+                ""
+            ],
+            "% by row": [
+                ""
+            ],
+            "% of Cases": [
+                ""
+            ],
+            "% of Responses": [
+                ""
+            ],
+            "% within": [
+                ""
+            ],
+            "0.01": [
+                ""
+            ],
+            "0.1": [
+                ""
+            ],
+            "A demonstration dataset for Likert scale bar plots.": [
+                ""
+            ],
+            "A demonstration dataset with four dichotomous variables describing  the credit cards owned by customers.": [
+                ""
+            ],
+            "A wrapper for ggstats2 main geoms (histogram, boxplot, point, bar).": [
+                ""
+            ],
+            "Accent": [
+                ""
+            ],
+            "Add plot frame": [
+                ""
+            ],
+            "Ascending": [
+                ""
+            ],
+            "Bar Plot": [
+                ""
+            ],
+            "Bar Type": [
+                ""
+            ],
+            "Bin Color": [
+                ""
+            ],
+            "Bin Size": [
+                ""
+            ],
+            "Black": [
+                ""
+            ],
+            "Blue": [
+                ""
+            ],
+            "Blue to Green": [
+                ""
+            ],
+            "Blue to Purple": [
+                ""
+            ],
+            "Blues": [
+                ""
+            ],
+            "Border": [
+                ""
+            ],
+            "Border Color": [
+                ""
+            ],
+            "Box Plot": [
+                ""
+            ],
+            "Boxplot Options": [
+                ""
+            ],
+            "Brown": [
+                ""
+            ],
+            "Brown and Green": [
+                ""
+            ],
+            "By Column": [
+                ""
+            ],
+            "By Group": [
+                ""
+            ],
+            "By Row": [
+                ""
+            ],
+            "By Variable": [
+                ""
+            ],
+            "Categorical": [
+                ""
+            ],
+            "Category Axis": [
+                ""
+            ],
+            "Centered": [
+                ""
+            ],
+            "Color Options": [
+                ""
+            ],
+            "Color Palette": [
+                ""
+            ],
+            "Color palette": [
+                ""
+            ],
+            "Column": [
+                ""
+            ],
+            "Columns (Groups)": [
+                ""
+            ],
+            "Continuous": [
+                ""
+            ],
+            "Count": [
+                ""
+            ],
+            "Counted Value": [
+                ""
+            ],
+            "Counts": [
+                ""
+            ],
+            "Credit Cards": [
+                ""
+            ],
+            "Crosstab": [
+                ""
+            ],
+            "Crosstab (% by row)": [
+                ""
+            ],
+            "Crosstab (% of Cases)": [
+                ""
+            ],
+            "Crosstab (% of Responses)": [
+                ""
+            ],
+            "Dark 2": [
+                ""
+            ],
+            "Decreasing": [
+                ""
+            ],
+            "Density": [
+                ""
+            ],
+            "Dependent Variable": [
+                ""
+            ],
+            "Descending": [
+                ""
+            ],
+            "Dodged": [
+                ""
+            ],
+            "Extra Options": [
+                ""
+            ],
+            "Fill": [
+                ""
+            ],
+            "For Border": [
+                ""
+            ],
+            "For border colors": [
+                ""
+            ],
+            "For fill colors": [
+                ""
+            ],
+            "For Filling": [
+                ""
+            ],
+            "Frequencies": [
+                ""
+            ],
+            "Frequency Plot": [
+                ""
+            ],
+            "Gray": [
+                ""
+            ],
+            "Green": [
+                ""
+            ],
+            "Green to Blue": [
+                ""
+            ],
+            "Greens": [
+                ""
+            ],
+            "Greys": [
+                ""
+            ],
+            "Group": [
+                ""
+            ],
+            "Group By": [
+                ""
+            ],
+            "Grouping": [
+                ""
+            ],
+            "Grouping Plot": [
+                ""
+            ],
+            "Grouping Variable": [
+                ""
+            ],
+            "Height": [
+                ""
+            ],
+            "Histogram": [
+                ""
+            ],
+            "Horizontal line at": [
+                ""
+            ],
+            "Horizontal plot": [
+                ""
+            ],
+            "Huge (800x500)": [
+                ""
+            ],
+            "I prefer Donuts!": [
+                ""
+            ],
+            "Ignore NA": [
+                ""
+            ],
+            "Increasing": [
+                ""
+            ],
+            "jmv Blue": [
+                ""
+            ],
+            "jmv Default": [
+                ""
+            ],
+            "jmv Gray": [
+                ""
+            ],
+            "jmv Green": [
+                ""
+            ],
+            "jmv Red": [
+                ""
+            ],
+            "jmv Yellow": [
+                ""
+            ],
+            "Label": [
+                ""
+            ],
+            "Labels": [
+                ""
+            ],
+            "Large (600x400)": [
+                ""
+            ],
+            "Legend at bottom": [
+                ""
+            ],
+            "Legend at Bottom": [
+                ""
+            ],
+            "Light Blue": [
+                ""
+            ],
+            "Light Brown": [
+                ""
+            ],
+            "Light Gray": [
+                ""
+            ],
+            "Light Green": [
+                ""
+            ],
+            "Light Orange": [
+                ""
+            ],
+            "Light Pink": [
+                ""
+            ],
+            "Light Purple": [
+                ""
+            ],
+            "Light Red": [
+                ""
+            ],
+            "Light Yellow": [
+                ""
+            ],
+            "Likert": [
+                ""
+            ],
+            "Likert Plot": [
+                ""
+            ],
+            "Likert Variables": [
+                ""
+            ],
+            "Medium (400x300)": [
+                ""
+            ],
+            "Multiple Response": [
+                ""
+            ],
+            "Multiple Response Crosstab": [
+                ""
+            ],
+            "Multiple Response Frequencies": [
+                ""
+            ],
+            "Mutible Response Crosstab": [
+                ""
+            ],
+            "None": [
+                ""
+            ],
+            "Number of cases": [
+                ""
+            ],
+            "Number of cases:": [
+                ""
+            ],
+            "Option name": [
+                ""
+            ],
+            "Option Variables": [
+                ""
+            ],
+            "Options": [
+                ""
+            ],
+            "Orange": [
+                ""
+            ],
+            "Orange and Purple": [
+                ""
+            ],
+            "Orange to Red": [
+                ""
+            ],
+            "Oranges": [
+                ""
+            ],
+            "Overall": [
+                ""
+            ],
+            "Overall (all groups)": [
+                ""
+            ],
+            "Overlapping": [
+                ""
+            ],
+            "Paired": [
+                ""
+            ],
+            "Palette": [
+                ""
+            ],
+            "Panel": [
+                ""
+            ],
+            "Panel Variable": [
+                ""
+            ],
+            "Panels by": [
+                ""
+            ],
+            "Pastel 1": [
+                ""
+            ],
+            "Pastel 2": [
+                ""
+            ],
+            "Percent": [
+                ""
+            ],
+            "Pie Chart": [
+                ""
+            ],
+            "Pink": [
+                ""
+            ],
+            "Pink and Green": [
+                ""
+            ],
+            "Plot": [
+                ""
+            ],
+            "Plot Options": [
+                ""
+            ],
+            "Plot Size": [
+                ""
+            ],
+            "Plot Size & Color": [
+                ""
+            ],
+            "Plot Type": [
+                ""
+            ],
+            "Plots": [
+                ""
+            ],
+            "Point size": [
+                ""
+            ],
+            "Point Size": [
+                ""
+            ],
+            "Position": [
+                ""
+            ],
+            "Prevent overlap": [
+                ""
+            ],
+            "pt": [
+                ""
+            ],
+            "Purple": [
+                ""
+            ],
+            "Purple and Green": [
+                ""
+            ],
+            "Purple to Blue": [
+                ""
+            ],
+            "Purple to Green": [
+                ""
+            ],
+            "Purple to Red": [
+                ""
+            ],
+            "Purples": [
+                ""
+            ],
+            "px": [
+                ""
+            ],
+            "Red": [
+                ""
+            ],
+            "Red and Blue": [
+                ""
+            ],
+            "Red and Gray": [
+                ""
+            ],
+            "Red to Purple": [
+                ""
+            ],
+            "Red, Yellow and Blue": [
+                ""
+            ],
+            "Red, Yellow and Green": [
+                ""
+            ],
+            "Red, Yellow, Blue": [
+                ""
+            ],
+            "Red, Yellow, Green": [
+                ""
+            ],
+            "Reds": [
+                ""
+            ],
+            "Reference Lines": [
+                ""
+            ],
+            "Reverse the staking order": [
+                ""
+            ],
+            "Row": [
+                ""
+            ],
+            "Rows (Options)": [
+                ""
+            ],
+            "Same color for all bars": [
+                ""
+            ],
+            "Scatter Plot": [
+                ""
+            ],
+            "Set 1": [
+                ""
+            ],
+            "Set 2": [
+                ""
+            ],
+            "Set 3": [
+                ""
+            ],
+            "Show % Labels": [
+                ""
+            ],
+            "Show 50% Line (Stacked Only)": [
+                ""
+            ],
+            "Show count labels": [
+                ""
+            ],
+            "Show Mean": [
+                ""
+            ],
+            "Show Normal Curve": [
+                ""
+            ],
+            "Show Outliers": [
+                ""
+            ],
+            "Show points with missing group/label": [
+                ""
+            ],
+            "Show Totals (Centered Only)": [
+                ""
+            ],
+            "Side by side": [
+                ""
+            ],
+            "Side by side 2": [
+                ""
+            ],
+            "Side-by-side": [
+                ""
+            ],
+            "Side-by-side 2": [
+                ""
+            ],
+            "Small (300x200)": [
+                ""
+            ],
+            "Sorting": [
+                ""
+            ],
+            "Spectral": [
+                ""
+            ],
+            "Stacked": [
+                ""
+            ],
+            "Stacked 100%": [
+                ""
+            ],
+            "Table": [
+                ""
+            ],
+            "Text": [
+                ""
+            ],
+            "Text Color": [
+                ""
+            ],
+            "Total": [
+                ""
+            ],
+            "Total Row": [
+                ""
+            ],
+            "Use Palette": [
+                ""
+            ],
+            "Use the same color for variables": [
+                ""
+            ],
+            "Values": [
+                ""
+            ],
+            "Variable": [
+                ""
+            ],
+            "Variables": [
+                ""
+            ],
+            "Vertical line at": [
+                ""
+            ],
+            "vijPlots": [
+                ""
+            ],
+            "White": [
+                ""
+            ],
+            "Width": [
+                ""
+            ],
+            "X-Axis": [
+                ""
+            ],
+            "X-intercept": [
+                ""
+            ],
+            "Y-Axis": [
+                ""
+            ],
+            "Y-axis (1-variable)": [
+                ""
+            ],
+            "Y-axis (with groups)": [
+                ""
+            ],
+            "Y-axis (without group)": [
+                ""
+            ],
+            "Y-intercept": [
+                ""
+            ],
+            "Yellow": [
+                ""
+            ],
+            "Yellow to Blue": [
+                ""
+            ],
+            "Yellow to Brown": [
+                ""
+            ],
+            "Yellow to Green": [
+                ""
+            ],
+            "Yellow to Red": [
+                ""
+            ],
+            "Yet Another jamovi Plotting Module": [
+                ""
+            ]
+        }
+    },
+    "code": "fr"
+}

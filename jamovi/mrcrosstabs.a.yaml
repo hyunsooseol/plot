@@ -1,0 +1,116 @@
+---
+name:  mrcrosstabs
+title: Crosstab
+menuGroup: vijPlots
+menuSubgroup: Multiple Response
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+
+    - name: resps
+      title: Option Variables
+      type: Variables
+      required: true
+      suggested:
+        - nominal
+      permitted:
+        - factor
+
+    - name: group
+      title: Grouping Variable
+      type: Variable
+      suggested:
+        - nominal
+        - ordinal
+      permitted:
+        - factor
+
+    - name: endorsed
+      title: Counted Value
+      type: Integer
+      default: 1
+
+    - name: optionname
+      title: Option name
+      type: String
+      default: 'Options'
+
+    - name: order
+      title: Sorting
+      type: List
+      options:
+        - title: Decreasing
+          name:  decreasing
+        - title: Increasing
+          name:  increasing
+        - title: None
+          name:  none
+      default: decreasing
+
+    - name: computedValues
+      title: Values
+      type: List
+      options:
+        - title: Count
+          name:  count
+        - title: "% of Responses"
+          name:  responses
+        - title: "% of Cases"
+          name:  cases
+        - title: "% by Row"
+          name:  options
+      default: count
+
+    - name: totalRow
+      title: "Total Row"
+      type: Bool
+      default: true
+
+    - name: showNbOfCases
+      title: "Number of cases"
+      type: Bool
+      default: true
+
+    - name: overall
+      title: "Overall (all groups)"
+      type: Bool
+      default: true
+
+    - name: xaxis
+      title: X-Axis
+      type: List
+      options:
+        - name: xrows
+          title: "Rows (Options)"
+        - name: xcols
+          title: "Columns (Groups)"
+      default: xcols
+
+    - name: bartype
+      title: "Bar Type"
+      type: List
+      options:
+        - title: "Side by side"
+          name:  dodge
+        - title: "Stacked"
+          name:  stack
+      default: dodge
+
+    - name: size
+      title: ""
+      type: List
+      options:
+        - title: Small (300x200)
+          name:  small
+        - title: Medium (400x300)
+          name:  medium
+        - title: Large (600x400)
+          name:  large
+        - title: Huge (800x500)
+          name:  huge
+      default: medium
+
+...
