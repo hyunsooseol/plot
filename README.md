@@ -1,9 +1,13 @@
 # vijPlots
 
-[jamovi](https://www.jamovi.org) module as ggplot2 wrapper to generate basic stats plots (histogram, boxplot, barplot, piechart,...) 
-with many options along with Multiple Response and Likert Barplots.
+[jamovi](https://www.jamovi.org) module as ggplot2 wrapper to generate basic stats plots (histogram, boxplot, barplot, piechart,...) with many options along with Multiple Response and Likert Barplots.
 
 ## Version history
+
+### 2024-11-01 / 0.5.0 (beta)
+
+-   French translation
+-   bug fixes
 
 ### 2024-10-27 / 0.4.0 (alpha)
 

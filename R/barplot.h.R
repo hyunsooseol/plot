@@ -8,7 +8,7 @@ barplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         initialize = function(
             rows = NULL,
             columns = NULL,
-            panel = NULL,
+            facet = NULL,
             ignoreNA = TRUE,
             horizontal = FALSE,
             legendAtBottom = FALSE,
@@ -48,9 +48,9 @@ barplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "ordinal"),
                 permitted=list(
                     "factor"))
-            private$..panel <- jmvcore::OptionVariable$new(
-                "panel",
-                panel,
+            private$..facet <- jmvcore::OptionVariable$new(
+                "facet",
+                facet,
                 suggested=list(
                     "nominal",
                     "ordinal"),
@@ -193,7 +193,7 @@ barplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
 
             self$.addOption(private$..rows)
             self$.addOption(private$..columns)
-            self$.addOption(private$..panel)
+            self$.addOption(private$..facet)
             self$.addOption(private$..ignoreNA)
             self$.addOption(private$..horizontal)
             self$.addOption(private$..legendAtBottom)
@@ -214,7 +214,7 @@ barplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
     active = list(
         rows = function() private$..rows$value,
         columns = function() private$..columns$value,
-        panel = function() private$..panel$value,
+        facet = function() private$..facet$value,
         ignoreNA = function() private$..ignoreNA$value,
         horizontal = function() private$..horizontal$value,
         legendAtBottom = function() private$..legendAtBottom$value,
@@ -234,7 +234,7 @@ barplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
     private = list(
         ..rows = NA,
         ..columns = NA,
-        ..panel = NA,
+        ..facet = NA,
         ..ignoreNA = NA,
         ..horizontal = NA,
         ..legendAtBottom = NA,
@@ -275,7 +275,7 @@ barplotResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 clearWith=list(
                     "rows",
                     "columns",
-                    "panel",
+                    "facet",
                     "ignoreNA",
                     "horizontal",
                     "legendAtBottom",
@@ -320,7 +320,7 @@ barplotBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
 #' @param data .
 #' @param rows .
 #' @param columns .
-#' @param panel .
+#' @param facet .
 #' @param ignoreNA .
 #' @param horizontal .
 #' @param legendAtBottom .
@@ -347,7 +347,7 @@ barplot <- function(
     data,
     rows,
     columns,
-    panel,
+    facet,
     ignoreNA = TRUE,
     horizontal = FALSE,
     legendAtBottom = FALSE,
@@ -370,22 +370,22 @@ barplot <- function(
 
     if ( ! missing(rows)) rows <- jmvcore::resolveQuo(jmvcore::enquo(rows))
     if ( ! missing(columns)) columns <- jmvcore::resolveQuo(jmvcore::enquo(columns))
-    if ( ! missing(panel)) panel <- jmvcore::resolveQuo(jmvcore::enquo(panel))
+    if ( ! missing(facet)) facet <- jmvcore::resolveQuo(jmvcore::enquo(facet))
     if (missing(data))
         data <- jmvcore::marshalData(
             parent.frame(),
             `if`( ! missing(rows), rows, NULL),
             `if`( ! missing(columns), columns, NULL),
-            `if`( ! missing(panel), panel, NULL))
+            `if`( ! missing(facet), facet, NULL))
 
     for (v in rows) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
     for (v in columns) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
-    for (v in panel) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
+    for (v in facet) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
 
     options <- barplotOptions$new(
         rows = rows,
         columns = columns,
-        panel = panel,
+        facet = facet,
         ignoreNA = ignoreNA,
         horizontal = horizontal,
         legendAtBottom = legendAtBottom,

@@ -15,7 +15,7 @@ children:
             name: vars
             isTarget: true
       - type: TargetLayoutBox
-        label: Grouping Variable
+        label: Group
         children:
           - type: VariablesListBox
             name: group
@@ -32,7 +32,7 @@ children:
         stretchFactor: 1
         children:
           - type: Label
-            label: Boxplot Options
+            label: Plot Options
             children:
               - type: LayoutBox
                 children:
@@ -55,3 +55,4 @@ children:
                     name: colorPalette
                   - type: CheckBox
                     name: singleColor
+                    enable: (!group)

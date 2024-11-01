@@ -13,7 +13,7 @@ items:
       clearWith:
         - rows
         - columns
-        - panel
+        - facet
         - ignoreNA
         - horizontal
         - legendAtBottom

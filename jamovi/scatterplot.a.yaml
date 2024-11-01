@@ -43,7 +43,7 @@ options:
         - id
 
     - name: ptSize
-      title: Point size
+      title: Point Size
       type: Variable
       suggested:
         - continuous

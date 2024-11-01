@@ -10,7 +10,13 @@
                 "plural_forms": "nplurals=2; plural=(n != 1)",
                 "lang": "en"
             },
+            ".": [
+                ""
+            ],
             "# of rows/columns": [
+                ""
+            ],
+            "%": [
                 ""
             ],
             "% accuracy": [
@@ -43,10 +49,13 @@
             "A demonstration dataset for Likert scale bar plots.": [
                 ""
             ],
+            "A demonstration dataset for vijPlots module.": [
+                ""
+            ],
             "A demonstration dataset with four dichotomous variables describing  the credit cards owned by customers.": [
                 ""
             ],
-            "A wrapper for ggstats2 main geoms (histogram, boxplot, point, bar).": [
+            "A wrapper for ggplot2 main geoms (histogram, boxplot, point, bar) along with Likert and multiple response barplots.": [
                 ""
             ],
             "Accent": [
@@ -88,13 +97,7 @@
             "Border": [
                 ""
             ],
-            "Border Color": [
-                ""
-            ],
             "Box Plot": [
-                ""
-            ],
-            "Boxplot Options": [
                 ""
             ],
             "Brown": [
@@ -103,13 +106,7 @@
             "Brown and Green": [
                 ""
             ],
-            "By Column": [
-                ""
-            ],
             "By Group": [
-                ""
-            ],
-            "By Row": [
                 ""
             ],
             "By Variable": [
@@ -175,28 +172,22 @@
             "Density": [
                 ""
             ],
-            "Dependent Variable": [
-                ""
-            ],
             "Descending": [
                 ""
             ],
-            "Dodged": [
+            "Extra Options": [
                 ""
             ],
-            "Extra Options": [
+            "Facet": [
+                ""
+            ],
+            "Facets": [
                 ""
             ],
             "Fill": [
                 ""
             ],
             "For Border": [
-                ""
-            ],
-            "For border colors": [
-                ""
-            ],
-            "For fill colors": [
                 ""
             ],
             "For Filling": [
@@ -227,6 +218,9 @@
                 ""
             ],
             "Group By": [
+                ""
+            ],
+            "Grouped": [
                 ""
             ],
             "Grouping": [
@@ -343,9 +337,6 @@
             "Multiple Response Frequencies": [
                 ""
             ],
-            "Mutible Response Crosstab": [
-                ""
-            ],
             "None": [
                 ""
             ],
@@ -391,15 +382,6 @@
             "Palette": [
                 ""
             ],
-            "Panel": [
-                ""
-            ],
-            "Panel Variable": [
-                ""
-            ],
-            "Panels by": [
-                ""
-            ],
             "Pastel 1": [
                 ""
             ],
@@ -434,9 +416,6 @@
                 ""
             ],
             "Plots": [
-                ""
-            ],
-            "Point size": [
                 ""
             ],
             "Point Size": [
@@ -553,9 +532,6 @@
             "Side by side": [
                 ""
             ],
-            "Side by side 2": [
-                ""
-            ],
             "Side-by-side": [
                 ""
             ],
@@ -581,9 +557,6 @@
                 ""
             ],
             "Text": [
-                ""
-            ],
-            "Text Color": [
                 ""
             ],
             "Total": [

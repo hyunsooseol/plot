@@ -12,7 +12,7 @@ items:
       renderFun: .plot
       clearWith:
         - aVar
-        - panel
+        - facet
         - donut
         - legendBottom
         - labels

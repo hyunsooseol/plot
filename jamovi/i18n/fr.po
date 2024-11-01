@@ -8,28 +8,39 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
+#: R/barplot.b.R
+#: R/piechart.b.R
+msgid "."
+msgstr ","
+
 #: barplot/options/facetNumber.title
+#: histogram/options/facetNumber.title
 #: piechart/options/facetNumber.title
 msgid "# of rows/columns"
-msgstr ""
+msgstr "Nbre de lignes/colonnes"
+
+#: R/barplot.b.R
+#: R/piechart.b.R
+msgid "%"
+msgstr " %"
 
 #: barplot/options/accuracy.title
 #: piechart/options/accuracy.title
 msgid "% accuracy"
-msgstr ""
+msgstr "Précision des %"
 
 #: barplot/ui[2][2][0].label
 #: piechart/ui[2][0][2][0].label
 msgid "% Accuracy"
-msgstr ""
+msgstr "Précision des %"
 
 #: mrcrosstabs/options/computedValues/options.title
 msgid "% by Row"
-msgstr ""
+msgstr "% par ligne"
 
 #: mrcrosstabs/ui[2][1][0]/computedValues_options.label
 msgid "% by row"
-msgstr ""
+msgstr "% par ligne"
 
 #: R/mrcrosstabs.b.R
 #: R/mrfrequencies.b.R
@@ -40,7 +51,7 @@ msgstr ""
 #: mrfrequencies/ui[2][2][0]/yaxis_cases.label
 #: mrfrequencies/results/responses.columns.title
 msgid "% of Cases"
-msgstr ""
+msgstr "% d'observations"
 
 #: R/mrcrosstabs.b.R
 #: R/mrfrequencies.b.R
@@ -51,11 +62,11 @@ msgstr ""
 #: mrfrequencies/ui[2][2][0]/yaxis_responses.label
 #: mrfrequencies/results/responses.columns.title
 msgid "% of Responses"
-msgstr ""
+msgstr "% de réponses"
 
 #: R/mrcrosstabs.b.R
 msgid "% within"
-msgstr ""
+msgstr "% dans"
 
 #: barplot/options/accuracy/0.01.title
 #: barplot/ui[2][2][0][0]/accuracy_001.label
@@ -80,15 +91,20 @@ msgstr ""
 
 #: package/datasets/Likert.description
 msgid "A demonstration dataset for Likert scale bar plots."
-msgstr ""
+msgstr "Fichier de démonstration d'un diagramme en barres pour variables de Likert."
+
+#: package/datasets/Likert.description
+msgid "A demonstration dataset for vijPlots module."
+msgstr "Fichier de démonstration du module vijPlots."
 
 #: package/datasets/Credit Cards.description
 msgid "A demonstration dataset with four dichotomous variables describing  the credit cards owned by customers."
-msgstr ""
+msgstr "Un fichier de démonstration avec quatres variables dichotomiques décrivant les cartes de crédit détenues par des consommateurs."
 
 #: package.description
-msgid "A wrapper for ggstats2 main geoms (histogram, boxplot, point, bar)."
-msgstr ""
+msgid "A wrapper for ggplot2 main geoms (histogram, boxplot, point, bar) along with Likert and multiple response barplots."
+msgstr "Une interface pour générer des graphiques ggplot2 (histogramme, barres, secteurs, nuage de points, etc) ainsi que des graphique en bâtons pour\n"
+"des variables de Likert et les réponses multiples."
 
 #: barplot/options/colorPalette/Accent.title
 #: boxplot/options/colorPalette/Accent.title
@@ -100,12 +116,12 @@ msgstr ""
 
 #: scatterplot/options/plotBorder.title
 msgid "Add plot frame"
-msgstr ""
+msgstr "Ajouter un cadre au graphique"
 
 #: likertplot/options/sorting/ascending.title
 #: likertplot/ui[1][1][0]/sorting_ascending.label
 msgid "Ascending"
-msgstr ""
+msgstr "Croissant"
 
 #: package/analyses/barplot.title
 #: package/analyses/barplot.menuTitle
@@ -113,21 +129,21 @@ msgstr ""
 #: barplot/ui.title
 #: barplot/results.title
 msgid "Bar Plot"
-msgstr ""
+msgstr "Diagramme en barres"
 
 #: barplot/options/position.title
 #: mrcrosstabs/options/bartype.title
 #: mrcrosstabs/ui[3][0][0][0].label
 msgid "Bar Type"
-msgstr ""
+msgstr "Type de barres"
 
 #: histogram/ui[2][2][0].label
 msgid "Bin Color"
-msgstr ""
+msgstr "Couleur des bâtons"
 
 #: histogram/ui[2][1][0].label
 msgid "Bin Size"
-msgstr ""
+msgstr "Taille des bâtons"
 
 #: barplot/options/borderColor/black.title
 #: barplot/options/textColor/black.title
@@ -136,11 +152,11 @@ msgstr ""
 #: piechart/options/borderColor/black.title
 #: piechart/options/textColor/black.title
 msgid "Black"
-msgstr ""
+msgstr "Noir"
 
 #: histogram/options/fillColor/#377EB8.title
 msgid "Blue"
-msgstr ""
+msgstr "Bleu"
 
 #: barplot/options/colorPalette/BuGn.title
 #: boxplot/options/colorPalette/BuGn.title
@@ -148,7 +164,7 @@ msgstr ""
 #: piechart/options/colorPalette/BuGn.title
 #: scatterplot/options/colorPalette/BuGn.title
 msgid "Blue to Green"
-msgstr ""
+msgstr "Bleu à vert"
 
 #: barplot/options/colorPalette/BuPu.title
 #: boxplot/options/colorPalette/BuPu.title
@@ -156,7 +172,7 @@ msgstr ""
 #: piechart/options/colorPalette/BuPu.title
 #: scatterplot/options/colorPalette/BuPu.title
 msgid "Blue to Purple"
-msgstr ""
+msgstr "Bleu à violet"
 
 #: barplot/options/colorPalette/Blues.title
 #: boxplot/options/colorPalette/Blues.title
@@ -164,16 +180,13 @@ msgstr ""
 #: piechart/options/colorPalette/Blues.title
 #: scatterplot/options/colorPalette/Blues.title
 msgid "Blues"
-msgstr ""
+msgstr "Bleus"
 
+#: barplot/options/borderColor.title
 #: histogram/options/borderColor.title
 #: piechart/options/borderColor.title
 msgid "Border"
-msgstr ""
-
-#: barplot/options/borderColor.title
-msgid "Border Color"
-msgstr ""
+msgstr "Bord"
 
 #: package/analyses/boxplot.title
 #: package/analyses/boxplot.menuTitle
@@ -181,16 +194,11 @@ msgstr ""
 #: boxplot/ui.title
 #: boxplot/results.title
 msgid "Box Plot"
-msgstr ""
-
-#: boxplot/ui[1][0][0].label
-#: piechart/ui[1][0][0].label
-msgid "Boxplot Options"
-msgstr ""
+msgstr "Boite à moustaches"
 
 #: histogram/options/fillColor/#A65628.title
 msgid "Brown"
-msgstr ""
+msgstr "Marron"
 
 #: barplot/options/colorPalette/BrBG.title
 #: boxplot/options/colorPalette/BrBG.title
@@ -199,25 +207,15 @@ msgstr ""
 #: piechart/options/colorPalette/BrBG.title
 #: scatterplot/options/colorPalette/BrBG.title
 msgid "Brown and Green"
-msgstr ""
-
-#: barplot/ui[3][0][1][0][0][0]/facetBy_column.label
-#: piechart/ui[2][0][1][0][0][0]/facetBy_column.label
-msgid "By Column"
-msgstr ""
+msgstr "Marron à vert"
 
 #: likertplot/ui[1][2][0]/groupBy_group.label
 msgid "By Group"
-msgstr ""
-
-#: barplot/ui[3][0][1][0][0][0]/facetBy_row.label
-#: piechart/ui[2][0][1][0][0][0]/facetBy_row.label
-msgid "By Row"
-msgstr ""
+msgstr "Par groupe"
 
 #: likertplot/ui[1][2][0]/groupBy_variable.label
 msgid "By Variable"
-msgstr ""
+msgstr "Par variable"
 
 #: package/analyses/barplot.menuSubgroup
 #: package/analyses/piechart.menuSubgroup
@@ -226,44 +224,47 @@ msgstr ""
 #: likertplot/options.menuSubgroup
 #: piechart/options.menuSubgroup
 msgid "Categorical"
-msgstr ""
+msgstr "Variables qualitatives"
 
 #: barplot/options/rows.title
 #: barplot/ui[0][0].label
 msgid "Category Axis"
-msgstr ""
+msgstr "Axe des catégories"
 
 #: likertplot/options/type/centered.title
 #: likertplot/ui[1][0][0]/type_centered.label
 msgid "Centered"
-msgstr ""
+msgstr "Centrées"
 
 #: barplot/ui[1][2][0].label
 #: barplot/ui[3][0][2][0].label
 #: boxplot/ui[1][1][0].label
 #: piechart/ui[1][2][0].label
 msgid "Color Options"
-msgstr ""
+msgstr "Options de couleurs"
 
-#: boxplot/options/colorPalette.title
 #: histogram/options/colorPalette.title
 #: histogram/ui[3][0][2][0].label
 msgid "Color Palette"
-msgstr ""
+msgstr "Palette de couleurs"
 
 #: scatterplot/options/colorPalette.title
 msgid "Color palette"
-msgstr ""
+msgstr "Palette de couleurs"
 
 #: barplot/options/facetBy/column.title
+#: barplot/ui[3][0][1][0][0][0]/facetBy_column.label
+#: histogram/options/facetBy/column.title
+#: histogram/ui[4][0][1][0][0][0]/facetBy_column.label
 #: piechart/options/facetBy/column.title
+#: piechart/ui[2][0][1][0][0][0]/facetBy_column.label
 msgid "Column"
-msgstr ""
+msgstr "Colonne"
 
 #: mrcrosstabs/options/xaxis/xcols.title
 #: mrcrosstabs/ui[3][0][1][0]/xaxis_xcols.label
 msgid "Columns (Groups)"
-msgstr ""
+msgstr "Colonnes (groupes)"
 
 #: package/analyses/histogram.menuSubgroup
 #: package/analyses/boxplot.menuSubgroup
@@ -272,8 +273,10 @@ msgstr ""
 #: histogram/options.menuSubgroup
 #: scatterplot/options.menuSubgroup
 msgid "Continuous"
-msgstr ""
+msgstr "Variables quantitatives"
 
+#: R/barplot.b.R
+#: R/histogram.b.R
 #: R/mrcrosstabs.b.R
 #: barplot/options/yaxis1var/count.title
 #: barplot/ui[2][0][0][0]/yaxis1var_count.label
@@ -284,12 +287,12 @@ msgstr ""
 #: piechart/options/labels/count.title
 #: piechart/ui[1][1][0][0]/labels_count.label
 msgid "Count"
-msgstr ""
+msgstr "Effectif"
 
 #: mrcrosstabs/options/endorsed.title
 #: mrfrequencies/options/endorsed.title
 msgid "Counted Value"
-msgstr ""
+msgstr "Valeur comptée"
 
 #: R/mrfrequencies.b.R
 #: mrfrequencies/options/showCounts.title
@@ -297,7 +300,7 @@ msgstr ""
 #: mrfrequencies/ui[2][2][0]/yaxis_counts.label
 #: mrfrequencies/results/responses.columns.title
 msgid "Counts"
-msgstr ""
+msgstr "Effectifs"
 
 #: package/datasets/Credit Cards.name
 msgid "Credit Cards"
@@ -308,19 +311,19 @@ msgstr ""
 #: mrcrosstabs/options.title
 #: mrcrosstabs/results/crosstab.title
 msgid "Crosstab"
-msgstr ""
+msgstr "Tableau croisé"
 
 #: R/mrcrosstabs.b.R
 msgid "Crosstab (% by row)"
-msgstr ""
+msgstr "Tableau croisé (% en ligne)"
 
 #: R/mrcrosstabs.b.R
 msgid "Crosstab (% of Cases)"
-msgstr ""
+msgstr "Tableau croisé (% des observations)"
 
 #: R/mrcrosstabs.b.R
 msgid "Crosstab (% of Responses)"
-msgstr ""
+msgstr "Tableau croisé (% des réponses)"
 
 #: barplot/options/colorPalette/Dark2.title
 #: boxplot/options/colorPalette/Dark2.title
@@ -337,62 +340,67 @@ msgstr ""
 #: mrfrequencies/options/order/decreasing.title
 #: mrfrequencies/ui[2][1][0]/order_decreasing.label
 msgid "Decreasing"
-msgstr ""
+msgstr "Décroissant"
 
+#: R/histogram.b.R
 #: histogram/options/histtype/density.title
 #: histogram/ui[2][0][0]/histtype_density.label
 msgid "Density"
-msgstr ""
-
-#: histogram/ui[0][0].label
-msgid "Dependent Variable"
-msgstr ""
+msgstr "Densité"
 
 #: likertplot/options/sorting/descending.title
 #: likertplot/ui[1][1][0]/sorting_descending.label
 msgid "Descending"
-msgstr ""
-
-#: histogram/options/grouping/dodge.title
-#: histogram/ui[3][0][0][0]/grouping_dodge.label
-msgid "Dodged"
-msgstr ""
+msgstr "Décroissant"
 
 #: barplot/ui[3].label
+#: histogram/ui[4].label
 #: piechart/ui[2].label
 msgid "Extra Options"
-msgstr ""
+msgstr "Autres options"
+
+#: barplot/options/facet.title
+#: barplot/options/facetBy.title
+#: barplot/ui[0][2].label
+#: histogram/options/facet.title
+#: histogram/ui[0][2].label
+#: piechart/options/facet.title
+#: piechart/ui[0][1].label
+msgid "Facet"
+msgstr "Facette"
+
+#: barplot/ui[3][0][1][0].label
+#: histogram/options/facetBy.title
+#: histogram/ui[4][0][1][0].label
+#: piechart/options/facetBy.title
+#: piechart/ui[2][0][1][0].label
+msgid "Facets"
+msgstr "Facettes"
 
 #: histogram/options/fillColor.title
 msgid "Fill"
-msgstr ""
-
-#: histogram/ui[3][0][1][0]/usePalette_forBoder.label
-msgid "For Border"
-msgstr ""
+msgstr "Remplissage"
 
 #: histogram/options/usePalette/forBorder.title
-msgid "For border colors"
-msgstr ""
+#: histogram/ui[3][0][1][0]/usePalette_forBoder.label
+msgid "For Border"
+msgstr "Pour les bordures"
 
 #: histogram/options/usePalette/forFilling.title
-msgid "For fill colors"
-msgstr ""
-
 #: histogram/ui[3][0][1][0]/usePalette_forFilling.label
 msgid "For Filling"
-msgstr ""
+msgstr "Pour le remplissage"
 
 #: package/analyses/mrfrequencies.title
 #: package/analyses/mrfrequencies.menuTitle
 #: mrfrequencies/options.title
 #: mrfrequencies/results/responses.title
 msgid "Frequencies"
-msgstr ""
+msgstr "Fréquences"
 
 #: mrfrequencies/results/plot.title
 msgid "Frequency Plot"
-msgstr ""
+msgstr "Graphique"
 
 #: barplot/options/borderColor/gray.title
 #: barplot/options/textColor/gray.title
@@ -401,11 +409,11 @@ msgstr ""
 #: piechart/options/borderColor/gray.title
 #: piechart/options/textColor/gray.title
 msgid "Gray"
-msgstr ""
+msgstr "Gris"
 
 #: histogram/options/fillColor/#4DAF4A.title
 msgid "Green"
-msgstr ""
+msgstr "Vert"
 
 #: barplot/options/colorPalette/GnBu.title
 #: boxplot/options/colorPalette/GnBu.title
@@ -413,7 +421,7 @@ msgstr ""
 #: piechart/options/colorPalette/GnBu.title
 #: scatterplot/options/colorPalette/GnBu.title
 msgid "Green to Blue"
-msgstr ""
+msgstr "Vert à bleu"
 
 #: barplot/options/colorPalette/Greens.title
 #: boxplot/options/colorPalette/Greens.title
@@ -421,7 +429,7 @@ msgstr ""
 #: piechart/options/colorPalette/Greens.title
 #: scatterplot/options/colorPalette/Greens.title
 msgid "Greens"
-msgstr ""
+msgstr "Verts"
 
 #: barplot/options/colorPalette/Greys.title
 #: boxplot/options/colorPalette/Greys.title
@@ -429,46 +437,52 @@ msgstr ""
 #: piechart/options/colorPalette/Greys.title
 #: scatterplot/options/colorPalette/Greys.title
 msgid "Greys"
-msgstr ""
+msgstr "Gris"
 
 #: barplot/options/columns.title
 #: barplot/ui[0][1].label
+#: boxplot/options/group.title
+#: boxplot/ui[0][1].label
+#: histogram/options/group.title
+#: histogram/ui[0][1].label
 #: likertplot/options/groupBy/group.title
 #: likertplot/ui[1][2][0].label
 #: scatterplot/options/group.title
 #: scatterplot/ui[0][2].label
 msgid "Group"
-msgstr ""
+msgstr "Groupe"
 
 #: likertplot/options/groupBy.title
 msgid "Group By"
-msgstr ""
+msgstr "Grouper par"
+
+#: histogram/options/grouping/dodge.title
+#: histogram/ui[3][0][0][0]/grouping_dodge.label
+msgid "Grouped"
+msgstr "Groupé"
 
 #: histogram/options/grouping.title
 #: histogram/ui[3][0][0][0].label
 msgid "Grouping"
-msgstr ""
+msgstr "Groupes"
 
 #: histogram/ui[3].label
 msgid "Grouping Plot"
-msgstr ""
+msgstr "Graphe"
 
-#: boxplot/options/group.title
-#: boxplot/ui[0][1].label
-#: histogram/options/group.title
-#: histogram/ui[0][1].label
 #: likertplot/options/group.title
 #: likertplot/ui[0][1].label
 #: mrcrosstabs/options/group.title
 #: mrcrosstabs/ui[0][1].label
 msgid "Grouping Variable"
-msgstr ""
+msgstr "Grouper par"
 
 #: barplot/options/plotHeight.title
+#: histogram/options/plotHeight.title
 #: likertplot/options/plotHeight.title
 #: piechart/options/plotHeight.title
 msgid "Height"
-msgstr ""
+msgstr "Hauteur"
 
 #: package/analyses/histogram.title
 #: package/analyses/histogram.menuTitle
@@ -478,28 +492,28 @@ msgstr ""
 #: histogram/ui[2][0][0].label
 #: histogram/results.title
 msgid "Histogram"
-msgstr ""
+msgstr "Histogramme"
 
 #: scatterplot/options/hline.title
 msgid "Horizontal line at"
-msgstr ""
+msgstr "Ligne horizontale à "
 
 #: barplot/options/horizontal.title
 msgid "Horizontal plot"
-msgstr ""
+msgstr "Graphe horizontal"
 
 #: mrcrosstabs/options/size/huge.title
 #: mrfrequencies/options/size/huge.title
 msgid "Huge (800x500)"
-msgstr ""
+msgstr "Énorme (800x500)"
 
 #: piechart/options/donut.title
 msgid "I prefer Donuts!"
-msgstr ""
+msgstr "Graphique en anneau"
 
 #: barplot/options/ignoreNA.title
 msgid "Ignore NA"
-msgstr ""
+msgstr "Ignorer les NA"
 
 #: barplot/options/order/increasing.title
 #: barplot/ui[1][1][0][0]/order_increasing.label
@@ -508,11 +522,11 @@ msgstr ""
 #: mrfrequencies/options/order/increasing.title
 #: mrfrequencies/ui[2][1][0]/order_increasing.label
 msgid "Increasing"
-msgstr ""
+msgstr "Croissant"
 
 #: histogram/options/fillColor/#A6C4F1.title
 msgid "jmv Blue"
-msgstr ""
+msgstr "Bleu jmv"
 
 #: barplot/options/colorPalette/jmv.title
 #: boxplot/options/colorPalette/jmv.title
@@ -520,83 +534,83 @@ msgstr ""
 #: piechart/options/colorPalette/jmv.title
 #: scatterplot/options/colorPalette/jmv.title
 msgid "jmv Default"
-msgstr ""
+msgstr "Couleurs jmv"
 
 #: histogram/options/fillColor/#C5C5C5.title
 msgid "jmv Gray"
-msgstr ""
+msgstr "Gris jmv"
 
 #: histogram/options/fillColor/#88C38B.title
 msgid "jmv Green"
-msgstr ""
+msgstr "Vert jmv"
 
 #: histogram/options/fillColor/#E18A8A.title
 msgid "jmv Red"
-msgstr ""
+msgstr "Rouge jmv"
 
 #: histogram/options/fillColor/#F0CD8C.title
 msgid "jmv Yellow"
-msgstr ""
+msgstr "Jaune jmv"
 
 #: piechart/options/textColor.title
 #: scatterplot/options/labelVar.title
 #: scatterplot/ui[0][3].label
 msgid "Label"
-msgstr ""
+msgstr "Etiquette"
 
 #: piechart/options/labels.title
 #: piechart/ui[1][1][0].label
 msgid "Labels"
-msgstr ""
+msgstr "Etiquettes"
 
 #: mrcrosstabs/options/size/large.title
 #: mrfrequencies/options/size/large.title
 msgid "Large (600x400)"
-msgstr ""
+msgstr "Grand (600x400)"
 
 #: barplot/options/legendAtBottom.title
 msgid "Legend at bottom"
-msgstr ""
+msgstr "Légende en bas "
 
 #: piechart/options/legendBottom.title
 msgid "Legend at Bottom"
-msgstr ""
+msgstr "Légende en bas"
 
 #: histogram/options/fillColor/#B3CDE3.title
 msgid "Light Blue"
-msgstr ""
+msgstr "Bleu clair"
 
 #: histogram/options/fillColor/#E5D8BD.title
 msgid "Light Brown"
-msgstr ""
+msgstr "Marron clair"
 
 #: histogram/options/fillColor/#F2F2F2.title
 msgid "Light Gray"
-msgstr ""
+msgstr "Gris clair"
 
 #: histogram/options/fillColor/#CCEBC5.title
 msgid "Light Green"
-msgstr ""
+msgstr "Vert clair"
 
 #: histogram/options/fillColor/#FED9A6.title
 msgid "Light Orange"
-msgstr ""
+msgstr "Orange clair"
 
 #: histogram/options/fillColor/#FDDAEC.title
 msgid "Light Pink"
-msgstr ""
+msgstr "Rose clair"
 
 #: histogram/options/fillColor/#DECBE4.title
 msgid "Light Purple"
-msgstr ""
+msgstr "Violet clair"
 
 #: histogram/options/fillColor/#FBB4AE.title
 msgid "Light Red"
-msgstr ""
+msgstr "Rouge clair"
 
 #: histogram/options/fillColor/#FFFFCC.title
 msgid "Light Yellow"
-msgstr ""
+msgstr "Jaune clair"
 
 #: package/datasets/Likert.name
 msgid "Likert"
@@ -608,37 +622,34 @@ msgstr ""
 #: likertplot/ui.title
 #: likertplot/results.title
 msgid "Likert Plot"
-msgstr ""
+msgstr "Diagramme Likert"
 
 #: likertplot/options/liks.title
 #: likertplot/ui[0][0].label
 msgid "Likert Variables"
-msgstr ""
+msgstr "Variables de Likert"
 
 #: mrcrosstabs/options/size/medium.title
 #: mrfrequencies/options/size/medium.title
 msgid "Medium (400x300)"
-msgstr ""
+msgstr "Moyen (400x300)"
 
 #: package/analyses/mrfrequencies.menuSubgroup
 #: package/analyses/mrcrosstabs.menuSubgroup
 #: mrcrosstabs/options.menuSubgroup
 #: mrfrequencies/options.menuSubgroup
 msgid "Multiple Response"
-msgstr ""
+msgstr "Réponses multiples"
 
 #: mrcrosstabs/ui.title
+#: mrcrosstabs/results.title
 msgid "Multiple Response Crosstab"
-msgstr ""
+msgstr "Réponses multiples - Tableau croisé"
 
 #: mrfrequencies/ui.title
 #: mrfrequencies/results.title
 msgid "Multiple Response Frequencies"
-msgstr ""
-
-#: mrcrosstabs/results.title
-msgid "Mutible Response Crosstab"
-msgstr ""
+msgstr "Réponses multiples - Fréquences"
 
 #: barplot/options/order/none.title
 #: barplot/options/borderColor/none.title
@@ -657,21 +668,21 @@ msgstr ""
 #: piechart/options/borderColor/none.title
 #: piechart/ui[1][1][0][0]/labels_none.label
 msgid "None"
-msgstr ""
+msgstr "Aucun"
 
 #: R/mrcrosstabs.b.R
 #: mrcrosstabs/options/showNbOfCases.title
 msgid "Number of cases"
-msgstr ""
+msgstr "Nombre d'observations"
 
 #: R/mrfrequencies.b.R
 msgid "Number of cases:"
-msgstr ""
+msgstr "Nombre d'observations :"
 
 #: mrcrosstabs/options/optionname.title
 #: mrfrequencies/options/optionname.title
 msgid "Option name"
-msgstr ""
+msgstr "Nom des options"
 
 #: mrcrosstabs/options/resps.title
 #: mrcrosstabs/ui[0][0].label
@@ -680,18 +691,18 @@ msgstr ""
 #: mrfrequencies/ui[0][0].label
 #: mrfrequencies/ui[1].label
 msgid "Option Variables"
-msgstr ""
+msgstr "Variables d'options"
 
 #: mrcrosstabs/options/optionname.default
 #: mrcrosstabs/results/crosstab.columns.title
 #: mrfrequencies/options/optionname.default
 #: mrfrequencies/results/responses.columns.title
 msgid "Options"
-msgstr ""
+msgstr "Options"
 
 #: histogram/options/fillColor/#FF7F00.title
 msgid "Orange"
-msgstr ""
+msgstr "Orange"
 
 #: barplot/options/colorPalette/PuOr.title
 #: boxplot/options/colorPalette/PuOr.title
@@ -700,7 +711,7 @@ msgstr ""
 #: piechart/options/colorPalette/PuOr.title
 #: scatterplot/options/colorPalette/PuOr.title
 msgid "Orange and Purple"
-msgstr ""
+msgstr "Orange à violet"
 
 #: barplot/options/colorPalette/OrRd.title
 #: boxplot/options/colorPalette/OrRd.title
@@ -708,7 +719,7 @@ msgstr ""
 #: piechart/options/colorPalette/OrRd.title
 #: scatterplot/options/colorPalette/OrRd.title
 msgid "Orange to Red"
-msgstr ""
+msgstr "Orange à rouge"
 
 #: barplot/options/colorPalette/Oranges.title
 #: boxplot/options/colorPalette/Oranges.title
@@ -720,16 +731,16 @@ msgstr ""
 
 #: R/mrcrosstabs.b.R
 msgid "Overall"
-msgstr ""
+msgstr "Ensemble"
 
 #: mrcrosstabs/options/overall.title
 msgid "Overall (all groups)"
-msgstr ""
+msgstr "Ensemble des groupes"
 
 #: histogram/options/grouping/identity.title
 #: histogram/ui[3][0][0][0]/grouping_identity.label
 msgid "Overlapping"
-msgstr ""
+msgstr "Superposé"
 
 #: barplot/options/colorPalette/Paired.title
 #: boxplot/options/colorPalette/Paired.title
@@ -740,29 +751,11 @@ msgid "Paired"
 msgstr ""
 
 #: barplot/options/colorPalette.title
+#: boxplot/options/colorPalette.title
 #: likertplot/options/plotColor.title
 #: piechart/options/colorPalette.title
 msgid "Palette"
-msgstr ""
-
-#: barplot/options/panel.title
-#: barplot/ui[0][2].label
-#: barplot/ui[3][0][1][0].label
-#: piechart/ui[0][1].label
-#: piechart/ui[2][0][1][0].label
-msgid "Panel"
-msgstr ""
-
-#: histogram/options/panel.title
-#: histogram/ui[0][2].label
-#: piechart/options/panel.title
-msgid "Panel Variable"
-msgstr ""
-
-#: barplot/options/facetBy.title
-#: piechart/options/facetBy.title
-msgid "Panels by"
-msgstr ""
+msgstr "Palette"
 
 #: barplot/options/colorPalette/Pastel1.title
 #: boxplot/options/colorPalette/Pastel1.title
@@ -780,12 +773,13 @@ msgstr ""
 msgid "Pastel 2"
 msgstr ""
 
+#: R/barplot.b.R
 #: barplot/options/yaxis1var/percent.title
 #: barplot/ui[2][0][0][0]/yaxis1var_percent.label
 #: piechart/options/labels/percent.title
 #: piechart/ui[1][1][0][0]/labels_percent.label
 msgid "Percent"
-msgstr ""
+msgstr "Pourcent"
 
 #: package/analyses/piechart.title
 #: package/analyses/piechart.menuTitle
@@ -793,11 +787,11 @@ msgstr ""
 #: piechart/ui.title
 #: piechart/results.title
 msgid "Pie Chart"
-msgstr ""
+msgstr "Diagramme en secteurs"
 
 #: histogram/options/fillColor/#F781BF.title
 msgid "Pink"
-msgstr ""
+msgstr "Rose"
 
 #: barplot/options/colorPalette/PiYG.title
 #: boxplot/options/colorPalette/PiYG.title
@@ -806,62 +800,62 @@ msgstr ""
 #: piechart/options/colorPalette/PiYG.title
 #: scatterplot/options/colorPalette/PiYG.title
 msgid "Pink and Green"
-msgstr ""
+msgstr "Rose et vert"
 
 #: mrfrequencies/ui[2][2][0].label
 msgid "Plot"
-msgstr ""
+msgstr "Graphique"
 
 #: barplot/ui[1][0][0].label
+#: boxplot/ui[1][0][0].label
 #: likertplot/ui[2][0][0].label
+#: piechart/ui[1][0][0].label
 #: scatterplot/ui[1][0][0].label
 msgid "Plot Options"
-msgstr ""
+msgstr "Options du graphique"
 
 #: barplot/ui[3][0][0][0].label
+#: histogram/ui[4][0][0][0].label
 #: mrcrosstabs/ui[3][0][2].label
 #: mrfrequencies/ui[3].label
 #: piechart/ui[2][0][0][0].label
 msgid "Plot Size"
-msgstr ""
+msgstr "Taille du graphique"
 
 #: likertplot/ui[2][1][0].label
 msgid "Plot Size & Color"
-msgstr ""
+msgstr "Taille et couleur du graphique"
 
 #: likertplot/options/type.title
 #: likertplot/ui[1][0][0].label
 msgid "Plot Type"
-msgstr ""
+msgstr "Type de graphique"
 
 #: mrcrosstabs/ui[3].label
 #: mrcrosstabs/results/plot.title
 msgid "Plots"
-msgstr ""
+msgstr "Graphiques"
 
 #: scatterplot/options/ptSize.title
-msgid "Point size"
-msgstr ""
-
 #: scatterplot/ui[0][4].label
 msgid "Point Size"
-msgstr ""
+msgstr "Taille des points"
 
 #: histogram/options/binBoundary.title
 msgid "Position"
-msgstr ""
+msgstr "Origine"
 
 #: scatterplot/options/overlap.title
 msgid "Prevent overlap"
-msgstr ""
+msgstr "Empêcher la superposition"
 
 #: likertplot/ui[2][1][0]/textSize.suffix
 msgid "pt"
-msgstr ""
+msgstr "pt"
 
 #: histogram/options/fillColor/#984EA3.title
 msgid "Purple"
-msgstr ""
+msgstr "Violet"
 
 #: barplot/options/colorPalette/PRGn.title
 #: boxplot/options/colorPalette/PRGn.title
@@ -870,7 +864,7 @@ msgstr ""
 #: piechart/options/colorPalette/PRGn.title
 #: scatterplot/options/colorPalette/PRGn.title
 msgid "Purple and Green"
-msgstr ""
+msgstr "Violet et vert"
 
 #: barplot/options/colorPalette/PuBu.title
 #: boxplot/options/colorPalette/PuBu.title
@@ -878,7 +872,7 @@ msgstr ""
 #: piechart/options/colorPalette/PuBu.title
 #: scatterplot/options/colorPalette/PuBu.title
 msgid "Purple to Blue"
-msgstr ""
+msgstr "Violet à bleu"
 
 #: barplot/options/colorPalette/PuBuGn.title
 #: boxplot/options/colorPalette/PuBuGn.title
@@ -886,7 +880,7 @@ msgstr ""
 #: piechart/options/colorPalette/PuBuGn.title
 #: scatterplot/options/colorPalette/PuBuGn.title
 msgid "Purple to Green"
-msgstr ""
+msgstr "Violet à vert"
 
 #: barplot/options/colorPalette/PuRd.title
 #: boxplot/options/colorPalette/PuRd.title
@@ -894,7 +888,7 @@ msgstr ""
 #: piechart/options/colorPalette/PuRd.title
 #: scatterplot/options/colorPalette/PuRd.title
 msgid "Purple to Red"
-msgstr ""
+msgstr "Violet à rouge"
 
 #: barplot/options/colorPalette/Purples.title
 #: boxplot/options/colorPalette/Purples.title
@@ -902,20 +896,22 @@ msgstr ""
 #: piechart/options/colorPalette/Purples.title
 #: scatterplot/options/colorPalette/Purples.title
 msgid "Purples"
-msgstr ""
+msgstr "Violets"
 
 #: barplot/ui[3][0][0][0][0]/plotWidth.suffix
 #: barplot/ui[3][0][0][0][0]/plotHeight.suffix
+#: histogram/ui[4][0][0][0][0]/plotWidth.suffix
+#: histogram/ui[4][0][0][0][0]/plotHeight.suffix
 #: likertplot/ui[2][1][0]/plotWidth.suffix
 #: likertplot/ui[2][1][0]/plotHeight.suffix
 #: piechart/ui[2][0][0][0][0]/plotWidth.suffix
 #: piechart/ui[2][0][0][0][0]/plotHeight.suffix
 msgid "px"
-msgstr ""
+msgstr "px"
 
 #: histogram/options/fillColor/#E41A1C.title
 msgid "Red"
-msgstr ""
+msgstr "Rouge"
 
 #: barplot/options/colorPalette/RdBu.title
 #: boxplot/options/colorPalette/RdBu.title
@@ -924,7 +920,7 @@ msgstr ""
 #: piechart/options/colorPalette/RdBu.title
 #: scatterplot/options/colorPalette/RdBu.title
 msgid "Red and Blue"
-msgstr ""
+msgstr "Rouge et bleu"
 
 #: barplot/options/colorPalette/RdGy.title
 #: boxplot/options/colorPalette/RdGy.title
@@ -933,7 +929,7 @@ msgstr ""
 #: piechart/options/colorPalette/RdGy.title
 #: scatterplot/options/colorPalette/RdGy.title
 msgid "Red and Gray"
-msgstr ""
+msgstr "Rouge et gris"
 
 #: barplot/options/colorPalette/RdPu.title
 #: boxplot/options/colorPalette/RdPu.title
@@ -941,15 +937,15 @@ msgstr ""
 #: piechart/options/colorPalette/RdPu.title
 #: scatterplot/options/colorPalette/RdPu.title
 msgid "Red to Purple"
-msgstr ""
+msgstr "Rouge et violet"
 
 #: likertplot/options/plotColor/RdYlBu.title
 msgid "Red, Yellow and Blue"
-msgstr ""
+msgstr "Rouge, jaune et bleu"
 
 #: likertplot/options/plotColor/RdYlGn.title
 msgid "Red, Yellow and Green"
-msgstr ""
+msgstr "Rouge, jaune et vert"
 
 #: barplot/options/colorPalette/RdYlBu.title
 #: boxplot/options/colorPalette/RdYlBu.title
@@ -957,7 +953,7 @@ msgstr ""
 #: piechart/options/colorPalette/RdYlBu.title
 #: scatterplot/options/colorPalette/RdYlBu.title
 msgid "Red, Yellow, Blue"
-msgstr ""
+msgstr "Rouge, jaune et bleu"
 
 #: barplot/options/colorPalette/RdYlGn.title
 #: boxplot/options/colorPalette/RdYlGn.title
@@ -965,7 +961,7 @@ msgstr ""
 #: piechart/options/colorPalette/RdYlGn.title
 #: scatterplot/options/colorPalette/RdYlGn.title
 msgid "Red, Yellow, Green"
-msgstr ""
+msgstr "Rouge, jaune et vert"
 
 #: barplot/options/colorPalette/Reds.title
 #: boxplot/options/colorPalette/Reds.title
@@ -973,29 +969,33 @@ msgstr ""
 #: piechart/options/colorPalette/Reds.title
 #: scatterplot/options/colorPalette/Reds.title
 msgid "Reds"
-msgstr ""
+msgstr "Rouges"
 
 #: scatterplot/ui[1][1][0].label
 msgid "Reference Lines"
-msgstr ""
+msgstr "Lignes de référence"
 
 #: likertplot/options/reverseLikert.title
 msgid "Reverse the staking order"
-msgstr ""
+msgstr "Inverser les modalités"
 
 #: barplot/options/facetBy/row.title
+#: barplot/ui[3][0][1][0][0][0]/facetBy_row.label
+#: histogram/options/facetBy/row.title
+#: histogram/ui[4][0][1][0][0][0]/facetBy_row.label
 #: piechart/options/facetBy/row.title
+#: piechart/ui[2][0][1][0][0][0]/facetBy_row.label
 msgid "Row"
-msgstr ""
+msgstr "Ligne"
 
 #: mrcrosstabs/options/xaxis/xrows.title
 #: mrcrosstabs/ui[3][0][1][0]/xaxis_xrows.label
 msgid "Rows (Options)"
-msgstr ""
+msgstr "Lignes (Options)"
 
 #: barplot/options/singleColor.title
 msgid "Same color for all bars"
-msgstr ""
+msgstr "Utiliser une couleur unique"
 
 #: package/analyses/scatterplot.title
 #: package/analyses/scatterplot.menuTitle
@@ -1003,7 +1003,7 @@ msgstr ""
 #: scatterplot/ui.title
 #: scatterplot/results.title
 msgid "Scatter Plot"
-msgstr ""
+msgstr "Nuage de points"
 
 #: barplot/options/colorPalette/Set1.title
 #: boxplot/options/colorPalette/Set1.title
@@ -1031,58 +1031,55 @@ msgstr ""
 
 #: likertplot/options/addLabels.title
 msgid "Show % Labels"
-msgstr ""
+msgstr "Afficher les %"
 
 #: likertplot/options/addMedianLine.title
 msgid "Show 50% Line (Stacked Only)"
-msgstr ""
+msgstr "Afficher la ligne de 50 % (empilées)"
 
 #: barplot/options/showLabels.title
 msgid "Show count labels"
-msgstr ""
+msgstr "Afficher les effectifs"
 
 #: boxplot/options/showMean.title
 msgid "Show Mean"
-msgstr ""
+msgstr "Afficher la moyenne"
 
 #: histogram/options/normalCurve.title
 msgid "Show Normal Curve"
-msgstr ""
+msgstr "Afficher la courbe normale"
 
 #: boxplot/options/showOutliers.title
 msgid "Show Outliers"
-msgstr ""
+msgstr "Afficher les valeurs aberrantes"
 
 #: scatterplot/options/keepNA.title
 msgid "Show points with missing group/label"
-msgstr ""
+msgstr "Afficher les points avec groupe manquant"
 
 #: likertplot/options/addTotals.title
 msgid "Show Totals (Centered Only)"
-msgstr ""
+msgstr "Afficher les totaux (centrées)"
 
-#: barplot/options/position/dodge.title
 #: mrcrosstabs/options/bartype/dodge.title
 #: mrcrosstabs/ui[3][0][0][0]/bartype_dodge.label
 msgid "Side by side"
-msgstr ""
+msgstr "Juxtaposé"
 
-#: barplot/options/position/dodge2.title
-msgid "Side by side 2"
-msgstr ""
-
+#: barplot/options/position/dodge.title
 #: barplot/ui[2][1][0][0]/position_dodge.label
 msgid "Side-by-side"
-msgstr ""
+msgstr "Juxtaposé"
 
+#: barplot/options/position/dodge2.title
 #: barplot/ui[2][1][0][0]/position_dodge2.label
 msgid "Side-by-side 2"
-msgstr ""
+msgstr "Juxtaposé 2"
 
 #: mrcrosstabs/options/size/small.title
 #: mrfrequencies/options/size/small.title
 msgid "Small (300x200)"
-msgstr ""
+msgstr "Petit (300x200)"
 
 #: barplot/options/order.title
 #: barplot/ui[1][1][0].label
@@ -1093,7 +1090,7 @@ msgstr ""
 #: mrfrequencies/options/order.title
 #: mrfrequencies/ui[2][1][0].label
 msgid "Sorting"
-msgstr ""
+msgstr "Tri"
 
 #: barplot/options/colorPalette/Spectral.title
 #: boxplot/options/colorPalette/Spectral.title
@@ -1113,63 +1110,61 @@ msgstr ""
 #: mrcrosstabs/options/bartype/stack.title
 #: mrcrosstabs/ui[3][0][0][0]/bartype_stack.label
 msgid "Stacked"
-msgstr ""
+msgstr "Empilé"
 
 #: barplot/options/position/fill.title
 #: barplot/ui[2][1][0][0]/position_fill.label
 msgid "Stacked 100%"
-msgstr ""
+msgstr "Empilé à 100 %"
 
 #: mrcrosstabs/ui[2][0][0].label
 #: mrfrequencies/ui[2][0][0].label
 msgid "Table"
-msgstr ""
-
-#: likertplot/options/textSize.title
-msgid "Text"
-msgstr ""
+msgstr "Table"
 
 #: barplot/options/textColor.title
-msgid "Text Color"
-msgstr ""
+#: likertplot/options/textSize.title
+msgid "Text"
+msgstr "Texte"
 
 #: mrfrequencies/options/showTotal.title
 msgid "Total"
-msgstr ""
+msgstr "Total"
 
 #: mrcrosstabs/options/totalRow.title
 msgid "Total Row"
-msgstr ""
+msgstr "Ligne Total"
 
 #: histogram/options/usePalette.title
 #: histogram/ui[3][0][1][0].label
 msgid "Use Palette"
-msgstr ""
+msgstr "Utiliser la palette"
 
 #: boxplot/options/singleColor.title
 msgid "Use the same color for variables"
-msgstr ""
+msgstr "Utiliser une couleur unique"
 
 #: mrcrosstabs/options/computedValues.title
 #: mrcrosstabs/ui[2][1][0].label
 msgid "Values"
-msgstr ""
+msgstr "Valeurs"
 
 #: histogram/options/aVar.title
+#: histogram/ui[0][0].label
 #: likertplot/options/groupBy/variable.title
 #: piechart/options/aVar.title
 #: piechart/ui[0][0].label
 msgid "Variable"
-msgstr ""
+msgstr "Variable"
 
 #: boxplot/options/vars.title
 #: boxplot/ui[0][0].label
 msgid "Variables"
-msgstr ""
+msgstr "Variables"
 
 #: scatterplot/options/vline.title
 msgid "Vertical line at"
-msgstr ""
+msgstr "Ligne verticale à"
 
 #: package/analyses/histogram.menuGroup
 #: package/analyses/boxplot.menuGroup
@@ -1197,21 +1192,22 @@ msgstr ""
 #: piechart/options/borderColor/white.title
 #: piechart/options/textColor/white.title
 msgid "White"
-msgstr ""
+msgstr "Blanc"
 
 #: barplot/options/plotWidth.title
 #: histogram/options/binWidth.title
+#: histogram/options/plotWidth.title
 #: likertplot/options/plotWidth.title
 #: piechart/options/plotWidth.title
 msgid "Width"
-msgstr ""
+msgstr "Largeur"
 
 #: mrcrosstabs/options/xaxis.title
 #: mrcrosstabs/ui[3][0][1][0].label
 #: scatterplot/options/xaxis.title
 #: scatterplot/ui[0][0].label
 msgid "X-Axis"
-msgstr ""
+msgstr "Axe X"
 
 #: scatterplot/options/xinter.title
 msgid "X-intercept"
@@ -1221,7 +1217,7 @@ msgstr ""
 #: scatterplot/options/yaxis.title
 #: scatterplot/ui[0][1].label
 msgid "Y-Axis"
-msgstr ""
+msgstr "Axe Y"
 
 #: barplot/options/yaxis1var.title
 msgid "Y-axis (1-variable)"
@@ -1229,11 +1225,11 @@ msgstr ""
 
 #: barplot/ui[2][1][0].label
 msgid "Y-axis (with groups)"
-msgstr ""
+msgstr "Axe Y (avec groupes)"
 
 #: barplot/ui[2][0][0].label
 msgid "Y-axis (without group)"
-msgstr ""
+msgstr "Axe Y (sans groupe)"
 
 #: scatterplot/options/yinter.title
 msgid "Y-intercept"
@@ -1241,7 +1237,7 @@ msgstr ""
 
 #: histogram/options/fillColor/#FFFF33.title
 msgid "Yellow"
-msgstr ""
+msgstr "Jaune"
 
 #: barplot/options/colorPalette/YlGnBu.title
 #: boxplot/options/colorPalette/YlGnBu.title
@@ -1249,7 +1245,7 @@ msgstr ""
 #: piechart/options/colorPalette/YlGnBu.title
 #: scatterplot/options/colorPalette/YlGnBu.title
 msgid "Yellow to Blue"
-msgstr ""
+msgstr "Jaune à bleu"
 
 #: barplot/options/colorPalette/YlOrBr.title
 #: boxplot/options/colorPalette/YlOrBr.title
@@ -1257,7 +1253,7 @@ msgstr ""
 #: piechart/options/colorPalette/YlOrBr.title
 #: scatterplot/options/colorPalette/YlOrBr.title
 msgid "Yellow to Brown"
-msgstr ""
+msgstr "Jaune à marron"
 
 #: barplot/options/colorPalette/YlGn.title
 #: boxplot/options/colorPalette/YlGn.title
@@ -1265,7 +1261,7 @@ msgstr ""
 #: piechart/options/colorPalette/YlGn.title
 #: scatterplot/options/colorPalette/YlGn.title
 msgid "Yellow to Green"
-msgstr ""
+msgstr "Jaune à vert"
 
 #: barplot/options/colorPalette/YlOrRd.title
 #: boxplot/options/colorPalette/YlOrRd.title
@@ -1273,8 +1269,8 @@ msgstr ""
 #: piechart/options/colorPalette/YlOrRd.title
 #: scatterplot/options/colorPalette/YlOrRd.title
 msgid "Yellow to Red"
-msgstr ""
+msgstr "Jaune à rouge"
 
 #: package.title
 msgid "Yet Another jamovi Plotting Module"
-msgstr ""
+msgstr "Un autre module graphique pour jamovi"

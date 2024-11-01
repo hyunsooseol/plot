@@ -13,6 +13,7 @@ likertplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
         .run = function() {
             if( length( self$options$liks) > 1  ) {
                 plotData <- self$data[c(self$options$liks, self$options$group)]
+                plotData <- jmvcore::naOmit(plotData)
                 image <- self$results$plot
                 image$setState(plotData)
             }

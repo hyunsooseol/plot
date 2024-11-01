@@ -19,7 +19,7 @@ options:
         - numeric
 
     - name: group
-      title: Grouping Variable
+      title: Group
       type: Variable
       suggested:
         - nominal
@@ -27,8 +27,8 @@ options:
       permitted:
         - factor
 
-    - name: panel
-      title: Panel Variable
+    - name: facet
+      title: Facet
       type: Variable
       suggested:
         - nominal
@@ -119,7 +119,7 @@ options:
           name:  "#FDDAEC"
         - title: Light Gray
           name:  "#F2F2F2"
-      default: "#E41A1C"
+      default: "#A6C4F1"
 
     - name: borderColor
       title: Border
@@ -145,7 +145,7 @@ options:
           name:  identity
         - title: Stacked
           name:  stack
-        - title: Dodged
+        - title: Grouped
           name:  dodge
       default: none
 
@@ -230,10 +230,41 @@ options:
       title: Use Palette
       type: List
       options:
-        - title: For fill colors
+        - title: For Filling
           name:  forFilling
-        - title: For border colors
+        - title: For Border
           name:  forBorder
       default: forFilling
+
+    - name: plotWidth
+      type: Number
+      title: Width
+      min: 0
+      max: 1000
+      default: 0
+
+    - name: plotHeight
+      type: Number
+      title: Height
+      min: 0
+      max: 1600
+      default: 0
+
+    - name: facetBy
+      title: Facets
+      type: List
+      options:
+        - title: Row
+          name:  row
+        - title: Column
+          name:  column
+      default: column
+
+    - name: facetNumber
+      type: Number
+      title: "# of rows/columns"
+      min: 1
+      max: 10
+      default: 1
 
 ...

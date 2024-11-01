@@ -9,24 +9,24 @@ children:
     stretchFactor: 1
     children:
       - type: TargetLayoutBox
-        label: Dependent Variable
+        label: Variable
         children:
           - type: VariablesListBox
             name: aVar
             maxItemCount: 1
             isTarget: true
       - type: TargetLayoutBox
-        label: Grouping Variable
+        label: Group
         children:
           - type: VariablesListBox
             name: group
             maxItemCount: 1
             isTarget: true
       - type: TargetLayoutBox
-        label: Panel Variable
+        label: Facet
         children:
           - type: VariablesListBox
-            name: panel
+            name: facet
             maxItemCount: 1
             isTarget: true
   - type: LayoutBox
@@ -39,12 +39,13 @@ children:
   - type: LayoutBox
     margin: large
     style: inline
+    stretchFactor: 1
     children:
       - type: LayoutBox
         cell:
           column: 0
           row: 0
-        stretchFactor: 1
+        stretchFactor: 2
         children:
           - type: Label
             label: Histogram
@@ -63,7 +64,7 @@ children:
         cell:
           column: 1
           row: 0
-        stretchFactor: 1
+        stretchFactor: 2
         children:
           - type: Label
             label: Bin Size
@@ -81,7 +82,7 @@ children:
         cell:
           column: 2
           row: 0
-        stretchFactor: 1
+        stretchFactor: 3
         children:
           - type: Label
             label: Bin Color
@@ -121,16 +122,19 @@ children:
                     optionName: grouping
                     optionPart: stack
                     label: "Stacked"
+                    enable: (!(!group))
                   - type: RadioButton
                     name: grouping_identity
                     optionName: grouping
                     optionPart: identity
                     label: "Overlapping"
+                    enable: (!(!group))
                   - type: RadioButton
                     name: grouping_dodge
                     optionName: grouping
                     optionPart: dodge
-                    label: "Dodged"
+                    label: "Grouped"
+                    enable: (!(!group))
           - type: LayoutBox
             cell:
               column: 1
@@ -145,11 +149,13 @@ children:
                     optionName: usePalette
                     optionPart: forFilling
                     label: "For Filling"
+                    enable: (!(!group))
                   - type: RadioButton
                     name: usePalette_forBoder
                     optionName: usePalette
                     optionPart: forBorder
                     label: "For Border"
+                    enable: (!(!group))
           - type: LayoutBox
             cell:
               column: 2
@@ -162,3 +168,63 @@ children:
                   - type: ComboBox
                     name: colorPalette
                     label: ""
+  - type: CollapseBox
+    label: Extra Options
+    collapsed: true
+    stretchFactor: 1
+    children:
+      - type: LayoutBox
+        margin: large
+        stretchFactor: 1
+        style: inline
+        children:
+          - type: LayoutBox
+            cell:
+              column: 0
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: Plot Size
+                children:
+                  - type: LayoutBox
+                    children:
+                      - type: TextBox
+                        name: plotWidth
+                        format: number
+                        suffix: px
+                      - type: TextBox
+                        name: plotHeight
+                        format: number
+                        suffix: px
+          - type: LayoutBox
+            cell:
+              column: 1
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: Facets
+                children:
+                  - type: LayoutBox
+                    children:
+                      - type: LayoutBox
+                        margin: large
+                        style: inline
+                        children:
+                          - type: RadioButton
+                            name: facetBy_row
+                            optionName: facetBy
+                            optionPart: row
+                            label: Row
+                            enable: (!(!facet))
+                          - type: RadioButton
+                            name: facetBy_column
+                            optionName: facetBy
+                            optionPart: column
+                            label: Column
+                            enable: (!(!facet))
+                      - type: TextBox
+                        name: facetNumber
+                        format: number
+                        enable: (!(!facet))

@@ -13,7 +13,7 @@ items:
       clearWith:
         - aVar
         - group
-        - panel
+        - facet
         - histtype
         - binWidth
         - binBoundary
@@ -23,5 +23,8 @@ items:
         - grouping
         - colorPalette
         - usePalette
-
+        - plotWidth
+        - plotHeight
+        - facetBy
+        - facetNumber
 ...

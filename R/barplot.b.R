@@ -16,8 +16,8 @@ barplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                 } else {
                     width <- 500
                 }
-                if( !is.null(self$options$panel)) {
-                    nbOfFacet <- nlevels(self$data[[self$options$panel]])
+                if( !is.null(self$options$facet)) {
+                    nbOfFacet <- nlevels(self$data[[self$options$facet]])
                     nbOfColumn <-self$options$facetNumber
                     nbOfRow <- ceiling(nbOfFacet / nbOfColumn )
 
@@ -46,7 +46,7 @@ barplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
         .run = function() {
 
             if( ! is.null(self$options$rows) ) {
-                plotData <- self$data[c(self$options$rows, self$options$columns, self$options$panel)]
+                plotData <- self$data[c(self$options$rows, self$options$columns, self$options$facet)]
                 if( self$options$ignoreNA )
                     plotData <- jmvcore::naOmit(plotData)
                 image <- self$results$plot
@@ -71,7 +71,7 @@ barplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                 borderColor = self$options$borderColor
 
             # Percent format (scales)
-            doPercent <- label_percent(accuracy = as.numeric(self$options$accuracy))
+            doPercent <- label_percent(accuracy = as.numeric(self$options$accuracy), suffix = .("%"), decimal.mark = .("."))
 
             # ggplot with base AES and sorting
             if( self$options$order == "decreasing")
@@ -95,7 +95,7 @@ barplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                         plot <- plot + guides(fill = FALSE)
                     }
                     plot <- plot + scale_y_continuous(labels=percent_format())
-                    plot <- plot + labs(y = "Percent")
+                    plot <- plot + labs(y = .("Percent"))
                     if( self$options$showLabels ) {
                         plot <- plot + geom_text(aes(y = after_stat(prop), group=1, label = doPercent(after_stat(prop))), stat = StatProp, position = position_stack(vjust = 0.5),
                                              color = self$options$textColor, fontface = "bold")
@@ -113,7 +113,7 @@ barplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                                                 stat = "count", position = position_stack(vjust = 0.5),
                                              color = self$options$textColor, fontface = "bold")
                     }
-                    plot <- plot + labs(y = "Count")
+                    plot <- plot + labs(y = .("Count"))
                 }
             ## Two variables
             } else {
@@ -125,7 +125,7 @@ barplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                         plot <- plot + geom_text(aes(fill = !!columns, by = !!rows, label=doPercent(after_stat(prop))), stat = StatProp, position = position_fill(.5),
                                              color = self$options$textColor, fontface = "bold")
                     }
-                    plot <- plot + labs(y = "Percent")
+                    plot <- plot + labs(y = .("Percent"))
                 # Two variables with count (dodge)
                 } else if( self$options$position == "dodge" || self$options$position == "dodge2") {
                     if( self$options$showLabels ) {
@@ -134,17 +134,16 @@ barplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                                          stat = "count",
                                          color = self$options$textColor, fontface = "bold")
                     }
-                    plot <- plot + labs(y = "Count")
+                    plot <- plot + labs(y = .("Count"))
                 # Two variables with count (staked)
                 } else { # Stacked
-                    plot <- plot + labs(y = "Count")
                     if( self$options$showLabels ) {
                         plot <- plot + geom_text(aes(fill = !!columns, label = after_stat(count), y = after_stat(count)),
                                              position = position_stack(vjust = 0.5),
                                              stat = "count",
                                              color = self$options$textColor, fontface = "bold")
                     }
-                    plot <- plot + labs(y = "Count")
+                    plot <- plot + labs(y = .("Count"))
                 }
             }
 
@@ -152,14 +151,14 @@ barplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             if( self$options$horizontal )
                 plot <- plot + coord_flip()
 
-            # Panel
-            if( !is.null(self$options$panel) ) {
-                panelVar <- self$options$panel
-                panelVar <- ensym(panelVar)
+            # facet
+            if( !is.null(self$options$facet) ) {
+                facetVar <- self$options$facet
+                facetVar <- ensym(facetVar)
                 if( self$options$facetBy == "column")
-                    plot <- plot + facet_wrap(vars(!!panelVar), ncol = as.numeric(self$options$facetNumber))
+                    plot <- plot + facet_wrap(vars(!!facetVar), ncol = as.numeric(self$options$facetNumber))
                 else
-                    plot <- plot + facet_wrap(vars(!!panelVar), nrow = as.numeric(self$options$facetNumber))
+                    plot <- plot + facet_wrap(vars(!!facetVar), nrow = as.numeric(self$options$facetNumber))
             }
 
             # Theme and colors

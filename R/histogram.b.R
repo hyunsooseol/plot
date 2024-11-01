@@ -7,14 +7,36 @@ histogramClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
     private = list(
         .init = function() {
             # Set the size of the plot
-            image <- self$results$plot
-            if( !is.null(self$options$panel)) {
-                image$setSize(600, max(400, 250*nlevels(self$data[[self$options$panel]])))
+            userWidth <- as.numeric(self$options$plotWidth)
+            userHeight <- as.numeric(self$options$plotHeight)
+            # Compute the size according to facet
+            if( userWidth * userHeight == 0 ) {
+                if( !is.null(self$options$facet)) {
+                    nbOfFacet <- nlevels(self$data[[self$options$facet]])
+                    nbOfColumn <-self$options$facetNumber
+                    nbOfRow <- ceiling(nbOfFacet / nbOfColumn )
+                    if( self$options$facetBy == "column" ) {
+                        height <- max(400,250*nbOfRow)
+                        width <- max(600, 300*nbOfColumn)
+                    } else {
+                        height <- max(400,250*nbOfColumn)
+                        width <- max(600, 300*nbOfRow)
+                    }
+                } else {
+                    width <- 600
+                    height <- 400
+                }
             }
+            if( userWidth >0 )
+                width = userWidth
+            if( userHeight >0 )
+                height = userHeight
+            image <- self$results$plot
+            image$setSize(width, height)
         },
         .run = function() {
             if( ! is.null(self$options$aVar) ) {
-                plotData <- self$data[c(self$options$aVar, self$options$group, self$options$panel)]
+                plotData <- self$data[c(self$options$aVar, self$options$group, self$options$facet)]
                 plotData[[self$options$aVar]] <- jmvcore::toNumeric(plotData[[self$options$aVar]])
                 image <- self$results$plot
                 image$setState(plotData)
@@ -35,11 +57,11 @@ histogramClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
               groupVar <- NULL
           }
 
-          if( !is.null(self$options$panel) ) {
-            panelVar <- self$options$panel
-            panelVar <- ensym(panelVar)
+          if( !is.null(self$options$facet) ) {
+            facetVar <- self$options$facet
+            facetVar <- ensym(facetVar)
           } else {
-            panelVar <- NULL
+            facetVar <- NULL
           }
 
           plotData <- jmvcore::naOmit(plotData)
@@ -102,19 +124,27 @@ histogramClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                         color = "red", linewidth = 1, na.rm=TRUE)
 
           if( self$options$histtype == "density" )
-              plot <- plot + labs(y="Density") + scale_y_continuous(labels = scales::comma)
+              plot <- plot + labs(y=.("Density")) + scale_y_continuous(labels = scales::comma)
           else
-              plot <- plot + labs(y="Count")
+              plot <- plot + labs(y=.("Count"))
 
-          if( !is.null(panelVar) ) {
-              plot <- plot + facet_wrap(vars(!!panelVar), ncol=1)
+          if( !is.null(facetVar) ) {
+              plot <- plot + facet_wrap(vars(!!facetVar), ncol=1)
+          }
 
+        # Facet
+        if( !is.null(facetVar) ) {
+              if( self$options$facetBy == "column")
+                  plot <- plot + facet_wrap(vars(!!facetVar), ncol = as.numeric(self$options$facetNumber))
+              else
+                  plot <- plot + facet_wrap(vars(!!facetVar), nrow = as.numeric(self$options$facetNumber))
           }
-          # Theme and colors
-          plot <- plot + ggtheme
-          if( self$options$colorPalette != 'jmv' ) {
-              plot <- plot + scale_fill_brewer(palette = self$options$colorPalette) + scale_colour_brewer(palette = self$options$colorPalette)
-          }
-          return(plot)
-        })
+
+        # Theme and colors
+        plot <- plot + ggtheme
+        if( self$options$colorPalette != 'jmv' ) {
+            plot <- plot + scale_fill_brewer(palette = self$options$colorPalette) + scale_colour_brewer(palette = self$options$colorPalette)
+        }
+        return(plot)
+    })
 )

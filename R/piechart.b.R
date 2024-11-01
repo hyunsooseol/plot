@@ -11,8 +11,8 @@ piechartClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             userHeight <- as.numeric(self$options$plotHeight)
             # Compute the size according to facet
             if( userWidth * userHeight == 0 ) {
-                if( !is.null(self$options$panel)) {
-                    nbOfFacet <- nlevels(self$data[[self$options$panel]])
+                if( !is.null(self$options$facet)) {
+                    nbOfFacet <- nlevels(self$data[[self$options$facet]])
                     nbOfColumn <-self$options$facetNumber
                     nbOfRow <- ceiling(nbOfFacet / nbOfColumn )
 
@@ -42,7 +42,7 @@ piechartClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
 
         .run = function() {
             if( ! is.null(self$options$aVar) ) {
-                plotData <- self$data[c(self$options$aVar, self$options$panel)]
+                plotData <- self$data[c(self$options$aVar, self$options$facet)]
                 plotData <- jmvcore::naOmit(plotData)
                 image <- self$results$plot
                 image$setState(plotData)
@@ -55,11 +55,11 @@ piechartClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             aVar <- self$options$aVar
             aVar <- ensym(aVar)
 
-            if( !is.null(self$options$panel) ) {
-                panelVar <- self$options$panel
-                panelVar <- ensym(panelVar)
+            if( !is.null(self$options$facet) ) {
+                facetVar <- self$options$facet
+                facetVar <- ensym(facetVar)
             } else {
-                panelVar <- NULL
+                facetVar <- NULL
             }
 
             # set the border color
@@ -70,7 +70,7 @@ piechartClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             }
 
             # Percent format (scales)
-            doPercent <- label_percent(accuracy = as.numeric(self$options$accuracy))
+            doPercent <- label_percent(accuracy = as.numeric(self$options$accuracy), suffix = .("%"), decimal.mark = .("."))
 
             if(self$options$donut) {
                 plot <- ggplot(plotData, aes(x = 10, fill = !!aVar, by = 1)) + xlim(c(8.5,10.5))
@@ -84,23 +84,19 @@ piechartClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             if( self$options$labels == "count" ) {
                 plot <- plot + geom_text(aes(label = after_stat(count)), stat = "count",
                                          position = position_fill(vjust = 0.5),
-                                         color = self$options$textColor, fontface = "bold", size = 5)
+                                         color = self$options$textColor, fontface = "bold")
             } else if( self$options$labels == "percent" ) {
-                # plot <- plot + geom_text(stat = StatProp, position = position_fill(vjust = 0.5),
-                #                              color = self$options$textColor, fontface = "bold", size = 5)
                 plot <- plot + geom_text(aes(label = doPercent(after_stat(prop))), stat = StatProp, position = position_fill(vjust = 0.5),
-                                         color = self$options$textColor, fontface = "bold", size = 5)
+                                         color = self$options$textColor, fontface = "bold")
 
             }
 
-            # Panel
-            if( !is.null(self$options$panel) ) {
-                panelVar <- self$options$panel
-                panelVar <- ensym(panelVar)
+            # Facet
+            if( !is.null(facetVar) ) {
                 if( self$options$facetBy == "column")
-                    plot <- plot + facet_wrap(vars(!!panelVar), ncol = as.numeric(self$options$facetNumber), scales = "free")
+                    plot <- plot + facet_wrap(vars(!!facetVar), ncol = as.numeric(self$options$facetNumber), scales = "free")
                 else
-                    plot <- plot + facet_wrap(vars(!!panelVar), nrow = as.numeric(self$options$facetNumber), scales = "free")
+                    plot <- plot + facet_wrap(vars(!!facetVar), nrow = as.numeric(self$options$facetNumber), scales = "free")
             }
 
 

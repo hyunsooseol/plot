@@ -28,8 +28,8 @@ options:
       permitted:
         - factor
 
-    - name: panel
-      title: Panel
+    - name: facet
+      title: Facet
       type: Variable
       suggested:
         - nominal
@@ -88,9 +88,9 @@ options:
       title: Bar Type
       type: List
       options:
-        - title: Side by side
+        - title: Side-by-side
           name:  dodge
-        - title: Side by side 2
+        - title: Side-by-side 2
           name:  dodge2
         - title: Stacked
           name:  stack
@@ -176,7 +176,7 @@ options:
           name:  YlOrRd
 
     - name: borderColor
-      title: Border Color
+      title: Border
       type: List
       options:
         - title: None
@@ -190,7 +190,7 @@ options:
       default: none
 
     - name: textColor
-      title: Text Color
+      title: Text
       type: List
       options:
         - title: Black
@@ -228,7 +228,7 @@ options:
       default: 0
 
     - name: facetBy
-      title: Panels by
+      title: Facet
       type: List
       options:
         - title: Row

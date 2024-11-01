@@ -155,7 +155,7 @@ mrcrosstabsResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class
             super$initialize(
                 options=options,
                 name="",
-                title="Mutible Response Crosstab")
+                title="Multiple Response Crosstab")
             self$add(jmvcore::Table$new(
                 options=options,
                 name="crosstab",

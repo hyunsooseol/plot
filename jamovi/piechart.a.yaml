@@ -18,8 +18,8 @@ options:
       permitted:
         - factor
 
-    - name: panel
-      title: Panel Variable
+    - name: facet
+      title: Facet
       type: Variable
       suggested:
         - nominal
@@ -179,7 +179,7 @@ options:
       default: 0
 
     - name: facetBy
-      title: Panels by
+      title: Facets
       type: List
       options:
         - title: Row

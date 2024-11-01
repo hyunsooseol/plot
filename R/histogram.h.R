@@ -8,16 +8,20 @@ histogramOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         initialize = function(
             aVar = NULL,
             group = NULL,
-            panel = NULL,
+            facet = NULL,
             histtype = "count",
             normalCurve = FALSE,
             binWidth = 0,
             binBoundary = 0,
-            fillColor = "#E41A1C",
+            fillColor = "#A6C4F1",
             borderColor = "black",
             grouping = "none",
             colorPalette = NULL,
-            usePalette = "forFilling", ...) {
+            usePalette = "forFilling",
+            plotWidth = 0,
+            plotHeight = 0,
+            facetBy = "column",
+            facetNumber = 1, ...) {
 
             super$initialize(
                 package="vijPlots",
@@ -40,9 +44,9 @@ histogramOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "ordinal"),
                 permitted=list(
                     "factor"))
-            private$..panel <- jmvcore::OptionVariable$new(
-                "panel",
-                panel,
+            private$..facet <- jmvcore::OptionVariable$new(
+                "facet",
+                facet,
                 suggested=list(
                     "nominal",
                     "ordinal"),
@@ -99,7 +103,7 @@ histogramOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "#E5D8BD",
                     "#FDDAEC",
                     "#F2F2F2"),
-                default="#E41A1C")
+                default="#A6C4F1")
             private$..borderColor <- jmvcore::OptionList$new(
                 "borderColor",
                 borderColor,
@@ -165,10 +169,35 @@ histogramOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "forFilling",
                     "forBorder"),
                 default="forFilling")
+            private$..plotWidth <- jmvcore::OptionNumber$new(
+                "plotWidth",
+                plotWidth,
+                min=0,
+                max=1000,
+                default=0)
+            private$..plotHeight <- jmvcore::OptionNumber$new(
+                "plotHeight",
+                plotHeight,
+                min=0,
+                max=1600,
+                default=0)
+            private$..facetBy <- jmvcore::OptionList$new(
+                "facetBy",
+                facetBy,
+                options=list(
+                    "row",
+                    "column"),
+                default="column")
+            private$..facetNumber <- jmvcore::OptionNumber$new(
+                "facetNumber",
+                facetNumber,
+                min=1,
+                max=10,
+                default=1)
 
             self$.addOption(private$..aVar)
             self$.addOption(private$..group)
-            self$.addOption(private$..panel)
+            self$.addOption(private$..facet)
             self$.addOption(private$..histtype)
             self$.addOption(private$..normalCurve)
             self$.addOption(private$..binWidth)
@@ -178,11 +207,15 @@ histogramOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             self$.addOption(private$..grouping)
             self$.addOption(private$..colorPalette)
             self$.addOption(private$..usePalette)
+            self$.addOption(private$..plotWidth)
+            self$.addOption(private$..plotHeight)
+            self$.addOption(private$..facetBy)
+            self$.addOption(private$..facetNumber)
         }),
     active = list(
         aVar = function() private$..aVar$value,
         group = function() private$..group$value,
-        panel = function() private$..panel$value,
+        facet = function() private$..facet$value,
         histtype = function() private$..histtype$value,
         normalCurve = function() private$..normalCurve$value,
         binWidth = function() private$..binWidth$value,
@@ -191,11 +224,15 @@ histogramOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         borderColor = function() private$..borderColor$value,
         grouping = function() private$..grouping$value,
         colorPalette = function() private$..colorPalette$value,
-        usePalette = function() private$..usePalette$value),
+        usePalette = function() private$..usePalette$value,
+        plotWidth = function() private$..plotWidth$value,
+        plotHeight = function() private$..plotHeight$value,
+        facetBy = function() private$..facetBy$value,
+        facetNumber = function() private$..facetNumber$value),
     private = list(
         ..aVar = NA,
         ..group = NA,
-        ..panel = NA,
+        ..facet = NA,
         ..histtype = NA,
         ..normalCurve = NA,
         ..binWidth = NA,
@@ -204,7 +241,11 @@ histogramOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         ..borderColor = NA,
         ..grouping = NA,
         ..colorPalette = NA,
-        ..usePalette = NA)
+        ..usePalette = NA,
+        ..plotWidth = NA,
+        ..plotHeight = NA,
+        ..facetBy = NA,
+        ..facetNumber = NA)
 )
 
 histogramResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
@@ -229,7 +270,7 @@ histogramResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 clearWith=list(
                     "aVar",
                     "group",
-                    "panel",
+                    "facet",
                     "histtype",
                     "binWidth",
                     "binBoundary",
@@ -238,7 +279,11 @@ histogramResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "fillColor",
                     "grouping",
                     "colorPalette",
-                    "usePalette")))}))
+                    "usePalette",
+                    "plotWidth",
+                    "plotHeight",
+                    "facetBy",
+                    "facetNumber")))}))
 
 histogramBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
     "histogramBase",
@@ -267,7 +312,7 @@ histogramBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
 #' @param data .
 #' @param aVar .
 #' @param group .
-#' @param panel .
+#' @param facet .
 #' @param histtype .
 #' @param normalCurve .
 #' @param binWidth .
@@ -277,6 +322,10 @@ histogramBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
 #' @param grouping .
 #' @param colorPalette .
 #' @param usePalette .
+#' @param plotWidth .
+#' @param plotHeight .
+#' @param facetBy .
+#' @param facetNumber .
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$plot} \tab \tab \tab \tab \tab an image \cr
@@ -287,37 +336,41 @@ histogram <- function(
     data,
     aVar,
     group,
-    panel,
+    facet,
     histtype = "count",
     normalCurve = FALSE,
     binWidth = 0,
     binBoundary = 0,
-    fillColor = "#E41A1C",
+    fillColor = "#A6C4F1",
     borderColor = "black",
     grouping = "none",
     colorPalette,
-    usePalette = "forFilling") {
+    usePalette = "forFilling",
+    plotWidth = 0,
+    plotHeight = 0,
+    facetBy = "column",
+    facetNumber = 1) {
 
     if ( ! requireNamespace("jmvcore", quietly=TRUE))
         stop("histogram requires jmvcore to be installed (restart may be required)")
 
     if ( ! missing(aVar)) aVar <- jmvcore::resolveQuo(jmvcore::enquo(aVar))
     if ( ! missing(group)) group <- jmvcore::resolveQuo(jmvcore::enquo(group))
-    if ( ! missing(panel)) panel <- jmvcore::resolveQuo(jmvcore::enquo(panel))
+    if ( ! missing(facet)) facet <- jmvcore::resolveQuo(jmvcore::enquo(facet))
     if (missing(data))
         data <- jmvcore::marshalData(
             parent.frame(),
             `if`( ! missing(aVar), aVar, NULL),
             `if`( ! missing(group), group, NULL),
-            `if`( ! missing(panel), panel, NULL))
+            `if`( ! missing(facet), facet, NULL))
 
     for (v in group) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
-    for (v in panel) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
+    for (v in facet) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
 
     options <- histogramOptions$new(
         aVar = aVar,
         group = group,
-        panel = panel,
+        facet = facet,
         histtype = histtype,
         normalCurve = normalCurve,
         binWidth = binWidth,
@@ -326,7 +379,11 @@ histogram <- function(
         borderColor = borderColor,
         grouping = grouping,
         colorPalette = colorPalette,
-        usePalette = usePalette)
+        usePalette = usePalette,
+        plotWidth = plotWidth,
+        plotHeight = plotHeight,
+        facetBy = facetBy,
+        facetNumber = facetNumber)
 
     analysis <- histogramClass$new(
         options = options,

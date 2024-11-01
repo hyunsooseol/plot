@@ -23,10 +23,10 @@ children:
             maxItemCount: 1
             isTarget: true
       - type: TargetLayoutBox
-        label: Panel
+        label: Facet
         children:
           - type: VariablesListBox
-            name: panel
+            name: facet
             maxItemCount: 1
             isTarget: true
   - type: LayoutBox
@@ -224,7 +224,7 @@ children:
             stretchFactor: 8
             children:
               - type: Label
-                label: Panel
+                label: Facets
                 children:
                   - type: LayoutBox
                     children:
@@ -236,18 +236,18 @@ children:
                             name: facetBy_row
                             optionName: facetBy
                             optionPart: row
-                            label: By Row
-                            enable: (!(!panel))
+                            label: Row
+                            enable: (!(!facet))
                           - type: RadioButton
                             name: facetBy_column
                             optionName: facetBy
                             optionPart: column
-                            label: By Column
-                            enable: (!(!panel))
+                            label: Column
+                            enable: (!(!facet))
                       - type: TextBox
                         name: facetNumber
                         format: number
-                        enable: (!(!panel))
+                        enable: (!(!facet))
           - type: LayoutBox
             cell:
                 column: 2

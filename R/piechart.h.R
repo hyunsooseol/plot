@@ -7,7 +7,7 @@ piechartOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
     public = list(
         initialize = function(
             aVar = NULL,
-            panel = NULL,
+            facet = NULL,
             donut = FALSE,
             legendBottom = FALSE,
             labels = "none",
@@ -33,9 +33,9 @@ piechartOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "nominal"),
                 permitted=list(
                     "factor"))
-            private$..panel <- jmvcore::OptionVariable$new(
-                "panel",
-                panel,
+            private$..facet <- jmvcore::OptionVariable$new(
+                "facet",
+                facet,
                 suggested=list(
                     "nominal",
                     "ordinal"),
@@ -149,7 +149,7 @@ piechartOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 default=1)
 
             self$.addOption(private$..aVar)
-            self$.addOption(private$..panel)
+            self$.addOption(private$..facet)
             self$.addOption(private$..donut)
             self$.addOption(private$..legendBottom)
             self$.addOption(private$..labels)
@@ -164,7 +164,7 @@ piechartOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         }),
     active = list(
         aVar = function() private$..aVar$value,
-        panel = function() private$..panel$value,
+        facet = function() private$..facet$value,
         donut = function() private$..donut$value,
         legendBottom = function() private$..legendBottom$value,
         labels = function() private$..labels$value,
@@ -178,7 +178,7 @@ piechartOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         facetNumber = function() private$..facetNumber$value),
     private = list(
         ..aVar = NA,
-        ..panel = NA,
+        ..facet = NA,
         ..donut = NA,
         ..legendBottom = NA,
         ..labels = NA,
@@ -213,7 +213,7 @@ piechartResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 renderFun=".plot",
                 clearWith=list(
                     "aVar",
-                    "panel",
+                    "facet",
                     "donut",
                     "legendBottom",
                     "labels",
@@ -252,7 +252,7 @@ piechartBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
 #' 
 #' @param data .
 #' @param aVar .
-#' @param panel .
+#' @param facet .
 #' @param donut .
 #' @param legendBottom .
 #' @param labels .
@@ -273,7 +273,7 @@ piechartBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
 piechart <- function(
     data,
     aVar,
-    panel,
+    facet,
     donut = FALSE,
     legendBottom = FALSE,
     labels = "none",
@@ -290,19 +290,19 @@ piechart <- function(
         stop("piechart requires jmvcore to be installed (restart may be required)")
 
     if ( ! missing(aVar)) aVar <- jmvcore::resolveQuo(jmvcore::enquo(aVar))
-    if ( ! missing(panel)) panel <- jmvcore::resolveQuo(jmvcore::enquo(panel))
+    if ( ! missing(facet)) facet <- jmvcore::resolveQuo(jmvcore::enquo(facet))
     if (missing(data))
         data <- jmvcore::marshalData(
             parent.frame(),
             `if`( ! missing(aVar), aVar, NULL),
-            `if`( ! missing(panel), panel, NULL))
+            `if`( ! missing(facet), facet, NULL))
 
     for (v in aVar) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
-    for (v in panel) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
+    for (v in facet) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
 
     options <- piechartOptions$new(
         aVar = aVar,
-        panel = panel,
+        facet = facet,
         donut = donut,
         legendBottom = legendBottom,
         labels = labels,

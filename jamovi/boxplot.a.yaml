@@ -19,7 +19,7 @@ options:
         - numeric
 
     - name: group
-      title: Grouping Variable
+      title: Group
       type: Variable
       suggested:
         - nominal
@@ -38,7 +38,7 @@ options:
       default: false
 
     - name: colorPalette
-      title: Color Palette
+      title: Palette
       type: List
       options:
         - title: jmv Default
