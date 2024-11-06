@@ -2,6 +2,34 @@
 
 [jamovi](https://www.jamovi.org) module as ggplot2 wrapper to generate basic stats plots (histogram, boxplot, barplot, piechart,...) with many options along with Multiple Response and Likert Barplots.
 
+## Histogram
+
+![](img/hist.jpg)
+
+## Box Plot
+
+![](img/box.jpg)
+
+## Scatter Plot
+
+![](img/scatter.jpg)
+
+## Bar Plot
+
+![](img/bar.jpg)
+
+## Pie Chart
+
+![](img/pie.jpg)
+
+## Likert Plot
+
+![](img/likert.jpg)
+
+## Multiple Responses
+
+![](img/mr.jpg)
+
 ## Version history
 
 ### 2024-11-01 / 0.5.0 (beta)
