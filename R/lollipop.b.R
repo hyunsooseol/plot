@@ -87,14 +87,17 @@ lollipopClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
 
             summaryFun <- self$options$yaxis
             if (summaryFun == "minmax") {
+                mainColor <- self$options$dotColor
+                lightColor <- colorspace::lighten(mainColor, 0.4)
+                darkColor <- colorspace::darken(mainColor, 0.2)
                 plot <- plot +
-                    stat_summary(fun = max, fun.min = min, fun.max = max) +
-                    stat_summary(fun=min, geom = "point", size=self$options$dotSize, color="blue") +
-                    stat_summary(fun=max, geom = "point", size=self$options$dotSize, color="red")
+                    stat_summary(fun = max, fun.min = min, fun.max = max, color = self$options$lineColor) +
+                    stat_summary(fun = min, geom = "point", size = self$options$dotSize, color=lightColor) +
+                    stat_summary(fun = max, geom = "point", size = self$options$dotSize, color = darkColor)
             } else {
                 plot <- plot +
-                    stat_summary(fun=summaryFun, geom = "segment", aes(yend=0), size = self$options$lineWidth, color=self$options$lineColor)+
-                    stat_summary(fun=summaryFun, geom = "point", size=self$options$dotSize, color=self$options$dotColor)
+                    stat_summary(fun = summaryFun, geom = "segment", aes(yend = 0), size = self$options$lineWidth, color = self$options$lineColor)+
+                    stat_summary(fun = summaryFun, geom = "point", size = self$options$dotSize, color = self$options$dotColor)
             }
 
             # Axis Labels
