@@ -15,6 +15,7 @@ msgstr ","
 
 #: barplot/options/facetNumber.title
 #: histogram/options/facetNumber.title
+#: lollipop/options/facetNumber.title
 #: piechart/options/facetNumber.title
 msgid "# of rows/columns"
 msgstr "Nbre de lignes/colonnes"
@@ -93,7 +94,7 @@ msgstr ""
 msgid "A demonstration dataset for Likert scale bar plots."
 msgstr "Fichier de démonstration d'un diagramme en barres pour variables de Likert."
 
-#: package/datasets/Likert.description
+#: package/datasets/vijPlots.description
 msgid "A demonstration dataset for vijPlots module."
 msgstr "Fichier de démonstration du module vijPlots."
 
@@ -102,9 +103,8 @@ msgid "A demonstration dataset with four dichotomous variables describing  the c
 msgstr "Un fichier de démonstration avec quatres variables dichotomiques décrivant les cartes de crédit détenues par des consommateurs."
 
 #: package.description
-msgid "A wrapper for ggplot2 main geoms (histogram, boxplot, point, bar) along with Likert and multiple response barplots."
-msgstr "Une interface pour générer des graphiques ggplot2 (histogramme, barres, secteurs, nuage de points, etc) ainsi que des graphique en bâtons pour\n"
-"des variables de Likert et les réponses multiples."
+msgid "A wrapper for ggplot2 main geoms (histogram, boxplot, point, bar, lollipop) along with Likert and multiple response barplots."
+msgstr "Une interface pour les principaux graphiques de ggplot2 (histogramme, boite à moustaches, nuage de points, secteurs, barres...) ainsi que les diagrammes en barre pour Likert et réponses multiples."
 
 #: barplot/options/colorPalette/Accent.title
 #: boxplot/options/colorPalette/Accent.title
@@ -149,12 +149,16 @@ msgstr "Taille des bâtons"
 #: barplot/options/textColor/black.title
 #: histogram/options/fillColor/black.title
 #: histogram/options/borderColor/black.title
+#: lollipop/options/dotColor/black.title
+#: lollipop/options/lineColor/black.title
 #: piechart/options/borderColor/black.title
 #: piechart/options/textColor/black.title
 msgid "Black"
 msgstr "Noir"
 
 #: histogram/options/fillColor/#377EB8.title
+#: lollipop/options/dotColor/#377EB8.title
+#: lollipop/options/lineColor/#377EB8.title
 msgid "Blue"
 msgstr "Bleu"
 
@@ -197,6 +201,8 @@ msgid "Box Plot"
 msgstr "Boite à moustaches"
 
 #: histogram/options/fillColor/#A65628.title
+#: lollipop/options/dotColor/#A65628.title
+#: lollipop/options/lineColor/#A65628.title
 msgid "Brown"
 msgstr "Marron"
 
@@ -252,10 +258,16 @@ msgstr "Palette de couleurs"
 msgid "Color palette"
 msgstr "Palette de couleurs"
 
+#: lollipop/ui[2][2][0].label
+msgid "Colors"
+msgstr "Couleurs"
+
 #: barplot/options/facetBy/column.title
 #: barplot/ui[3][0][1][0][0][0]/facetBy_column.label
 #: histogram/options/facetBy/column.title
 #: histogram/ui[4][0][1][0][0][0]/facetBy_column.label
+#: lollipop/options/facetBy/column.title
+#: lollipop/ui[3][0][1][0][0][0]/facetBy_column.label
 #: piechart/options/facetBy/column.title
 #: piechart/ui[2][0][1][0][0][0]/facetBy_column.label
 msgid "Column"
@@ -269,8 +281,10 @@ msgstr "Colonnes (groupes)"
 #: package/analyses/histogram.menuSubgroup
 #: package/analyses/boxplot.menuSubgroup
 #: package/analyses/scatterplot.menuSubgroup
+#: package/analyses/lollipop.menuSubgroup
 #: boxplot/options.menuSubgroup
 #: histogram/options.menuSubgroup
+#: lollipop/options.menuSubgroup
 #: scatterplot/options.menuSubgroup
 msgid "Continuous"
 msgstr "Variables quantitatives"
@@ -335,6 +349,8 @@ msgstr ""
 
 #: barplot/options/order/decreasing.title
 #: barplot/ui[1][1][0][0]/order_decreasing.label
+#: lollipop/options/order/decreasing.title
+#: lollipop/ui[2][1][0][0]/order_decreasing.label
 #: mrcrosstabs/options/order/decreasing.title
 #: mrcrosstabs/ui[2][2][0]/order_decreasing.label
 #: mrfrequencies/options/order/decreasing.title
@@ -353,8 +369,17 @@ msgstr "Densité"
 msgid "Descending"
 msgstr "Décroissant"
 
+#: lollipop/options/dotColor.title
+msgid "Dot"
+msgstr "Point"
+
+#: lollipop/options/dotSize.title
+msgid "Dot Size"
+msgstr "Point"
+
 #: barplot/ui[3].label
 #: histogram/ui[4].label
+#: lollipop/ui[3].label
 #: piechart/ui[2].label
 msgid "Extra Options"
 msgstr "Autres options"
@@ -364,6 +389,9 @@ msgstr "Autres options"
 #: barplot/ui[0][2].label
 #: histogram/options/facet.title
 #: histogram/ui[0][2].label
+#: lollipop/options/facet.title
+#: lollipop/options/facetBy.title
+#: lollipop/ui[0][2].label
 #: piechart/options/facet.title
 #: piechart/ui[0][1].label
 msgid "Facet"
@@ -372,6 +400,7 @@ msgstr "Facette"
 #: barplot/ui[3][0][1][0].label
 #: histogram/options/facetBy.title
 #: histogram/ui[4][0][1][0].label
+#: lollipop/ui[3][0][1][0].label
 #: piechart/options/facetBy.title
 #: piechart/ui[2][0][1][0].label
 msgid "Facets"
@@ -406,12 +435,16 @@ msgstr "Graphique"
 #: barplot/options/textColor/gray.title
 #: histogram/options/fillColor/#999999.title
 #: histogram/options/borderColor/gray.title
+#: lollipop/options/dotColor/#999999.title
+#: lollipop/options/lineColor/#999999.title
 #: piechart/options/borderColor/gray.title
 #: piechart/options/textColor/gray.title
 msgid "Gray"
 msgstr "Gris"
 
 #: histogram/options/fillColor/#4DAF4A.title
+#: lollipop/options/dotColor/#4DAF4A.title
+#: lollipop/options/lineColor/#4DAF4A.title
 msgid "Green"
 msgstr "Vert"
 
@@ -447,6 +480,8 @@ msgstr "Gris"
 #: histogram/ui[0][1].label
 #: likertplot/options/groupBy/group.title
 #: likertplot/ui[1][2][0].label
+#: lollipop/options/group.title
+#: lollipop/ui[0][1].label
 #: scatterplot/options/group.title
 #: scatterplot/ui[0][2].label
 msgid "Group"
@@ -480,6 +515,7 @@ msgstr "Grouper par"
 #: barplot/options/plotHeight.title
 #: histogram/options/plotHeight.title
 #: likertplot/options/plotHeight.title
+#: lollipop/options/plotHeight.title
 #: piechart/options/plotHeight.title
 msgid "Height"
 msgstr "Hauteur"
@@ -499,6 +535,7 @@ msgid "Horizontal line at"
 msgstr "Ligne horizontale à "
 
 #: barplot/options/horizontal.title
+#: lollipop/options/horizontal.title
 msgid "Horizontal plot"
 msgstr "Graphe horizontal"
 
@@ -517,6 +554,8 @@ msgstr "Ignorer les NA"
 
 #: barplot/options/order/increasing.title
 #: barplot/ui[1][1][0][0]/order_increasing.label
+#: lollipop/options/order/increasing.title
+#: lollipop/ui[2][1][0][0]/order_increasing.label
 #: mrcrosstabs/options/order/increasing.title
 #: mrcrosstabs/ui[2][2][0]/order_increasing.label
 #: mrfrequencies/options/order/increasing.title
@@ -525,6 +564,8 @@ msgid "Increasing"
 msgstr "Croissant"
 
 #: histogram/options/fillColor/#A6C4F1.title
+#: lollipop/options/dotColor/#A6C4F1.title
+#: lollipop/options/lineColor/#A6C4F1.title
 msgid "jmv Blue"
 msgstr "Bleu jmv"
 
@@ -537,18 +578,26 @@ msgid "jmv Default"
 msgstr "Couleurs jmv"
 
 #: histogram/options/fillColor/#C5C5C5.title
+#: lollipop/options/dotColor/#C5C5C5.title
+#: lollipop/options/lineColor/#C5C5C5.title
 msgid "jmv Gray"
 msgstr "Gris jmv"
 
 #: histogram/options/fillColor/#88C38B.title
+#: lollipop/options/dotColor/#88C38B.title
+#: lollipop/options/lineColor/#88C38B.title
 msgid "jmv Green"
 msgstr "Vert jmv"
 
 #: histogram/options/fillColor/#E18A8A.title
+#: lollipop/options/dotColor/#E18A8A.title
+#: lollipop/options/lineColor/#E18A8A.title
 msgid "jmv Red"
 msgstr "Rouge jmv"
 
 #: histogram/options/fillColor/#F0CD8C.title
+#: lollipop/options/dotColor/#F0CD8C.title
+#: lollipop/options/lineColor/#F0CD8C.title
 msgid "jmv Yellow"
 msgstr "Jaune jmv"
 
@@ -577,38 +626,56 @@ msgid "Legend at Bottom"
 msgstr "Légende en bas"
 
 #: histogram/options/fillColor/#B3CDE3.title
+#: lollipop/options/dotColor/#B3CDE3.title
+#: lollipop/options/lineColor/#B3CDE3.title
 msgid "Light Blue"
 msgstr "Bleu clair"
 
 #: histogram/options/fillColor/#E5D8BD.title
+#: lollipop/options/dotColor/#E5D8BD.title
+#: lollipop/options/lineColor/#E5D8BD.title
 msgid "Light Brown"
 msgstr "Marron clair"
 
 #: histogram/options/fillColor/#F2F2F2.title
+#: lollipop/options/dotColor/#F2F2F2.title
+#: lollipop/options/lineColor/#F2F2F2.title
 msgid "Light Gray"
 msgstr "Gris clair"
 
 #: histogram/options/fillColor/#CCEBC5.title
+#: lollipop/options/dotColor/#CCEBC5.title
+#: lollipop/options/lineColor/#CCEBC5.title
 msgid "Light Green"
 msgstr "Vert clair"
 
 #: histogram/options/fillColor/#FED9A6.title
+#: lollipop/options/dotColor/#FED9A6.title
+#: lollipop/options/lineColor/#FED9A6.title
 msgid "Light Orange"
 msgstr "Orange clair"
 
 #: histogram/options/fillColor/#FDDAEC.title
+#: lollipop/options/dotColor/#FDDAEC.title
+#: lollipop/options/lineColor/#FDDAEC.title
 msgid "Light Pink"
 msgstr "Rose clair"
 
 #: histogram/options/fillColor/#DECBE4.title
+#: lollipop/options/dotColor/#DECBE4.title
+#: lollipop/options/lineColor/#DECBE4.title
 msgid "Light Purple"
 msgstr "Violet clair"
 
 #: histogram/options/fillColor/#FBB4AE.title
+#: lollipop/options/dotColor/#FBB4AE.title
+#: lollipop/options/lineColor/#FBB4AE.title
 msgid "Light Red"
 msgstr "Rouge clair"
 
 #: histogram/options/fillColor/#FFFFCC.title
+#: lollipop/options/dotColor/#FFFFCC.title
+#: lollipop/options/lineColor/#FFFFCC.title
 msgid "Light Yellow"
 msgstr "Jaune clair"
 
@@ -629,10 +696,71 @@ msgstr "Diagramme Likert"
 msgid "Likert Variables"
 msgstr "Variables de Likert"
 
+#: lollipop/options/lineColor.title
+msgid "Line"
+msgstr "Ligne"
+
+#: lollipop/options/lineWidth.title
+msgid "Line Width"
+msgstr "Ligne"
+
+#: package/analyses/lollipop.title
+#: package/analyses/lollipop.menuTitle
+#: lollipop/options.title
+#: lollipop/ui.title
+#: lollipop/results.title
+msgid "Lollipop Plot"
+msgstr "Lollipop (Sucettes)"
+
+#: lollipop/ui[3][0][2][0].label
+msgid "Lollipop Size"
+msgstr "Taille des lollipop"
+
+#: lollipop/options/yaxis/max.title
+#: lollipop/ui[2][0][0][1]/yaxis_max.label
+msgid "Max"
+msgstr ""
+
+#: R/lollipop.b.R
+msgid "Maximum of"
+msgstr "Maximum de"
+
+#: lollipop/options/yaxis/mean.title
+#: lollipop/ui[2][0][0][0]/yaxis_mean.label
+msgid "Mean"
+msgstr "Moyenne"
+
+#: R/lollipop.b.R
+msgid "Mean of"
+msgstr "Moyenne de"
+
+#: lollipop/options/yaxis/median.title
+#: lollipop/ui[2][0][0][0]/yaxis_median.label
+msgid "Median"
+msgstr "Médiane"
+
+#: R/lollipop.b.R
+msgid "Median of"
+msgstr "Médiane de"
+
 #: mrcrosstabs/options/size/medium.title
 #: mrfrequencies/options/size/medium.title
 msgid "Medium (400x300)"
 msgstr "Moyen (400x300)"
+
+#: lollipop/options/yaxis/min.title
+#: lollipop/ui[2][0][0][1]/yaxis_min.label
+msgid "Min"
+msgstr ""
+
+#: lollipop/options/yaxis/minmax.title
+#: lollipop/ui[2][0][0][1]/yaxis_minmax.label
+msgid "Min / Max"
+msgstr ""
+
+#: R/lollipop.b.R
+msgid "Minimum of"
+msgstr "Minimum de"
 
 #: package/analyses/mrfrequencies.menuSubgroup
 #: package/analyses/mrcrosstabs.menuSubgroup
@@ -660,6 +788,8 @@ msgstr "Réponses multiples - Fréquences"
 #: histogram/ui[3][0][0][0]/grouping_none.label
 #: likertplot/options/sorting/none.title
 #: likertplot/ui[1][1][0]/sorting_none.label
+#: lollipop/options/order/none.title
+#: lollipop/ui[2][1][0][0]/order_none.label
 #: mrcrosstabs/options/order/none.title
 #: mrcrosstabs/ui[2][2][0]/order_none.label
 #: mrfrequencies/options/order/none.title
@@ -701,6 +831,8 @@ msgid "Options"
 msgstr "Options"
 
 #: histogram/options/fillColor/#FF7F00.title
+#: lollipop/options/dotColor/#FF7F00.title
+#: lollipop/options/lineColor/#FF7F00.title
 msgid "Orange"
 msgstr "Orange"
 
@@ -790,6 +922,8 @@ msgid "Pie Chart"
 msgstr "Diagramme en secteurs"
 
 #: histogram/options/fillColor/#F781BF.title
+#: lollipop/options/dotColor/#F781BF.title
+#: lollipop/options/lineColor/#F781BF.title
 msgid "Pink"
 msgstr "Rose"
 
@@ -816,6 +950,7 @@ msgstr "Options du graphique"
 
 #: barplot/ui[3][0][0][0].label
 #: histogram/ui[4][0][0][0].label
+#: lollipop/ui[3][0][0][0].label
 #: mrcrosstabs/ui[3][0][2].label
 #: mrfrequencies/ui[3].label
 #: piechart/ui[2][0][0][0].label
@@ -854,6 +989,8 @@ msgid "pt"
 msgstr "pt"
 
 #: histogram/options/fillColor/#984EA3.title
+#: lollipop/options/dotColor/#984EA3.title
+#: lollipop/options/lineColor/#984EA3.title
 msgid "Purple"
 msgstr "Violet"
 
@@ -904,12 +1041,18 @@ msgstr "Violets"
 #: histogram/ui[4][0][0][0][0]/plotHeight.suffix
 #: likertplot/ui[2][1][0]/plotWidth.suffix
 #: likertplot/ui[2][1][0]/plotHeight.suffix
+#: lollipop/ui[3][0][0][0][0]/plotWidth.suffix
+#: lollipop/ui[3][0][0][0][0]/plotHeight.suffix
+#: lollipop/ui[3][0][2][0]/dotSize.suffix
+#: lollipop/ui[3][0][2][0]/lineWidth.suffix
 #: piechart/ui[2][0][0][0][0]/plotWidth.suffix
 #: piechart/ui[2][0][0][0][0]/plotHeight.suffix
 msgid "px"
 msgstr "px"
 
 #: histogram/options/fillColor/#E41A1C.title
+#: lollipop/options/dotColor/#E41A1C.title
+#: lollipop/options/lineColor/#E41A1C.title
 msgid "Red"
 msgstr "Rouge"
 
@@ -983,6 +1126,8 @@ msgstr "Inverser les modalités"
 #: barplot/ui[3][0][1][0][0][0]/facetBy_row.label
 #: histogram/options/facetBy/row.title
 #: histogram/ui[4][0][1][0][0][0]/facetBy_row.label
+#: lollipop/options/facetBy/row.title
+#: lollipop/ui[3][0][1][0][0][0]/facetBy_row.label
 #: piechart/options/facetBy/row.title
 #: piechart/ui[2][0][1][0][0][0]/facetBy_row.label
 msgid "Row"
@@ -1085,6 +1230,8 @@ msgstr "Petit (300x200)"
 #: barplot/ui[1][1][0].label
 #: likertplot/options/sorting.title
 #: likertplot/ui[1][1][0].label
+#: lollipop/options/order.title
+#: lollipop/ui[2][1][0].label
 #: mrcrosstabs/options/order.title
 #: mrcrosstabs/ui[2][2][0].label
 #: mrfrequencies/options/order.title
@@ -1144,6 +1291,8 @@ msgstr "Utiliser la palette"
 msgid "Use the same color for variables"
 msgstr "Utiliser une couleur unique"
 
+#: lollipop/options/yaxis/identity.title
+#: lollipop/ui[2][0][0][0]/yaxis_identity.label
 #: mrcrosstabs/options/computedValues.title
 #: mrcrosstabs/ui[2][1][0].label
 msgid "Values"
@@ -1152,6 +1301,8 @@ msgstr "Valeurs"
 #: histogram/options/aVar.title
 #: histogram/ui[0][0].label
 #: likertplot/options/groupBy/variable.title
+#: lollipop/options/aVar.title
+#: lollipop/ui[0][0].label
 #: piechart/options/aVar.title
 #: piechart/ui[0][0].label
 msgid "Variable"
@@ -1174,10 +1325,13 @@ msgstr "Ligne verticale à"
 #: package/analyses/mrfrequencies.menuGroup
 #: package/analyses/mrcrosstabs.menuGroup
 #: package/analyses/scatterplot.menuGroup
+#: package/analyses/lollipop.menuGroup
+#: package/datasets/vijPlots.name
 #: barplot/options.menuGroup
 #: boxplot/options.menuGroup
 #: histogram/options.menuGroup
 #: likertplot/options.menuGroup
+#: lollipop/options.menuGroup
 #: mrcrosstabs/options.menuGroup
 #: mrfrequencies/options.menuGroup
 #: piechart/options.menuGroup
@@ -1189,6 +1343,8 @@ msgstr ""
 #: barplot/options/textColor/white.title
 #: histogram/options/fillColor/white.title
 #: histogram/options/borderColor/white.title
+#: lollipop/options/dotColor/white.title
+#: lollipop/options/lineColor/white.title
 #: piechart/options/borderColor/white.title
 #: piechart/options/textColor/white.title
 msgid "White"
@@ -1198,6 +1354,7 @@ msgstr "Blanc"
 #: histogram/options/binWidth.title
 #: histogram/options/plotWidth.title
 #: likertplot/options/plotWidth.title
+#: lollipop/options/plotWidth.title
 #: piechart/options/plotWidth.title
 msgid "Width"
 msgstr "Largeur"
@@ -1213,6 +1370,8 @@ msgstr "Axe X"
 msgid "X-intercept"
 msgstr ""
 
+#: lollipop/options/yaxis.title
+#: lollipop/ui[2][0][0].label
 #: mrfrequencies/options/yaxis.title
 #: scatterplot/options/yaxis.title
 #: scatterplot/ui[0][1].label
@@ -1236,6 +1395,8 @@ msgid "Y-intercept"
 msgstr ""
 
 #: histogram/options/fillColor/#FFFF33.title
+#: lollipop/options/dotColor/#FFFF33.title
+#: lollipop/options/lineColor/#FFFF33.title
 msgid "Yellow"
 msgstr "Jaune"
 

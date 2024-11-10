@@ -16,6 +16,8 @@ jmvtools::addAnalysis(name='boxplot', title='Box Plot') # name = function/files 
 jmvtools::addAnalysis(name='piechart', title='Pie Chart') # name = function/files name, title = menu item name
 jmvtools::addAnalysis(name='scatterplot', title='Scatter Plot') # name = function/files name, title = menu item name
 jmvtools::addAnalysis(name='barplot', title='Bar Plot') # name = function/files name, title = menu item name
+jmvtools::addAnalysis(name='lollipop', title='Lollipop Plot') # name = function/files name, title = menu item name
+
 
 jmvtools::install()
 

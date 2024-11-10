@@ -1,5 +1,5 @@
-title: Histogram
-name: histogram
+title: Lollipop Plot
+name: lollipop
 jus: '3.0'
 stage: 0
 compilerMode: tame
@@ -31,35 +31,61 @@ children:
             isTarget: true
   - type: LayoutBox
     margin: large
-    style: inline
     children:
       - type: CheckBox
-        name: normalCurve
-        enable: (!group)
+        name: horizontal
   - type: LayoutBox
     margin: large
-    style: inline
     stretchFactor: 1
+    style: inline
     children:
       - type: LayoutBox
         cell:
           column: 0
           row: 0
-        stretchFactor: 2
+        fitToGrid: true
+        stretchFactor: 3
         children:
           - type: Label
-            label: Histogram
+            label: Y-Axis
+            style: list-inline
             children:
-              - type: RadioButton
-                name: histtype_count
-                optionName: histtype
-                optionPart: count
-                label: "Count"
-              - type: RadioButton
-                name: histtype_density
-                optionName: histtype
-                optionPart: density
-                label: "Density"
+              - type: LayoutBox
+                margin: normal
+                children:
+                  - type: RadioButton
+                    name: yaxis_mean
+                    optionName: yaxis
+                    optionPart: mean
+                    label: Mean
+                  - type: RadioButton
+                    name: yaxis_median
+                    optionName: yaxis
+                    optionPart: median
+                    label: Median
+                  - type: RadioButton
+                    name: yaxis_identity
+                    optionName: yaxis
+                    optionPart: identity
+                    label: Values
+              - type: LayoutBox
+                margin: normal
+                children:
+                  - type: RadioButton
+                    name: yaxis_max
+                    optionName: yaxis
+                    optionPart: max
+                    label: Max
+                  - type: RadioButton
+                    name: yaxis_min
+                    optionName: yaxis
+                    optionPart: min
+                    label: Min
+                  - type: RadioButton
+                    name: yaxis_minmax
+                    optionName: yaxis
+                    optionPart: minmax
+                    label: Min / Max
       - type: LayoutBox
         cell:
           column: 1
@@ -67,17 +93,25 @@ children:
         stretchFactor: 2
         children:
           - type: Label
-            label: Bin Size
+            label: Sorting
             children:
               - type: LayoutBox
-                stretchFactor: 1
                 children:
-                  - type: TextBox
-                    name: binWidth
-                    format: number
-                  - type: TextBox
-                    name: binBoundary
-                    format: number
+                  - type: RadioButton
+                    name: order_none
+                    optionName: order
+                    optionPart: none
+                    label: None
+                  - type: RadioButton
+                    name: order_increasing
+                    optionName: order
+                    optionPart: increasing
+                    label: Increasing
+                  - type: RadioButton
+                    name: order_decreasing
+                    optionName: order
+                    optionPart: decreasing
+                    label: Decreasing
       - type: LayoutBox
         cell:
           column: 2
@@ -85,89 +119,14 @@ children:
         stretchFactor: 3
         children:
           - type: Label
-            label: Bin Color
+            label: Colors
             children:
               - type: LayoutBox
-                stretchFactor: 1
                 children:
                   - type: ComboBox
-                    name: borderColor
+                    name: dotColor
                   - type: ComboBox
-                    name: fillColor
-  - type: CollapseBox
-    label: Grouping Plot
-    collapsed: false
-    stretchFactor: 1
-    children:
-      - type: LayoutBox
-        margin: large
-        stretchFactor: 1
-        children:
-          - type: LayoutBox
-            cell:
-              column: 0
-              row: 0
-            stretchFactor: 1
-            children:
-              - type: Label
-                label: "Grouping"
-                children:
-                  - type: RadioButton
-                    name: grouping_none
-                    optionName: grouping
-                    optionPart: none
-                    label: "None"
-                  - type: RadioButton
-                    name: grouping_stack
-                    optionName: grouping
-                    optionPart: stack
-                    label: "Stacked"
-                    enable: (!(!group))
-                  - type: RadioButton
-                    name: grouping_identity
-                    optionName: grouping
-                    optionPart: identity
-                    label: "Overlapping"
-                    enable: (!(!group))
-                  - type: RadioButton
-                    name: grouping_dodge
-                    optionName: grouping
-                    optionPart: dodge
-                    label: "Grouped"
-                    enable: (!(!group))
-          - type: LayoutBox
-            cell:
-              column: 1
-              row: 0
-            stretchFactor: 1
-            children:
-              - type: Label
-                label: "Use Palette"
-                children:
-                  - type: RadioButton
-                    name: usePalette_forFilling
-                    optionName: usePalette
-                    optionPart: forFilling
-                    label: "For Filling"
-                    enable: (!(!group))
-                  - type: RadioButton
-                    name: usePalette_forBoder
-                    optionName: usePalette
-                    optionPart: forBorder
-                    label: "For Border"
-                    enable: (!(!group))
-          - type: LayoutBox
-            cell:
-              column: 2
-              row: 0
-            stretchFactor: 1
-            children:
-              - type: Label
-                label: "Color Palette"
-                children:
-                  - type: ComboBox
-                    name: colorPalette
-                    label: ""
+                    name: lineColor
   - type: CollapseBox
     label: Extra Options
     collapsed: true
@@ -182,7 +141,7 @@ children:
             cell:
               column: 0
               row: 0
-            stretchFactor: 1
+            stretchFactor: 6
             children:
               - type: Label
                 label: Plot Size
@@ -201,7 +160,7 @@ children:
             cell:
               column: 1
               row: 0
-            stretchFactor: 1
+            stretchFactor: 8
             children:
               - type: Label
                 label: Facets
@@ -228,3 +187,20 @@ children:
                         name: facetNumber
                         format: number
                         enable: (!(!facet))
+          - type: LayoutBox
+            cell:
+              column: 2
+              row: 0
+            stretchFactor: 6
+            children:
+              - type: Label
+                label: Lollipop Size
+                children:
+                  - type: TextBox
+                    name: dotSize
+                    format: number
+                    suffix: px
+                  - type: TextBox
+                    name: lineWidth
+                    format: number
+                    suffix: px

@@ -55,7 +55,7 @@
             "A demonstration dataset with four dichotomous variables describing  the credit cards owned by customers.": [
                 ""
             ],
-            "A wrapper for ggplot2 main geoms (histogram, boxplot, point, bar) along with Likert and multiple response barplots.": [
+            "A wrapper for ggplot2 main geoms (histogram, boxplot, point, bar, lollipop) along with Likert and multiple response barplots.": [
                 ""
             ],
             "Accent": [
@@ -130,6 +130,9 @@
             "Color palette": [
                 ""
             ],
+            "Colors": [
+                ""
+            ],
             "Column": [
                 ""
             ],
@@ -173,6 +176,12 @@
                 ""
             ],
             "Descending": [
+                ""
+            ],
+            "Dot": [
+                ""
+            ],
+            "Dot Size": [
                 ""
             ],
             "Extra Options": [
@@ -325,7 +334,46 @@
             "Likert Variables": [
                 ""
             ],
+            "Line": [
+                ""
+            ],
+            "Line Width": [
+                ""
+            ],
+            "Lollipop Plot": [
+                ""
+            ],
+            "Lollipop Size": [
+                ""
+            ],
+            "Max": [
+                ""
+            ],
+            "Maximum of": [
+                ""
+            ],
+            "Mean": [
+                ""
+            ],
+            "Mean of": [
+                ""
+            ],
+            "Median": [
+                ""
+            ],
+            "Median of": [
+                ""
+            ],
             "Medium (400x300)": [
+                ""
+            ],
+            "Min": [
+                ""
+            ],
+            "Min / Max": [
+                ""
+            ],
+            "Minimum of": [
                 ""
             ],
             "Multiple Response": [

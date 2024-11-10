@@ -14,6 +14,10 @@
 
 ![](img/scatter.jpg)
 
+## Lollipop Plot
+
+![](img/lollipop.jpg)
+
 ## Bar Plot
 
 ![](img/bar.jpg)
@@ -31,6 +35,11 @@
 ![](img/mr.jpg)
 
 ## Version history
+
+### 2024-11-10 / 0.6.0 (beta)
+
+-   Improve normal curve in histogram using ggh4x
+-   Lollipop plot
 
 ### 2024-11-01 / 0.5.0 (beta)
 

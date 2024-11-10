@@ -55,8 +55,8 @@
             "A demonstration dataset with four dichotomous variables describing  the credit cards owned by customers.": [
                 "Un fichier de démonstration avec quatres variables dichotomiques décrivant les cartes de crédit détenues par des consommateurs."
             ],
-            "A wrapper for ggplot2 main geoms (histogram, boxplot, point, bar) along with Likert and multiple response barplots.": [
-                "Une interface pour générer des graphiques ggplot2 (histogramme, barres, secteurs, nuage de points, etc) ainsi que des graphique en bâtons pour\ndes variables de Likert et les réponses multiples."
+            "A wrapper for ggplot2 main geoms (histogram, boxplot, point, bar, lollipop) along with Likert and multiple response barplots.": [
+                "Une interface pour les principaux graphiques de ggplot2 (histogramme, boite à moustaches, nuage de points, secteurs, barres...) ainsi que les diagrammes en barre pour Likert et réponses multiples."
             ],
             "Accent": [
                 ""
@@ -130,6 +130,9 @@
             "Color palette": [
                 "Palette de couleurs"
             ],
+            "Colors": [
+                "Couleurs"
+            ],
             "Column": [
                 "Colonne"
             ],
@@ -174,6 +177,12 @@
             ],
             "Descending": [
                 "Décroissant"
+            ],
+            "Dot": [
+                "Point"
+            ],
+            "Dot Size": [
+                "Point"
             ],
             "Extra Options": [
                 "Autres options"
@@ -325,8 +334,47 @@
             "Likert Variables": [
                 "Variables de Likert"
             ],
+            "Line": [
+                "Ligne"
+            ],
+            "Line Width": [
+                "Ligne"
+            ],
+            "Lollipop Plot": [
+                "Lollipop (Sucettes)"
+            ],
+            "Lollipop Size": [
+                "Taille des lollipop"
+            ],
+            "Max": [
+                ""
+            ],
+            "Maximum of": [
+                "Maximum de"
+            ],
+            "Mean": [
+                "Moyenne"
+            ],
+            "Mean of": [
+                "Moyenne de"
+            ],
+            "Median": [
+                "Médiane"
+            ],
+            "Median of": [
+                "Médiane de"
+            ],
             "Medium (400x300)": [
                 "Moyen (400x300)"
+            ],
+            "Min": [
+                ""
+            ],
+            "Min / Max": [
+                ""
+            ],
+            "Minimum of": [
+                "Minimum de"
             ],
             "Multiple Response": [
                 "Réponses multiples"
