@@ -45,4 +45,6 @@ items:
         - order
         - yaxis
         - size
+        - singleColor
+        - colorPalette
 ...

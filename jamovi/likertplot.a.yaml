@@ -79,6 +79,11 @@ options:
       type: Bool
       default: false
 
+    - name: toInteger
+      title: Convert variables to integer
+      type: Bool
+      default: false
+
     - name: plotWidth
       type: Number
       title: Width

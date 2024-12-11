@@ -148,9 +148,9 @@ options:
           name:  black
         - title: White
           name:  white
-        - title: Gray
-          name:  gray
-      default: black
+        - title: Auto
+          name:  auto
+      default: auto
 
     - name: accuracy
       title: "% accuracy"

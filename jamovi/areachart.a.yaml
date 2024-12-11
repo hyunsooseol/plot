@@ -1,25 +1,55 @@
 ---
-name:  barplot
-title: Bar Plot
+name:  areachart
+title: Area Chart
 menuGroup: vijPlots
-menuSubgroup: Categorical
+menuSubgroup: "Time Series"
 version: '1.0.0'
 jas: '1.2'
 
 options:
+    - name: mode
+      title: ""
+      type: List
+      options:
+            - name: oneVariable
+              title: "One variable"
+            - name: severalVariables
+              title: "Several variables"
+
     - name: data
       type: Data
 
-    - name: rows
-      title: Category Axis
+    - name: timeVar
+      title: X-Axis
       type: Variable
       suggested:
-        - nominal
         - ordinal
-      permitted:
-        - factor
+        - continuous
 
-    - name: columns
+    - name: timeVar1
+      title: X-Axis
+      type: Variable
+      suggested:
+        - ordinal
+        - continuous
+
+    - name: vars
+      title: Variables
+      type: Variables
+      suggested:
+        - continuous
+      permitted:
+        - numeric
+
+    - name: var
+      title: Variable
+      type: Variable
+      suggested:
+        - continuous
+      permitted:
+        - numeric
+
+    - name: group
       title: Group
       type: Variable
       suggested:
@@ -28,75 +58,22 @@ options:
       permitted:
         - factor
 
-    - name: facet
-      title: Facet
-      type: Variable
-      suggested:
-        - nominal
-        - ordinal
-      permitted:
-        - factor
-
-    - name: ignoreNA
-      title: Ignore NA
-      type: Bool
-      default: true
-
-    - name: horizontal
-      title: Horizontal plot
-      type: Bool
-      default: false
-
-    - name: legendAtBottom
-      title: Legend at bottom
-      type: Bool
-      default: false
-
-    - name: showLabels
-      title: Show count labels
-      type: Bool
-      default: true
-
-    - name: order
-      title: Sorting
-      type: List
-      options:
-        - title: Decreasing
-          name:  decreasing
-        - title: Increasing
-          name:  increasing
-        - title: None
-          name:  none
-      default: none
-
-    - name: yaxis1var
-      title: Y-axis (1-variable)
-      type: List
-      options:
-        - title: Count
-          name:  count
-        - title: Percent
-          name:  percent
-      default: count
-
-    - name: singleColor
-      title: Same color for all bars
+    - name: showLine
+      title: Show Lines
       type: Bool
       default: true
 
     - name: position
-      title: Bar Type
+      title: "Position"
       type: List
       options:
-        - title: Side-by-side
-          name:  dodge
-        - title: Side-by-side 2
-          name:  dodge2
-        - title: Stacked
-          name:  stack
-        - title: "Stacked 100%"
-          name:  fill
-      default: dodge
+          - name: stack
+            title: 'Stacked'
+          - name: fill
+            title: 'Stacked 100%'
+          - name: identity
+            title: 'Overlapping'
+      default: stack
 
     - name: colorPalette
       title: Palette
@@ -174,44 +151,79 @@ options:
           name:  YlOrBr
         - title: Yellow to Red
           name:  YlOrRd
+      default: jmv
 
-    - name: borderColor
-      title: Border
+    - name: isDate
+      title: X-Axis is a date
+      type: Bool
+      default: false
+
+    - name: dateFormat
+      title: Input Format
       type: List
       options:
-        - title: None
-          name:  none
-        - title: Black
-          name:  black
-        - title: White
-          name:  white
-        - title: Gray
-          name:  gray
-      default: none
+        - title: "Auto"
+          name:  "auto"
+        - title: "ISO (Y-M-D)"
+          name:  "iso"
+        - title: "US (M-D-Y)"
+          name:  "us"
+        - title: "EU (D-M-Y)"
+          name:  "eu"
+      default: "auto"
 
-    - name: textColor
-      title: Text
+    - name: displayFormat
+      title: Display Format
       type: List
       options:
-        - title: Black
-          name:  black
-        - title: White
-          name:  white
-        - title: Auto
-          name:  auto
-      default: auto
+        - title: "2035-06-20"
+          name:  "%Y-%m-%d"
+        - title: "06/20/35"
+          name:  "%m/%d/%y"
+        - title: "20/06/35"
+          name:  "%d/%m/%y"
+        - title: "2035 June 20"
+          name:  "%Y %B %e "
+        - title: "20 June 2035"
+          name:  "%e %B %Y"
+        - title: "June 2035"
+          name:  "%B %Y"
+        - title: "2035 June"
+          name:  "%Y %B"
+        - title: "Jun"
+          name:  "%b"
+        - title: "June"
+          name:  "%B"
+        - title: "2035"
+          name:  "%Y"
+      default: "%Y-%m-%d"
 
-    - name: accuracy
-      title: "% accuracy"
+    - name: dateBreak
+      title: Date Breaks
       type: List
       options:
-        - title: "1"
-          name:  "1"
-        - title: "0.1"
-          name:  "0.1"
-        - title: "0.01"
-          name: "0.01"
-      default: "0.1"
+        - title: "1 day"
+          name:  "1 day"
+        - title: "1 week"
+          name:  "1 week"
+        - title: "2 weeks"
+          name:  "2 week"
+        - title: "1 month"
+          name:  "1 month"
+        - title: "3 months"
+          name:  "3 month"
+        - title: "6 months"
+          name:  "6 month"
+        - title: "1 year"
+          name:  "1 year"
+        - title: "10 years"
+          name:  "10 year"
+      default: "1 month"
+
+    - name: rotateLabels
+      title: Rotate X-Axis Labels
+      type: Bool
+      default: false
 
     - name: plotWidth
       type: Number
@@ -224,24 +236,18 @@ options:
       type: Number
       title: Height
       min: 0
-      max: 1600
+      max: 1000
       default: 0
 
-    - name: facetBy
-      title: Facet
-      type: List
-      options:
-        - title: Row
-          name:  row
-        - title: Column
-          name:  column
-      default: column
-
-    - name: facetNumber
+    - name: lineWidth
       type: Number
-      title: "# of rows/columns"
-      min: 1
+      title: Line Width
+      min: 0.1
       max: 10
-      default: 1
+      default: 0.5
+
+    - name: ylabel
+      type: String
+      title: Y-Label
 
 ...

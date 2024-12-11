@@ -60,17 +60,30 @@ mrfrequenciesClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class
             # to be sure the factor ordering is kept
             plotData$Option <- factor(plotData$Option, levels=plotData$Option)
 
-            if ( self$options$yaxis == "responses") {
+            if (self$options$yaxis == "responses") {
                 plot <- ggplot(plotData, aes(Option, Responses )) +
                     labs(y=.("% of Responses")) + scale_y_continuous(labels=percent_format())
-            } else if ( self$options$yaxis == "cases") {
+            } else if (self$options$yaxis == "cases") {
                 plot <- ggplot(plotData, aes(Option, Cases )) +
                     labs(y=.("% of Cases")) + scale_y_continuous(labels=percent_format())
             } else {
                 plot <- ggplot(plotData, aes(Option, Frequency )) + labs(y=.("Counts"))
             }
 
-            plot <- plot + geom_col(fill=theme$color[2]) + labs(x="")  + ggtheme
+            #plot <- plot + geom_col(fill=theme$color[2]) + labs(x="")  + ggtheme
+            if (self$options$singleColor) {
+                firstColorOfPalette <- jmvcore::colorPalette(n = 5, pal = self$options$colorPalette, type = "color")[1]
+                plot <- plot + geom_col(fill = firstColorOfPalette)
+            } else {
+                plot <- plot + geom_col(aes(fill = Option)) + guides(fill = FALSE)
+            }
+
+            # Theme and labs
+            plot <- plot + labs(x="")  + ggtheme
+            # Color palette
+            if (!self$options$singleColor && self$options$colorPalette != 'jmv') {
+                plot <- plot + scale_fill_brewer(palette = self$options$colorPalette, na.value="grey")
+            }
 
             return(plot)
 

@@ -17,7 +17,8 @@ mrcrosstabsOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class
             overall = TRUE,
             xaxis = "xcols",
             bartype = "dodge",
-            size = "medium", ...) {
+            size = "medium",
+            colorPalette = NULL, ...) {
 
             super$initialize(
                 package="vijPlots",
@@ -101,6 +102,46 @@ mrcrosstabsOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class
                     "large",
                     "huge"),
                 default="medium")
+            private$..colorPalette <- jmvcore::OptionList$new(
+                "colorPalette",
+                colorPalette,
+                options=list(
+                    "jmv",
+                    "Set1",
+                    "Set2",
+                    "Set3",
+                    "Pastel1",
+                    "Pastel2",
+                    "Accent",
+                    "Paired",
+                    "Dark2",
+                    "Spectral",
+                    "RdYlGn",
+                    "RdYlBu",
+                    "RdGy",
+                    "RdBu",
+                    "PuOr",
+                    "PRGn",
+                    "PiYG",
+                    "BrBG",
+                    "Blues",
+                    "Greens",
+                    "Greys",
+                    "Oranges",
+                    "Purples",
+                    "Reds",
+                    "BuGn",
+                    "BuPu",
+                    "GnBu",
+                    "OrRd",
+                    "PuBu",
+                    "PuBuGn",
+                    "PuRd",
+                    "RdPu",
+                    "YlGn",
+                    "YlGnBu",
+                    "YlOrBr",
+                    "YlOrRd"))
 
             self$.addOption(private$..resps)
             self$.addOption(private$..group)
@@ -114,6 +155,7 @@ mrcrosstabsOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class
             self$.addOption(private$..xaxis)
             self$.addOption(private$..bartype)
             self$.addOption(private$..size)
+            self$.addOption(private$..colorPalette)
         }),
     active = list(
         resps = function() private$..resps$value,
@@ -127,7 +169,8 @@ mrcrosstabsOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class
         overall = function() private$..overall$value,
         xaxis = function() private$..xaxis$value,
         bartype = function() private$..bartype$value,
-        size = function() private$..size$value),
+        size = function() private$..size$value,
+        colorPalette = function() private$..colorPalette$value),
     private = list(
         ..resps = NA,
         ..group = NA,
@@ -140,7 +183,8 @@ mrcrosstabsOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class
         ..overall = NA,
         ..xaxis = NA,
         ..bartype = NA,
-        ..size = NA)
+        ..size = NA,
+        ..colorPalette = NA)
 )
 
 mrcrosstabsResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
@@ -190,7 +234,8 @@ mrcrosstabsResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class
                     "bartype",
                     "xaxis",
                     "size",
-                    "optionname")))}))
+                    "optionname",
+                    "colorPalette")))}))
 
 mrcrosstabsBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
     "mrcrosstabsBase",
@@ -229,6 +274,7 @@ mrcrosstabsBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
 #' @param xaxis .
 #' @param bartype .
 #' @param size .
+#' @param colorPalette .
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$crosstab} \tab \tab \tab \tab \tab a table \cr
@@ -255,7 +301,8 @@ mrcrosstabs <- function(
     overall = TRUE,
     xaxis = "xcols",
     bartype = "dodge",
-    size = "medium") {
+    size = "medium",
+    colorPalette) {
 
     if ( ! requireNamespace("jmvcore", quietly=TRUE))
         stop("mrcrosstabs requires jmvcore to be installed (restart may be required)")
@@ -283,7 +330,8 @@ mrcrosstabs <- function(
         overall = overall,
         xaxis = xaxis,
         bartype = bartype,
-        size = size)
+        size = size,
+        colorPalette = colorPalette)
 
     analysis <- mrcrosstabsClass$new(
         options = options,

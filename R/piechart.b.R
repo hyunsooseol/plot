@@ -82,13 +82,24 @@ piechartClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
 
             # Labels
             if( self$options$labels == "count" ) {
-                plot <- plot + geom_text(aes(label = after_stat(count)), stat = "count",
-                                         position = position_fill(vjust = 0.5),
-                                         color = self$options$textColor, fontface = "bold")
+                if (self$options$textColor == "auto") { # using hex_bw
+                    plot <- plot + geom_text(aes(fill = !!aVar, label = after_stat(count),
+                                                 color = after_scale(ggstats::hex_bw(.data$fill))),
+                                             stat = "count", position = position_fill(vjust = 0.5), fontface = "bold")
+                } else {
+                    plot <- plot + geom_text(aes(label = after_stat(count)), stat = "count",
+                                                 position = position_fill(vjust = 0.5),
+                                                 color = self$options$textColor, fontface = "bold")
+                }
             } else if( self$options$labels == "percent" ) {
-                plot <- plot + geom_text(aes(label = doPercent(after_stat(prop))), stat = StatProp, position = position_fill(vjust = 0.5),
-                                         color = self$options$textColor, fontface = "bold")
-
+                if (self$options$textColor == "auto") { # using hex_bw
+                    plot <- plot + geom_text(aes(label = doPercent(after_stat(prop)),
+                                                 color = after_scale(ggstats::hex_bw(.data$fill))),
+                                             stat = StatProp, position = position_fill(vjust = 0.5), fontface = "bold")
+                } else {
+                    plot <- plot + geom_text(aes(label = doPercent(after_stat(prop))), stat = StatProp, position = position_fill(vjust = 0.5),
+                                             color = self$options$textColor, fontface = "bold")
+                }
             }
 
             # Facet

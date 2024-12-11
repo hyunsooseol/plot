@@ -5,11 +5,20 @@
             "1": [
                 ""
             ],
+            "2035": [
+                ""
+            ],
             "": {
                 "domain": "messages",
                 "plural_forms": "nplurals=2; plural=(n != 1)",
                 "lang": "en"
             },
+            " doesn't have a valid date format.": [
+                ""
+            ],
+            " has not a valid date format.": [
+                ""
+            ],
             ".": [
                 ""
             ],
@@ -46,10 +55,55 @@
             "0.1": [
                 ""
             ],
+            "06/20/35": [
+                ""
+            ],
+            "1 day": [
+                ""
+            ],
+            "1 month": [
+                ""
+            ],
+            "1 week": [
+                ""
+            ],
+            "1 year": [
+                ""
+            ],
+            "10 years": [
+                ""
+            ],
+            "2 weeks": [
+                ""
+            ],
+            "20 June 2035": [
+                ""
+            ],
+            "20/06/35": [
+                ""
+            ],
+            "2035 June": [
+                ""
+            ],
+            "2035 June 20": [
+                ""
+            ],
+            "2035-06-20": [
+                ""
+            ],
+            "3 months": [
+                ""
+            ],
+            "6 months": [
+                ""
+            ],
             "A demonstration dataset for Likert scale bar plots.": [
                 ""
             ],
             "A demonstration dataset for vijPlots module.": [
+                ""
+            ],
+            "A demonstration dataset for vijPlots/Time Series functions.": [
                 ""
             ],
             "A demonstration dataset with four dichotomous variables describing  the credit cards owned by customers.": [
@@ -64,7 +118,13 @@
             "Add plot frame": [
                 ""
             ],
+            "Area Chart": [
+                ""
+            ],
             "Ascending": [
+                ""
+            ],
+            "Auto": [
                 ""
             ],
             "Bar Plot": [
@@ -142,6 +202,9 @@
             "Continuous": [
                 ""
             ],
+            "Convert variables to integer": [
+                ""
+            ],
             "Count": [
                 ""
             ],
@@ -169,6 +232,9 @@
             "Dark 2": [
                 ""
             ],
+            "Date Breaks": [
+                ""
+            ],
             "Decreasing": [
                 ""
             ],
@@ -178,10 +244,19 @@
             "Descending": [
                 ""
             ],
+            "Display Format": [
+                ""
+            ],
             "Dot": [
                 ""
             ],
             "Dot Size": [
+                ""
+            ],
+            "en_US.utf-8": [
+                ""
+            ],
+            "EU (D-M-Y)": [
                 ""
             ],
             "Extra Options": [
@@ -265,6 +340,12 @@
             "Increasing": [
                 ""
             ],
+            "Input Format": [
+                ""
+            ],
+            "ISO (Y-M-D)": [
+                ""
+            ],
             "jmv Blue": [
                 ""
             ],
@@ -281,6 +362,15 @@
                 ""
             ],
             "jmv Yellow": [
+                ""
+            ],
+            "Jun": [
+                ""
+            ],
+            "June": [
+                ""
+            ],
+            "June 2035": [
                 ""
             ],
             "Label": [
@@ -335,6 +425,9 @@
                 ""
             ],
             "Line": [
+                ""
+            ],
+            "Line Chart": [
                 ""
             ],
             "Line Width": [
@@ -394,6 +487,9 @@
             "Number of cases:": [
                 ""
             ],
+            "One variable": [
+                ""
+            ],
             "Option name": [
                 ""
             ],
@@ -413,6 +509,9 @@
                 ""
             ],
             "Oranges": [
+                ""
+            ],
+            "Other Options": [
                 ""
             ],
             "Overall": [
@@ -464,6 +563,9 @@
                 ""
             ],
             "Plots": [
+                ""
+            ],
+            "Point & Line Size": [
                 ""
             ],
             "Point Size": [
@@ -532,6 +634,9 @@
             "Reverse the staking order": [
                 ""
             ],
+            "Rotate X-Axis Labels": [
+                ""
+            ],
             "Row": [
                 ""
             ],
@@ -553,6 +658,9 @@
             "Set 3": [
                 ""
             ],
+            "Several variables": [
+                ""
+            ],
             "Show % Labels": [
                 ""
             ],
@@ -562,6 +670,9 @@
             "Show count labels": [
                 ""
             ],
+            "Show Lines": [
+                ""
+            ],
             "Show Mean": [
                 ""
             ],
@@ -569,6 +680,9 @@
                 ""
             ],
             "Show Outliers": [
+                ""
+            ],
+            "Show Points": [
                 ""
             ],
             "Show points with missing group/label": [
@@ -592,6 +706,9 @@
             "Sorting": [
                 ""
             ],
+            "Sorting (Median)": [
+                ""
+            ],
             "Spectral": [
                 ""
             ],
@@ -607,10 +724,16 @@
             "Text": [
                 ""
             ],
+            "Time Series": [
+                ""
+            ],
             "Total": [
                 ""
             ],
             "Total Row": [
+                ""
+            ],
+            "US (M-D-Y)": [
                 ""
             ],
             "Use Palette": [
@@ -643,6 +766,9 @@
             "X-Axis": [
                 ""
             ],
+            "X-Axis is a date": [
+                ""
+            ],
             "X-intercept": [
                 ""
             ],
@@ -659,6 +785,9 @@
                 ""
             ],
             "Y-intercept": [
+                ""
+            ],
+            "Y-Label": [
                 ""
             ],
             "Yellow": [

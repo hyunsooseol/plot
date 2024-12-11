@@ -5,11 +5,20 @@
             "1": [
                 ""
             ],
+            "2035": [
+                ""
+            ],
             "": {
                 "domain": "messages",
                 "plural_forms": "nplurals=2; plural=(n != 1)",
                 "lang": "fr"
             },
+            " doesn't have a valid date format.": [
+                ""
+            ],
+            " has not a valid date format.": [
+                " n'a pas un format de date valide."
+            ],
             ".": [
                 ","
             ],
@@ -46,11 +55,56 @@
             "0.1": [
                 ""
             ],
+            "06/20/35": [
+                ""
+            ],
+            "1 day": [
+                "1 jour"
+            ],
+            "1 month": [
+                "1 mois"
+            ],
+            "1 week": [
+                "1 semaine"
+            ],
+            "1 year": [
+                "1 an"
+            ],
+            "10 years": [
+                "10 ans"
+            ],
+            "2 weeks": [
+                "2 semaines"
+            ],
+            "20 June 2035": [
+                "20 juin 2035"
+            ],
+            "20/06/35": [
+                ""
+            ],
+            "2035 June": [
+                "2035 juin"
+            ],
+            "2035 June 20": [
+                "2035 juin 20"
+            ],
+            "2035-06-20": [
+                ""
+            ],
+            "3 months": [
+                "3 mois"
+            ],
+            "6 months": [
+                "6 mois"
+            ],
             "A demonstration dataset for Likert scale bar plots.": [
                 "Fichier de démonstration d'un diagramme en barres pour variables de Likert."
             ],
             "A demonstration dataset for vijPlots module.": [
                 "Fichier de démonstration du module vijPlots."
+            ],
+            "A demonstration dataset for vijPlots/Time Series functions.": [
+                ""
             ],
             "A demonstration dataset with four dichotomous variables describing  the credit cards owned by customers.": [
                 "Un fichier de démonstration avec quatres variables dichotomiques décrivant les cartes de crédit détenues par des consommateurs."
@@ -64,8 +118,14 @@
             "Add plot frame": [
                 "Ajouter un cadre au graphique"
             ],
+            "Area Chart": [
+                "Graphique en aires"
+            ],
             "Ascending": [
                 "Croissant"
+            ],
+            "Auto": [
+                ""
             ],
             "Bar Plot": [
                 "Diagramme en barres"
@@ -142,6 +202,9 @@
             "Continuous": [
                 "Variables quantitatives"
             ],
+            "Convert variables to integer": [
+                "Convertir les variables en entiers"
+            ],
             "Count": [
                 "Effectif"
             ],
@@ -169,6 +232,9 @@
             "Dark 2": [
                 ""
             ],
+            "Date Breaks": [
+                "Intervalle"
+            ],
             "Decreasing": [
                 "Décroissant"
             ],
@@ -178,11 +244,20 @@
             "Descending": [
                 "Décroissant"
             ],
+            "Display Format": [
+                "Affichage"
+            ],
             "Dot": [
                 "Point"
             ],
             "Dot Size": [
                 "Point"
+            ],
+            "en_US.utf-8": [
+                "fr_FR.utf-8"
+            ],
+            "EU (D-M-Y)": [
+                "EU (J-M-A)"
             ],
             "Extra Options": [
                 "Autres options"
@@ -265,6 +340,12 @@
             "Increasing": [
                 "Croissant"
             ],
+            "Input Format": [
+                "Entrée"
+            ],
+            "ISO (Y-M-D)": [
+                "ISO (A-M-J)"
+            ],
             "jmv Blue": [
                 "Bleu jmv"
             ],
@@ -282,6 +363,15 @@
             ],
             "jmv Yellow": [
                 "Jaune jmv"
+            ],
+            "Jun": [
+                "jui"
+            ],
+            "June": [
+                "juin"
+            ],
+            "June 2035": [
+                "juin 2035"
             ],
             "Label": [
                 "Etiquette"
@@ -336,6 +426,9 @@
             ],
             "Line": [
                 "Ligne"
+            ],
+            "Line Chart": [
+                "Graphique en courbes"
             ],
             "Line Width": [
                 "Ligne"
@@ -394,6 +487,9 @@
             "Number of cases:": [
                 "Nombre d'observations :"
             ],
+            "One variable": [
+                "Une variable"
+            ],
             "Option name": [
                 "Nom des options"
             ],
@@ -414,6 +510,9 @@
             ],
             "Oranges": [
                 ""
+            ],
+            "Other Options": [
+                "Autres options"
             ],
             "Overall": [
                 "Ensemble"
@@ -465,6 +564,9 @@
             ],
             "Plots": [
                 "Graphiques"
+            ],
+            "Point & Line Size": [
+                "Taile des points et lignes"
             ],
             "Point Size": [
                 "Taille des points"
@@ -532,6 +634,9 @@
             "Reverse the staking order": [
                 "Inverser les modalités"
             ],
+            "Rotate X-Axis Labels": [
+                "Pivoter les étiquettes"
+            ],
             "Row": [
                 "Ligne"
             ],
@@ -553,6 +658,9 @@
             "Set 3": [
                 ""
             ],
+            "Several variables": [
+                "Plusieurs variables"
+            ],
             "Show % Labels": [
                 "Afficher les %"
             ],
@@ -562,6 +670,9 @@
             "Show count labels": [
                 "Afficher les effectifs"
             ],
+            "Show Lines": [
+                "Afficher les lignes"
+            ],
             "Show Mean": [
                 "Afficher la moyenne"
             ],
@@ -570,6 +681,9 @@
             ],
             "Show Outliers": [
                 "Afficher les valeurs aberrantes"
+            ],
+            "Show Points": [
+                "Afficher les points"
             ],
             "Show points with missing group/label": [
                 "Afficher les points avec groupe manquant"
@@ -592,6 +706,9 @@
             "Sorting": [
                 "Tri"
             ],
+            "Sorting (Median)": [
+                "Tri (Médiane)"
+            ],
             "Spectral": [
                 ""
             ],
@@ -607,11 +724,17 @@
             "Text": [
                 "Texte"
             ],
+            "Time Series": [
+                "Séries temporelles"
+            ],
             "Total": [
                 "Total"
             ],
             "Total Row": [
                 "Ligne Total"
+            ],
+            "US (M-D-Y)": [
+                "US (M-J-A)"
             ],
             "Use Palette": [
                 "Utiliser la palette"
@@ -643,6 +766,9 @@
             "X-Axis": [
                 "Axe X"
             ],
+            "X-Axis is a date": [
+                "L'axe X est une date"
+            ],
             "X-intercept": [
                 ""
             ],
@@ -660,6 +786,9 @@
             ],
             "Y-intercept": [
                 ""
+            ],
+            "Y-Label": [
+                "Axe Y"
             ],
             "Yellow": [
                 "Jaune"

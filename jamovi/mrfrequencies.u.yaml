@@ -87,7 +87,7 @@ children:
                 name: yaxis_counts
                 optionName: yaxis
                 optionPart: counts
-                label: 'Counts'
+                label: Counts
               - type: RadioButton
                 name: yaxis_responses
                 optionName: yaxis
@@ -98,12 +98,31 @@ children:
                 optionName: yaxis
                 optionPart: cases
                 label: '% of Cases'
-  - type: Label
-    label: "Plot Size"
+  - type: LayoutBox
+    margin: large
+    stretchFactor: 1
     children:
       - type: LayoutBox
+        cell:
+          column: 0
+          row: 0
         stretchFactor: 1
-        style: inline
         children:
-          - type: ComboBox
-            name: size
+          - type: Label
+            label: Plot Size
+            children:
+              - type: ComboBox
+                name: size
+      - type: LayoutBox
+        cell:
+          column: 1
+          row: 0
+        stretchFactor: 1
+        children:
+          - type: Label
+            label: Color Options
+            children:
+              - type: ComboBox
+                name: colorPalette
+              - type: CheckBox
+                name: singleColor

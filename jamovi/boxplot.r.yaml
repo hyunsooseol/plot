@@ -17,4 +17,5 @@ items:
         - showMean
         - colorPalette
         - singleColor
+        - order
 ...

@@ -1,14 +1,21 @@
 ---
-name:  boxplot
-title: Box Plot
+name:  linechart
+title: Line Chart
 menuGroup: vijPlots
-menuSubgroup: Continuous
+menuSubgroup: "Time Series"
 version: '1.0.0'
 jas: '1.2'
 
 options:
     - name: data
       type: Data
+
+    - name: timeVar
+      title: X-Axis
+      type: Variable
+      suggested:
+        - ordinal
+        - continuous
 
     - name: vars
       title: Variables
@@ -27,15 +34,10 @@ options:
       permitted:
         - factor
 
-    - name: showOutliers
-      title: Show Outliers
+    - name: showPoint
+      title: Show Points
       type: Bool
       default: true
-
-    - name: showMean
-      title: Show Mean
-      type: Bool
-      default: false
 
     - name: colorPalette
       title: Palette
@@ -113,22 +115,106 @@ options:
           name:  YlOrBr
         - title: Yellow to Red
           name:  YlOrRd
+      default: jmv
 
-    - name: singleColor
-      title: Use the same color for variables
+    - name: isDate
+      title: X-Axis is a date
       type: Bool
       default: false
 
-    - name: order
-      title: "Sorting (Median)"
+    - name: dateFormat
+      title: Input Format
       type: List
       options:
-        - title: Decreasing
-          name:  decreasing
-        - title: Increasing
-          name:  increasing
-        - title: None
-          name:  none
-      default: none
+        - title: "Auto"
+          name:  "auto"
+        - title: "ISO (Y-M-D)"
+          name:  "iso"
+        - title: "US (M-D-Y)"
+          name:  "us"
+        - title: "EU (D-M-Y)"
+          name:  "eu"
+      default: "auto"
+
+    - name: displayFormat
+      title: Display Format
+      type: List
+      options:
+        - title: "2035-06-20"
+          name:  "%Y-%m-%d"
+        - title: "06/20/35"
+          name:  "%m/%d/%y"
+        - title: "20/06/35"
+          name:  "%d/%m/%y"
+        - title: "2035 June 20"
+          name:  "%Y %B %e "
+        - title: "20 June 2035"
+          name:  "%e %B %Y"
+        - title: "June 2035"
+          name:  "%B %Y"
+        - title: "2035 June"
+          name:  "%Y %B"
+        - title: "Jun"
+          name:  "%b"
+        - title: "June"
+          name:  "%B"
+        - title: "2035"
+          name:  "%Y"
+      default: "%Y-%m-%d"
+
+    - name: dateBreak
+      title: Date Breaks
+      type: List
+      options:
+        - title: "1 day"
+          name:  "1 day"
+        - title: "1 week"
+          name:  "1 week"
+        - title: "2 weeks"
+          name:  "2 week"
+        - title: "1 month"
+          name:  "1 month"
+        - title: "3 months"
+          name:  "3 month"
+        - title: "6 months"
+          name:  "6 month"
+        - title: "1 year"
+          name:  "1 year"
+        - title: "10 years"
+          name:  "10 year"
+      default: "1 month"
+
+    - name: rotateLabels
+      title: Rotate X-Axis Labels
+      type: Bool
+      default: false
+
+    - name: plotWidth
+      type: Number
+      title: Width
+      min: 0
+      max: 1000
+      default: 0
+
+    - name: plotHeight
+      type: Number
+      title: Height
+      min: 0
+      max: 1000
+      default: 0
+
+    - name: dotSize
+      type: Number
+      title: Dot Size
+      min: 1
+      max: 20
+      default: 2
+
+    - name: lineWidth
+      type: Number
+      title: Line Width
+      min: 0
+      max: 10
+      default: 1
 
 ...

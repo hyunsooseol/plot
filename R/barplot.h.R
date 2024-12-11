@@ -19,7 +19,7 @@ barplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             position = "dodge",
             colorPalette = NULL,
             borderColor = "none",
-            textColor = "white",
+            textColor = "auto",
             accuracy = "0.1",
             plotWidth = 0,
             plotHeight = 0,
@@ -155,8 +155,8 @@ barplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 options=list(
                     "black",
                     "white",
-                    "gray"),
-                default="white")
+                    "auto"),
+                default="auto")
             private$..accuracy <- jmvcore::OptionList$new(
                 "accuracy",
                 accuracy,
@@ -358,7 +358,7 @@ barplot <- function(
     position = "dodge",
     colorPalette,
     borderColor = "none",
-    textColor = "white",
+    textColor = "auto",
     accuracy = "0.1",
     plotWidth = 0,
     plotHeight = 0,

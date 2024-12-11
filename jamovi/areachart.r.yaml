@@ -1,0 +1,34 @@
+---
+name:  areachart
+title: Area Chart
+jrs:   '1.1'
+
+items:
+    - name: plot
+      title: ""
+      type: Image
+      width:  600
+      height: 400
+      renderFun: .plot
+      clearWith:
+        - mode
+        - var
+        - vars
+        - timeVar
+        - timeVar1
+        - group
+        - colorPalette
+        - showLine
+        - isDate
+        - dateFormat
+        - dateBreak
+        - displayFormat
+        - rotateLabels
+        - plotWidth
+        - plotHeight
+        - dotSize
+        - lineWidth
+        - position
+        - ylabel
+
+...

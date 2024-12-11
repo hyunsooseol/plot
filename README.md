@@ -34,12 +34,32 @@
 
 ![](img/mr.jpg)
 
+## Line Charts
+
+![](img/linechart1.jpg)
+
+![](img/linechart2.jpg)
+
+## Area Chart
+
+![](img/areachart.jpg)
+
 ## Version history
+
+### 2024-12-11 / 0.7.0 (beta)
+
+-   Line Chart
+-   Area Chart
+-   Option "Auto" for text color in Barchart and Piechart using ggstats::hex_bw()
+-   Sort (by median) in Boxplot
+-   Color Options in Multiple Response Frequencies & Crosstab
+-   Option to convert variables to integer in Likert Plot.
+-   Likert Plot can plot a single variable
 
 ### 2024-11-10 / 0.6.0 (beta)
 
--   Improve normal curve in histogram using ggh4x
 -   Lollipop plot
+-   Improve normal curve in histogram using ggh4x
 
 ### 2024-11-01 / 0.5.0 (beta)
 

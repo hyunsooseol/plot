@@ -29,7 +29,7 @@ children:
         cell:
           column: 0
           row: 0
-        stretchFactor: 1
+        stretchFactor: 6
         children:
           - type: Label
             label: Plot Options
@@ -44,7 +44,33 @@ children:
         cell:
           column: 1
           row: 0
-        stretchFactor: 1
+        stretchFactor: 5
+        children:
+          - type: Label
+            label: "Sorting (Median)"
+            children:
+              - type: LayoutBox
+                children:
+                  - type: RadioButton
+                    name: order_none
+                    optionName: order
+                    optionPart: none
+                    label: None
+                  - type: RadioButton
+                    name: order_increasing
+                    optionName: order
+                    optionPart: increasing
+                    label: Increasing
+                  - type: RadioButton
+                    name: order_decreasing
+                    optionName: order
+                    optionPart: decreasing
+                    label: Decreasing
+      - type: LayoutBox
+        cell:
+          column: 2
+          row: 0
+        stretchFactor: 9
         children:
           - type: Label
             label: Color Options

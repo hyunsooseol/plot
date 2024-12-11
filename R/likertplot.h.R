@@ -15,6 +15,7 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             addTotals = TRUE,
             addMedianLine = TRUE,
             reverseLikert = FALSE,
+            toInteger = FALSE,
             plotWidth = 600,
             plotHeight = 400,
             textSize = 12,
@@ -79,6 +80,10 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 "reverseLikert",
                 reverseLikert,
                 default=FALSE)
+            private$..toInteger <- jmvcore::OptionBool$new(
+                "toInteger",
+                toInteger,
+                default=FALSE)
             private$..plotWidth <- jmvcore::OptionNumber$new(
                 "plotWidth",
                 plotWidth,
@@ -121,6 +126,7 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             self$.addOption(private$..addTotals)
             self$.addOption(private$..addMedianLine)
             self$.addOption(private$..reverseLikert)
+            self$.addOption(private$..toInteger)
             self$.addOption(private$..plotWidth)
             self$.addOption(private$..plotHeight)
             self$.addOption(private$..textSize)
@@ -136,6 +142,7 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         addTotals = function() private$..addTotals$value,
         addMedianLine = function() private$..addMedianLine$value,
         reverseLikert = function() private$..reverseLikert$value,
+        toInteger = function() private$..toInteger$value,
         plotWidth = function() private$..plotWidth$value,
         plotHeight = function() private$..plotHeight$value,
         textSize = function() private$..textSize$value,
@@ -150,6 +157,7 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         ..addTotals = NA,
         ..addMedianLine = NA,
         ..reverseLikert = NA,
+        ..toInteger = NA,
         ..plotWidth = NA,
         ..plotHeight = NA,
         ..textSize = NA,
@@ -187,9 +195,9 @@ likertplotResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "addTotals",
                     "addMedianLine",
                     "reverseLikert",
-                    "jamoviTheme",
-                    "plotW",
-                    "plotH",
+                    "toInteger",
+                    "plotWidth",
+                    "plotHeight",
                     "textSize",
                     "plotColor")))}))
 
@@ -227,6 +235,7 @@ likertplotBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
 #' @param addTotals .
 #' @param addMedianLine .
 #' @param reverseLikert .
+#' @param toInteger .
 #' @param plotWidth .
 #' @param plotHeight .
 #' @param textSize .
@@ -248,6 +257,7 @@ likertplot <- function(
     addTotals = TRUE,
     addMedianLine = TRUE,
     reverseLikert = FALSE,
+    toInteger = FALSE,
     plotWidth = 600,
     plotHeight = 400,
     textSize = 12,
@@ -277,6 +287,7 @@ likertplot <- function(
         addTotals = addTotals,
         addMedianLine = addMedianLine,
         reverseLikert = reverseLikert,
+        toInteger = toInteger,
         plotWidth = plotWidth,
         plotHeight = plotHeight,
         textSize = textSize,

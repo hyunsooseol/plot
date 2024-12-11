@@ -37,5 +37,6 @@ items:
         - xaxis
         - size
         - optionname
+        - colorPalette
 
 ...

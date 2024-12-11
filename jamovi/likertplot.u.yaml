@@ -110,6 +110,8 @@ children:
                 enable: (type_stacked)
               - type: CheckBox
                 name: reverseLikert
+              - type: CheckBox
+                name: toInteger
       - type: LayoutBox
         cell:
           column: 1
@@ -117,7 +119,7 @@ children:
         stretchFactor: 1
         children:
           - type: Label
-            label: "Plot Size & Color"
+            label: Plot Size & Color
             children:
               - type: TextBox
                 name: plotWidth

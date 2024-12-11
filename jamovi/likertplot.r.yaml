@@ -22,9 +22,9 @@ items:
         - addTotals
         - addMedianLine
         - reverseLikert
-        - jamoviTheme
-        - plotW
-        - plotH
+        - toInteger
+        - plotWidth
+        - plotHeight
         - textSize
         - plotColor
 

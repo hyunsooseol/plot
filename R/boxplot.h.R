@@ -11,7 +11,8 @@ boxplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             showOutliers = TRUE,
             showMean = FALSE,
             colorPalette = NULL,
-            singleColor = FALSE, ...) {
+            singleColor = FALSE,
+            order = "none", ...) {
 
             super$initialize(
                 package="vijPlots",
@@ -86,6 +87,14 @@ boxplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 "singleColor",
                 singleColor,
                 default=FALSE)
+            private$..order <- jmvcore::OptionList$new(
+                "order",
+                order,
+                options=list(
+                    "decreasing",
+                    "increasing",
+                    "none"),
+                default="none")
 
             self$.addOption(private$..vars)
             self$.addOption(private$..group)
@@ -93,6 +102,7 @@ boxplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             self$.addOption(private$..showMean)
             self$.addOption(private$..colorPalette)
             self$.addOption(private$..singleColor)
+            self$.addOption(private$..order)
         }),
     active = list(
         vars = function() private$..vars$value,
@@ -100,14 +110,16 @@ boxplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         showOutliers = function() private$..showOutliers$value,
         showMean = function() private$..showMean$value,
         colorPalette = function() private$..colorPalette$value,
-        singleColor = function() private$..singleColor$value),
+        singleColor = function() private$..singleColor$value,
+        order = function() private$..order$value),
     private = list(
         ..vars = NA,
         ..group = NA,
         ..showOutliers = NA,
         ..showMean = NA,
         ..colorPalette = NA,
-        ..singleColor = NA)
+        ..singleColor = NA,
+        ..order = NA)
 )
 
 boxplotResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
@@ -135,7 +147,8 @@ boxplotResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "showOutliers",
                     "showMean",
                     "colorPalette",
-                    "singleColor")))}))
+                    "singleColor",
+                    "order")))}))
 
 boxplotBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
     "boxplotBase",
@@ -168,6 +181,7 @@ boxplotBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
 #' @param showMean .
 #' @param colorPalette .
 #' @param singleColor .
+#' @param order .
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$plot} \tab \tab \tab \tab \tab an image \cr
@@ -181,7 +195,8 @@ boxplot <- function(
     showOutliers = TRUE,
     showMean = FALSE,
     colorPalette,
-    singleColor = FALSE) {
+    singleColor = FALSE,
+    order = "none") {
 
     if ( ! requireNamespace("jmvcore", quietly=TRUE))
         stop("boxplot requires jmvcore to be installed (restart may be required)")
@@ -202,7 +217,8 @@ boxplot <- function(
         showOutliers = showOutliers,
         showMean = showMean,
         colorPalette = colorPalette,
-        singleColor = singleColor)
+        singleColor = singleColor,
+        order = order)
 
     analysis <- boxplotClass$new(
         options = options,

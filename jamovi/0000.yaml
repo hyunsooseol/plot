@@ -1,16 +1,18 @@
 ---
 title: Yet Another jamovi Plotting Module
 name: vijPlots
-version: 0.6.0
+version: 0.7.0
 jms: '1.0'
 authors:
   - Vincent Jalby
 maintainer: Vincent Jalby <vincent.jalby@unilim.fr>
-date: '2024-11-10'
+date: '2024-12-11'
 type: R
 description: >-
-  A wrapper for ggplot2 main geoms (histogram, boxplot, point, bar, lollipop)
-  along with Likert and multiple response barplots.
+  Main statistical charts (histogram, boxplot, point, bar, line...) with many
+  options along with Likert and multiple response barplots. Project source is
+  available at  <a href="https://github.com/vjalby/vijPlots"
+  target="_blank">Github</a>.
 analyses:
   - title: Histogram
     name: histogram
@@ -66,6 +68,18 @@ analyses:
     menuGroup: vijPlots
     menuTitle: Lollipop Plot
     menuSubgroup: Continuous
+  - title: Line Chart
+    name: linechart
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Line Chart
+    menuSubgroup: Time Series
+  - title: Area Chart
+    name: areachart
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Area Chart
+    menuSubgroup: Time Series
 usesNative: true
 minApp: 1.0.8
 datasets:
@@ -80,5 +94,8 @@ datasets:
   - name: vijPlots
     path: vijPlots.omv
     description: A demonstration dataset for vijPlots module.
+  - name: Time Series
+    path: TimeSeries.omv
+    description: A demonstration dataset for vijPlots/Time Series functions.
 
 ...

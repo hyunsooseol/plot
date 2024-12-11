@@ -15,7 +15,9 @@ mrfrequenciesOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Cla
             showResponses = TRUE,
             showCases = TRUE,
             yaxis = "cases",
-            size = "medium", ...) {
+            size = "medium",
+            colorPalette = NULL,
+            singleColor = TRUE, ...) {
 
             super$initialize(
                 package="vijPlots",
@@ -80,6 +82,50 @@ mrfrequenciesOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Cla
                     "large",
                     "huge"),
                 default="medium")
+            private$..colorPalette <- jmvcore::OptionList$new(
+                "colorPalette",
+                colorPalette,
+                options=list(
+                    "jmv",
+                    "Set1",
+                    "Set2",
+                    "Set3",
+                    "Pastel1",
+                    "Pastel2",
+                    "Accent",
+                    "Paired",
+                    "Dark2",
+                    "Spectral",
+                    "RdYlGn",
+                    "RdYlBu",
+                    "RdGy",
+                    "RdBu",
+                    "PuOr",
+                    "PRGn",
+                    "PiYG",
+                    "BrBG",
+                    "Blues",
+                    "Greens",
+                    "Greys",
+                    "Oranges",
+                    "Purples",
+                    "Reds",
+                    "BuGn",
+                    "BuPu",
+                    "GnBu",
+                    "OrRd",
+                    "PuBu",
+                    "PuBuGn",
+                    "PuRd",
+                    "RdPu",
+                    "YlGn",
+                    "YlGnBu",
+                    "YlOrBr",
+                    "YlOrRd"))
+            private$..singleColor <- jmvcore::OptionBool$new(
+                "singleColor",
+                singleColor,
+                default=TRUE)
 
             self$.addOption(private$..resps)
             self$.addOption(private$..endorsed)
@@ -91,6 +137,8 @@ mrfrequenciesOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Cla
             self$.addOption(private$..showCases)
             self$.addOption(private$..yaxis)
             self$.addOption(private$..size)
+            self$.addOption(private$..colorPalette)
+            self$.addOption(private$..singleColor)
         }),
     active = list(
         resps = function() private$..resps$value,
@@ -102,7 +150,9 @@ mrfrequenciesOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Cla
         showResponses = function() private$..showResponses$value,
         showCases = function() private$..showCases$value,
         yaxis = function() private$..yaxis$value,
-        size = function() private$..size$value),
+        size = function() private$..size$value,
+        colorPalette = function() private$..colorPalette$value,
+        singleColor = function() private$..singleColor$value),
     private = list(
         ..resps = NA,
         ..endorsed = NA,
@@ -113,7 +163,9 @@ mrfrequenciesOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Cla
         ..showResponses = NA,
         ..showCases = NA,
         ..yaxis = NA,
-        ..size = NA)
+        ..size = NA,
+        ..colorPalette = NA,
+        ..singleColor = NA)
 )
 
 mrfrequenciesResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
@@ -174,7 +226,9 @@ mrfrequenciesResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Cla
                     "endorsed",
                     "order",
                     "yaxis",
-                    "size")))}))
+                    "size",
+                    "singleColor",
+                    "colorPalette")))}))
 
 mrfrequenciesBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
     "mrfrequenciesBase",
@@ -211,6 +265,8 @@ mrfrequenciesBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
 #' @param showCases .
 #' @param yaxis .
 #' @param size .
+#' @param colorPalette .
+#' @param singleColor .
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$responses} \tab \tab \tab \tab \tab a table \cr
@@ -235,7 +291,9 @@ mrfrequencies <- function(
     showResponses = TRUE,
     showCases = TRUE,
     yaxis = "cases",
-    size = "medium") {
+    size = "medium",
+    colorPalette,
+    singleColor = TRUE) {
 
     if ( ! requireNamespace("jmvcore", quietly=TRUE))
         stop("mrfrequencies requires jmvcore to be installed (restart may be required)")
@@ -258,7 +316,9 @@ mrfrequencies <- function(
         showResponses = showResponses,
         showCases = showCases,
         yaxis = yaxis,
-        size = size)
+        size = size,
+        colorPalette = colorPalette,
+        singleColor = singleColor)
 
     analysis <- mrfrequenciesClass$new(
         options = options,

@@ -11,15 +11,19 @@ likertplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             image$setSize(self$options$plotWidth, self$options$plotHeight)
         },
         .run = function() {
-            if( length( self$options$liks) > 1  ) {
+            if( length( self$options$liks) > 0  ) {
                 plotData <- self$data[c(self$options$liks, self$options$group)]
                 plotData <- jmvcore::naOmit(plotData)
+                if (self$options$toInteger) {
+                    for (var in self$options$liks)
+                        plotData[,var] <- as.integer(plotData[,var])
+                }
                 image <- self$results$plot
                 image$setState(plotData)
             }
         },
         .plot = function(image, ggtheme, theme, ...) {  # <-- the plot function
-            if( length( self$options$liks) < 2  )
+            if (length( self$options$liks) == 0)
                 return(FALSE)
             plotData <- image$state
             textSize = self$options$textSize
@@ -46,7 +50,7 @@ likertplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                     facetRows <- NULL
                 }
                 # Do Likert Plot (centered)
-                plot <- ggstats::gglikert(plotData, include = self$options$liks,
+                plot <- ggstats::gglikert(as_tibble(plotData), include = self$options$liks,
                                           sort = self$options$sorting,
                                           add_labels = self$options$addLabels,
                                           labels_size = (textSize/12)*3.5,
@@ -68,7 +72,7 @@ likertplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                     facetRows <- NULL
                 }
                 # Do Likert Plot (stacked)
-                plot <- ggstats::gglikert_stacked(plotData, include = self$options$liks,
+                plot <- ggstats::gglikert_stacked(as_tibble(plotData), include = self$options$liks,
                                                   sort = self$options$sorting,
                                                   add_labels = self$options$addLabels,
                                                   labels_size = (textSize/12)*3.5,

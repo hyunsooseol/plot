@@ -97,8 +97,21 @@ barplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                     plot <- plot + scale_y_continuous(labels=percent_format())
                     plot <- plot + labs(y = .("Percent"))
                     if( self$options$showLabels ) {
-                        plot <- plot + geom_text(aes(y = after_stat(prop), group=1, label = doPercent(after_stat(prop))), stat = StatProp, position = position_stack(vjust = 0.5),
-                                             color = self$options$textColor, fontface = "bold")
+                        if (self$options$textColor == "auto") { # using hex_bw
+                            if (self$options$singleColor) {
+                                plot <- plot + geom_text(aes(y = after_stat(prop), group=1, label = doPercent(after_stat(prop)),
+                                                                color = after_scale(ggstats::hex_bw(firstColorOfPalette))),
+                                                     stat = StatProp, position = position_stack(vjust = 0.5), fontface = "bold")
+                            } else {
+                                plot <- plot + geom_text(aes(y = after_stat(prop), group=1, label = doPercent(after_stat(prop)),
+                                                             fill = !!rows, color = after_scale(ggstats::hex_bw(.data$fill))),
+                                                         stat = StatProp, position = position_stack(vjust = 0.5), fontface = "bold")
+                            }
+                        } else {
+                            plot <- plot + geom_text(aes(y = after_stat(prop), group=1, label = doPercent(after_stat(prop))),
+                                                    stat = StatProp, position = position_stack(vjust = 0.5),
+                                                    color = self$options$textColor, fontface = "bold")
+                        }
                     }
                 # One variable with Count
                 } else {
@@ -109,9 +122,21 @@ barplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                         plot <- plot + guides(fill = FALSE)
                     }
                     if (self$options$showLabels) {
-                        plot <- plot + geom_text(aes(label = after_stat(count), y = after_stat(count)),
+                        if (self$options$textColor == "auto") { # using hex_bw
+                            if (self$options$singleColor) {
+                                plot <- plot + geom_text(aes(label = after_stat(count), y = after_stat(count),
+                                                             color = after_scale(ggstats::hex_bw(firstColorOfPalette))),
+                                                         stat = "count", position = position_stack(vjust = 0.5),fontface = "bold")
+                            } else {
+                                plot <- plot + geom_text(aes(label = after_stat(count), y = after_stat(count),
+                                                             fill = !!rows, color = after_scale(ggstats::hex_bw(.data$fill))),
+                                                         stat = "count", position = position_stack(vjust = 0.5), fontface = "bold")
+                            }
+                        } else {
+                            plot <- plot + geom_text(aes(label = after_stat(count), y = after_stat(count)),
                                                 stat = "count", position = position_stack(vjust = 0.5),
                                              color = self$options$textColor, fontface = "bold")
+                        }
                     }
                     plot <- plot + labs(y = .("Count"))
                 }
@@ -122,26 +147,46 @@ barplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                 if (self$options$position == "fill") {
                     plot <- plot + scale_y_continuous(labels=percent_format())
                     if (self$options$showLabels) {
-                        plot <- plot + geom_text(aes(fill = !!columns, by = !!rows, label=doPercent(after_stat(prop))), stat = StatProp, position = position_fill(.5),
-                                             color = self$options$textColor, fontface = "bold")
+                        if (self$options$textColor == "auto") { # using hex_bw
+                            plot <- plot + geom_text(aes(fill = !!columns, by = !!rows, label=doPercent(after_stat(prop)),
+                                                         color = after_scale(ggstats::hex_bw(.data$fill))),
+                                                     stat = StatProp, position = position_fill(.5), fontface = "bold")
+                        } else {
+                            plot <- plot + geom_text(aes(fill = !!columns, by = !!rows, label=doPercent(after_stat(prop))), stat = StatProp, position = position_fill(.5),
+                                                     color = self$options$textColor, fontface = "bold")
+                        }
                     }
                     plot <- plot + labs(y = .("Percent"))
                 # Two variables with count (dodge)
                 } else if (self$options$position == "dodge" || self$options$position == "dodge2") {
                     if (self$options$showLabels) {
-                        plot <- plot + geom_text(aes(fill = !!columns, label = after_stat(count), y = after_stat(count/2)),
-                                         position = position_dodge(width = 0.9),
-                                         stat = "count",
-                                         color = self$options$textColor, fontface = "bold")
+                        if (self$options$textColor == "auto") { # using hex_bw
+                            plot <- plot + geom_text(aes(fill = !!columns, label = after_stat(count), y = after_stat(count/2),
+                                                         color = after_scale(ggstats::hex_bw(.data$fill))),
+                                            position = position_dodge(width = 0.9),
+                                            stat = "count", fontface = "bold")
+                        } else {
+                            plot <- plot + geom_text(aes(fill = !!columns, label = after_stat(count), y = after_stat(count/2)),
+                                                     position = position_dodge(width = 0.9),
+                                                     stat = "count",
+                                                     color = self$options$textColor, fontface = "bold")
+                        }
                     }
                     plot <- plot + labs(y = .("Count"))
                 # Two variables with count (staked)
                 } else { # Stacked
                     if (self$options$showLabels) {
-                        plot <- plot + geom_text(aes(fill = !!columns, label = after_stat(count), y = after_stat(count)),
-                                             position = position_stack(vjust = 0.5),
-                                             stat = "count",
-                                             color = self$options$textColor, fontface = "bold")
+                        if (self$options$textColor == "auto") { # using hex_bw
+                            plot <- plot + geom_text(aes(fill = !!columns, label = after_stat(count), y = after_stat(count),
+                                                         color = after_scale(ggstats::hex_bw(.data$fill))),
+                                                position = position_stack(vjust = 0.5),
+                                                stat = "count", fontface = "bold")
+                        } else {
+                            plot <- plot + geom_text(aes(fill = !!columns, label = after_stat(count), y = after_stat(count)),
+                                                     position = position_stack(vjust = 0.5),
+                                                     stat = "count",
+                                                     color = self$options$textColor, fontface = "bold")
+                        }
                     }
                     plot <- plot + labs(y = .("Count"))
                 }

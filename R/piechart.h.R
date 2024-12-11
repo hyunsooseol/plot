@@ -13,7 +13,7 @@ piechartOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             labels = "none",
             colorPalette = NULL,
             borderColor = "black",
-            textColor = "black",
+            textColor = "auto",
             accuracy = "0.1",
             plotWidth = 0,
             plotHeight = 0,
@@ -112,8 +112,8 @@ piechartOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 options=list(
                     "black",
                     "white",
-                    "gray"),
-                default="black")
+                    "auto"),
+                default="auto")
             private$..accuracy <- jmvcore::OptionList$new(
                 "accuracy",
                 accuracy,
@@ -279,7 +279,7 @@ piechart <- function(
     labels = "none",
     colorPalette,
     borderColor = "black",
-    textColor = "black",
+    textColor = "auto",
     accuracy = "0.1",
     plotWidth = 0,
     plotHeight = 0,

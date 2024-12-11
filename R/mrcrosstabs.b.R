@@ -109,12 +109,17 @@ mrcrosstabsClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                     geom_col( aes(fill=!!zVarName), position = self$options$bartype) +
                     labs(x = self$options$optionname) + ggtheme
             }
-            #plot +
-            if ( self$options$computedValues == "responses" ) {
+
+            # Color palette
+            if (self$options$colorPalette != 'jmv') {
+                plot <- plot + scale_fill_brewer(palette = self$options$colorPalette, na.value="grey")
+            }
+
+            if (self$options$computedValues == "responses") {
                 plot <- plot + labs(y=.("% of Responses")) + scale_y_continuous(labels=percent_format())
-            } else if ( self$options$computedValues == "cases" ) {
+            } else if (self$options$computedValues == "cases") {
                 plot <- plot + labs(y=.("% of Cases")) + scale_y_continuous(labels=percent_format())
-            } else if ( self$options$computedValues == "options" ) {
+            } else if (self$options$computedValues == "options") {
                 plot <- plot + labs(y=paste(.("% within"), self$options$optionname)) + scale_y_continuous(labels=percent_format())
             } else {
                 plot <- plot + labs(y=.("Count"))

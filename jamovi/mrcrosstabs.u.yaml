@@ -155,12 +155,20 @@ children:
                     optionName: xaxis
                     optionPart: xcols
                     label: "Columns (Groups)"
-          - type: Label
-            label: "Plot Size"
+          - type: LayoutBox
+            cell:
+              column: 2
+              row: 0
+            stretchFactor: 1
             children:
-              - type: LayoutBox
-                stretchFactor: 1
-                style: inline
+              - type: Label
+                label: "Plot Size"
                 children:
                   - type: ComboBox
                     name: size
+              - type: Label
+                label: Color Options
+                children:
+                  - type: ComboBox
+                    label: ""
+                    name: colorPalette
