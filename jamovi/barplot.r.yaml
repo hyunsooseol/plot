@@ -1,0 +1,34 @@
+---
+name:  barplot
+title: Bar Plot
+jrs:   '1.1'
+
+items:
+    - name: plot
+      title: ""
+      type: Image
+      width:  600
+      height: 400
+      renderFun: .plot
+      clearWith:
+        - rows
+        - columns
+        - facet
+        - ignoreNA
+        - horizontal
+        - legendAtBottom
+        - showLabels
+        - position
+        - order
+        - yaxis1var
+        - singleColor
+        - colorPalette
+        - textColor
+        - borderColor
+        - accuracy
+        - plotWidth
+        - plotHeight
+        - facetBy
+        - facetNumber
+
+...

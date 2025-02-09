@@ -1,0 +1,230 @@
+title: Histogram
+name: histogram
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+  - type: VariableSupplier
+    persistentItems: false
+    stretchFactor: 1
+    children:
+      - type: TargetLayoutBox
+        label: Variable
+        children:
+          - type: VariablesListBox
+            name: aVar
+            maxItemCount: 1
+            isTarget: true
+      - type: TargetLayoutBox
+        label: Group
+        children:
+          - type: VariablesListBox
+            name: group
+            maxItemCount: 1
+            isTarget: true
+      - type: TargetLayoutBox
+        label: Facet
+        children:
+          - type: VariablesListBox
+            name: facet
+            maxItemCount: 1
+            isTarget: true
+  - type: LayoutBox
+    margin: large
+    style: inline
+    children:
+      - type: CheckBox
+        name: normalCurve
+        enable: (!group)
+  - type: LayoutBox
+    margin: large
+    style: inline
+    stretchFactor: 1
+    children:
+      - type: LayoutBox
+        cell:
+          column: 0
+          row: 0
+        stretchFactor: 2
+        children:
+          - type: Label
+            label: Histogram
+            children:
+              - type: RadioButton
+                name: histtype_count
+                optionName: histtype
+                optionPart: count
+                label: "Count"
+              - type: RadioButton
+                name: histtype_density
+                optionName: histtype
+                optionPart: density
+                label: "Density"
+      - type: LayoutBox
+        cell:
+          column: 1
+          row: 0
+        stretchFactor: 2
+        children:
+          - type: Label
+            label: Bin Size
+            children:
+              - type: LayoutBox
+                stretchFactor: 1
+                children:
+                  - type: TextBox
+                    name: binWidth
+                    format: number
+                  - type: TextBox
+                    name: binBoundary
+                    format: number
+      - type: LayoutBox
+        cell:
+          column: 2
+          row: 0
+        stretchFactor: 3
+        children:
+          - type: Label
+            label: Bin Color
+            children:
+              - type: LayoutBox
+                stretchFactor: 1
+                children:
+                  - type: ComboBox
+                    name: borderColor
+                  - type: ComboBox
+                    name: fillColor
+  - type: CollapseBox
+    label: Grouping Plot
+    collapsed: false
+    stretchFactor: 1
+    children:
+      - type: LayoutBox
+        margin: large
+        stretchFactor: 1
+        children:
+          - type: LayoutBox
+            cell:
+              column: 0
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: "Grouping"
+                children:
+                  - type: RadioButton
+                    name: grouping_none
+                    optionName: grouping
+                    optionPart: none
+                    label: "None"
+                  - type: RadioButton
+                    name: grouping_stack
+                    optionName: grouping
+                    optionPart: stack
+                    label: "Stacked"
+                    enable: (!(!group))
+                  - type: RadioButton
+                    name: grouping_identity
+                    optionName: grouping
+                    optionPart: identity
+                    label: "Overlapping"
+                    enable: (!(!group))
+                  - type: RadioButton
+                    name: grouping_dodge
+                    optionName: grouping
+                    optionPart: dodge
+                    label: "Grouped"
+                    enable: (!(!group))
+          - type: LayoutBox
+            cell:
+              column: 1
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: "Use Palette"
+                children:
+                  - type: RadioButton
+                    name: usePalette_forFilling
+                    optionName: usePalette
+                    optionPart: forFilling
+                    label: "For Filling"
+                    enable: (!(!group))
+                  - type: RadioButton
+                    name: usePalette_forBoder
+                    optionName: usePalette
+                    optionPart: forBorder
+                    label: "For Border"
+                    enable: (!(!group))
+          - type: LayoutBox
+            cell:
+              column: 2
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: "Color Palette"
+                children:
+                  - type: ComboBox
+                    name: colorPalette
+                    label: ""
+  - type: CollapseBox
+    label: Extra Options
+    collapsed: true
+    stretchFactor: 1
+    children:
+      - type: LayoutBox
+        margin: large
+        stretchFactor: 1
+        style: inline
+        children:
+          - type: LayoutBox
+            cell:
+              column: 0
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: Plot Size
+                children:
+                  - type: LayoutBox
+                    children:
+                      - type: TextBox
+                        name: plotWidth
+                        format: number
+                        suffix: px
+                      - type: TextBox
+                        name: plotHeight
+                        format: number
+                        suffix: px
+          - type: LayoutBox
+            cell:
+              column: 1
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: Facets
+                children:
+                  - type: LayoutBox
+                    children:
+                      - type: LayoutBox
+                        margin: large
+                        style: inline
+                        children:
+                          - type: RadioButton
+                            name: facetBy_row
+                            optionName: facetBy
+                            optionPart: row
+                            label: Row
+                            enable: (!(!facet))
+                          - type: RadioButton
+                            name: facetBy_column
+                            optionName: facetBy
+                            optionPart: column
+                            label: Column
+                            enable: (!(!facet))
+                      - type: TextBox
+                        name: facetNumber
+                        format: number
+                        enable: (!(!facet))

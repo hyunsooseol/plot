@@ -1,0 +1,110 @@
+---
+title: 'vijPlots: Yet Another jamovi Plotting Module'
+name: vijPlots
+version: 0.7.5
+jms: '1.0'
+authors:
+  - Vincent Jalby
+maintainer: Vincent Jalby <vincent.jalby@unilim.fr>
+date: '2025-02-09'
+type: R
+description: >-
+  Main statistical charts (histogram, boxplot, point, bar, line...) with many
+  options along with Likert and multiple response barplots. Project source is
+  available at  <a href="https://github.com/vjalby/vijPlots"
+  target="_blank">Github</a>.
+analyses:
+  - title: Histogram
+    name: histogram
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Histogram
+    menuSubgroup: Continuous
+  - title: Box Plot
+    name: boxplot
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Box Plot
+    menuSubgroup: Continuous
+  - title: Raincloud Plot
+    name: raincloud
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Raincloud Plot
+    menuSubgroup: Continuous
+  - title: Bar Plot
+    name: barplot
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Bar Plot
+    menuSubgroup: Categorical
+  - title: Pie Chart
+    name: piechart
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Pie Chart
+    menuSubgroup: Categorical
+  - title: Likert Plot
+    name: likertplot
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Likert Plot
+    menuSubgroup: Categorical
+  - title: Frequencies
+    name: mrfrequencies
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Frequencies
+    menuSubgroup: Multiple Response
+  - title: Crosstab
+    name: mrcrosstabs
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Crosstab
+    menuSubgroup: Multiple Response
+  - title: Scatter Plot
+    name: scatterplot
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Scatter Plot
+    menuSubgroup: Continuous
+  - title: Lollipop Plot
+    name: lollipop
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Lollipop Plot
+    menuSubgroup: Continuous
+  - title: Line Chart
+    name: linechart
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Line Chart
+    menuSubgroup: Time Series
+  - title: Area Chart
+    name: areachart
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Area Chart
+    menuSubgroup: Time Series
+usesNative: true
+minApp: 1.0.8
+datasets:
+  - name: Credit Cards
+    path: creditcards.omv
+    description: >-
+      A demonstration dataset with four dichotomous variables describing  the
+      credit cards owned by customers.
+  - name: Likert
+    path: likert.omv
+    description: A demonstration dataset for Likert scale bar plots.
+  - name: vijPlots
+    path: vijPlots.omv
+    description: A demonstration dataset for vijPlots module.
+  - name: Time Series
+    path: TimeSeries.omv
+    description: A demonstration dataset for vijPlots/Time Series functions.
+  - name: Raincloud
+    path: raincloud.omv
+    description: A demonstration dataset for vijPlots/Raincloud plot.
+
+...

@@ -1,0 +1,84 @@
+title: Box Plot
+name: boxplot
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+  - type: VariableSupplier
+    persistentItems: false
+    stretchFactor: 1
+    children:
+      - type: TargetLayoutBox
+        label: Variables
+        children:
+          - type: VariablesListBox
+            name: vars
+            isTarget: true
+      - type: TargetLayoutBox
+        label: Group
+        children:
+          - type: VariablesListBox
+            name: group
+            maxItemCount: 1
+            isTarget: true
+  - type: LayoutBox
+    margin: large
+    style: inline
+    children:
+      - type: LayoutBox
+        cell:
+          column: 0
+          row: 0
+        stretchFactor: 6
+        children:
+          - type: Label
+            label: Plot Options
+            children:
+              - type: LayoutBox
+                children:
+                  - type: CheckBox
+                    name: showOutliers
+                  - type: CheckBox
+                    name: showMean
+      - type: LayoutBox
+        cell:
+          column: 1
+          row: 0
+        stretchFactor: 5
+        children:
+          - type: Label
+            label: "Sorting (Median)"
+            children:
+              - type: LayoutBox
+                children:
+                  - type: RadioButton
+                    name: order_none
+                    optionName: order
+                    optionPart: none
+                    label: None
+                  - type: RadioButton
+                    name: order_increasing
+                    optionName: order
+                    optionPart: increasing
+                    label: Increasing
+                  - type: RadioButton
+                    name: order_decreasing
+                    optionName: order
+                    optionPart: decreasing
+                    label: Decreasing
+      - type: LayoutBox
+        cell:
+          column: 2
+          row: 0
+        stretchFactor: 9
+        children:
+          - type: Label
+            label: Color Options
+            children:
+              - type: LayoutBox
+                children:
+                  - type: ComboBox
+                    name: colorPalette
+                  - type: CheckBox
+                    name: singleColor
+                    enable: (!group)

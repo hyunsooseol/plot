@@ -1,0 +1,253 @@
+---
+name:  areachart
+title: Area Chart
+menuGroup: vijPlots
+menuSubgroup: "Time Series"
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: mode
+      title: ""
+      type: List
+      options:
+            - name: oneVariable
+              title: "One variable"
+            - name: severalVariables
+              title: "Several variables"
+
+    - name: data
+      type: Data
+
+    - name: timeVar
+      title: X-Axis
+      type: Variable
+      suggested:
+        - ordinal
+        - continuous
+
+    - name: timeVar1
+      title: X-Axis
+      type: Variable
+      suggested:
+        - ordinal
+        - continuous
+
+    - name: vars
+      title: Variables
+      type: Variables
+      suggested:
+        - continuous
+      permitted:
+        - numeric
+
+    - name: var
+      title: Variable
+      type: Variable
+      suggested:
+        - continuous
+      permitted:
+        - numeric
+
+    - name: group
+      title: Group
+      type: Variable
+      suggested:
+        - nominal
+        - ordinal
+      permitted:
+        - factor
+
+    - name: showLine
+      title: Show Lines
+      type: Bool
+      default: true
+
+    - name: position
+      title: "Position"
+      type: List
+      options:
+          - name: stack
+            title: 'Stacked'
+          - name: fill
+            title: 'Stacked 100%'
+          - name: identity
+            title: 'Overlapping'
+      default: stack
+
+    - name: colorPalette
+      title: Palette
+      type: List
+      options:
+        - title: jmv Default
+          name:  jmv
+        - title: Set 1
+          name:  Set1
+        - title: Set 2
+          name:  Set2
+        - title: Set 3
+          name:  Set3
+        - title: Pastel 1
+          name:  Pastel1
+        - title: Pastel 2
+          name:  Pastel2
+        - title: Accent
+          name:  Accent
+        - title: Paired
+          name:  Paired
+        - title: Dark 2
+          name:  Dark2
+        - title: Spectral
+          name:  Spectral
+        - title: Red, Yellow, Green
+          name:  RdYlGn
+        - title: Red, Yellow, Blue
+          name:  RdYlBu
+        - title: Red and Gray
+          name:  RdGy
+        - title: Red and Blue
+          name:  RdBu
+        - title: Orange and Purple
+          name:  PuOr
+        - title: Purple and Green
+          name:  PRGn
+        - title: Pink and Green
+          name:  PiYG
+        - title: Brown and Green
+          name:  BrBG
+        - title: Blues
+          name:  Blues
+        - title: Greens
+          name:  Greens
+        - title: Greys
+          name:  Greys
+        - title: Oranges
+          name:  Oranges
+        - title: Purples
+          name:  Purples
+        - title: Reds
+          name:  Reds
+        - title: Blue to Green
+          name:  BuGn
+        - title: Blue to Purple
+          name:  BuPu
+        - title: Green to Blue
+          name:  GnBu
+        - title: Orange to Red
+          name:  OrRd
+        - title: Purple to Blue
+          name:  PuBu
+        - title: Purple to Green
+          name:  PuBuGn
+        - title: Purple to Red
+          name:  PuRd
+        - title: Red to Purple
+          name:  RdPu
+        - title: Yellow to Green
+          name:  YlGn
+        - title: Yellow to Blue
+          name:  YlGnBu
+        - title: Yellow to Brown
+          name:  YlOrBr
+        - title: Yellow to Red
+          name:  YlOrRd
+      default: jmv
+
+    - name: isDate
+      title: X-Axis is a date
+      type: Bool
+      default: false
+
+    - name: dateFormat
+      title: Input Format
+      type: List
+      options:
+        - title: "Auto"
+          name:  "auto"
+        - title: "ISO (Y-M-D)"
+          name:  "iso"
+        - title: "US (M-D-Y)"
+          name:  "us"
+        - title: "EU (D-M-Y)"
+          name:  "eu"
+      default: "auto"
+
+    - name: displayFormat
+      title: Display Format
+      type: List
+      options:
+        - title: "2035-06-20"
+          name:  "%Y-%m-%d"
+        - title: "06/20/35"
+          name:  "%m/%d/%y"
+        - title: "20/06/35"
+          name:  "%d/%m/%y"
+        - title: "2035 June 20"
+          name:  "%Y %B %e "
+        - title: "20 June 2035"
+          name:  "%e %B %Y"
+        - title: "June 2035"
+          name:  "%B %Y"
+        - title: "2035 June"
+          name:  "%Y %B"
+        - title: "Jun"
+          name:  "%b"
+        - title: "June"
+          name:  "%B"
+        - title: "2035"
+          name:  "%Y"
+      default: "%Y-%m-%d"
+
+    - name: dateBreak
+      title: Date Breaks
+      type: List
+      options:
+        - title: "1 day"
+          name:  "1 day"
+        - title: "1 week"
+          name:  "1 week"
+        - title: "2 weeks"
+          name:  "2 week"
+        - title: "1 month"
+          name:  "1 month"
+        - title: "3 months"
+          name:  "3 month"
+        - title: "6 months"
+          name:  "6 month"
+        - title: "1 year"
+          name:  "1 year"
+        - title: "10 years"
+          name:  "10 year"
+      default: "1 month"
+
+    - name: rotateLabels
+      title: Rotate X-Axis Labels
+      type: Bool
+      default: false
+
+    - name: plotWidth
+      type: Number
+      title: Width
+      min: 0
+      max: 1000
+      default: 0
+
+    - name: plotHeight
+      type: Number
+      title: Height
+      min: 0
+      max: 1000
+      default: 0
+
+    - name: lineWidth
+      type: Number
+      title: Line Width
+      min: 0.1
+      max: 10
+      default: 0.5
+
+    - name: ylabel
+      type: String
+      title: Y-Label
+
+...
