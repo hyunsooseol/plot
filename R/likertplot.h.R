@@ -16,9 +16,11 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             addMedianLine = TRUE,
             reverseLikert = FALSE,
             toInteger = FALSE,
+            ignoreNA = TRUE,
             plotWidth = 600,
             plotHeight = 400,
             textSize = 12,
+            accuracy = "1",
             plotColor = "BrBG", ...) {
 
             super$initialize(
@@ -84,6 +86,10 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 "toInteger",
                 toInteger,
                 default=FALSE)
+            private$..ignoreNA <- jmvcore::OptionBool$new(
+                "ignoreNA",
+                ignoreNA,
+                default=TRUE)
             private$..plotWidth <- jmvcore::OptionNumber$new(
                 "plotWidth",
                 plotWidth,
@@ -102,6 +108,14 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 min=6,
                 max=24,
                 default=12)
+            private$..accuracy <- jmvcore::OptionList$new(
+                "accuracy",
+                accuracy,
+                options=list(
+                    "1",
+                    "0.1",
+                    "0.01"),
+                default="1")
             private$..plotColor <- jmvcore::OptionList$new(
                 "plotColor",
                 plotColor,
@@ -127,9 +141,11 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             self$.addOption(private$..addMedianLine)
             self$.addOption(private$..reverseLikert)
             self$.addOption(private$..toInteger)
+            self$.addOption(private$..ignoreNA)
             self$.addOption(private$..plotWidth)
             self$.addOption(private$..plotHeight)
             self$.addOption(private$..textSize)
+            self$.addOption(private$..accuracy)
             self$.addOption(private$..plotColor)
         }),
     active = list(
@@ -143,9 +159,11 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         addMedianLine = function() private$..addMedianLine$value,
         reverseLikert = function() private$..reverseLikert$value,
         toInteger = function() private$..toInteger$value,
+        ignoreNA = function() private$..ignoreNA$value,
         plotWidth = function() private$..plotWidth$value,
         plotHeight = function() private$..plotHeight$value,
         textSize = function() private$..textSize$value,
+        accuracy = function() private$..accuracy$value,
         plotColor = function() private$..plotColor$value),
     private = list(
         ..liks = NA,
@@ -158,9 +176,11 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         ..addMedianLine = NA,
         ..reverseLikert = NA,
         ..toInteger = NA,
+        ..ignoreNA = NA,
         ..plotWidth = NA,
         ..plotHeight = NA,
         ..textSize = NA,
+        ..accuracy = NA,
         ..plotColor = NA)
 )
 
@@ -196,9 +216,11 @@ likertplotResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "addMedianLine",
                     "reverseLikert",
                     "toInteger",
+                    "ignoreNA",
                     "plotWidth",
                     "plotHeight",
                     "textSize",
+                    "accuracy",
                     "plotColor")))}))
 
 likertplotBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
@@ -236,9 +258,11 @@ likertplotBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
 #' @param addMedianLine .
 #' @param reverseLikert .
 #' @param toInteger .
+#' @param ignoreNA .
 #' @param plotWidth .
 #' @param plotHeight .
 #' @param textSize .
+#' @param accuracy .
 #' @param plotColor .
 #' @return A results object containing:
 #' \tabular{llllll}{
@@ -258,9 +282,11 @@ likertplot <- function(
     addMedianLine = TRUE,
     reverseLikert = FALSE,
     toInteger = FALSE,
+    ignoreNA = TRUE,
     plotWidth = 600,
     plotHeight = 400,
     textSize = 12,
+    accuracy = "1",
     plotColor = "BrBG") {
 
     if ( ! requireNamespace("jmvcore", quietly=TRUE))
@@ -288,9 +314,11 @@ likertplot <- function(
         addMedianLine = addMedianLine,
         reverseLikert = reverseLikert,
         toInteger = toInteger,
+        ignoreNA = ignoreNA,
         plotWidth = plotWidth,
         plotHeight = plotHeight,
         textSize = textSize,
+        accuracy = accuracy,
         plotColor = plotColor)
 
     analysis <- likertplotClass$new(

@@ -31,6 +31,7 @@ msgid "%"
 msgstr ""
 
 #: barplot/options/accuracy.title
+#: likertplot/options/accuracy.title
 #: piechart/options/accuracy.title
 msgid "% accuracy"
 msgstr ""
@@ -76,6 +77,7 @@ msgstr ""
 
 #: barplot/options/accuracy/0.01.title
 #: barplot/ui[2][2][0][0]/accuracy_001.label
+#: likertplot/options/accuracy/0.01.title
 #: piechart/options/accuracy/0.01.title
 #: piechart/ui[2][0][2][0][0]/accuracy_001.label
 msgid "0.01"
@@ -83,6 +85,7 @@ msgstr ""
 
 #: barplot/options/accuracy/0.1.title
 #: barplot/ui[2][2][0][0]/accuracy_01.label
+#: likertplot/options/accuracy/0.1.title
 #: piechart/options/accuracy/0.1.title
 #: piechart/ui[2][0][2][0][0]/accuracy_01.label
 msgid "0.1"
@@ -95,6 +98,7 @@ msgstr ""
 
 #: barplot/options/accuracy/1.title
 #: barplot/ui[2][2][0][0]/accuracy_1.label
+#: likertplot/options/accuracy/1.title
 #: piechart/options/accuracy/1.title
 #: piechart/ui[2][0][2][0][0]/accuracy_1.label
 msgid "1"
@@ -176,6 +180,10 @@ msgstr ""
 
 #: package/datasets/vijPlots.description
 msgid "A demonstration dataset for vijPlots module."
+msgstr ""
+
+#: package/datasets/Raincloud.description
+msgid "A demonstration dataset for vijPlots/Raincloud plot."
 msgstr ""
 
 #: package/datasets/Time Series.description
@@ -317,6 +325,10 @@ msgstr ""
 #: boxplot/ui.title
 #: boxplot/results.title
 msgid "Box Plot"
+msgstr ""
+
+#: boxplot/ui[2][0][2][0].label
+msgid "Boxplot Elements"
 msgstr ""
 
 #: histogram/options/fillColor/#A65628.title
@@ -528,6 +540,10 @@ msgstr ""
 msgid "Dot Size"
 msgstr ""
 
+#: boxplot/options/staple.title
+msgid "Draw staples"
+msgstr ""
+
 #: R/areachart.b.R
 #: R/linechart.b.R
 msgid "en_US.utf-8"
@@ -540,6 +556,7 @@ msgstr ""
 
 #: areachart/ui[2].label
 #: barplot/ui[3].label
+#: boxplot/ui[2].label
 #: histogram/ui[4].label
 #: linechart/ui[2].label
 #: lollipop/ui[3].label
@@ -705,6 +722,7 @@ msgstr ""
 
 #: areachart/options/plotHeight.title
 #: barplot/options/plotHeight.title
+#: boxplot/options/plotHeight.title
 #: histogram/options/plotHeight.title
 #: likertplot/options/plotHeight.title
 #: linechart/options/plotHeight.title
@@ -729,6 +747,7 @@ msgid "Horizontal line at"
 msgstr ""
 
 #: barplot/options/horizontal.title
+#: boxplot/options/horizontal.title
 #: lollipop/options/horizontal.title
 #: raincloud/options/horizontal.title
 msgid "Horizontal plot"
@@ -744,6 +763,8 @@ msgid "I prefer Donuts!"
 msgstr ""
 
 #: barplot/options/ignoreNA.title
+#: boxplot/options/ignoreNA.title
+#: likertplot/options/ignoreNA.title
 msgid "Ignore NA"
 msgstr ""
 
@@ -828,6 +849,8 @@ msgstr ""
 msgid "June 2035"
 msgstr ""
 
+#: boxplot/options/label.title
+#: boxplot/ui[0][2].label
 #: piechart/options/textColor.title
 #: scatterplot/options/labelVar.title
 #: scatterplot/ui[0][3].label
@@ -845,6 +868,7 @@ msgid "Large (600x400)"
 msgstr ""
 
 #: barplot/options/legendAtBottom.title
+#: boxplot/options/legendAtBottom.title
 msgid "Legend at bottom"
 msgstr ""
 
@@ -1043,6 +1067,14 @@ msgstr ""
 msgid "None"
 msgstr ""
 
+#: boxplot/options/notchWidth.title
+msgid "Notch Width"
+msgstr ""
+
+#: boxplot/options/notches.title
+msgid "Notched box"
+msgstr ""
+
 #: raincloud/options/nudgeBoxplot.title
 msgid "Nudged boxplots"
 msgstr ""
@@ -1239,6 +1271,7 @@ msgstr ""
 #: areachart/ui[1][0][0].label
 #: barplot/ui[1][0][0].label
 #: boxplot/ui[1][0][0].label
+#: boxplot/ui[2][0][1][0].label
 #: likertplot/ui[2][0][0].label
 #: linechart/ui[1][0][0].label
 #: piechart/ui[1][0][0].label
@@ -1249,6 +1282,7 @@ msgstr ""
 
 #: areachart/ui[2][0][0][0].label
 #: barplot/ui[3][0][0][0].label
+#: boxplot/ui[2][0][0][0].label
 #: histogram/ui[4][0][0][0].label
 #: linechart/ui[2][0][0][0].label
 #: lollipop/ui[3][0][0][0].label
@@ -1372,6 +1406,8 @@ msgstr ""
 #: areachart/ui[2][0][1][0][0]/lineWidth.suffix
 #: barplot/ui[3][0][0][0][0]/plotWidth.suffix
 #: barplot/ui[3][0][0][0][0]/plotHeight.suffix
+#: boxplot/ui[2][0][0][0][0]/plotWidth.suffix
+#: boxplot/ui[2][0][0][0][0]/plotHeight.suffix
 #: histogram/ui[4][0][0][0][0]/plotWidth.suffix
 #: histogram/ui[4][0][0][0][0]/plotHeight.suffix
 #: likertplot/ui[2][1][0]/plotWidth.suffix
@@ -1389,6 +1425,10 @@ msgstr ""
 #: raincloud/ui[2][0][0][0][0]/plotWidth.suffix
 #: raincloud/ui[2][0][0][0][0]/plotHeight.suffix
 msgid "px"
+msgstr ""
+
+#: package/datasets/Raincloud.name
+msgid "Raincloud"
 msgstr ""
 
 #: package/analyses/raincloud.title
@@ -1607,7 +1647,7 @@ msgid "Show Normal Curve"
 msgstr ""
 
 #: boxplot/options/showOutliers.title
-msgid "Show Outliers"
+msgid "Show outliers"
 msgstr ""
 
 #: linechart/options/showPoint.title
@@ -1690,6 +1730,10 @@ msgstr ""
 #: barplot/options/position/fill.title
 #: barplot/ui[2][1][0][0]/position_fill.label
 msgid "Stacked 100%"
+msgstr ""
+
+#: boxplot/options/stapleWidth.title
+msgid "Staple Width"
 msgstr ""
 
 #: mrcrosstabs/ui[2][0][0].label
@@ -1794,6 +1838,10 @@ msgstr ""
 msgid "vijPlots"
 msgstr ""
 
+#: package.title
+msgid "vijPlots: Yet Another jamovi Plotting Module"
+msgstr ""
+
 #: barplot/options/borderColor/white.title
 #: barplot/options/textColor/white.title
 #: histogram/options/fillColor/white.title
@@ -1807,6 +1855,7 @@ msgstr ""
 
 #: areachart/options/plotWidth.title
 #: barplot/options/plotWidth.title
+#: boxplot/options/plotWidth.title
 #: histogram/options/binWidth.title
 #: histogram/options/plotWidth.title
 #: likertplot/options/plotWidth.title
@@ -1925,8 +1974,4 @@ msgstr ""
 #: raincloud/options/colorPalette/YlOrRd.title
 #: scatterplot/options/colorPalette/YlOrRd.title
 msgid "Yellow to Red"
-msgstr ""
-
-#: package.title
-msgid "Yet Another jamovi Plotting Module"
 msgstr ""

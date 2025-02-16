@@ -21,6 +21,13 @@ children:
             name: group
             maxItemCount: 1
             isTarget: true
+      - type: TargetLayoutBox
+        label: Label
+        children:
+          - type: VariablesListBox
+            name: label
+            maxItemCount: 1
+            isTarget: true
   - type: LayoutBox
     margin: large
     style: inline
@@ -37,9 +44,16 @@ children:
               - type: LayoutBox
                 children:
                   - type: CheckBox
+                    name: ignoreNA
+                    enable: (!(!group))
+                  - type: CheckBox
                     name: showOutliers
                   - type: CheckBox
                     name: showMean
+                  - type: CheckBox
+                    name: staple
+                  - type: CheckBox
+                    name: notches
       - type: LayoutBox
         cell:
           column: 1
@@ -47,7 +61,7 @@ children:
         stretchFactor: 5
         children:
           - type: Label
-            label: "Sorting (Median)"
+            label: Sorting (Median)
             children:
               - type: LayoutBox
                 children:
@@ -82,3 +96,62 @@ children:
                   - type: CheckBox
                     name: singleColor
                     enable: (!group)
+  - type: CollapseBox
+    label: Extra Options
+    collapsed: true
+    stretchFactor: 1
+    children:
+      - type: LayoutBox
+        margin: large
+        stretchFactor: 1
+        style: inline
+        children:
+          - type: LayoutBox
+            cell:
+              column: 0
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: Plot Size
+                children:
+                  - type: LayoutBox
+                    children:
+                      - type: TextBox
+                        name: plotWidth
+                        format: number
+                        suffix: px
+                      - type: TextBox
+                        name: plotHeight
+                        format: number
+                        suffix: px
+          - type: LayoutBox
+            cell:
+              column: 1
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: Plot Options
+                children:
+                  - type: CheckBox
+                    name: horizontal
+                  - type: CheckBox
+                    name: legendAtBottom
+          - type: LayoutBox
+            cell:
+              column: 2
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: Boxplot Elements
+                children:
+                  - type: LayoutBox
+                    children:
+                      - type: TextBox
+                        name: stapleWidth
+                        format: number
+                      - type: TextBox
+                        name: notchWidth
+                        format: number

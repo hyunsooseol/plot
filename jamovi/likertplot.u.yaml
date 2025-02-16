@@ -101,6 +101,9 @@ children:
             label: Plot Options
             children:
               - type: CheckBox
+                name: ignoreNA
+                enable: (!(!group))
+              - type: CheckBox
                 name: addLabels
               - type: CheckBox
                 name: addTotals
@@ -133,5 +136,7 @@ children:
                 name: textSize
                 format: number
                 suffix: pt
+              - type: ComboBox
+                name: accuracy
               - type: ComboBox
                 name: plotColor

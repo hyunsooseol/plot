@@ -31,6 +31,7 @@ msgid "%"
 msgstr " %"
 
 #: barplot/options/accuracy.title
+#: likertplot/options/accuracy.title
 #: piechart/options/accuracy.title
 msgid "% accuracy"
 msgstr "Précision des %"
@@ -76,6 +77,7 @@ msgstr "% dans"
 
 #: barplot/options/accuracy/0.01.title
 #: barplot/ui[2][2][0][0]/accuracy_001.label
+#: likertplot/options/accuracy/0.01.title
 #: piechart/options/accuracy/0.01.title
 #: piechart/ui[2][0][2][0][0]/accuracy_001.label
 msgid "0.01"
@@ -83,6 +85,7 @@ msgstr ""
 
 #: barplot/options/accuracy/0.1.title
 #: barplot/ui[2][2][0][0]/accuracy_01.label
+#: likertplot/options/accuracy/0.1.title
 #: piechart/options/accuracy/0.1.title
 #: piechart/ui[2][0][2][0][0]/accuracy_01.label
 msgid "0.1"
@@ -95,6 +98,7 @@ msgstr ""
 
 #: barplot/options/accuracy/1.title
 #: barplot/ui[2][2][0][0]/accuracy_1.label
+#: likertplot/options/accuracy/1.title
 #: piechart/options/accuracy/1.title
 #: piechart/ui[2][0][2][0][0]/accuracy_1.label
 msgid "1"
@@ -177,6 +181,10 @@ msgstr "Fichier de démonstration d'un diagramme en barres pour variables de Lik
 #: package/datasets/vijPlots.description
 msgid "A demonstration dataset for vijPlots module."
 msgstr "Fichier de démonstration du module vijPlots."
+
+#: package/datasets/Raincloud.description
+msgid "A demonstration dataset for vijPlots/Raincloud plot."
+msgstr ""
 
 #: package/datasets/Time Series.description
 msgid "A demonstration dataset for vijPlots/Time Series functions."
@@ -318,6 +326,10 @@ msgstr "Bord"
 #: boxplot/results.title
 msgid "Box Plot"
 msgstr "Boite à moustaches"
+
+#: boxplot/ui[2][0][2][0].label
+msgid "Boxplot Elements"
+msgstr "Éléments de la boite"
 
 #: histogram/options/fillColor/#A65628.title
 #: lollipop/options/dotColor/#A65628.title
@@ -528,6 +540,10 @@ msgstr "Point"
 msgid "Dot Size"
 msgstr "Point"
 
+#: boxplot/options/staple.title
+msgid "Draw staples"
+msgstr "Tracer les agrafes"
+
 #: R/areachart.b.R
 #: R/linechart.b.R
 msgid "en_US.utf-8"
@@ -540,6 +556,7 @@ msgstr "EU (J-M-A)"
 
 #: areachart/ui[2].label
 #: barplot/ui[3].label
+#: boxplot/ui[2].label
 #: histogram/ui[4].label
 #: linechart/ui[2].label
 #: lollipop/ui[3].label
@@ -705,6 +722,7 @@ msgstr "Grouper par"
 
 #: areachart/options/plotHeight.title
 #: barplot/options/plotHeight.title
+#: boxplot/options/plotHeight.title
 #: histogram/options/plotHeight.title
 #: likertplot/options/plotHeight.title
 #: linechart/options/plotHeight.title
@@ -729,6 +747,7 @@ msgid "Horizontal line at"
 msgstr "Ligne horizontale à "
 
 #: barplot/options/horizontal.title
+#: boxplot/options/horizontal.title
 #: lollipop/options/horizontal.title
 #: raincloud/options/horizontal.title
 msgid "Horizontal plot"
@@ -744,6 +763,8 @@ msgid "I prefer Donuts!"
 msgstr "Graphique en anneau"
 
 #: barplot/options/ignoreNA.title
+#: boxplot/options/ignoreNA.title
+#: likertplot/options/ignoreNA.title
 msgid "Ignore NA"
 msgstr "Ignorer les NA"
 
@@ -828,6 +849,8 @@ msgstr "juin"
 msgid "June 2035"
 msgstr "juin 2035"
 
+#: boxplot/options/label.title
+#: boxplot/ui[0][2].label
 #: piechart/options/textColor.title
 #: scatterplot/options/labelVar.title
 #: scatterplot/ui[0][3].label
@@ -845,6 +868,7 @@ msgid "Large (600x400)"
 msgstr "Grand (600x400)"
 
 #: barplot/options/legendAtBottom.title
+#: boxplot/options/legendAtBottom.title
 msgid "Legend at bottom"
 msgstr "Légende en bas "
 
@@ -1043,6 +1067,14 @@ msgstr "Réponses multiples - Fréquences"
 msgid "None"
 msgstr "Aucun"
 
+#: boxplot/options/notchWidth.title
+msgid "Notch Width"
+msgstr "Largeur de l'encoche"
+
+#: boxplot/options/notches.title
+msgid "Notched box"
+msgstr "Boite avec encoche"
+
 #: raincloud/options/nudgeBoxplot.title
 msgid "Nudged boxplots"
 msgstr "Boites à moustaches séparées"
@@ -1239,6 +1271,7 @@ msgstr "Graphique"
 #: areachart/ui[1][0][0].label
 #: barplot/ui[1][0][0].label
 #: boxplot/ui[1][0][0].label
+#: boxplot/ui[2][0][1][0].label
 #: likertplot/ui[2][0][0].label
 #: linechart/ui[1][0][0].label
 #: piechart/ui[1][0][0].label
@@ -1249,6 +1282,7 @@ msgstr "Options du graphique"
 
 #: areachart/ui[2][0][0][0].label
 #: barplot/ui[3][0][0][0].label
+#: boxplot/ui[2][0][0][0].label
 #: histogram/ui[4][0][0][0].label
 #: linechart/ui[2][0][0][0].label
 #: lollipop/ui[3][0][0][0].label
@@ -1372,6 +1406,8 @@ msgstr "Violets"
 #: areachart/ui[2][0][1][0][0]/lineWidth.suffix
 #: barplot/ui[3][0][0][0][0]/plotWidth.suffix
 #: barplot/ui[3][0][0][0][0]/plotHeight.suffix
+#: boxplot/ui[2][0][0][0][0]/plotWidth.suffix
+#: boxplot/ui[2][0][0][0][0]/plotHeight.suffix
 #: histogram/ui[4][0][0][0][0]/plotWidth.suffix
 #: histogram/ui[4][0][0][0][0]/plotHeight.suffix
 #: likertplot/ui[2][1][0]/plotWidth.suffix
@@ -1390,6 +1426,10 @@ msgstr "Violets"
 #: raincloud/ui[2][0][0][0][0]/plotHeight.suffix
 msgid "px"
 msgstr "px"
+
+#: package/datasets/Raincloud.name
+msgid "Raincloud"
+msgstr ""
 
 #: package/analyses/raincloud.title
 #: package/analyses/raincloud.menuTitle
@@ -1607,8 +1647,8 @@ msgid "Show Normal Curve"
 msgstr "Afficher la courbe normale"
 
 #: boxplot/options/showOutliers.title
-msgid "Show Outliers"
-msgstr "Afficher les valeurs aberrantes"
+msgid "Show outliers"
+msgstr "Afficher les extrêmes"
 
 #: linechart/options/showPoint.title
 msgid "Show Points"
@@ -1691,6 +1731,10 @@ msgstr "Empilé"
 #: barplot/ui[2][1][0][0]/position_fill.label
 msgid "Stacked 100%"
 msgstr "Empilé à 100 %"
+
+#: boxplot/options/stapleWidth.title
+msgid "Staple Width"
+msgstr "Largeur de l'agrafe"
 
 #: mrcrosstabs/ui[2][0][0].label
 #: mrfrequencies/ui[2][0][0].label
@@ -1794,6 +1838,10 @@ msgstr "Ligne verticale à"
 msgid "vijPlots"
 msgstr ""
 
+#: package.title
+msgid "vijPlots: Yet Another jamovi Plotting Module"
+msgstr ""
+
 #: barplot/options/borderColor/white.title
 #: barplot/options/textColor/white.title
 #: histogram/options/fillColor/white.title
@@ -1807,6 +1855,7 @@ msgstr "Blanc"
 
 #: areachart/options/plotWidth.title
 #: barplot/options/plotWidth.title
+#: boxplot/options/plotWidth.title
 #: histogram/options/binWidth.title
 #: histogram/options/plotWidth.title
 #: likertplot/options/plotWidth.title
@@ -1926,7 +1975,3 @@ msgstr "Jaune à vert"
 #: scatterplot/options/colorPalette/YlOrRd.title
 msgid "Yellow to Red"
 msgstr "Jaune à rouge"
-
-#: package.title
-msgid "Yet Another jamovi Plotting Module"
-msgstr "Un autre module graphique pour jamovi"

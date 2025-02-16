@@ -23,9 +23,11 @@ items:
         - addMedianLine
         - reverseLikert
         - toInteger
+        - ignoreNA
         - plotWidth
         - plotHeight
         - textSize
+        - accuracy
         - plotColor
 
 ...

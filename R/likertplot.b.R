@@ -13,6 +13,16 @@ likertplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
         .run = function() {
             if( length( self$options$liks) > 0  ) {
                 plotData <- self$data[c(self$options$liks, self$options$group)]
+                # Remove case with missing group
+                if (!is.null(self$options$group) & self$options$ignoreNA) {
+                    plotData <- subset(plotData, !is.na(plotData[self$options$group]))
+                }
+                # Change NA to "NA" (workaround to gglikert limitation with NA)
+                if (!is.null(self$options$group) & !self$options$ignoreNA) {
+                    plotData[[self$options$group]] <- factor(plotData[[self$options$group]], levels =  c(levels(plotData[[self$options$group]]),"NA"))
+                    plotData[ is.na(plotData[,self$options$group]),self$options$group] <- "NA"
+                }
+
                 #plotData <- jmvcore::naOmit(plotData)
                 if (self$options$toInteger) {
                     for (var in self$options$liks)
@@ -34,6 +44,7 @@ likertplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             } else {
                 groupingVar <- NULL
             }
+            accuracy <- as.numeric(self$options$accuracy)
             # Doing the plot
             if( self$options$type == 'centered' ) {
                 # Group setup
@@ -43,7 +54,7 @@ likertplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                         facetRows <- vars(.question)
                     } else {
                         yOption <- ".question"
-                        facetRows <- groupingVar
+                        facetRows <- vars(!!ensym(groupingVar))
                     }
                 } else {
                     yOption <- ".question"
@@ -54,6 +65,7 @@ likertplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                                           sort = self$options$sorting,
                                           add_labels = self$options$addLabels,
                                           labels_size = (textSize/12)*3.5,
+                                          labels_accuracy = accuracy,
                                           add_totals = self$options$addTotals,
                                           reverse_likert = self$options$reverseLikert,
                                           y = yOption, facet_rows = facetRows)
@@ -65,7 +77,7 @@ likertplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                         facetRows <- vars(.question)
                     } else {
                         yOption <- ".question"
-                        facetRows <- groupingVar
+                        facetRows <- vars(!!ensym(groupingVar))
                     }
                 } else {
                     yOption <- ".question"
@@ -76,6 +88,7 @@ likertplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                                                   sort = self$options$sorting,
                                                   add_labels = self$options$addLabels,
                                                   labels_size = (textSize/12)*3.5,
+                                                  labels_accuracy = accuracy,
                                                   add_median_line = self$options$addMedianLine,
                                                   reverse_fill = ! self$options$reverseLikert,
                                                   y = yOption) + facet_grid(rows = facetRows)

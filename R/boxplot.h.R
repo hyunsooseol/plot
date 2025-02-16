@@ -8,11 +8,21 @@ boxplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         initialize = function(
             vars = NULL,
             group = NULL,
+            label = NULL,
             showOutliers = TRUE,
             showMean = FALSE,
+            staple = FALSE,
+            notches = FALSE,
+            ignoreNA = TRUE,
+            horizontal = FALSE,
+            legendAtBottom = FALSE,
             colorPalette = "jmv",
             singleColor = FALSE,
-            order = "none", ...) {
+            order = "none",
+            plotWidth = 0,
+            plotHeight = 0,
+            stapleWidth = 0.25,
+            notchWidth = 0.5, ...) {
 
             super$initialize(
                 package="vijPlots",
@@ -35,6 +45,15 @@ boxplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "ordinal"),
                 permitted=list(
                     "factor"))
+            private$..label <- jmvcore::OptionVariable$new(
+                "label",
+                label,
+                suggested=list(
+                    "nominal",
+                    "id"),
+                permitted=list(
+                    "factor",
+                    "id"))
             private$..showOutliers <- jmvcore::OptionBool$new(
                 "showOutliers",
                 showOutliers,
@@ -42,6 +61,26 @@ boxplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             private$..showMean <- jmvcore::OptionBool$new(
                 "showMean",
                 showMean,
+                default=FALSE)
+            private$..staple <- jmvcore::OptionBool$new(
+                "staple",
+                staple,
+                default=FALSE)
+            private$..notches <- jmvcore::OptionBool$new(
+                "notches",
+                notches,
+                default=FALSE)
+            private$..ignoreNA <- jmvcore::OptionBool$new(
+                "ignoreNA",
+                ignoreNA,
+                default=TRUE)
+            private$..horizontal <- jmvcore::OptionBool$new(
+                "horizontal",
+                horizontal,
+                default=FALSE)
+            private$..legendAtBottom <- jmvcore::OptionBool$new(
+                "legendAtBottom",
+                legendAtBottom,
                 default=FALSE)
             private$..colorPalette <- jmvcore::OptionList$new(
                 "colorPalette",
@@ -96,31 +135,85 @@ boxplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "increasing",
                     "none"),
                 default="none")
+            private$..plotWidth <- jmvcore::OptionNumber$new(
+                "plotWidth",
+                plotWidth,
+                min=0,
+                max=1000,
+                default=0)
+            private$..plotHeight <- jmvcore::OptionNumber$new(
+                "plotHeight",
+                plotHeight,
+                min=0,
+                max=1600,
+                default=0)
+            private$..stapleWidth <- jmvcore::OptionNumber$new(
+                "stapleWidth",
+                stapleWidth,
+                min=0,
+                max=1,
+                default=0.25)
+            private$..notchWidth <- jmvcore::OptionNumber$new(
+                "notchWidth",
+                notchWidth,
+                min=0,
+                max=1,
+                default=0.5)
 
             self$.addOption(private$..vars)
             self$.addOption(private$..group)
+            self$.addOption(private$..label)
             self$.addOption(private$..showOutliers)
             self$.addOption(private$..showMean)
+            self$.addOption(private$..staple)
+            self$.addOption(private$..notches)
+            self$.addOption(private$..ignoreNA)
+            self$.addOption(private$..horizontal)
+            self$.addOption(private$..legendAtBottom)
             self$.addOption(private$..colorPalette)
             self$.addOption(private$..singleColor)
             self$.addOption(private$..order)
+            self$.addOption(private$..plotWidth)
+            self$.addOption(private$..plotHeight)
+            self$.addOption(private$..stapleWidth)
+            self$.addOption(private$..notchWidth)
         }),
     active = list(
         vars = function() private$..vars$value,
         group = function() private$..group$value,
+        label = function() private$..label$value,
         showOutliers = function() private$..showOutliers$value,
         showMean = function() private$..showMean$value,
+        staple = function() private$..staple$value,
+        notches = function() private$..notches$value,
+        ignoreNA = function() private$..ignoreNA$value,
+        horizontal = function() private$..horizontal$value,
+        legendAtBottom = function() private$..legendAtBottom$value,
         colorPalette = function() private$..colorPalette$value,
         singleColor = function() private$..singleColor$value,
-        order = function() private$..order$value),
+        order = function() private$..order$value,
+        plotWidth = function() private$..plotWidth$value,
+        plotHeight = function() private$..plotHeight$value,
+        stapleWidth = function() private$..stapleWidth$value,
+        notchWidth = function() private$..notchWidth$value),
     private = list(
         ..vars = NA,
         ..group = NA,
+        ..label = NA,
         ..showOutliers = NA,
         ..showMean = NA,
+        ..staple = NA,
+        ..notches = NA,
+        ..ignoreNA = NA,
+        ..horizontal = NA,
+        ..legendAtBottom = NA,
         ..colorPalette = NA,
         ..singleColor = NA,
-        ..order = NA)
+        ..order = NA,
+        ..plotWidth = NA,
+        ..plotHeight = NA,
+        ..stapleWidth = NA,
+        ..notchWidth = NA)
 )
 
 boxplotResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
@@ -145,11 +238,21 @@ boxplotResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 clearWith=list(
                     "vars",
                     "group",
+                    "label",
                     "showOutliers",
                     "showMean",
+                    "staple",
+                    "notches",
+                    "horizontal",
+                    "legendAtBottom",
+                    "ignoreNA",
+                    "stapleWidth",
+                    "notchWidth",
                     "colorPalette",
                     "singleColor",
-                    "order")))}))
+                    "order",
+                    "plotHeight",
+                    "plotWidth")))}))
 
 boxplotBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
     "boxplotBase",
@@ -178,11 +281,21 @@ boxplotBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
 #' @param data .
 #' @param vars .
 #' @param group .
+#' @param label .
 #' @param showOutliers .
 #' @param showMean .
+#' @param staple .
+#' @param notches .
+#' @param ignoreNA .
+#' @param horizontal .
+#' @param legendAtBottom .
 #' @param colorPalette .
 #' @param singleColor .
 #' @param order .
+#' @param plotWidth .
+#' @param plotHeight .
+#' @param stapleWidth .
+#' @param notchWidth .
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$plot} \tab \tab \tab \tab \tab an image \cr
@@ -193,33 +306,55 @@ boxplot <- function(
     data,
     vars,
     group,
+    label,
     showOutliers = TRUE,
     showMean = FALSE,
+    staple = FALSE,
+    notches = FALSE,
+    ignoreNA = TRUE,
+    horizontal = FALSE,
+    legendAtBottom = FALSE,
     colorPalette = "jmv",
     singleColor = FALSE,
-    order = "none") {
+    order = "none",
+    plotWidth = 0,
+    plotHeight = 0,
+    stapleWidth = 0.25,
+    notchWidth = 0.5) {
 
     if ( ! requireNamespace("jmvcore", quietly=TRUE))
         stop("boxplot requires jmvcore to be installed (restart may be required)")
 
     if ( ! missing(vars)) vars <- jmvcore::resolveQuo(jmvcore::enquo(vars))
     if ( ! missing(group)) group <- jmvcore::resolveQuo(jmvcore::enquo(group))
+    if ( ! missing(label)) label <- jmvcore::resolveQuo(jmvcore::enquo(label))
     if (missing(data))
         data <- jmvcore::marshalData(
             parent.frame(),
             `if`( ! missing(vars), vars, NULL),
-            `if`( ! missing(group), group, NULL))
+            `if`( ! missing(group), group, NULL),
+            `if`( ! missing(label), label, NULL))
 
     for (v in group) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
 
     options <- boxplotOptions$new(
         vars = vars,
         group = group,
+        label = label,
         showOutliers = showOutliers,
         showMean = showMean,
+        staple = staple,
+        notches = notches,
+        ignoreNA = ignoreNA,
+        horizontal = horizontal,
+        legendAtBottom = legendAtBottom,
         colorPalette = colorPalette,
         singleColor = singleColor,
-        order = order)
+        order = order,
+        plotWidth = plotWidth,
+        plotHeight = plotHeight,
+        stapleWidth = stapleWidth,
+        notchWidth = notchWidth)
 
     analysis <- boxplotClass$new(
         options = options,

@@ -100,6 +100,9 @@
             "A demonstration dataset for vijPlots module.": [
                 "Fichier de démonstration du module vijPlots."
             ],
+            "A demonstration dataset for vijPlots/Raincloud plot.": [
+                ""
+            ],
             "A demonstration dataset for vijPlots/Time Series functions.": [
                 ""
             ],
@@ -156,6 +159,9 @@
             ],
             "Box Plot": [
                 "Boite à moustaches"
+            ],
+            "Boxplot Elements": [
+                "Éléments de la boite"
             ],
             "Brown": [
                 "Marron"
@@ -249,6 +255,9 @@
             ],
             "Dot Size": [
                 "Point"
+            ],
+            "Draw staples": [
+                "Tracer les agrafes"
             ],
             "en_US.utf-8": [
                 "fr_FR.utf-8"
@@ -487,6 +496,12 @@
             "None": [
                 "Aucun"
             ],
+            "Notch Width": [
+                "Largeur de l'encoche"
+            ],
+            "Notched box": [
+                "Boite avec encoche"
+            ],
             "Nudged boxplots": [
                 "Boites à moustaches séparées"
             ],
@@ -610,6 +625,9 @@
             "px": [
                 "px"
             ],
+            "Raincloud": [
+                ""
+            ],
             "Raincloud Plot": [
                 ""
             ],
@@ -694,8 +712,8 @@
             "Show Normal Curve": [
                 "Afficher la courbe normale"
             ],
-            "Show Outliers": [
-                "Afficher les valeurs aberrantes"
+            "Show outliers": [
+                "Afficher les extrêmes"
             ],
             "Show Points": [
                 "Afficher les points"
@@ -732,6 +750,9 @@
             ],
             "Stacked 100%": [
                 "Empilé à 100 %"
+            ],
+            "Staple Width": [
+                "Largeur de l'agrafe"
             ],
             "Table": [
                 "Table"
@@ -770,6 +791,9 @@
                 "Ligne verticale à"
             ],
             "vijPlots": [
+                ""
+            ],
+            "vijPlots: Yet Another jamovi Plotting Module": [
                 ""
             ],
             "White": [
@@ -819,9 +843,6 @@
             ],
             "Yellow to Red": [
                 "Jaune à rouge"
-            ],
-            "Yet Another jamovi Plotting Module": [
-                "Un autre module graphique pour jamovi"
             ]
         }
     },

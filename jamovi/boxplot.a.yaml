@@ -27,13 +27,48 @@ options:
       permitted:
         - factor
 
+    - name: label
+      title: Label
+      type: Variable
+      suggested:
+        - nominal
+        - id
+      permitted:
+        - factor
+        - id
+
     - name: showOutliers
-      title: Show Outliers
+      title: Show outliers
       type: Bool
       default: true
 
     - name: showMean
       title: Show Mean
+      type: Bool
+      default: false
+
+    - name: staple
+      title: Draw staples
+      type: Bool
+      default: false
+
+    - name: notches
+      title: Notched box
+      type: Bool
+      default: false
+
+    - name: ignoreNA
+      title: Ignore NA
+      type: Bool
+      default: true
+
+    - name: horizontal
+      title: Horizontal plot
+      type: Bool
+      default: false
+
+    - name: legendAtBottom
+      title: Legend at bottom
       type: Bool
       default: false
 
@@ -131,5 +166,33 @@ options:
         - title: None
           name:  none
       default: none
+
+    - name: plotWidth
+      type: Number
+      title: Width
+      min: 0
+      max: 1000
+      default: 0
+
+    - name: plotHeight
+      type: Number
+      title: Height
+      min: 0
+      max: 1600
+      default: 0
+
+    - name: stapleWidth
+      type: Number
+      title: Staple Width
+      min: 0
+      max: 1
+      default: 0.25
+
+    - name: notchWidth
+      type: Number
+      title: Notch Width
+      min: 0
+      max: 1
+      default: 0.5
 
 ...

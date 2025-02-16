@@ -84,6 +84,11 @@ options:
       type: Bool
       default: false
 
+    - name: ignoreNA
+      title: Ignore NA
+      type: Bool
+      default: true
+
     - name: plotWidth
       type: Number
       title: Width
@@ -104,6 +109,18 @@ options:
       min: 6
       max: 24
       default: 12
+
+    - name: accuracy
+      title: "% accuracy"
+      type: List
+      options:
+        - title: "1"
+          name:  "1"
+        - title: "0.1"
+          name:  "0.1"
+        - title: "0.01"
+          name: "0.01"
+      default: "1"
 
     - name: plotColor
       title: "Palette"
