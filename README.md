@@ -50,7 +50,7 @@
 
 ## Version history
 
-### 2024-02-16 / 0.7.6 (beta)
+### 2024-02-17 / 0.7.7 (beta)
 
 -   Improved Boxplot: Labels (for outliers), staples, notched box, horizontal plot, legend at bottom, NA's, custom plot size
 -   Improved Likert plot: Fix a bug in Likert group/by group total computation, add % accuracy setting, ignore group NA setting.

@@ -19,7 +19,8 @@ likertplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                 }
                 # Change NA to "NA" (workaround to gglikert limitation with NA)
                 if (!is.null(self$options$group) & !self$options$ignoreNA) {
-                    plotData[[self$options$group]] <- factor(plotData[[self$options$group]], levels =  c(levels(plotData[[self$options$group]]),"NA"))
+                    if (!("NA" %in% levels(plotData[[self$options$group]])))
+                        plotData[[self$options$group]] <- factor(plotData[[self$options$group]], levels =  c(levels(plotData[[self$options$group]]),"NA"))
                     plotData[ is.na(plotData[,self$options$group]),self$options$group] <- "NA"
                 }
 
