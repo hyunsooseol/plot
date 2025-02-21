@@ -1,0 +1,139 @@
+title: Q-Q & P-P Plots
+name: qqplot
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+  - type: VariableSupplier
+    persistentItems: false
+    stretchFactor: 1
+    children:
+      - type: TargetLayoutBox
+        label: Variable
+        children:
+          - type: VariablesListBox
+            name: dep
+            maxItemCount: 1
+            isTarget: true
+      - type: TargetLayoutBox
+        label: Grouping Variable
+        children:
+          - type: VariablesListBox
+            name: group
+            maxItemCount: 1
+            isTarget: true
+  - type: LayoutBox
+    margin: large
+    style: inline
+    stretchFactor: 1
+    children:
+      - type: ComboBox
+        name: distrib
+  - type: LayoutBox
+    margin: large
+    style: inline
+    stretchFactor: 1
+    children:
+      - type: LayoutBox
+        cell:
+          column: 0
+          row: 0
+        stretchFactor: 1
+        children:
+          - type: Label
+            label: Plot Type
+            children:
+              - type: RadioButton
+                name: type_QQ
+                optionName: type
+                optionPart: QQ
+                label: Q-Q Plot
+              - type: RadioButton
+                name: type_PP
+                optionName: type
+                optionPart: PP
+                label: P-P Plot
+          - type: Label
+            label: Data Transform
+            children:
+              - type: LayoutBox
+                children:
+                  - type: CheckBox
+                    name: transLog
+                  - type: CheckBox
+                    name: standardize
+      - type: LayoutBox
+        cell:
+          column: 1
+          row: 0
+        stretchFactor: 1
+        children:
+          - type: Label
+            label: Plot Options
+            children:
+              - type: CheckBox
+                name: refLine
+                children:
+                  - type: LayoutBox
+                    style: inline
+                    children:
+                      - type: RadioButton
+                        name: refType_identity
+                        optionName: refType
+                        optionPart: identity
+                        label: Identity Line
+                        enable: (refLine)
+                      - type: RadioButton
+                        name: refType_qqline
+                        optionName: refType
+                        optionPart: qqline
+                        label: Q-Q Line
+                        enable: (refLine && type_QQ)
+              - type: CheckBox
+                name: band
+              - type: CheckBox
+                name: detrend
+  - type: CollapseBox
+    label: Extra Options
+    collapsed: true
+    stretchFactor: 1
+    children:
+      - type: LayoutBox
+        margin: large
+        stretchFactor: 1
+        style: inline
+        children:
+          - type: LayoutBox
+            cell:
+              column: 0
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: Plot Size
+                children:
+                  - type: LayoutBox
+                    children:
+                      - type: TextBox
+                        name: plotWidth
+                        format: number
+                        suffix: px
+                      - type: TextBox
+                        name: plotHeight
+                        format: number
+                        suffix: px
+          - type: LayoutBox
+            cell:
+              column: 1
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: Confidence Band Method
+                children:
+                  - type: LayoutBox
+                    children:
+                      - type: ComboBox
+                        name: methodQQ
+                      - type: ComboBox
+                        name: methodPP

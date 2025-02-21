@@ -1,0 +1,43 @@
+---
+name:  qqplot
+title: Q-Q & P-P Plots
+jrs:   '1.1'
+refs:
+    - qqplotr
+
+items:
+    - name:  ErrorMessage
+      title: ""
+      type:  Preformatted
+      visible: false
+    - name: plot
+      title: ""
+      type: Image
+      width:  400
+      height: 400
+      renderFun: .plot
+      clearWith:
+        - dep
+        - group
+        - distrib
+        - transLog
+        - standardize
+        - refLine
+        - band
+        - methodQQ
+        - methodPP
+        - detrend
+        - type
+        - refType
+        - plotWidth
+        - plotHeight
+    - name:  paramTable
+      title: "Parameter Estimates"
+      type: Table
+      rows:  1
+      columns:
+        - name: var
+          title: ''
+          type: text
+
+...

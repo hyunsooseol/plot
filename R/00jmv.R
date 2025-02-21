@@ -8,4 +8,11 @@
         `year`=2024, 
         `title`="ggstats: Extension to 'ggplot2' for Plotting Stats", 
         `publisher`="[R package]. Retrieved from https://cran.r-project.org/package=ggstats", 
-        `url`="https://cran.r-project.org/package=ggstats"))
+        `url`="https://cran.r-project.org/package=ggstats"), 
+    `qqplotr`=list(
+        `type`="software", 
+        `author`="Almeida, A., Loy, A., Hofmann, H.", 
+        `year`=2023, 
+        `title`="qqplotr: Quantile-Quantile Plot Extensions for 'ggplot2'", 
+        `publisher`="[R package]. Retrieved from https://CRAN.R-project.org/package=qqplotr", 
+        `url`="https://CRAN.R-project.org/package=qqplotr"))

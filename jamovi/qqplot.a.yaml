@@ -1,0 +1,141 @@
+---
+name:  qqplot
+title: Q-Q & P-P Plots
+menuGroup: vijPlots
+menuSubgroup: Continuous
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+
+    - name: dep
+      title: Variable
+      type: Variable
+      suggested:
+        - continuous
+      permitted:
+        - numeric
+
+    - name: group
+      title: Grouping Variable
+      type: Variable
+      suggested:
+        - nominal
+        - ordinal
+      permitted:
+        - factor
+
+    - name: distrib
+      title: Distribution
+      type: List
+      options:
+        - title: Normal
+          name:  norm
+        - title: Log-Normal
+          name:  lnorm
+        - title: Beta
+          name:  beta
+        - title: Cauchy
+          name:  cauchy
+        - title: Chi-squared
+          name:  chisq
+        - title: Exponential
+          name:  exp
+        - title: F
+          name:  f
+        - title: Gamma
+          name:  gamma
+        - title: Logistic
+          name:  logis
+        - title: Weibull
+          name:  weibull
+      default: norm
+
+    - name: transLog
+      title: Natural Log Tranform
+      type: Bool
+      default: false
+
+    - name: standardize
+      title: Standardize Values
+      type: Bool
+      default: false
+
+    - name: refLine
+      title: Reference Line
+      type: Bool
+      default: true
+
+    - name: band
+      title: Confidence Band
+      type: Bool
+      default: false
+
+    - name: methodQQ
+      title: Q-Q
+      type: List
+      options:
+        - title: "Equal Local Levels"
+          name:  ell
+        - title: Pointwise
+          name:  pointwise
+        - title: Boostrap
+          name:  boot
+        - title: Kolmogorov-Smirnov
+          name:  ks
+        - title: Tail-Sensitive (Normal)
+          name:  ts
+      default: ell
+
+    - name: methodPP
+      title: P-P
+      type: List
+      options:
+        - title: "Equal Local Levels"
+          name:  ell
+        - title: Boostrap
+          name:  boot
+      default: ell
+
+    - name: detrend
+      title: Detrended Plot
+      type: Bool
+      default: false
+
+    - name: type
+      title: Plot Type
+      type: List
+      options:
+        - title: Q-Q Plot
+          name:  QQ
+        - title: P-P Plot
+          name:  PP
+      default: QQ
+
+    - name: refType
+      title: Reference Line
+      type: List
+      options:
+        - title: Q-Q Line
+          name:  qqline
+        - title: Identity Line
+          name:  identity
+      default: identity
+
+    - name: plotWidth
+      type: Number
+      title: Width
+      min: 0
+      max: 1000
+      default: 0
+
+    - name: plotHeight
+      type: Number
+      title: Height
+      min: 0
+      max: 1600
+      default: 0
+
+...

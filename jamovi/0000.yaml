@@ -1,12 +1,12 @@
 ---
 title: 'vijPlots: Yet Another jamovi Plotting Module'
 name: vijPlots
-version: 0.7.7
+version: 0.7.9
 jms: '1.0'
 authors:
   - Vincent Jalby
 maintainer: Vincent Jalby <vincent.jalby@unilim.fr>
-date: '2025-02-17'
+date: '2025-02-21'
 type: R
 description: >-
   Main statistical charts (histogram, boxplot, point, bar, line, raincloud...)
@@ -86,6 +86,12 @@ analyses:
     menuGroup: vijPlots
     menuTitle: Area Chart
     menuSubgroup: Time Series
+  - title: Q-Q & P-P Plots
+    name: qqplot
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Q-Q & P-P Plots
+    menuSubgroup: Continuous
 usesNative: true
 minApp: 1.0.8
 datasets:

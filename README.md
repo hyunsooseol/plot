@@ -48,7 +48,15 @@
 
 ![](img/raincloud.jpg)
 
+## QQ Plot
+
+![](img/qqplot.jpg)
+
 ## Version history
+
+### 2024-07-21 / 0.7.9 (beta)
+
+-   Q-Q & P-P Plots (using qqplotr package)
 
 ### 2024-02-17 / 0.7.7 (beta)
 
@@ -96,4 +104,5 @@
 
 ## References
 
--   Larmarange J (2025). ggstats: Extension to 'ggplot2' for Plotting Stats. R package version 0.8.0, <https://github.com/larmarange/ggstats>, <https://larmarange.github.io/ggstats/>.
+-   Larmarange J (2025). ggstats: Extension to 'ggplot2' for Plotting Stats. R package version 0.8.0, <https://github.com/larmarange/ggstats>.
+-   Almeida, A., Loy, A., Hofmann, H. (2023). qqplotr: Quantile-Quantile Plot Extensions for 'ggplot2'. R package version 0.0.6, <https://github.com/aloy/qqplotr>.
