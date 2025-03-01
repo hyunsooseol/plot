@@ -75,9 +75,11 @@ barplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
 
             # ggplot with base AES and sorting
             if (self$options$order == "decreasing")
-                plot <- ggplot(plotData, aes(x = reorder(!!rows, !!rows, length, decreasing = TRUE)))
+#                plot <- ggplot(plotData, aes(x = reorder(!!rows, !!rows, length, decreasing = TRUE)))
+                plot <- ggplot(plotData, aes(x = forcats::fct_infreq(!!rows)))
             else if (self$options$order == "increasing")
-                plot <- ggplot(plotData, aes(x = reorder(!!rows, !!rows, length, decreasing = FALSE)))
+#                plot <- ggplot(plotData, aes(x = reorder(!!rows, !!rows, length, decreasing = FALSE)))
+                plot <- ggplot(plotData, aes(x = forcats::fct_rev(forcats::fct_infreq(!!rows))))
             else
                 plot <- ggplot(plotData, aes(x = !!rows))
             # Geom bar + labels
@@ -211,7 +213,6 @@ barplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             if (self$options$colorPalette != 'jmv') {
                 plot <- plot + scale_fill_brewer(palette = self$options$colorPalette, na.value="grey")
             }
-
             # Legend position
             if (self$options$legendAtBottom)
                 plot <- plot + theme(legend.position="bottom")

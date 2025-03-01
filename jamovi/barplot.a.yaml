@@ -70,7 +70,7 @@ options:
       default: none
 
     - name: yaxis1var
-      title: Y-axis (1-variable)
+      title: Y-axis (without group)
       type: List
       options:
         - title: Count

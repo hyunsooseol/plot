@@ -34,8 +34,8 @@ options:
         - nominal
         - id
       permitted:
-        - factor
         - id
+        - factor
 
     - name: showOutliers
       title: Show outliers

@@ -19,9 +19,9 @@ jmvtools::addAnalysis(name='barplot', title='Bar Plot')
 jmvtools::addAnalysis(name='lollipop', title='Lollipop Plot')
 jmvtools::addAnalysis(name='linechart', title='Line Chart')
 jmvtools::addAnalysis(name='areachart', title='Area Chart')
-jmvtools::addAnalysis(name='qqplot', title='Q-Q & P-P Plots')
 jmvtools::addAnalysis(name='raincloud', title='Raincloud Plot')
-
+jmvtools::addAnalysis(name='qqplot', title='Q-Q & P-P Plots')
+# Install module
 jmvtools::install()
 
 

@@ -13,18 +13,19 @@ likertplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
         .run = function() {
             if( length( self$options$liks) > 0  ) {
                 plotData <- self$data[c(self$options$liks, self$options$group)]
-                # Remove case with missing group
-                if (!is.null(self$options$group) & self$options$ignoreNA) {
-                    plotData <- subset(plotData, !is.na(plotData[self$options$group]))
+                # Missing group cases
+                if (!is.null(self$options$group)) {
+                    # Remove cases with missing group or change NA to "NA"
+                    if (self$options$ignoreNA)
+                        plotData <- subset(plotData, !is.na(plotData[self$options$group]))
+                    else
+                        plotData[,self$options$group] <- forcats::fct_na_value_to_level(plotData[,self$options$group], level="NA") # <NA> is not placed as last level !
                 }
-                # Change NA to "NA" (workaround to gglikert limitation with NA)
-                if (!is.null(self$options$group) & !self$options$ignoreNA) {
-                    if (!("NA" %in% levels(plotData[[self$options$group]])))
-                        plotData[[self$options$group]] <- factor(plotData[[self$options$group]], levels =  c(levels(plotData[[self$options$group]]),"NA"))
-                    plotData[ is.na(plotData[,self$options$group]),self$options$group] <- "NA"
+                # Workaround to ggstats 0.6-0.8 bug (doesn't work with integers!)
+                if (self$options$reverseLikert && !self$options$toInteger) {
+                    for (var in self$options$liks)
+                        plotData[,var] <- forcats::fct_rev(plotData[,var])
                 }
-
-                #plotData <- jmvcore::naOmit(plotData)
                 if (self$options$toInteger) {
                     for (var in self$options$liks)
                         plotData[,var] <- as.integer(plotData[,var])
@@ -33,7 +34,7 @@ likertplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                 image$setState(plotData)
             }
         },
-        .plot = function(image, ggtheme, theme, ...) {  # <-- the plot function
+        .plot = function(image, ggtheme, theme, ...) {
             if (length( self$options$liks) == 0)
                 return(FALSE)
             plotData <- image$state
@@ -68,7 +69,7 @@ likertplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                                           labels_size = (textSize/12)*3.5,
                                           labels_accuracy = accuracy,
                                           add_totals = self$options$addTotals,
-                                          reverse_likert = self$options$reverseLikert,
+                                          #reverse_likert = self$options$reverseLikert,
                                           y = yOption, facet_rows = facetRows)
             } else {
                 # Group setup
@@ -91,10 +92,14 @@ likertplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                                                   labels_size = (textSize/12)*3.5,
                                                   labels_accuracy = accuracy,
                                                   add_median_line = self$options$addMedianLine,
-                                                  reverse_fill = ! self$options$reverseLikert,
+                                                  #reverse_fill = ! self$options$reverseLikert,
                                                   y = yOption) + facet_grid(rows = facetRows)
             }
-            plot <- plot + theme(text = element_text(size=textSize)) + scale_fill_brewer(palette = self$options$plotColor)
+            plot <- plot + theme(text = element_text(size=textSize))
+            if (self$options$reverseLikert && !self$options$toInteger)
+                plot <- plot + scale_fill_brewer(palette = self$options$plotColor, direction = -1)
+            else
+                plot <- plot + scale_fill_brewer(palette = self$options$plotColor)
             return(plot)
         })
 )

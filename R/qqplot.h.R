@@ -13,13 +13,18 @@ qqplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             standardize = FALSE,
             refLine = TRUE,
             band = FALSE,
-            methodQQ = "ell",
+            methodQQ = "pointwise",
             methodPP = "ell",
             detrend = FALSE,
             type = "QQ",
             refType = "identity",
             plotWidth = 0,
-            plotHeight = 0, ...) {
+            plotHeight = 0,
+            textSize = 16,
+            paramMethod = "paraEstimate",
+            paramEstMethod = "mle",
+            param1 = 0,
+            param2 = 1, ...) {
 
             super$initialize(
                 package="vijPlots",
@@ -55,6 +60,8 @@ qqplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "f",
                     "gamma",
                     "logis",
+                    "t",
+                    "unif",
                     "weibull"),
                 default="norm")
             private$..transLog <- jmvcore::OptionBool$new(
@@ -82,7 +89,7 @@ qqplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "boot",
                     "ks",
                     "ts"),
-                default="ell")
+                default="pointwise")
             private$..methodPP <- jmvcore::OptionList$new(
                 "methodPP",
                 methodPP,
@@ -120,6 +127,34 @@ qqplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 min=0,
                 max=1600,
                 default=0)
+            private$..textSize <- jmvcore::OptionNumber$new(
+                "textSize",
+                textSize,
+                min=6,
+                max=24,
+                default=16)
+            private$..paramMethod <- jmvcore::OptionList$new(
+                "paramMethod",
+                paramMethod,
+                options=list(
+                    "paraEstimate",
+                    "paraValue"),
+                default="paraEstimate")
+            private$..paramEstMethod <- jmvcore::OptionList$new(
+                "paramEstMethod",
+                paramEstMethod,
+                options=list(
+                    "mle",
+                    "mme"),
+                default="mle")
+            private$..param1 <- jmvcore::OptionNumber$new(
+                "param1",
+                param1,
+                default=0)
+            private$..param2 <- jmvcore::OptionNumber$new(
+                "param2",
+                param2,
+                default=1)
 
             self$.addOption(private$..dep)
             self$.addOption(private$..group)
@@ -135,6 +170,11 @@ qqplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             self$.addOption(private$..refType)
             self$.addOption(private$..plotWidth)
             self$.addOption(private$..plotHeight)
+            self$.addOption(private$..textSize)
+            self$.addOption(private$..paramMethod)
+            self$.addOption(private$..paramEstMethod)
+            self$.addOption(private$..param1)
+            self$.addOption(private$..param2)
         }),
     active = list(
         dep = function() private$..dep$value,
@@ -150,7 +190,12 @@ qqplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         type = function() private$..type$value,
         refType = function() private$..refType$value,
         plotWidth = function() private$..plotWidth$value,
-        plotHeight = function() private$..plotHeight$value),
+        plotHeight = function() private$..plotHeight$value,
+        textSize = function() private$..textSize$value,
+        paramMethod = function() private$..paramMethod$value,
+        paramEstMethod = function() private$..paramEstMethod$value,
+        param1 = function() private$..param1$value,
+        param2 = function() private$..param2$value),
     private = list(
         ..dep = NA,
         ..group = NA,
@@ -165,13 +210,19 @@ qqplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         ..type = NA,
         ..refType = NA,
         ..plotWidth = NA,
-        ..plotHeight = NA)
+        ..plotHeight = NA,
+        ..textSize = NA,
+        ..paramMethod = NA,
+        ..paramEstMethod = NA,
+        ..param1 = NA,
+        ..param2 = NA)
 )
 
 qqplotResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
     "qqplotResults",
     inherit = jmvcore::Group,
     active = list(
+        helpMessage = function() private$.items[["helpMessage"]],
         ErrorMessage = function() private$.items[["ErrorMessage"]],
         plot = function() private$.items[["plot"]],
         paramTable = function() private$.items[["paramTable"]]),
@@ -184,6 +235,11 @@ qqplotResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 title="Q-Q & P-P Plots",
                 refs=list(
                     "qqplotr"))
+            self$add(jmvcore::Html$new(
+                options=options,
+                name="helpMessage",
+                title="",
+                visible=TRUE))
             self$add(jmvcore::Preformatted$new(
                 options=options,
                 name="ErrorMessage",
@@ -210,7 +266,12 @@ qqplotResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "type",
                     "refType",
                     "plotWidth",
-                    "plotHeight")))
+                    "plotHeight",
+                    "textSize",
+                    "paramMethod",
+                    "paramEstMethod",
+                    "param1",
+                    "param2")))
             self$add(jmvcore::Table$new(
                 options=options,
                 name="paramTable",
@@ -261,8 +322,14 @@ qqplotBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
 #' @param refType .
 #' @param plotWidth .
 #' @param plotHeight .
+#' @param textSize .
+#' @param paramMethod .
+#' @param paramEstMethod .
+#' @param param1 .
+#' @param param2 .
 #' @return A results object containing:
 #' \tabular{llllll}{
+#'   \code{results$helpMessage} \tab \tab \tab \tab \tab a html \cr
 #'   \code{results$ErrorMessage} \tab \tab \tab \tab \tab a preformatted \cr
 #'   \code{results$plot} \tab \tab \tab \tab \tab an image \cr
 #'   \code{results$paramTable} \tab \tab \tab \tab \tab a table \cr
@@ -284,13 +351,18 @@ qqplot <- function(
     standardize = FALSE,
     refLine = TRUE,
     band = FALSE,
-    methodQQ = "ell",
+    methodQQ = "pointwise",
     methodPP = "ell",
     detrend = FALSE,
     type = "QQ",
     refType = "identity",
     plotWidth = 0,
-    plotHeight = 0) {
+    plotHeight = 0,
+    textSize = 16,
+    paramMethod = "paraEstimate",
+    paramEstMethod = "mle",
+    param1 = 0,
+    param2 = 1) {
 
     if ( ! requireNamespace("jmvcore", quietly=TRUE))
         stop("qqplot requires jmvcore to be installed (restart may be required)")
@@ -319,7 +391,12 @@ qqplot <- function(
         type = type,
         refType = refType,
         plotWidth = plotWidth,
-        plotHeight = plotHeight)
+        plotHeight = plotHeight,
+        textSize = textSize,
+        paramMethod = paramMethod,
+        paramEstMethod = paramEstMethod,
+        param1 = param1,
+        param2 = param2)
 
     analysis <- qqplotClass$new(
         options = options,

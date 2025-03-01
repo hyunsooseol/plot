@@ -19,6 +19,15 @@
             ".": [
                 ""
             ],
+            "{detrendStr}{distribStr} {typeStr} Plot of {varStr}": [
+                ""
+            ],
+            "{stdStr}Sample Quantiles": [
+                ""
+            ],
+            "{stdStr}Sample Quantiles Deviation": [
+                ""
+            ],
             "# of rows/columns": [
                 ""
             ],
@@ -133,6 +142,9 @@
             "Bar Type": [
                 ""
             ],
+            "Beta": [
+                ""
+            ],
             "Bin Color": [
                 ""
             ],
@@ -152,6 +164,9 @@
                 ""
             ],
             "Blues": [
+                ""
+            ],
+            "Boostrap": [
                 ""
             ],
             "Border": [
@@ -181,7 +196,13 @@
             "Category Axis": [
                 ""
             ],
+            "Cauchy": [
+                ""
+            ],
             "Centered": [
+                ""
+            ],
+            "Chi-squared": [
                 ""
             ],
             "Color Options": [
@@ -200,6 +221,12 @@
                 ""
             ],
             "Columns (Groups)": [
+                ""
+            ],
+            "Confidence Band": [
+                ""
+            ],
+            "Confidence Band Methods": [
                 ""
             ],
             "Continuous": [
@@ -235,6 +262,9 @@
             "Dark 2": [
                 ""
             ],
+            "Data Transform": [
+                ""
+            ],
             "Date Breaks": [
                 ""
             ],
@@ -247,7 +277,16 @@
             "Descending": [
                 ""
             ],
+            "Detrended ": [
+                ""
+            ],
+            "Detrended Plot": [
+                ""
+            ],
             "Display Format": [
+                ""
+            ],
+            "Distribution": [
                 ""
             ],
             "Dot": [
@@ -262,10 +301,22 @@
             "en_US.utf-8": [
                 ""
             ],
+            "Equal Local Levels": [
+                ""
+            ],
+            "Estimate Parameters from Data": [
+                ""
+            ],
             "EU (D-M-Y)": [
                 ""
             ],
+            "Exponential": [
+                ""
+            ],
             "Extra Options": [
+                ""
+            ],
+            "F": [
                 ""
             ],
             "Facet": [
@@ -287,6 +338,9 @@
                 ""
             ],
             "Frequency Plot": [
+                ""
+            ],
+            "Gamma": [
                 ""
             ],
             "Gray": [
@@ -346,6 +400,9 @@
             "I prefer Donuts!": [
                 ""
             ],
+            "Identity Line": [
+                ""
+            ],
             "Ignore NA": [
                 ""
             ],
@@ -383,6 +440,9 @@
                 ""
             ],
             "June 2035": [
+                ""
+            ],
+            "Kolmogorov-Smirnov": [
                 ""
             ],
             "Label": [
@@ -445,19 +505,28 @@
             "Line Width": [
                 ""
             ],
+            "Log-normal": [
+                ""
+            ],
+            "Logistic": [
+                ""
+            ],
             "Lollipop Plot": [
                 ""
             ],
             "Lollipop Size": [
                 ""
             ],
-            "Main statistical charts (histogram, boxplot, point, bar, line...) with many options along with Likert and multiple response barplots. Project source is available at  <a href=\"https://github.com/vjalby/vijPlots\" target=\"_blank\">Github</a>.": [
+            "Main statistical charts (histogram, boxplot, point, bar, line, raincloud...) with many options along with Likert and multiple response barplots. Project source is available at  <a href=\"https://github.com/vjalby/vijPlots\" target=\"_blank\">Github</a>.": [
                 ""
             ],
             "Max": [
                 ""
             ],
             "Maximum of": [
+                ""
+            ],
+            "Maximum-likelihood (MLE)": [
                 ""
             ],
             "Mean": [
@@ -473,6 +542,9 @@
                 ""
             ],
             "Medium (400x300)": [
+                ""
+            ],
+            "Method of moments (MME)": [
                 ""
             ],
             "Min": [
@@ -493,7 +565,13 @@
             "Multiple Response Frequencies": [
                 ""
             ],
+            "Natural Log Tranform": [
+                ""
+            ],
             "None": [
+                ""
+            ],
+            "Normal": [
                 ""
             ],
             "Notch Width": [
@@ -547,10 +625,28 @@
             "Overlapping": [
                 ""
             ],
+            "P-P": [
+                ""
+            ],
+            "P-P Plot": [
+                ""
+            ],
             "Paired": [
                 ""
             ],
             "Palette": [
+                ""
+            ],
+            "Parameter 1": [
+                ""
+            ],
+            "Parameter 2": [
+                ""
+            ],
+            "Parameter Estimates": [
+                ""
+            ],
+            "Parameter Values": [
                 ""
             ],
             "Pastel 1": [
@@ -595,6 +691,9 @@
             "Point Size": [
                 ""
             ],
+            "Pointwise": [
+                ""
+            ],
             "Position": [
                 ""
             ],
@@ -623,6 +722,18 @@
                 ""
             ],
             "px": [
+                ""
+            ],
+            "Q-Q": [
+                ""
+            ],
+            "Q-Q & P-P Plots": [
+                ""
+            ],
+            "Q-Q Line": [
+                ""
+            ],
+            "Q-Q Plot": [
                 ""
             ],
             "Raincloud": [
@@ -658,6 +769,9 @@
             "Reds": [
                 ""
             ],
+            "Reference Line": [
+                ""
+            ],
             "Reference Lines": [
                 ""
             ],
@@ -677,6 +791,12 @@
                 ""
             ],
             "Same color for all bars": [
+                ""
+            ],
+            "Sample Probabilities": [
+                ""
+            ],
+            "Sample Probability Deviation": [
                 ""
             ],
             "Scatter Plot": [
@@ -751,13 +871,34 @@
             "Stacked 100%": [
                 ""
             ],
+            "Standardize Values": [
+                ""
+            ],
+            "Standardized ": [
+                ""
+            ],
+            "Standardized values": [
+                ""
+            ],
             "Staple Width": [
+                ""
+            ],
+            "Student": [
                 ""
             ],
             "Table": [
                 ""
             ],
+            "Tail-Sensitive (Normal)": [
+                ""
+            ],
             "Text": [
+                ""
+            ],
+            "Theoretical Probabilities": [
+                ""
+            ],
+            "Theoretical Quantiles": [
                 ""
             ],
             "Time Series": [
@@ -767,6 +908,9 @@
                 ""
             ],
             "Total Row": [
+                ""
+            ],
+            "Uniform": [
                 ""
             ],
             "US (M-D-Y)": [
@@ -796,6 +940,9 @@
             "vijPlots: Yet Another jamovi Plotting Module": [
                 ""
             ],
+            "Weibull": [
+                ""
+            ],
             "White": [
                 ""
             ],
@@ -808,22 +955,13 @@
             "X-Axis is a date": [
                 ""
             ],
-            "X-intercept": [
-                ""
-            ],
             "Y-Axis": [
-                ""
-            ],
-            "Y-axis (1-variable)": [
                 ""
             ],
             "Y-axis (with groups)": [
                 ""
             ],
             "Y-axis (without group)": [
-                ""
-            ],
-            "Y-intercept": [
                 ""
             ],
             "Y-Label": [

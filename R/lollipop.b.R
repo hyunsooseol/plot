@@ -79,9 +79,11 @@ lollipopClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                 orderFun <- max
 
             if (self$options$order == "decreasing")
-                plot <- ggplot(plotData, aes(x = reorder(!!groupVar,!!aVar, orderFun, decreasing = TRUE) , y = !!aVar))
+                #plot <- ggplot(plotData, aes(x = reorder(!!groupVar,!!aVar, orderFun, decreasing = TRUE) , y = !!aVar))
+                plot <- ggplot(plotData, aes(x = forcats::fct_reorder(!!groupVar,!!aVar, .fun = orderFun, .desc = TRUE) , y = !!aVar))
             else if (self$options$order == "increasing")
-                plot <- ggplot(plotData, aes(x = reorder(!!groupVar,!!aVar, orderFun, decreasing = FALSE) , y = !!aVar))
+                #plot <- ggplot(plotData, aes(x = reorder(!!groupVar,!!aVar, orderFun, decreasing = FALSE) , y = !!aVar))
+                plot <- ggplot(plotData, aes(x = forcats::fct_reorder(!!groupVar,!!aVar, .fun = orderFun, .desc = FALSE) , y = !!aVar))
             else
                 plot <- ggplot(plotData, aes(x = !!groupVar, y = !!aVar))
 

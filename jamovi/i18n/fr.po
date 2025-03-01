@@ -18,6 +18,18 @@ msgstr " n'a pas un format de date valide."
 msgid "."
 msgstr ","
 
+#: R/qqplot.b.R
+msgid "{detrendStr}{distribStr} {typeStr} Plot of {varStr}"
+msgstr "Diagramme {typeStr} {distribStr} {detrendStr}de {varStr}"
+
+#: R/qqplot.b.R
+msgid "{stdStr}Sample Quantiles"
+msgstr "Quantiles observés{stdStr}"
+
+#: R/qqplot.b.R
+msgid "{stdStr}Sample Quantiles Deviation"
+msgstr "Écarts des quantiles observés{stdStr}"
+
 #: barplot/options/facetNumber.title
 #: histogram/options/facetNumber.title
 #: lollipop/options/facetNumber.title
@@ -249,6 +261,10 @@ msgstr "Diagramme en barres"
 msgid "Bar Type"
 msgstr "Type de barres"
 
+#: qqplot/options/distrib/beta.title
+msgid "Beta"
+msgstr ""
+
 #: histogram/ui[2][2][0].label
 msgid "Bin Color"
 msgstr "Couleur des bâtons"
@@ -313,6 +329,11 @@ msgstr "Bleu à violet"
 msgid "Blues"
 msgstr "Bleus"
 
+#: qqplot/options/methodQQ/boot.title
+#: qqplot/options/methodPP/boot.title
+msgid "Boostrap"
+msgstr ""
+
 #: barplot/options/borderColor.title
 #: histogram/options/borderColor.title
 #: piechart/options/borderColor.title
@@ -373,10 +394,18 @@ msgstr "Variables qualitatives"
 msgid "Category Axis"
 msgstr "Axe des catégories"
 
+#: qqplot/options/distrib/cauchy.title
+msgid "Cauchy"
+msgstr ""
+
 #: likertplot/options/type/centered.title
 #: likertplot/ui[1][0][0]/type_centered.label
 msgid "Centered"
 msgstr "Centrées"
+
+#: qqplot/options/distrib/chisq.title
+msgid "Chi-squared"
+msgstr "Khi-deux"
 
 #: barplot/ui[1][2][0].label
 #: barplot/ui[3][0][2][0].label
@@ -417,14 +446,24 @@ msgstr "Colonne"
 msgid "Columns (Groups)"
 msgstr "Colonnes (groupes)"
 
+#: qqplot/options/band.title
+msgid "Confidence Band"
+msgstr "Bande de confiance (IC)"
+
+#: qqplot/ui[4][0][1][0].label
+msgid "Confidence Band Methods"
+msgstr "Méthodes de calcul de l'IC"
+
 #: package/analyses/histogram.menuSubgroup
 #: package/analyses/boxplot.menuSubgroup
 #: package/analyses/raincloud.menuSubgroup
 #: package/analyses/scatterplot.menuSubgroup
 #: package/analyses/lollipop.menuSubgroup
+#: package/analyses/qqplot.menuSubgroup
 #: boxplot/options.menuSubgroup
 #: histogram/options.menuSubgroup
 #: lollipop/options.menuSubgroup
+#: qqplot/options.menuSubgroup
 #: raincloud/options.menuSubgroup
 #: scatterplot/options.menuSubgroup
 msgid "Continuous"
@@ -497,6 +536,10 @@ msgstr "Tableau croisé (% des réponses)"
 msgid "Dark 2"
 msgstr ""
 
+#: qqplot/ui[2][0][1].label
+msgid "Data Transform"
+msgstr "Tranformation des données"
+
 #: areachart/options/dateBreak.title
 #: linechart/options/dateBreak.title
 msgid "Date Breaks"
@@ -526,10 +569,22 @@ msgstr "Densité"
 msgid "Descending"
 msgstr "Décroissant"
 
+#: R/qqplot.b.R
+msgid "Detrended "
+msgstr "redressé "
+
+#: qqplot/options/detrend.title
+msgid "Detrended Plot"
+msgstr "Diagramme redressé"
+
 #: areachart/options/displayFormat.title
 #: linechart/options/displayFormat.title
 msgid "Display Format"
 msgstr "Affichage"
+
+#: qqplot/options/distrib.title
+msgid "Distribution"
+msgstr ""
 
 #: lollipop/options/dotColor.title
 msgid "Dot"
@@ -549,10 +604,24 @@ msgstr "Tracer les agrafes"
 msgid "en_US.utf-8"
 msgstr "fr_FR.utf-8"
 
+#: qqplot/options/methodQQ/ell.title
+#: qqplot/options/methodPP/ell.title
+msgid "Equal Local Levels"
+msgstr ""
+
+#: qqplot/options/paramMethod/paraEstimate.title
+#: qqplot/ui[3][0][0]/paramMethod_paraEstimat.label
+msgid "Estimate Parameters from Data"
+msgstr "Estimer les paramètres à partir des données"
+
 #: areachart/options/dateFormat/eu.title
 #: linechart/options/dateFormat/eu.title
 msgid "EU (D-M-Y)"
 msgstr "EU (J-M-A)"
+
+#: qqplot/options/distrib/exp.title
+msgid "Exponential"
+msgstr "Exponentielle"
 
 #: areachart/ui[2].label
 #: barplot/ui[3].label
@@ -561,9 +630,14 @@ msgstr "EU (J-M-A)"
 #: linechart/ui[2].label
 #: lollipop/ui[3].label
 #: piechart/ui[2].label
+#: qqplot/ui[4].label
 #: raincloud/ui[2].label
 msgid "Extra Options"
 msgstr "Autres options"
+
+#: qqplot/options/distrib/f.title
+msgid "F"
+msgstr ""
 
 #: barplot/options/facet.title
 #: barplot/options/facetBy.title
@@ -611,6 +685,10 @@ msgstr "Fréquences"
 #: mrfrequencies/results/plot.title
 msgid "Frequency Plot"
 msgstr "Graphique"
+
+#: qqplot/options/distrib/gamma.title
+msgid "Gamma"
+msgstr ""
 
 #: barplot/options/borderColor/gray.title
 #: histogram/options/fillColor/#999999.title
@@ -717,6 +795,8 @@ msgstr "Graphe"
 #: likertplot/ui[0][1].label
 #: mrcrosstabs/options/group.title
 #: mrcrosstabs/ui[0][1].label
+#: qqplot/options/group.title
+#: qqplot/ui[0][1].label
 msgid "Grouping Variable"
 msgstr "Grouper par"
 
@@ -728,6 +808,7 @@ msgstr "Grouper par"
 #: linechart/options/plotHeight.title
 #: lollipop/options/plotHeight.title
 #: piechart/options/plotHeight.title
+#: qqplot/options/plotHeight.title
 #: raincloud/options/plotHeight.title
 msgid "Height"
 msgstr "Hauteur"
@@ -761,6 +842,11 @@ msgstr "Énorme (800x500)"
 #: piechart/options/donut.title
 msgid "I prefer Donuts!"
 msgstr "Graphique en anneau"
+
+#: qqplot/options/refType/identity.title
+#: qqplot/ui[2][1][0]/refLine[0]/refType_identity.label
+msgid "Identity Line"
+msgstr "Droite identitée"
 
 #: barplot/options/ignoreNA.title
 #: boxplot/options/ignoreNA.title
@@ -848,6 +934,10 @@ msgstr "juin"
 #: linechart/options/displayFormat/%B %Y.title
 msgid "June 2035"
 msgstr "juin 2035"
+
+#: qqplot/options/methodQQ/ks.title
+msgid "Kolmogorov-Smirnov"
+msgstr ""
 
 #: boxplot/options/label.title
 #: boxplot/ui[0][2].label
@@ -965,6 +1055,14 @@ msgstr "Graphique en courbes"
 msgid "Line Width"
 msgstr "Ligne"
 
+#: qqplot/options/distrib/lnorm.title
+msgid "Log-normal"
+msgstr "Log-normale"
+
+#: qqplot/options/distrib/logis.title
+msgid "Logistic"
+msgstr "Logistique"
+
 #: package/analyses/lollipop.title
 #: package/analyses/lollipop.menuTitle
 #: lollipop/options.title
@@ -978,7 +1076,7 @@ msgid "Lollipop Size"
 msgstr "Taille des lollipop"
 
 #: package.description
-msgid "Main statistical charts (histogram, boxplot, point, bar, line...) with many options along with Likert and multiple response barplots. Project source is available at  <a href=\"https://github.com/vjalby/vijPlots\" target=\"_blank\">Github</a>."
+msgid "Main statistical charts (histogram, boxplot, point, bar, line, raincloud...) with many options along with Likert and multiple response barplots. Project source is available at  <a href=\"https://github.com/vjalby/vijPlots\" target=\"_blank\">Github</a>."
 msgstr ""
 
 #: lollipop/options/yaxis/max.title
@@ -989,6 +1087,11 @@ msgstr ""
 #: R/lollipop.b.R
 msgid "Maximum of"
 msgstr "Maximum de"
+
+#: qqplot/options/paramEstMethod/mle.title
+#: qqplot/ui[3][0][0]/paramMethod_paraEstimat[0]/paramEstMethod_mle.label
+msgid "Maximum-likelihood (MLE)"
+msgstr "Maximum de vraisemblance (MLE)"
 
 #: lollipop/options/yaxis/mean.title
 #: lollipop/ui[2][0][0][0]/yaxis_mean.label
@@ -1012,6 +1115,11 @@ msgstr "Médiane de"
 #: mrfrequencies/options/size/medium.title
 msgid "Medium (400x300)"
 msgstr "Moyen (400x300)"
+
+#: qqplot/options/paramEstMethod/mme.title
+#: qqplot/ui[3][0][0]/paramMethod_paraEstimat[0]/paramEstMethod_mme.label
+msgid "Method of moments (MME)"
+msgstr "Méthode des moments (MME)"
 
 #: lollipop/options/yaxis/min.title
 #: lollipop/ui[2][0][0][1]/yaxis_min.label
@@ -1044,6 +1152,10 @@ msgstr "Réponses multiples - Tableau croisé"
 msgid "Multiple Response Frequencies"
 msgstr "Réponses multiples - Fréquences"
 
+#: qqplot/options/transLog.title
+msgid "Natural Log Tranform"
+msgstr "Transformation logarithme népérien"
+
 #: barplot/options/order/none.title
 #: barplot/options/borderColor/none.title
 #: barplot/ui[1][1][0][0]/order_none.label
@@ -1066,6 +1178,10 @@ msgstr "Réponses multiples - Fréquences"
 #: piechart/ui[1][1][0][0]/labels_none.label
 msgid "None"
 msgstr "Aucun"
+
+#: qqplot/options/distrib/norm.title
+msgid "Normal"
+msgstr "Normale"
 
 #: boxplot/options/notchWidth.title
 msgid "Notch Width"
@@ -1177,6 +1293,16 @@ msgstr "Ensemble des groupes"
 msgid "Overlapping"
 msgstr "Superposé"
 
+#: R/qqplot.b.R
+#: qqplot/options/methodPP.title
+msgid "P-P"
+msgstr ""
+
+#: qqplot/options/type/PP.title
+#: qqplot/ui[2][0][0]/type_PP.label
+msgid "P-P Plot"
+msgstr "Graphique P-P"
+
 #: areachart/options/colorPalette/Paired.title
 #: barplot/options/colorPalette/Paired.title
 #: boxplot/options/colorPalette/Paired.title
@@ -1201,6 +1327,25 @@ msgstr ""
 #: raincloud/options/colorPalette.title
 msgid "Palette"
 msgstr "Palette"
+
+#: qqplot/options/param1.title
+msgid "Parameter 1"
+msgstr "Paramètre 1"
+
+#: qqplot/options/param2.title
+msgid "Parameter 2"
+msgstr "Paramètre 2"
+
+#: R/qqplot.b.R
+#: qqplot/results/paramTable.title
+msgid "Parameter Estimates"
+msgstr "Estimation des paramètres"
+
+#: qqplot/options/paramMethod/paraValue.title
+#: qqplot/ui[3].label
+#: qqplot/ui[3][0][1]/paramMethod_paraValue.label
+msgid "Parameter Values"
+msgstr "Valeurs des paramètres"
 
 #: areachart/options/colorPalette/Pastel1.title
 #: barplot/options/colorPalette/Pastel1.title
@@ -1275,6 +1420,7 @@ msgstr "Graphique"
 #: likertplot/ui[2][0][0].label
 #: linechart/ui[1][0][0].label
 #: piechart/ui[1][0][0].label
+#: qqplot/ui[2][1][0].label
 #: raincloud/ui[1][0][0].label
 #: scatterplot/ui[1][0][0].label
 msgid "Plot Options"
@@ -1289,6 +1435,7 @@ msgstr "Options du graphique"
 #: mrcrosstabs/ui[3][0][2][0].label
 #: mrfrequencies/ui[3][0][0].label
 #: piechart/ui[2][0][0][0].label
+#: qqplot/ui[4][0][0][0].label
 #: raincloud/ui[2][0][0][0].label
 msgid "Plot Size"
 msgstr "Taille du graphique"
@@ -1299,6 +1446,8 @@ msgstr "Taille et couleur du graphique"
 
 #: likertplot/options/type.title
 #: likertplot/ui[1][0][0].label
+#: qqplot/options/type.title
+#: qqplot/ui[2][0][0].label
 msgid "Plot Type"
 msgstr "Type de graphique"
 
@@ -1316,6 +1465,10 @@ msgstr "Taile des points et lignes"
 msgid "Point Size"
 msgstr "Taille des points"
 
+#: qqplot/options/methodQQ/pointwise.title
+msgid "Pointwise"
+msgstr ""
+
 #: areachart/options/position.title
 #: histogram/options/binBoundary.title
 msgid "Position"
@@ -1326,6 +1479,7 @@ msgid "Prevent overlap"
 msgstr "Empêcher la superposition"
 
 #: likertplot/ui[2][1][0]/textSize.suffix
+#: qqplot/ui[4][0][0][0][0]/textSize.suffix
 msgid "pt"
 msgstr "pt"
 
@@ -1422,10 +1576,35 @@ msgstr "Violets"
 #: lollipop/ui[3][0][2][0]/lineWidth.suffix
 #: piechart/ui[2][0][0][0][0]/plotWidth.suffix
 #: piechart/ui[2][0][0][0][0]/plotHeight.suffix
+#: qqplot/ui[4][0][0][0][0]/plotWidth.suffix
+#: qqplot/ui[4][0][0][0][0]/plotHeight.suffix
 #: raincloud/ui[2][0][0][0][0]/plotWidth.suffix
 #: raincloud/ui[2][0][0][0][0]/plotHeight.suffix
 msgid "px"
 msgstr "px"
+
+#: R/qqplot.b.R
+#: qqplot/options/methodQQ.title
+msgid "Q-Q"
+msgstr ""
+
+#: package/analyses/qqplot.title
+#: package/analyses/qqplot.menuTitle
+#: qqplot/options.title
+#: qqplot/ui.title
+#: qqplot/results.title
+msgid "Q-Q & P-P Plots"
+msgstr "Diagrammes Q-Q & P-P"
+
+#: qqplot/options/refType/qqline.title
+#: qqplot/ui[2][1][0]/refLine[0]/refType_qqline.label
+msgid "Q-Q Line"
+msgstr "Droite Q-Q"
+
+#: qqplot/options/type/QQ.title
+#: qqplot/ui[2][0][0]/type_QQ.label
+msgid "Q-Q Plot"
+msgstr "Diagramme Q-Q"
 
 #: package/datasets/Raincloud.name
 msgid "Raincloud"
@@ -1437,7 +1616,7 @@ msgstr ""
 #: raincloud/ui.title
 #: raincloud/results.title
 msgid "Raincloud Plot"
-msgstr ""
+msgstr "Diagramme Raincloud"
 
 #: histogram/options/fillColor/#E41A1C.title
 #: lollipop/options/dotColor/#E41A1C.title
@@ -1533,6 +1712,11 @@ msgstr "Rouge, jaune et vert"
 msgid "Reds"
 msgstr "Rouges"
 
+#: qqplot/options/refLine.title
+#: qqplot/options/refType.title
+msgid "Reference Line"
+msgstr "Droite de référence"
+
 #: scatterplot/ui[1][1][0].label
 msgid "Reference Lines"
 msgstr "Lignes de référence"
@@ -1570,6 +1754,14 @@ msgstr "Lignes (Options)"
 #: mrfrequencies/options/singleColor.title
 msgid "Same color for all bars"
 msgstr "Utiliser une couleur unique"
+
+#: R/qqplot.b.R
+msgid "Sample Probabilities"
+msgstr "Probabilités observées"
+
+#: R/qqplot.b.R
+msgid "Sample Probability Deviation"
+msgstr "Écarts des probabilités observées"
 
 #: package/analyses/scatterplot.title
 #: package/analyses/scatterplot.menuTitle
@@ -1732,19 +1924,48 @@ msgstr "Empilé"
 msgid "Stacked 100%"
 msgstr "Empilé à 100 %"
 
+#: qqplot/options/standardize.title
+msgid "Standardize Values"
+msgstr "Valeurs standadisées"
+
+#: R/qqplot.b.R
+msgid "Standardized "
+msgstr " standardisés"
+
+#: R/qqplot.b.R
+msgid "Standardized values"
+msgstr "Valeurs standardisées"
+
 #: boxplot/options/stapleWidth.title
 msgid "Staple Width"
 msgstr "Largeur de l'agrafe"
+
+#: qqplot/options/distrib/t.title
+msgid "Student"
+msgstr ""
 
 #: mrcrosstabs/ui[2][0][0].label
 #: mrfrequencies/ui[2][0][0].label
 msgid "Table"
 msgstr "Table"
 
+#: qqplot/options/methodQQ/ts.title
+msgid "Tail-Sensitive (Normal)"
+msgstr ""
+
 #: barplot/options/textColor.title
 #: likertplot/options/textSize.title
+#: qqplot/options/textSize.title
 msgid "Text"
 msgstr "Texte"
+
+#: R/qqplot.b.R
+msgid "Theoretical Probabilities"
+msgstr "Probabilités théoriques"
+
+#: R/qqplot.b.R
+msgid "Theoretical Quantiles"
+msgstr "Quantiles théoriques"
 
 #: package/analyses/linechart.menuSubgroup
 #: package/analyses/areachart.menuSubgroup
@@ -1761,6 +1982,10 @@ msgstr "Total"
 #: mrcrosstabs/options/totalRow.title
 msgid "Total Row"
 msgstr "Ligne Total"
+
+#: qqplot/options/distrib/unif.title
+msgid "Uniform"
+msgstr "Uniforme"
 
 #: areachart/options/dateFormat/us.title
 #: linechart/options/dateFormat/us.title
@@ -1792,6 +2017,8 @@ msgstr "Valeurs"
 #: lollipop/ui[0][0].label
 #: piechart/options/aVar.title
 #: piechart/ui[0][0].label
+#: qqplot/options/dep.title
+#: qqplot/ui[0][0].label
 #: raincloud/options/aVar.title
 #: raincloud/ui[0][0].label
 msgid "Variable"
@@ -1822,6 +2049,7 @@ msgstr "Ligne verticale à"
 #: package/analyses/lollipop.menuGroup
 #: package/analyses/linechart.menuGroup
 #: package/analyses/areachart.menuGroup
+#: package/analyses/qqplot.menuGroup
 #: package/datasets/vijPlots.name
 #: areachart/options.menuGroup
 #: barplot/options.menuGroup
@@ -1833,6 +2061,7 @@ msgstr "Ligne verticale à"
 #: mrcrosstabs/options.menuGroup
 #: mrfrequencies/options.menuGroup
 #: piechart/options.menuGroup
+#: qqplot/options.menuGroup
 #: raincloud/options.menuGroup
 #: scatterplot/options.menuGroup
 msgid "vijPlots"
@@ -1840,6 +2069,10 @@ msgstr ""
 
 #: package.title
 msgid "vijPlots: Yet Another jamovi Plotting Module"
+msgstr ""
+
+#: qqplot/options/distrib/weibull.title
+msgid "Weibull"
 msgstr ""
 
 #: barplot/options/borderColor/white.title
@@ -1862,6 +2095,7 @@ msgstr "Blanc"
 #: linechart/options/plotWidth.title
 #: lollipop/options/plotWidth.title
 #: piechart/options/plotWidth.title
+#: qqplot/options/plotWidth.title
 #: raincloud/options/plotWidth.title
 msgid "Width"
 msgstr "Largeur"
@@ -1886,10 +2120,6 @@ msgstr "Axe X"
 msgid "X-Axis is a date"
 msgstr "L'axe X est une date"
 
-#: scatterplot/options/xinter.title
-msgid "X-intercept"
-msgstr ""
-
 #: lollipop/options/yaxis.title
 #: lollipop/ui[2][0][0].label
 #: mrfrequencies/options/yaxis.title
@@ -1898,21 +2128,14 @@ msgstr ""
 msgid "Y-Axis"
 msgstr "Axe Y"
 
-#: barplot/options/yaxis1var.title
-msgid "Y-axis (1-variable)"
-msgstr ""
-
 #: barplot/ui[2][1][0].label
 msgid "Y-axis (with groups)"
 msgstr "Axe Y (avec groupes)"
 
+#: barplot/options/yaxis1var.title
 #: barplot/ui[2][0][0].label
 msgid "Y-axis (without group)"
 msgstr "Axe Y (sans groupe)"
-
-#: scatterplot/options/yinter.title
-msgid "Y-intercept"
-msgstr ""
 
 #: areachart/options/ylabel.title
 msgid "Y-Label"

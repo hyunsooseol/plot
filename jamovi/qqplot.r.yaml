@@ -6,6 +6,10 @@ refs:
     - qqplotr
 
 items:
+    - name:  helpMessage
+      title: ""
+      type:  Html
+      visible: true
     - name:  ErrorMessage
       title: ""
       type:  Preformatted
@@ -31,6 +35,11 @@ items:
         - refType
         - plotWidth
         - plotHeight
+        - textSize
+        - paramMethod
+        - paramEstMethod
+        - param1
+        - param2
     - name:  paramTable
       title: "Parameter Estimates"
       type: Table

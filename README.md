@@ -54,20 +54,13 @@
 
 ## Version history
 
-### 2024-07-21 / 0.7.9 (beta)
+### 2025-03-01 / 0.8.0 (beta)
 
 -   Q-Q & P-P Plots (using qqplotr package)
-
-### 2024-02-17 / 0.7.7 (beta)
-
--   Improved Boxplot: Labels (for outliers), staples, notched box, horizontal plot, legend at bottom, NA's, custom plot size
--   Improved Likert plot: Fix a bug in Likert group/by group total computation, add % accuracy setting, ignore group NA setting.
-
-### 2024-02-09 / 0.7.5 (beta)
-
--   Fix label position in scatterplot
--   Fix missing values exclusion in Likert Plot
 -   Raincloud plot
+-   Improved Boxplot: Labels (for outliers), staples, notched box, horizontal plot, legend at bottom, NA's, custom plot size
+-   Improved Likert plot: Fix bugs with "by group" total computation and with "reverse staking order", fix missing values exclusion, add % accuracy setting, ignore group NA setting.
+-   Fix label position in Scatterplot
 
 ### 2024-12-11 / 0.7.0 (beta)
 

@@ -33,7 +33,7 @@ options:
       options:
         - title: Normal
           name:  norm
-        - title: Log-Normal
+        - title: Log-normal
           name:  lnorm
         - title: Beta
           name:  beta
@@ -49,6 +49,10 @@ options:
           name:  gamma
         - title: Logistic
           name:  logis
+        - title: Student
+          name:  t
+        - title: Uniform
+          name:  unif
         - title: Weibull
           name:  weibull
       default: norm
@@ -87,7 +91,7 @@ options:
           name:  ks
         - title: Tail-Sensitive (Normal)
           name:  ts
-      default: ell
+      default: pointwise
 
     - name: methodPP
       title: P-P
@@ -138,4 +142,40 @@ options:
       max: 1600
       default: 0
 
+    - name: textSize
+      type: Number
+      title: Text
+      min: 6
+      max: 24
+      default: 16
+
+    - name: paramMethod
+      title: ""
+      type: List
+      options:
+        - title: Estimate Parameters from Data
+          name:  paraEstimate
+        - title: Parameter Values
+          name:  paraValue
+      default: paraEstimate
+
+    - name: paramEstMethod
+      title: ""
+      type: List
+      options:
+        - title: Maximum-likelihood (MLE)
+          name:  mle
+        - title: Method of moments (MME)
+          name:  mme
+      default: mle
+
+    - name: param1
+      type: Number
+      title: Parameter 1
+      default: 0
+
+    - name: param2
+      type: Number
+      title: Parameter 2
+      default: 1
 ...

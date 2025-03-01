@@ -52,8 +52,8 @@ boxplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "nominal",
                     "id"),
                 permitted=list(
-                    "factor",
-                    "id"))
+                    "id",
+                    "factor"))
             private$..showOutliers <- jmvcore::OptionBool$new(
                 "showOutliers",
                 showOutliers,

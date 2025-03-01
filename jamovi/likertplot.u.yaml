@@ -113,8 +113,10 @@ children:
                 enable: (type_stacked)
               - type: CheckBox
                 name: reverseLikert
+                enable: (!toInteger)
               - type: CheckBox
                 name: toInteger
+                enable: (!reverseLikert)
       - type: LayoutBox
         cell:
           column: 1

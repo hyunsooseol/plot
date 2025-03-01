@@ -139,32 +139,33 @@ boxplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                     plot <- plot + guides(fill = FALSE)
                     if( self$options$showMean ) {
                         plot <- plot + stat_summary(aes(y = !!aVar, x = !!varName), fun = mean, geom = "point",
-                                                    color = 'red', size = 2)
+                                                    shape = 15, size = 3)
                     }
                 } else {
                     if (length(depVarNames) > 1) {
                         plot <- plot + geom_boxplot(aes(y = !!aVar, x = !!varName, fill = !!groupVar),
                         			outliers = self$options$showOutliers, staplewidth = stapleWidth,
                         			notch = notches, notchwidth = notchWidth, key_glyph = draw_key_rect)
-                       #plot <- plot + geom_boxplot(aes(y = !!aVar, x = !!varName, fill = reorder(!!groupVar, !!aVar, na.rm=TRUE, FUN = median)), outliers = self$options$showOutliers)
                         if (self$options$showMean) {
                           plot <- plot + stat_summary(aes(y = !!aVar, x = !!varName, group = !!groupVar), fun = mean, geom = "point",
-                                                      position = position_dodge(.75), color='red', size = 2, show.legend = FALSE)
+                                                      position = position_dodge(.75), shape = 15, size = 3, show.legend = FALSE)
                         }
                         if (!is.null(labelVar) & self$options$showOutliers) {
                             outlierVar <- paste0(".outliers_",varName)
                             outlierVar <- ensym(outlierVar)
                             plot <- plot + geom_text(aes(x = !!varName,y = !!aVar, label = !!outlierVar, group = !!groupVar), na.rm = TRUE,
                                                      hjust = 0, position = ggpp::position_dodgenudge(x = nudgeX, width = .75), angle = labAngle)
-                            #self$results$text$setContent(plotData)
                         }
                     } else {
                         if (self$options$order == "increasing")
-                            plot <- plot + geom_boxplot(aes(y = !!aVar, x = reorder(!!groupVar, !!aVar, na.rm=TRUE, FUN = median), fill = !!groupVar),
+                            #plot <- plot + geom_boxplot(aes(y = !!aVar, x = reorder(!!groupVar, !!aVar, na.rm=TRUE, FUN = median), fill = !!groupVar),
+                            plot <- plot + geom_boxplot(aes(y = !!aVar, x = forcats::fct_reorder(!!groupVar, !!aVar), fill = !!groupVar),
                             				outliers = self$options$showOutliers, staplewidth = stapleWidth,
                             				notch = notches, notchwidth = notchWidth)
                         else if (self$options$order == "decreasing")
-                            plot <- plot + geom_boxplot(aes(y = !!aVar, x = reorder(!!groupVar, -!!aVar, na.rm=TRUE, FUN = median), fill = !!groupVar),
+                            #plot <- plot + geom_boxplot(aes(y = !!aVar, x = reorder(!!groupVar, -!!aVar, na.rm=TRUE, FUN = median), fill = !!groupVar),
+                            plot <- plot + geom_boxplot(aes(y = !!aVar, x = forcats::fct_reorder(!!groupVar, !!aVar, .desc=TRUE), fill = !!groupVar),
+
                             				outliers = self$options$showOutliers, staplewidth = stapleWidth,
                             				notch = notches, notchwidth = notchWidth)
                         else
@@ -173,7 +174,7 @@ boxplotClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                             				notch = notches, notchwidth = notchWidth)
                         if (self$options$showMean) {
                           	plot <- plot + stat_summary(aes(y = !!aVar, x = !!groupVar), fun = mean, geom = "point",
-                                                      color = 'red', size = 2)
+                          	                            shape = 15, size = 3)
                         }
                         if (!is.null(labelVar) & self$options$showOutliers) {
                             outlierVar <- paste0(".outliers_",varName)

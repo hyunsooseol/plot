@@ -53,7 +53,10 @@ scatterplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class
                 labelVar,
                 suggested=list(
                     "nominal",
-                    "id"))
+                    "id"),
+                permitted=list(
+                    "id",
+                    "factor"))
             private$..ptSize <- jmvcore::OptionVariable$new(
                 "ptSize",
                 ptSize,
