@@ -1,12 +1,12 @@
 ---
 title: 'vijPlots: Yet Another jamovi Plotting Module'
 name: vijPlots
-version: 0.8.0
+version: 0.8.2
 jms: '1.0'
 authors:
   - Vincent Jalby
 maintainer: Vincent Jalby <vincent.jalby@unilim.fr>
-date: '2025-03-01'
+date: '2025-03-22'
 type: R
 description: >-
   Main statistical charts (histogram, boxplot, point, bar, line, raincloud...)
@@ -20,78 +20,98 @@ analyses:
     menuGroup: vijPlots
     menuTitle: Histogram
     menuSubgroup: Continuous
+    category: analyses
   - title: Box Plot
     name: boxplot
     ns: vijPlots
     menuGroup: vijPlots
     menuTitle: Box Plot
     menuSubgroup: Continuous
+    category: analyses
   - title: Raincloud Plot
     name: raincloud
     ns: vijPlots
     menuGroup: vijPlots
     menuTitle: Raincloud Plot
     menuSubgroup: Continuous
+    category: analyses
   - title: Bar Plot
     name: barplot
     ns: vijPlots
     menuGroup: vijPlots
     menuTitle: Bar Plot
     menuSubgroup: Categorical
+    category: analyses
   - title: Pie Chart
     name: piechart
     ns: vijPlots
     menuGroup: vijPlots
     menuTitle: Pie Chart
     menuSubgroup: Categorical
+    category: analyses
   - title: Likert Plot
     name: likertplot
     ns: vijPlots
     menuGroup: vijPlots
     menuTitle: Likert Plot
     menuSubgroup: Categorical
+    category: analyses
   - title: Frequencies
     name: mrfrequencies
     ns: vijPlots
     menuGroup: vijPlots
     menuTitle: Frequencies
     menuSubgroup: Multiple Response
+    category: analyses
   - title: Crosstab
     name: mrcrosstabs
     ns: vijPlots
     menuGroup: vijPlots
     menuTitle: Crosstab
     menuSubgroup: Multiple Response
+    category: analyses
   - title: Scatter Plot
     name: scatterplot
     ns: vijPlots
     menuGroup: vijPlots
     menuTitle: Scatter Plot
     menuSubgroup: Continuous
+    category: analyses
   - title: Lollipop Plot
     name: lollipop
     ns: vijPlots
     menuGroup: vijPlots
     menuTitle: Lollipop Plot
     menuSubgroup: Continuous
+    category: analyses
   - title: Line Chart
     name: linechart
     ns: vijPlots
     menuGroup: vijPlots
     menuTitle: Line Chart
     menuSubgroup: Time Series
+    category: analyses
   - title: Area Chart
     name: areachart
     ns: vijPlots
     menuGroup: vijPlots
     menuTitle: Area Chart
     menuSubgroup: Time Series
+    category: analyses
   - title: Q-Q & P-P Plots
     name: qqplot
     ns: vijPlots
     menuGroup: vijPlots
     menuTitle: Q-Q & P-P Plots
     menuSubgroup: Continuous
+    category: analyses
+  - title: Correspondence Plot
+    name: corresp
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Correspondence Plot
+    menuSubgroup: Categorical
+    category: analyses
 usesNative: true
 minApp: 1.0.8
 datasets:
@@ -112,5 +132,8 @@ datasets:
   - name: Raincloud
     path: raincloud.omv
     description: A demonstration dataset for vijPlots/Raincloud plot.
+  - name: Smoking
+    path: smoking.omv
+    description: A demonstration dataset for vijPlots/Correspondence plot.
 
 ...

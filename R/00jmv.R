@@ -15,4 +15,11 @@
         `year`=2023, 
         `title`="qqplotr: Quantile-Quantile Plot Extensions for 'ggplot2'", 
         `publisher`="[R package]. Retrieved from https://CRAN.R-project.org/package=qqplotr", 
-        `url`="https://CRAN.R-project.org/package=qqplotr"))
+        `url`="https://CRAN.R-project.org/package=qqplotr"), 
+    `ca`=list(
+        `type`="software", 
+        `author`="Greenacre, M., Nenadic, O., Friendly, M.", 
+        `year`=2020, 
+        `title`="ca: Simple, Multiple and Joint Correspondence Analysis", 
+        `publisher`="[R package]. Retrieved from https://CRAN.R-project.org/package=ca", 
+        `url`="https://CRAN.R-project.org/package=ca"))

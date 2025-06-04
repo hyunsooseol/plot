@@ -72,6 +72,11 @@ msgstr "% par ligne"
 msgid "% of Cases"
 msgstr "% d'observations"
 
+#: corresp/results/eigenvalues.columns.title
+#: corresp2/results/eigenvalues.columns.title
+msgid "% of Inertia"
+msgstr ""
+
 #: R/mrcrosstabs.b.R
 #: R/mrfrequencies.b.R
 #: mrcrosstabs/options/computedValues/responses.title
@@ -273,6 +278,13 @@ msgstr "Couleur des bâtons"
 msgid "Bin Size"
 msgstr "Taille des bâtons"
 
+#: corresp/options/showBiPlot.title
+#: corresp/results/biplot.title
+#: corresp2/options/showBiPlot.title
+#: corresp2/results/biplot.title
+msgid "Biplot"
+msgstr ""
+
 #: barplot/options/borderColor/black.title
 #: barplot/options/textColor/black.title
 #: histogram/options/fillColor/black.title
@@ -289,6 +301,16 @@ msgstr "Noir"
 #: lollipop/options/lineColor/#377EB8.title
 msgid "Blue"
 msgstr "Bleu"
+
+#: corresp/options/colorPalette/pink.title
+#: corresp2/options/colorPalette/pink.title
+msgid "Blue & Pink"
+msgstr ""
+
+#: corresp/options/colorPalette/default.title
+#: corresp2/options/colorPalette/default.title
+msgid "Blue & Red"
+msgstr ""
 
 #: areachart/options/colorPalette/BuGn.title
 #: barplot/options/colorPalette/BuGn.title
@@ -383,7 +405,11 @@ msgstr "Par variable"
 #: package/analyses/barplot.menuSubgroup
 #: package/analyses/piechart.menuSubgroup
 #: package/analyses/likertplot.menuSubgroup
+#: package/analyses/corresp.menuSubgroup
+#: package/analyses/corresp2.menuSubgroup
 #: barplot/options.menuSubgroup
+#: corresp/options.menuSubgroup
+#: corresp2/options.menuSubgroup
 #: likertplot/options.menuSubgroup
 #: piechart/options.menuSubgroup
 msgid "Categorical"
@@ -426,6 +452,10 @@ msgstr "Palette de couleurs"
 msgid "Color palette"
 msgstr "Palette de couleurs"
 
+#: corresp/options/colorPalette.title
+#: corresp/ui[3][0][1][0].label
+#: corresp2/options/colorPalette.title
+#: corresp2/ui[3][0][1][0].label
 #: lollipop/ui[2][2][0].label
 msgid "Colors"
 msgstr "Couleurs"
@@ -441,6 +471,30 @@ msgstr "Couleurs"
 msgid "Column"
 msgstr "Colonne"
 
+#: corresp/options/showColPlot.title
+#: corresp/results/colplot.title
+#: corresp2/options/showColPlot.title
+#: corresp2/results/colplot.title
+msgid "Column Plot"
+msgstr ""
+
+#: corresp/results/colProfiles.title
+#: corresp2/results/colProfiles.title
+msgid "Column Profiles"
+msgstr ""
+
+#: corresp/results/colSummary.title
+#: corresp2/results/colSummary.title
+msgid "Column Summary"
+msgstr ""
+
+#: corresp/options/cols.title
+#: corresp/ui[0][1].label
+#: corresp2/options/cols.title
+#: corresp2/ui[0][1].label
+msgid "Columns"
+msgstr ""
+
 #: mrcrosstabs/options/xaxis/xcols.title
 #: mrcrosstabs/ui[3][0][1][0]/xaxis_xcols.label
 msgid "Columns (Groups)"
@@ -453,6 +507,13 @@ msgstr "Bande de confiance (IC)"
 #: qqplot/ui[4][0][1][0].label
 msgid "Confidence Band Methods"
 msgstr "Méthodes de calcul de l'IC"
+
+#: corresp/options/showContingency.title
+#: corresp/results/contingency.title
+#: corresp2/options/showContingency.title
+#: corresp2/results/contingency.title
+msgid "Contingency Table"
+msgstr ""
 
 #: package/analyses/histogram.menuSubgroup
 #: package/analyses/boxplot.menuSubgroup
@@ -472,6 +533,23 @@ msgstr "Variables quantitatives"
 #: likertplot/options/toInteger.title
 msgid "Convert variables to integer"
 msgstr "Convertir les variables en entiers"
+
+#: package/analyses/corresp.title
+#: package/analyses/corresp.menuTitle
+#: corresp/options.title
+#: corresp/ui.title
+#: corresp/results.title
+msgid "Correspondence Plot"
+msgstr ""
+
+#: package/analyses/corresp2.title
+#: package/analyses/corresp2.menuTitle
+#: corresp2/options.title
+#: corresp2/ui.title
+#: corresp2/results.title
+#: corresp2/results/text.title
+msgid "Correspondence Plot 2"
+msgstr ""
 
 #: R/barplot.b.R
 #: R/histogram.b.R
@@ -500,6 +578,11 @@ msgstr "Valeur comptée"
 msgid "Counts"
 msgstr "Effectifs"
 
+#: corresp/options/counts.title
+#: corresp/ui[0][2].label
+msgid "Counts (optional)"
+msgstr ""
+
 #: package/datasets/Credit Cards.name
 msgid "Credit Cards"
 msgstr ""
@@ -523,6 +606,11 @@ msgstr "Tableau croisé (% des observations)"
 msgid "Crosstab (% of Responses)"
 msgstr "Tableau croisé (% des réponses)"
 
+#: corresp/results/eigenvalues.columns.title
+#: corresp2/results/eigenvalues.columns.title
+msgid "Cumulative %"
+msgstr ""
+
 #: areachart/options/colorPalette/Dark2.title
 #: barplot/options/colorPalette/Dark2.title
 #: boxplot/options/colorPalette/Dark2.title
@@ -536,6 +624,11 @@ msgstr "Tableau croisé (% des réponses)"
 msgid "Dark 2"
 msgstr ""
 
+#: corresp/options/colorPalette/dark.title
+#: corresp2/options/colorPalette/dark.title
+msgid "Dark Blue & Red"
+msgstr ""
+
 #: qqplot/ui[2][0][1].label
 msgid "Data Transform"
 msgstr "Tranformation des données"
@@ -544,6 +637,10 @@ msgstr "Tranformation des données"
 #: linechart/options/dateBreak.title
 msgid "Date Breaks"
 msgstr "Intervalle"
+
+#: corresp/results/text.title
+msgid "Debug"
+msgstr ""
 
 #: barplot/options/order/decreasing.title
 #: barplot/ui[1][1][0][0]/order_decreasing.label
@@ -576,6 +673,11 @@ msgstr "redressé "
 #: qqplot/options/detrend.title
 msgid "Detrended Plot"
 msgstr "Diagramme redressé"
+
+#: corresp/results/eigenvalues.columns.title
+#: corresp2/results/eigenvalues.columns.title
+msgid "Dimension"
+msgstr ""
 
 #: areachart/options/displayFormat.title
 #: linechart/options/displayFormat.title
@@ -626,6 +728,8 @@ msgstr "Exponentielle"
 #: areachart/ui[2].label
 #: barplot/ui[3].label
 #: boxplot/ui[2].label
+#: corresp/ui[3].label
+#: corresp2/ui[3].label
 #: histogram/ui[4].label
 #: linechart/ui[2].label
 #: lollipop/ui[3].label
@@ -803,6 +907,8 @@ msgstr "Grouper par"
 #: areachart/options/plotHeight.title
 #: barplot/options/plotHeight.title
 #: boxplot/options/plotHeight.title
+#: corresp/options/plotHeight.title
+#: corresp2/options/plotHeight.title
 #: histogram/options/plotHeight.title
 #: likertplot/options/plotHeight.title
 #: linechart/options/plotHeight.title
@@ -866,6 +972,16 @@ msgstr "Ignorer les NA"
 #: mrfrequencies/ui[2][1][0]/order_increasing.label
 msgid "Increasing"
 msgstr "Croissant"
+
+#: corresp/results/eigenvalues.columns.title
+#: corresp2/results/eigenvalues.columns.title
+msgid "Inertia"
+msgstr ""
+
+#: corresp/options/showInertia.title
+#: corresp2/options/showInertia.title
+msgid "Inertia Summary"
+msgstr ""
 
 #: areachart/options/dateFormat.title
 #: linechart/options/dateFormat.title
@@ -1079,6 +1195,11 @@ msgstr "Taille des lollipop"
 msgid "Main statistical charts (histogram, boxplot, point, bar, line, raincloud...) with many options along with Likert and multiple response barplots. Project source is available at  <a href=\"https://github.com/vjalby/vijPlots\" target=\"_blank\">Github</a>."
 msgstr ""
 
+#: R/corresp.b.R
+#: R/corresp2.b.R
+msgid "Margin"
+msgstr ""
+
 #: lollipop/options/yaxis/max.title
 #: lollipop/ui[2][0][0][1]/yaxis_max.label
 msgid "Max"
@@ -1204,6 +1325,11 @@ msgstr "Nombre d'observations"
 msgid "Number of cases:"
 msgstr "Nombre d'observations :"
 
+#: corresp/options/dimNum.title
+#: corresp2/options/dimNum.title
+msgid "Number of dimensions"
+msgstr ""
+
 #: areachart/options/mode/oneVariable.title
 msgid "One variable"
 msgstr "Une variable"
@@ -1234,6 +1360,11 @@ msgstr "Options"
 #: lollipop/options/lineColor/#FF7F00.title
 msgid "Orange"
 msgstr "Orange"
+
+#: corresp/options/colorPalette/orange.title
+#: corresp2/options/colorPalette/orange.title
+msgid "Orange & Green"
+msgstr ""
 
 #: areachart/options/colorPalette/PuOr.title
 #: barplot/options/colorPalette/PuOr.title
@@ -1429,6 +1560,8 @@ msgstr "Options du graphique"
 #: areachart/ui[2][0][0][0].label
 #: barplot/ui[3][0][0][0].label
 #: boxplot/ui[2][0][0][0].label
+#: corresp/ui[3][0][0][0].label
+#: corresp2/ui[3][0][0][0].label
 #: histogram/ui[4][0][0][0].label
 #: linechart/ui[2][0][0][0].label
 #: lollipop/ui[3][0][0][0].label
@@ -1451,6 +1584,8 @@ msgstr "Taille et couleur du graphique"
 msgid "Plot Type"
 msgstr "Type de graphique"
 
+#: corresp/ui[2][1][0].label
+#: corresp2/ui[2][1][0].label
 #: mrcrosstabs/ui[3].label
 #: mrcrosstabs/results/plot.title
 msgid "Plots"
@@ -1488,6 +1623,11 @@ msgstr "pt"
 #: lollipop/options/lineColor/#984EA3.title
 msgid "Purple"
 msgstr "Violet"
+
+#: corresp/options/colorPalette/purple.title
+#: corresp2/options/colorPalette/purple.title
+msgid "Purple & Green"
+msgstr ""
 
 #: areachart/options/colorPalette/PRGn.title
 #: barplot/options/colorPalette/PRGn.title
@@ -1562,6 +1702,10 @@ msgstr "Violets"
 #: barplot/ui[3][0][0][0][0]/plotHeight.suffix
 #: boxplot/ui[2][0][0][0][0]/plotWidth.suffix
 #: boxplot/ui[2][0][0][0][0]/plotHeight.suffix
+#: corresp/ui[3][0][0][0][0]/plotWidth.suffix
+#: corresp/ui[3][0][0][0][0]/plotHeight.suffix
+#: corresp2/ui[3][0][0][0][0]/plotWidth.suffix
+#: corresp2/ui[3][0][0][0][0]/plotHeight.suffix
 #: histogram/ui[4][0][0][0][0]/plotWidth.suffix
 #: histogram/ui[4][0][0][0][0]/plotHeight.suffix
 #: likertplot/ui[2][1][0]/plotWidth.suffix
@@ -1745,6 +1889,40 @@ msgstr "Pivoter les étiquettes"
 msgid "Row"
 msgstr "Ligne"
 
+#: corresp/options/showProfiles.title
+#: corresp2/options/showProfiles.title
+msgid "Row and Column Profiles"
+msgstr ""
+
+#: corresp/options/showSummaries.title
+#: corresp2/options/showSummaries.title
+msgid "Row and Column Summaries"
+msgstr ""
+
+#: corresp/options/showRowPlot.title
+#: corresp/results/rowplot.title
+#: corresp2/options/showRowPlot.title
+#: corresp2/results/rowplot.title
+msgid "Row Plot"
+msgstr ""
+
+#: corresp/results/rowProfiles.title
+#: corresp2/results/rowProfiles.title
+msgid "Row Profiles"
+msgstr ""
+
+#: corresp/results/rowSummary.title
+#: corresp2/results/rowSummary.title
+msgid "Row Summary"
+msgstr ""
+
+#: corresp/options/rows.title
+#: corresp/ui[0][0].label
+#: corresp2/options/rows.title
+#: corresp2/ui[0][0].label
+msgid "Rows"
+msgstr ""
+
 #: mrcrosstabs/options/xaxis/xrows.title
 #: mrcrosstabs/ui[3][0][1][0]/xaxis_xrows.label
 msgid "Rows (Options)"
@@ -1869,10 +2047,20 @@ msgstr "Juxtaposé"
 msgid "Side-by-side 2"
 msgstr "Juxtaposé 2"
 
+#: corresp/results/eigenvalues.columns.title
+#: corresp2/results/eigenvalues.columns.title
+msgid "Singular Value"
+msgstr ""
+
 #: mrcrosstabs/options/size/small.title
 #: mrfrequencies/options/size/small.title
 msgid "Small (300x200)"
 msgstr "Petit (300x200)"
+
+#: corresp/ui[1][0].label
+#: corresp2/ui[1][0].label
+msgid "Solution"
+msgstr ""
 
 #: barplot/options/order.title
 #: barplot/ui[1][1][0].label
@@ -1944,10 +2132,28 @@ msgstr "Largeur de l'agrafe"
 msgid "Student"
 msgstr ""
 
+#: corresp/results/eigenvalues.title
+#: corresp2/results/eigenvalues.title
+msgid "Summary"
+msgstr ""
+
+#: corresp/options/supplementaryCols.title
+msgid "Supplementary Columns"
+msgstr ""
+
+#: corresp/options/supplementaryRows.title
+msgid "Supplementary Rows"
+msgstr ""
+
 #: mrcrosstabs/ui[2][0][0].label
 #: mrfrequencies/ui[2][0][0].label
 msgid "Table"
 msgstr "Table"
+
+#: corresp/ui[2][0][0].label
+#: corresp2/ui[2][0][0].label
+msgid "Tables"
+msgstr ""
 
 #: qqplot/options/methodQQ/ts.title
 msgid "Tail-Sensitive (Normal)"
@@ -1975,6 +2181,8 @@ msgstr "Quantiles théoriques"
 msgid "Time Series"
 msgstr "Séries temporelles"
 
+#: R/corresp.b.R
+#: R/corresp2.b.R
 #: mrfrequencies/options/showTotal.title
 msgid "Total"
 msgstr "Total"
@@ -2050,10 +2258,14 @@ msgstr "Ligne verticale à"
 #: package/analyses/linechart.menuGroup
 #: package/analyses/areachart.menuGroup
 #: package/analyses/qqplot.menuGroup
+#: package/analyses/corresp.menuGroup
+#: package/analyses/corresp2.menuGroup
 #: package/datasets/vijPlots.name
 #: areachart/options.menuGroup
 #: barplot/options.menuGroup
 #: boxplot/options.menuGroup
+#: corresp/options.menuGroup
+#: corresp2/options.menuGroup
 #: histogram/options.menuGroup
 #: likertplot/options.menuGroup
 #: linechart/options.menuGroup
@@ -2089,6 +2301,8 @@ msgstr "Blanc"
 #: areachart/options/plotWidth.title
 #: barplot/options/plotWidth.title
 #: boxplot/options/plotWidth.title
+#: corresp/options/plotWidth.title
+#: corresp2/options/plotWidth.title
 #: histogram/options/binWidth.title
 #: histogram/options/plotWidth.title
 #: likertplot/options/plotWidth.title
@@ -2115,6 +2329,11 @@ msgstr "Largeur"
 msgid "X-Axis"
 msgstr "Axe X"
 
+#: corresp/options/xaxis.title
+#: corresp2/options/xaxis.title
+msgid "X-axis"
+msgstr ""
+
 #: areachart/options/isDate.title
 #: linechart/options/isDate.title
 msgid "X-Axis is a date"
@@ -2127,6 +2346,11 @@ msgstr "L'axe X est une date"
 #: scatterplot/ui[0][1].label
 msgid "Y-Axis"
 msgstr "Axe Y"
+
+#: corresp/options/yaxis.title
+#: corresp2/options/yaxis.title
+msgid "Y-axis"
+msgstr ""
 
 #: barplot/ui[2][1][0].label
 msgid "Y-axis (with groups)"

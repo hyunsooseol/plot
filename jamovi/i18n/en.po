@@ -22,6 +22,10 @@ msgstr ""
 msgid "{detrendStr}{distribStr} {typeStr} Plot of {varStr}"
 msgstr ""
 
+#: R/corresp.b.R
+msgid "{normalization} normalization"
+msgstr ""
+
 #: R/qqplot.b.R
 msgid "{stdStr}Sample Quantiles"
 msgstr ""
@@ -70,6 +74,10 @@ msgstr ""
 #: mrfrequencies/ui[2][2][0]/yaxis_cases.label
 #: mrfrequencies/results/responses.columns.title
 msgid "% of Cases"
+msgstr ""
+
+#: corresp/results/eigenvalues.columns.title
+msgid "% of Inertia"
 msgstr ""
 
 #: R/mrcrosstabs.b.R
@@ -194,6 +202,10 @@ msgstr ""
 msgid "A demonstration dataset for vijPlots module."
 msgstr ""
 
+#: package/datasets/Smoking.description
+msgid "A demonstration dataset for vijPlots/Correspondence plot."
+msgstr ""
+
 #: package/datasets/Raincloud.description
 msgid "A demonstration dataset for vijPlots/Raincloud plot."
 msgstr ""
@@ -217,6 +229,10 @@ msgstr ""
 #: raincloud/options/colorPalette/Accent.title
 #: scatterplot/options/colorPalette/Accent.title
 msgid "Accent"
+msgstr ""
+
+#: R/corresp.b.R
+msgid "Active Margin"
 msgstr ""
 
 #: scatterplot/options/plotBorder.title
@@ -273,8 +289,14 @@ msgstr ""
 msgid "Bin Size"
 msgstr ""
 
+#: corresp/options/showBiPlot.title
+#: corresp/results/biplot.title
+msgid "Biplot"
+msgstr ""
+
 #: barplot/options/borderColor/black.title
 #: barplot/options/textColor/black.title
+#: corresp/options/supColor/black.title
 #: histogram/options/fillColor/black.title
 #: histogram/options/borderColor/black.title
 #: lollipop/options/dotColor/black.title
@@ -284,6 +306,8 @@ msgstr ""
 msgid "Black"
 msgstr ""
 
+#: corresp/options/rowColor/blue.title
+#: corresp/options/colColor/blue.title
 #: histogram/options/fillColor/#377EB8.title
 #: lollipop/options/dotColor/#377EB8.title
 #: lollipop/options/lineColor/#377EB8.title
@@ -383,7 +407,9 @@ msgstr ""
 #: package/analyses/barplot.menuSubgroup
 #: package/analyses/piechart.menuSubgroup
 #: package/analyses/likertplot.menuSubgroup
+#: package/analyses/corresp.menuSubgroup
 #: barplot/options.menuSubgroup
+#: corresp/options.menuSubgroup
 #: likertplot/options.menuSubgroup
 #: piechart/options.menuSubgroup
 msgid "Categorical"
@@ -426,12 +452,14 @@ msgstr ""
 msgid "Color palette"
 msgstr ""
 
+#: corresp/ui[5][0][1][0].label
 #: lollipop/ui[2][2][0].label
 msgid "Colors"
 msgstr ""
 
 #: barplot/options/facetBy/column.title
 #: barplot/ui[3][0][1][0][0][0]/facetBy_column.label
+#: corresp/options/colColor.title
 #: histogram/options/facetBy/column.title
 #: histogram/ui[4][0][1][0][0][0]/facetBy_column.label
 #: lollipop/options/facetBy/column.title
@@ -439,6 +467,29 @@ msgstr ""
 #: piechart/options/facetBy/column.title
 #: piechart/ui[2][0][1][0][0][0]/facetBy_column.label
 msgid "Column"
+msgstr ""
+
+#: corresp/options/showColPlot.title
+#: corresp/results/colplot.title
+msgid "Column Plot"
+msgstr ""
+
+#: corresp/options/normalization/colprincipal.title
+#: corresp/ui[3][0][0]/normalization_colprincipal.label
+msgid "Column Principal"
+msgstr ""
+
+#: corresp/results/colProfiles.title
+msgid "Column Profiles"
+msgstr ""
+
+#: corresp/results/colSummary.title
+msgid "Column Summary"
+msgstr ""
+
+#: corresp/options/cols.title
+#: corresp/ui[0][1].label
+msgid "Columns"
 msgstr ""
 
 #: mrcrosstabs/options/xaxis/xcols.title
@@ -452,6 +503,11 @@ msgstr ""
 
 #: qqplot/ui[4][0][1][0].label
 msgid "Confidence Band Methods"
+msgstr ""
+
+#: corresp/options/showContingency.title
+#: corresp/results/contingency.title
+msgid "Contingency Table"
 msgstr ""
 
 #: package/analyses/histogram.menuSubgroup
@@ -471,6 +527,14 @@ msgstr ""
 
 #: likertplot/options/toInteger.title
 msgid "Convert variables to integer"
+msgstr ""
+
+#: package/analyses/corresp.title
+#: package/analyses/corresp.menuTitle
+#: corresp/options.title
+#: corresp/ui.title
+#: corresp/results.title
+msgid "Correspondence Plot"
 msgstr ""
 
 #: R/barplot.b.R
@@ -500,6 +564,11 @@ msgstr ""
 msgid "Counts"
 msgstr ""
 
+#: corresp/options/counts.title
+#: corresp/ui[0][2].label
+msgid "Counts (optional)"
+msgstr ""
+
 #: package/datasets/Credit Cards.name
 msgid "Credit Cards"
 msgstr ""
@@ -521,6 +590,10 @@ msgstr ""
 
 #: R/mrcrosstabs.b.R
 msgid "Crosstab (% of Responses)"
+msgstr ""
+
+#: corresp/results/eigenvalues.columns.title
+msgid "Cumulative %"
 msgstr ""
 
 #: areachart/options/colorPalette/Dark2.title
@@ -575,6 +648,10 @@ msgstr ""
 
 #: qqplot/options/detrend.title
 msgid "Detrended Plot"
+msgstr ""
+
+#: corresp/results/eigenvalues.columns.title
+msgid "Dimension"
 msgstr ""
 
 #: areachart/options/displayFormat.title
@@ -665,6 +742,10 @@ msgstr ""
 msgid "Fill"
 msgstr ""
 
+#: corresp/options/fixedRatio.title
+msgid "Fixed X/Y Ratio"
+msgstr ""
+
 #: histogram/options/usePalette/forBorder.title
 #: histogram/ui[3][0][1][0]/usePalette_forBoder.label
 msgid "For Border"
@@ -691,6 +772,7 @@ msgid "Gamma"
 msgstr ""
 
 #: barplot/options/borderColor/gray.title
+#: corresp/options/supColor/darkgray.title
 #: histogram/options/fillColor/#999999.title
 #: histogram/options/borderColor/gray.title
 #: lollipop/options/dotColor/#999999.title
@@ -699,6 +781,8 @@ msgstr ""
 msgid "Gray"
 msgstr ""
 
+#: corresp/options/rowColor/forestgreen.title
+#: corresp/options/colColor/forestgreen.title
 #: histogram/options/fillColor/#4DAF4A.title
 #: lollipop/options/dotColor/#4DAF4A.title
 #: lollipop/options/lineColor/#4DAF4A.title
@@ -803,6 +887,7 @@ msgstr ""
 #: areachart/options/plotHeight.title
 #: barplot/options/plotHeight.title
 #: boxplot/options/plotHeight.title
+#: corresp/options/plotHeight.title
 #: histogram/options/plotHeight.title
 #: likertplot/options/plotHeight.title
 #: linechart/options/plotHeight.title
@@ -865,6 +950,14 @@ msgstr ""
 #: mrfrequencies/options/order/increasing.title
 #: mrfrequencies/ui[2][1][0]/order_increasing.label
 msgid "Increasing"
+msgstr ""
+
+#: corresp/results/eigenvalues.columns.title
+msgid "Inertia"
+msgstr ""
+
+#: corresp/options/showInertia.title
+msgid "Inertia Summary"
 msgstr ""
 
 #: areachart/options/dateFormat.title
@@ -1079,6 +1172,10 @@ msgstr ""
 msgid "Main statistical charts (histogram, boxplot, point, bar, line, raincloud...) with many options along with Likert and multiple response barplots. Project source is available at  <a href=\"https://github.com/vjalby/vijPlots\" target=\"_blank\">Github</a>."
 msgstr ""
 
+#: R/corresp.b.R
+msgid "Mass"
+msgstr ""
+
 #: lollipop/options/yaxis/max.title
 #: lollipop/ui[2][0][0][1]/yaxis_max.label
 msgid "Max"
@@ -1183,6 +1280,14 @@ msgstr ""
 msgid "Normal"
 msgstr ""
 
+#: corresp/options/normalization.title
+msgid "Normalisation"
+msgstr ""
+
+#: corresp/ui[3][0].label
+msgid "Normalization"
+msgstr ""
+
 #: boxplot/options/notchWidth.title
 msgid "Notch Width"
 msgstr ""
@@ -1202,6 +1307,10 @@ msgstr ""
 
 #: R/mrfrequencies.b.R
 msgid "Number of cases:"
+msgstr ""
+
+#: corresp/options/dimNum.title
+msgid "Number of dimensions"
 msgstr ""
 
 #: areachart/options/mode/oneVariable.title
@@ -1229,6 +1338,8 @@ msgstr ""
 msgid "Options"
 msgstr ""
 
+#: corresp/options/rowColor/darkorange1.title
+#: corresp/options/colColor/darkorange1.title
 #: histogram/options/fillColor/#FF7F00.title
 #: lollipop/options/dotColor/#FF7F00.title
 #: lollipop/options/lineColor/#FF7F00.title
@@ -1389,6 +1500,8 @@ msgstr ""
 msgid "Pie Chart"
 msgstr ""
 
+#: corresp/options/rowColor/hotpink.title
+#: corresp/options/colColor/hotpink.title
 #: histogram/options/fillColor/#F781BF.title
 #: lollipop/options/dotColor/#F781BF.title
 #: lollipop/options/lineColor/#F781BF.title
@@ -1417,6 +1530,7 @@ msgstr ""
 #: barplot/ui[1][0][0].label
 #: boxplot/ui[1][0][0].label
 #: boxplot/ui[2][0][1][0].label
+#: corresp/ui[5].label
 #: likertplot/ui[2][0][0].label
 #: linechart/ui[1][0][0].label
 #: piechart/ui[1][0][0].label
@@ -1429,6 +1543,7 @@ msgstr ""
 #: areachart/ui[2][0][0][0].label
 #: barplot/ui[3][0][0][0].label
 #: boxplot/ui[2][0][0][0].label
+#: corresp/ui[5][0][0][0].label
 #: histogram/ui[4][0][0][0].label
 #: linechart/ui[2][0][0][0].label
 #: lollipop/ui[3][0][0][0].label
@@ -1451,6 +1566,7 @@ msgstr ""
 msgid "Plot Type"
 msgstr ""
 
+#: corresp/ui[4][1][0].label
 #: mrcrosstabs/ui[3].label
 #: mrcrosstabs/results/plot.title
 msgid "Plots"
@@ -1478,11 +1594,18 @@ msgstr ""
 msgid "Prevent overlap"
 msgstr ""
 
+#: corresp/options/normalization/principal.title
+#: corresp/ui[3][0][0]/normalization_principal.label
+msgid "Principal"
+msgstr ""
+
 #: likertplot/ui[2][1][0]/textSize.suffix
 #: qqplot/ui[4][0][0][0][0]/textSize.suffix
 msgid "pt"
 msgstr ""
 
+#: corresp/options/rowColor/purple.title
+#: corresp/options/colColor/purple.title
 #: histogram/options/fillColor/#984EA3.title
 #: lollipop/options/dotColor/#984EA3.title
 #: lollipop/options/lineColor/#984EA3.title
@@ -1562,6 +1685,8 @@ msgstr ""
 #: barplot/ui[3][0][0][0][0]/plotHeight.suffix
 #: boxplot/ui[2][0][0][0][0]/plotWidth.suffix
 #: boxplot/ui[2][0][0][0][0]/plotHeight.suffix
+#: corresp/ui[5][0][0][0][0]/plotWidth.suffix
+#: corresp/ui[5][0][0][0][0]/plotHeight.suffix
 #: histogram/ui[4][0][0][0][0]/plotWidth.suffix
 #: histogram/ui[4][0][0][0][0]/plotHeight.suffix
 #: likertplot/ui[2][1][0]/plotWidth.suffix
@@ -1618,6 +1743,8 @@ msgstr ""
 msgid "Raincloud Plot"
 msgstr ""
 
+#: corresp/options/rowColor/red.title
+#: corresp/options/colColor/red.title
 #: histogram/options/fillColor/#E41A1C.title
 #: lollipop/options/dotColor/#E41A1C.title
 #: lollipop/options/lineColor/#E41A1C.title
@@ -1736,6 +1863,7 @@ msgstr ""
 
 #: barplot/options/facetBy/row.title
 #: barplot/ui[3][0][1][0][0][0]/facetBy_row.label
+#: corresp/options/rowColor.title
 #: histogram/options/facetBy/row.title
 #: histogram/ui[4][0][1][0][0][0]/facetBy_row.label
 #: lollipop/options/facetBy/row.title
@@ -1743,6 +1871,37 @@ msgstr ""
 #: piechart/options/facetBy/row.title
 #: piechart/ui[2][0][1][0][0][0]/facetBy_row.label
 msgid "Row"
+msgstr ""
+
+#: corresp/options/showProfiles.title
+msgid "Row and Column Profiles"
+msgstr ""
+
+#: corresp/options/showSummaries.title
+msgid "Row and Column Summaries"
+msgstr ""
+
+#: corresp/options/showRowPlot.title
+#: corresp/results/rowplot.title
+msgid "Row Plot"
+msgstr ""
+
+#: corresp/options/normalization/rowprincipal.title
+#: corresp/ui[3][0][0]/normalization_rowprincipal.label
+msgid "Row Principal"
+msgstr ""
+
+#: corresp/results/rowProfiles.title
+msgid "Row Profiles"
+msgstr ""
+
+#: corresp/results/rowSummary.title
+msgid "Row Summary"
+msgstr ""
+
+#: corresp/options/rows.title
+#: corresp/ui[0][0].label
+msgid "Rows"
 msgstr ""
 
 #: mrcrosstabs/options/xaxis/xrows.title
@@ -1869,9 +2028,21 @@ msgstr ""
 msgid "Side-by-side 2"
 msgstr ""
 
+#: corresp/results/eigenvalues.columns.title
+msgid "Singular Value"
+msgstr ""
+
 #: mrcrosstabs/options/size/small.title
 #: mrfrequencies/options/size/small.title
 msgid "Small (300x200)"
+msgstr ""
+
+#: package/datasets/Smoking.name
+msgid "Smoking"
+msgstr ""
+
+#: corresp/ui[1][0].label
+msgid "Solution"
 msgstr ""
 
 #: barplot/options/order.title
@@ -1924,6 +2095,11 @@ msgstr ""
 msgid "Stacked 100%"
 msgstr ""
 
+#: corresp/options/normalization/standard.title
+#: corresp/ui[3][0][0]/normalization_standard.label
+msgid "Standard"
+msgstr ""
+
 #: qqplot/options/standardize.title
 msgid "Standardize Values"
 msgstr ""
@@ -1944,9 +2120,38 @@ msgstr ""
 msgid "Student"
 msgstr ""
 
+#: corresp/results/eigenvalues.title
+msgid "Summary"
+msgstr ""
+
+#: corresp/options/supColor.title
+msgid "Supplement"
+msgstr ""
+
+#: corresp/options/supplementaryCols.title
+msgid "Supplementary Columns"
+msgstr ""
+
+#: corresp/ui[2][0].label
+msgid "Supplementary Points"
+msgstr ""
+
+#: corresp/options/supplementaryRows.title
+msgid "Supplementary Rows"
+msgstr ""
+
+#: corresp/options/normalization/symbiplot.title
+#: corresp/ui[3][0][0]/normalization_symbiplot.label
+msgid "Symetric"
+msgstr ""
+
 #: mrcrosstabs/ui[2][0][0].label
 #: mrfrequencies/ui[2][0][0].label
 msgid "Table"
+msgstr ""
+
+#: corresp/ui[4][0][0].label
+msgid "Tables"
 msgstr ""
 
 #: qqplot/options/methodQQ/ts.title
@@ -2050,10 +2255,12 @@ msgstr ""
 #: package/analyses/linechart.menuGroup
 #: package/analyses/areachart.menuGroup
 #: package/analyses/qqplot.menuGroup
+#: package/analyses/corresp.menuGroup
 #: package/datasets/vijPlots.name
 #: areachart/options.menuGroup
 #: barplot/options.menuGroup
 #: boxplot/options.menuGroup
+#: corresp/options.menuGroup
 #: histogram/options.menuGroup
 #: likertplot/options.menuGroup
 #: linechart/options.menuGroup
@@ -2086,9 +2293,14 @@ msgstr ""
 msgid "White"
 msgstr ""
 
+#: corresp/options/supColor/white.title
+msgid "White (Hidden)"
+msgstr ""
+
 #: areachart/options/plotWidth.title
 #: barplot/options/plotWidth.title
 #: boxplot/options/plotWidth.title
+#: corresp/options/plotWidth.title
 #: histogram/options/binWidth.title
 #: histogram/options/plotWidth.title
 #: likertplot/options/plotWidth.title
@@ -2115,6 +2327,10 @@ msgstr ""
 msgid "X-Axis"
 msgstr ""
 
+#: corresp/options/xaxis.title
+msgid "X-axis"
+msgstr ""
+
 #: areachart/options/isDate.title
 #: linechart/options/isDate.title
 msgid "X-Axis is a date"
@@ -2126,6 +2342,10 @@ msgstr ""
 #: scatterplot/options/yaxis.title
 #: scatterplot/ui[0][1].label
 msgid "Y-Axis"
+msgstr ""
+
+#: corresp/options/yaxis.title
+msgid "Y-axis"
 msgstr ""
 
 #: barplot/ui[2][1][0].label
@@ -2141,6 +2361,7 @@ msgstr ""
 msgid "Y-Label"
 msgstr ""
 
+#: corresp/options/supColor/yellow2.title
 #: histogram/options/fillColor/#FFFF33.title
 #: lollipop/options/dotColor/#FFFF33.title
 #: lollipop/options/lineColor/#FFFF33.title

@@ -1,0 +1,190 @@
+---
+name:  corresp
+title: Correspondence Plot
+menuGroup: vijPlots
+menuSubgroup: Categorical
+version: '1.0.0'
+jas: '1.2'
+
+weightsSupport: 'full'
+
+options:
+    - name: data
+      type: Data
+
+    - name: rows
+      title: Rows
+      type: Variable
+      suggested:
+        - nominal
+        - ordinal
+      permitted:
+        - factor
+
+    - name: cols
+      title: Columns
+      type: Variable
+      suggested:
+        - nominal
+        - ordinal
+      permitted:
+        - factor
+
+    - name: counts
+      title: Counts (optional)
+      type: Variable
+      suggested:
+        - continuous
+      permitted:
+        - numeric
+
+    - name: showContingency
+      title: Contingency Table
+      type: Bool
+      default: false
+
+    - name: showProfiles
+      title: Row and Column Profiles
+      type: Bool
+      default: false
+
+    - name: showInertia
+      title: Inertia Summary
+      type: Bool
+      default: true
+
+    - name: showSummaries
+      title: Row and Column Summaries
+      type: Bool
+      default: false
+
+    - name: showRowPlot
+      title: Row Plot
+      type: Bool
+      default: false
+
+    - name: showColPlot
+      title: Column Plot
+      type: Bool
+      default: false
+
+    - name: showBiPlot
+      title: Biplot
+      type: Bool
+      default: true
+
+    - name: supplementaryRows
+      type: String
+      title: Supplementary Rows
+
+    - name: supplementaryCols
+      type: String
+      title: Supplementary Columns
+
+    - name: dimNum
+      type: Number
+      title: "Number of dimensions"
+      min: 2
+      max: 10
+      default: 2
+
+    - name: xaxis
+      type: Number
+      title: "X-axis"
+      min: 1
+      max: 10
+      default: 1
+
+    - name: yaxis
+      type: Number
+      title: "Y-axis"
+      min: 1
+      max: 10
+      default: 2
+
+    - name: normalization
+      title: Normalisation
+      type: List
+      options:
+        - title: Principal
+          name:  principal
+        - title: Symetric
+          name:  symbiplot
+        - title: Row Principal
+          name:  rowprincipal
+        - title: Column Principal
+          name:  colprincipal
+        - title: Standard
+          name:  standard
+      default: principal
+
+    - name: plotWidth
+      type: Integer
+      title: Width
+      min: 0
+      max: 1000
+      default: 600
+
+    - name: plotHeight
+      type: Integer
+      title: Height
+      min: 0
+      max: 1000
+      default: 450
+
+    - name: fixedRatio
+      type: Bool
+      title: Fixed X/Y Ratio
+      default: true
+
+    - name: rowColor
+      title: Row
+      type: List
+      options:
+        - title: Blue
+          name:  blue
+        - title: Red
+          name:  red
+        - title: Green
+          name:  forestgreen
+        - title: Purple
+          name:  purple
+        - title: Pink
+          name:  hotpink
+        - title: Orange
+          name:  darkorange1
+      default: blue
+
+    - name: colColor
+      title: Column
+      type: List
+      options:
+        - title: Blue
+          name:  blue
+        - title: Red
+          name:  red
+        - title: Green
+          name:  forestgreen
+        - title: Purple
+          name:  purple
+        - title: Pink
+          name:  hotpink
+        - title: Orange
+          name:  darkorange1
+      default: red
+
+    - name: supColor
+      title: Supplement
+      type: List
+      options:
+        - title: Gray
+          name:  darkgray
+        - title: Black
+          name:  black
+        - title: Yellow
+          name:  yellow2
+        - title: White
+          name:  white
+      default: darkgray
+
+...

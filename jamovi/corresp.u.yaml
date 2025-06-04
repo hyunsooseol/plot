@@ -1,0 +1,216 @@
+title: Correspondence Plot
+name: corresp
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+  - type: VariableSupplier
+    persistentItems: false
+    stretchFactor: 1
+    children:
+      - type: TargetLayoutBox
+        label: Rows
+        children:
+          - type: VariablesListBox
+            name: rows
+            maxItemCount: 1
+            isTarget: true
+      - type: TargetLayoutBox
+        label: Columns
+        children:
+          - type: VariablesListBox
+            name: cols
+            maxItemCount: 1
+            isTarget: true
+      - type: TargetLayoutBox
+        label: Counts (optional)
+        children:
+          - type: VariablesListBox
+            name: counts
+            maxItemCount: 1
+            isTarget: true
+  - type: LayoutBox
+    margin: large
+    style: inline
+    stretchFactor: 1
+    children:
+      - type: Label
+        label: Solution
+        stretchFactor: 1
+        children:
+          - type: LayoutBox
+            cell:
+              column: 0
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: TextBox
+                name: dimNum
+                format: number
+          - type: LayoutBox
+            cell:
+              column: 1
+              row: 0
+            stretchFactor: 1
+            style: inline
+            children:
+              - type: TextBox
+                name: xaxis
+                format: number
+              - type: TextBox
+                name: yaxis
+                format: number
+  - type: LayoutBox
+    margin: large
+    style: inline
+    stretchFactor: 1
+    children:
+      - type: Label
+        label: Supplementary Points
+        stretchFactor: 1
+        children:
+          - type: LayoutBox
+            cell:
+              column: 0
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: TextBox
+                name: supplementaryRows
+                format: string
+          - type: LayoutBox
+            cell:
+              column: 1
+              row: 0
+            stretchFactor: 1
+            style: inline
+            children:
+              - type: TextBox
+                name: supplementaryCols
+                format: string
+  - type: LayoutBox
+    margin: large
+    stretchFactor: 1
+    children:
+      - type: Label
+        label: Normalization
+        stretchFactor: 1
+        children:
+          - type: LayoutBox
+            style: inline
+            margin: large
+            children:
+              - type: RadioButton
+                name: normalization_principal
+                optionName: normalization
+                optionPart: principal
+                label: Principal
+              - type: RadioButton
+                name: normalization_symbiplot
+                optionName: normalization
+                optionPart: symbiplot
+                label: Symetric
+              - type: RadioButton
+                name: normalization_rowprincipal
+                optionName: normalization
+                optionPart: rowprincipal
+                label: Row Principal
+              - type: RadioButton
+                name: normalization_colprincipal
+                optionName: normalization
+                optionPart: colprincipal
+                label: Column Principal
+              - type: RadioButton
+                name: normalization_standard
+                optionName: normalization
+                optionPart: standard
+                label: Standard
+  - type: LayoutBox
+    margin: large
+    style: inline
+    stretchFactor: 1
+    children:
+      - type: LayoutBox
+        cell:
+          column: 0
+          row: 0
+        stretchFactor: 1
+        children:
+          - type: Label
+            label: Tables
+            children:
+              - type: LayoutBox
+                children:
+                  - type: CheckBox
+                    name: showContingency
+                  - type: CheckBox
+                    name: showProfiles
+                  - type: CheckBox
+                    name: showInertia
+                  - type: CheckBox
+                    name: showSummaries
+      - type: LayoutBox
+        cell:
+          column: 1
+          row: 0
+        stretchFactor: 1
+        children:
+          - type: Label
+            label: Plots
+            children:
+              - type: LayoutBox
+                children:
+                  - type: CheckBox
+                    name: showRowPlot
+                  - type: CheckBox
+                    name: showColPlot
+                  - type: CheckBox
+                    name: showBiPlot
+  - type: CollapseBox
+    label: Plot Options
+    collapsed: true
+    stretchFactor: 1
+    children:
+      - type: LayoutBox
+        margin: large
+        stretchFactor: 1
+        style: inline
+        children:
+          - type: LayoutBox
+            cell:
+              column: 0
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: Plot Size
+                children:
+                  - type: LayoutBox
+                    children:
+                      - type: TextBox
+                        name: plotWidth
+                        format: number
+                        suffix: px
+                      - type: TextBox
+                        name: plotHeight
+                        format: number
+                        suffix: px
+                      - type: CheckBox
+                        name: fixedRatio
+          - type: LayoutBox
+            cell:
+              column: 1
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: Colors
+                children:
+                  - type: LayoutBox
+                    children:
+                      - type: ComboBox
+                        name: rowColor
+                      - type: ComboBox
+                        name: colColor
+                      - type: ComboBox
+                        name: supColor

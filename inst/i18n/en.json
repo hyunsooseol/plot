@@ -22,6 +22,9 @@
             "{detrendStr}{distribStr} {typeStr} Plot of {varStr}": [
                 ""
             ],
+            "{normalization} normalization": [
+                ""
+            ],
             "{stdStr}Sample Quantiles": [
                 ""
             ],
@@ -47,6 +50,9 @@
                 ""
             ],
             "% of Cases": [
+                ""
+            ],
+            "% of Inertia": [
                 ""
             ],
             "% of Responses": [
@@ -109,6 +115,9 @@
             "A demonstration dataset for vijPlots module.": [
                 ""
             ],
+            "A demonstration dataset for vijPlots/Correspondence plot.": [
+                ""
+            ],
             "A demonstration dataset for vijPlots/Raincloud plot.": [
                 ""
             ],
@@ -119,6 +128,9 @@
                 ""
             ],
             "Accent": [
+                ""
+            ],
+            "Active Margin": [
                 ""
             ],
             "Add plot frame": [
@@ -149,6 +161,9 @@
                 ""
             ],
             "Bin Size": [
+                ""
+            ],
+            "Biplot": [
                 ""
             ],
             "Black": [
@@ -220,6 +235,21 @@
             "Column": [
                 ""
             ],
+            "Column Plot": [
+                ""
+            ],
+            "Column Principal": [
+                ""
+            ],
+            "Column Profiles": [
+                ""
+            ],
+            "Column Summary": [
+                ""
+            ],
+            "Columns": [
+                ""
+            ],
             "Columns (Groups)": [
                 ""
             ],
@@ -229,10 +259,16 @@
             "Confidence Band Methods": [
                 ""
             ],
+            "Contingency Table": [
+                ""
+            ],
             "Continuous": [
                 ""
             ],
             "Convert variables to integer": [
+                ""
+            ],
+            "Correspondence Plot": [
                 ""
             ],
             "Count": [
@@ -242,6 +278,9 @@
                 ""
             ],
             "Counts": [
+                ""
+            ],
+            "Counts (optional)": [
                 ""
             ],
             "Credit Cards": [
@@ -257,6 +296,9 @@
                 ""
             ],
             "Crosstab (% of Responses)": [
+                ""
+            ],
+            "Cumulative %": [
                 ""
             ],
             "Dark 2": [
@@ -281,6 +323,9 @@
                 ""
             ],
             "Detrended Plot": [
+                ""
+            ],
+            "Dimension": [
                 ""
             ],
             "Display Format": [
@@ -326,6 +371,9 @@
                 ""
             ],
             "Fill": [
+                ""
+            ],
+            "Fixed X/Y Ratio": [
                 ""
             ],
             "For Border": [
@@ -407,6 +455,12 @@
                 ""
             ],
             "Increasing": [
+                ""
+            ],
+            "Inertia": [
+                ""
+            ],
+            "Inertia Summary": [
                 ""
             ],
             "Input Format": [
@@ -520,6 +574,9 @@
             "Main statistical charts (histogram, boxplot, point, bar, line, raincloud...) with many options along with Likert and multiple response barplots. Project source is available at  <a href=\"https://github.com/vjalby/vijPlots\" target=\"_blank\">Github</a>.": [
                 ""
             ],
+            "Mass": [
+                ""
+            ],
             "Max": [
                 ""
             ],
@@ -574,6 +631,12 @@
             "Normal": [
                 ""
             ],
+            "Normalisation": [
+                ""
+            ],
+            "Normalization": [
+                ""
+            ],
             "Notch Width": [
                 ""
             ],
@@ -587,6 +650,9 @@
                 ""
             ],
             "Number of cases:": [
+                ""
+            ],
+            "Number of dimensions": [
                 ""
             ],
             "One variable": [
@@ -700,6 +766,9 @@
             "Prevent overlap": [
                 ""
             ],
+            "Principal": [
+                ""
+            ],
             "pt": [
                 ""
             ],
@@ -787,6 +856,27 @@
             "Row": [
                 ""
             ],
+            "Row and Column Profiles": [
+                ""
+            ],
+            "Row and Column Summaries": [
+                ""
+            ],
+            "Row Plot": [
+                ""
+            ],
+            "Row Principal": [
+                ""
+            ],
+            "Row Profiles": [
+                ""
+            ],
+            "Row Summary": [
+                ""
+            ],
+            "Rows": [
+                ""
+            ],
             "Rows (Options)": [
                 ""
             ],
@@ -853,7 +943,16 @@
             "Side-by-side 2": [
                 ""
             ],
+            "Singular Value": [
+                ""
+            ],
             "Small (300x200)": [
+                ""
+            ],
+            "Smoking": [
+                ""
+            ],
+            "Solution": [
                 ""
             ],
             "Sorting": [
@@ -871,6 +970,9 @@
             "Stacked 100%": [
                 ""
             ],
+            "Standard": [
+                ""
+            ],
             "Standardize Values": [
                 ""
             ],
@@ -886,7 +988,28 @@
             "Student": [
                 ""
             ],
+            "Summary": [
+                ""
+            ],
+            "Supplement": [
+                ""
+            ],
+            "Supplementary Columns": [
+                ""
+            ],
+            "Supplementary Points": [
+                ""
+            ],
+            "Supplementary Rows": [
+                ""
+            ],
+            "Symetric": [
+                ""
+            ],
             "Table": [
+                ""
+            ],
+            "Tables": [
                 ""
             ],
             "Tail-Sensitive (Normal)": [
@@ -946,16 +1069,25 @@
             "White": [
                 ""
             ],
+            "White (Hidden)": [
+                ""
+            ],
             "Width": [
                 ""
             ],
             "X-Axis": [
                 ""
             ],
+            "X-axis": [
+                ""
+            ],
             "X-Axis is a date": [
                 ""
             ],
             "Y-Axis": [
+                ""
+            ],
+            "Y-axis": [
                 ""
             ],
             "Y-axis (with groups)": [

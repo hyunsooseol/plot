@@ -1,0 +1,167 @@
+---
+name:  corresp
+title: Correspondence Plot
+jrs:   '1.1'
+refs:
+    - ca
+
+items:
+    - name:  helpMessage
+      title: ""
+      type:  Html
+      visible: true
+
+    - name: contingency
+      title: Contingency Table
+      type: Table
+      visible: (showContingency)
+      rows:  0
+      columns: [ ]
+      clearWith:
+        - rows
+        - cols
+
+    - name:  rowProfiles
+      title: Row Profiles
+      type: Table
+      visible: (showProfiles)
+      rows:  0
+      columns: [ ]
+      clearWith:
+        - rows
+        - cols
+
+    - name:  colProfiles
+      title: Column Profiles
+      type: Table
+      visible: (showProfiles)
+      rows:  0
+      columns: [ ]
+      clearWith:
+        - rows
+        - cols
+
+    - name:  eigenvalues
+      title: Summary
+      type: Table
+      visible: (showInertia)
+      rows:  0
+      columns:
+        - name: dim
+          title: Dimension
+          type: number
+        - name: singular
+          title: "Singular Value"
+          type: number
+          format: zto
+        - name: inertia
+          title: "Inertia"
+          type: number
+          format: zto
+        - name: proportion
+          title: "% of Inertia"
+          type: integer
+          format: pc
+        - name: cumulative
+          title: "Cumulative %"
+          type: number
+          format: pc
+      clearWith:
+        - rows
+        - cols
+        - counts
+
+    - name:  rowSummary
+      title: Row Summary
+      type: Table
+      rows:  0
+      visible: (showSummaries)
+      columns: [ ]
+      clearWith:
+        - rows
+        - cols
+        - counts
+        - dimNum
+        - normalization
+
+    - name:  colSummary
+      title: Column Summary
+      type: Table
+      rows:  0
+      visible: (showSummaries)
+      columns: [ ]
+      clearWith:
+        - rows
+        - cols
+        - counts
+        - dimNum
+        - normalization
+
+    - name: rowplot
+      title: "Row Plot"
+      type: Image
+      visible: (showRowPlot)
+      width:  600
+      height: 450
+      renderFun: .rowplot
+      clearWith:
+        - rows
+        - cols
+        - counts
+        - xaxis
+        - yaxis
+        - rowColor
+        - supColor
+        - plotWidth
+        - plotHeight
+        - fixedRatio
+        - supplementaryRows
+        - supplementaryCols
+        - normalization
+
+    - name: colplot
+      title: "Column Plot"
+      type: Image
+      visible: (showColPlot)
+      width:  600
+      height: 450
+      renderFun: .colplot
+      clearWith:
+        - rows
+        - cols
+        - counts
+        - xaxis
+        - yaxis
+        - colColor
+        - supColor
+        - plotWidth
+        - plotHeight
+        - fixedRatio
+        - supplementaryRows
+        - supplementaryCols
+        - normalization
+
+    - name: biplot
+      title: "Biplot"
+      type: Image
+      visible: (showBiPlot)
+      width:  600
+      height: 450
+      renderFun: .biplot
+      clearWith:
+        - rows
+        - cols
+        - counts
+        - xaxis
+        - yaxis
+        - rowColor
+        - colColor
+        - supColor
+        - plotWidth
+        - plotHeight
+        - fixedRatio
+        - supplementaryRows
+        - supplementaryCols
+        - normalization
+
+...

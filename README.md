@@ -54,6 +54,10 @@
 
 ## Version history
 
+### 2025-03-01 / 0.8.1 (beta)
+
+-   Improve text size computation for Likert Plot
+
 ### 2025-03-01 / 0.8.0 (beta)
 
 -   Q-Q & P-P Plots (using qqplotr package)

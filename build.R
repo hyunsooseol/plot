@@ -21,15 +21,28 @@ jmvtools::addAnalysis(name='linechart', title='Line Chart')
 jmvtools::addAnalysis(name='areachart', title='Area Chart')
 jmvtools::addAnalysis(name='raincloud', title='Raincloud Plot')
 jmvtools::addAnalysis(name='qqplot', title='Q-Q & P-P Plots')
+jmvtools::addAnalysis(name='corresp', title='Correspondence Plot')
+jmvtools::addAnalysis(name='corresp2', title='Correspondence Plot 2')
+
 # Install module
+
 jmvtools::install()
 
 
 
 
-## i18n
+## i18n (update)
+jmvtools::i18nUpdate("en")
+jmvtools::i18nUpdate("fr")
 
-# Find the corect path
+## i18n (creation)
+jmvtools::i18nCreate("en")
+jmvtools::i18nCreate("fr")
+
+
+
+## old i18n
+# Find the correct path
 node::node()
 #/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library/node/node-darwin/bin/node
 jmvtools:::jmcPath()

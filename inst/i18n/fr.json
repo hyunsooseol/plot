@@ -49,6 +49,9 @@
             "% of Cases": [
                 "% d'observations"
             ],
+            "% of Inertia": [
+                ""
+            ],
             "% of Responses": [
                 "% de réponses"
             ],
@@ -151,11 +154,20 @@
             "Bin Size": [
                 "Taille des bâtons"
             ],
+            "Biplot": [
+                ""
+            ],
             "Black": [
                 "Noir"
             ],
             "Blue": [
                 "Bleu"
+            ],
+            "Blue & Pink": [
+                ""
+            ],
+            "Blue & Red": [
+                ""
             ],
             "Blue to Green": [
                 "Bleu à vert"
@@ -220,6 +232,18 @@
             "Column": [
                 "Colonne"
             ],
+            "Column Plot": [
+                ""
+            ],
+            "Column Profiles": [
+                ""
+            ],
+            "Column Summary": [
+                ""
+            ],
+            "Columns": [
+                ""
+            ],
             "Columns (Groups)": [
                 "Colonnes (groupes)"
             ],
@@ -229,11 +253,20 @@
             "Confidence Band Methods": [
                 "Méthodes de calcul de l'IC"
             ],
+            "Contingency Table": [
+                ""
+            ],
             "Continuous": [
                 "Variables quantitatives"
             ],
             "Convert variables to integer": [
                 "Convertir les variables en entiers"
+            ],
+            "Correspondence Plot": [
+                ""
+            ],
+            "Correspondence Plot 2": [
+                ""
             ],
             "Count": [
                 "Effectif"
@@ -243,6 +276,9 @@
             ],
             "Counts": [
                 "Effectifs"
+            ],
+            "Counts (optional)": [
+                ""
             ],
             "Credit Cards": [
                 ""
@@ -259,7 +295,13 @@
             "Crosstab (% of Responses)": [
                 "Tableau croisé (% des réponses)"
             ],
+            "Cumulative %": [
+                ""
+            ],
             "Dark 2": [
+                ""
+            ],
+            "Dark Blue & Red": [
                 ""
             ],
             "Data Transform": [
@@ -267,6 +309,9 @@
             ],
             "Date Breaks": [
                 "Intervalle"
+            ],
+            "Debug": [
+                ""
             ],
             "Decreasing": [
                 "Décroissant"
@@ -282,6 +327,9 @@
             ],
             "Detrended Plot": [
                 "Diagramme redressé"
+            ],
+            "Dimension": [
+                ""
             ],
             "Display Format": [
                 "Affichage"
@@ -409,6 +457,12 @@
             "Increasing": [
                 "Croissant"
             ],
+            "Inertia": [
+                ""
+            ],
+            "Inertia Summary": [
+                ""
+            ],
             "Input Format": [
                 "Entrée"
             ],
@@ -520,6 +574,9 @@
             "Main statistical charts (histogram, boxplot, point, bar, line, raincloud...) with many options along with Likert and multiple response barplots. Project source is available at  <a href=\"https://github.com/vjalby/vijPlots\" target=\"_blank\">Github</a>.": [
                 ""
             ],
+            "Margin": [
+                ""
+            ],
             "Max": [
                 ""
             ],
@@ -589,6 +646,9 @@
             "Number of cases:": [
                 "Nombre d'observations :"
             ],
+            "Number of dimensions": [
+                ""
+            ],
             "One variable": [
                 "Une variable"
             ],
@@ -603,6 +663,9 @@
             ],
             "Orange": [
                 "Orange"
+            ],
+            "Orange & Green": [
+                ""
             ],
             "Orange and Purple": [
                 "Orange à violet"
@@ -706,6 +769,9 @@
             "Purple": [
                 "Violet"
             ],
+            "Purple & Green": [
+                ""
+            ],
             "Purple and Green": [
                 "Violet et vert"
             ],
@@ -787,6 +853,24 @@
             "Row": [
                 "Ligne"
             ],
+            "Row and Column Profiles": [
+                ""
+            ],
+            "Row and Column Summaries": [
+                ""
+            ],
+            "Row Plot": [
+                ""
+            ],
+            "Row Profiles": [
+                ""
+            ],
+            "Row Summary": [
+                ""
+            ],
+            "Rows": [
+                ""
+            ],
             "Rows (Options)": [
                 "Lignes (Options)"
             ],
@@ -853,8 +937,14 @@
             "Side-by-side 2": [
                 "Juxtaposé 2"
             ],
+            "Singular Value": [
+                ""
+            ],
             "Small (300x200)": [
                 "Petit (300x200)"
+            ],
+            "Solution": [
+                ""
             ],
             "Sorting": [
                 "Tri"
@@ -886,8 +976,20 @@
             "Student": [
                 ""
             ],
+            "Summary": [
+                ""
+            ],
+            "Supplementary Columns": [
+                ""
+            ],
+            "Supplementary Rows": [
+                ""
+            ],
             "Table": [
                 "Table"
+            ],
+            "Tables": [
+                ""
             ],
             "Tail-Sensitive (Normal)": [
                 ""
@@ -952,11 +1054,17 @@
             "X-Axis": [
                 "Axe X"
             ],
+            "X-axis": [
+                ""
+            ],
             "X-Axis is a date": [
                 "L'axe X est une date"
             ],
             "Y-Axis": [
                 "Axe Y"
+            ],
+            "Y-axis": [
+                ""
             ],
             "Y-axis (with groups)": [
                 "Axe Y (avec groupes)"
