@@ -31,6 +31,15 @@
             "{stdStr}Sample Quantiles Deviation": [
                 ""
             ],
+            "* : Supplementary columns": [
+                ""
+            ],
+            "* : Supplementary rows": [
+                ""
+            ],
+            "* : Supplementary rows/columns": [
+                ""
+            ],
             "# of rows/columns": [
                 ""
             ],
@@ -238,8 +247,14 @@
             "Column Plot": [
                 ""
             ],
+            "Column Points for": [
+                ""
+            ],
             "Column Principal": [
                 ""
+            ],
+            "Column Principal_": [
+                "Column Principal"
             ],
             "Column Profiles": [
                 ""
@@ -266,6 +281,9 @@
                 ""
             ],
             "Convert variables to integer": [
+                ""
+            ],
+            "Coordinates†": [
                 ""
             ],
             "Correspondence Plot": [
@@ -631,9 +649,6 @@
             "Normal": [
                 ""
             ],
-            "Normalisation": [
-                ""
-            ],
             "Normalization": [
                 ""
             ],
@@ -769,6 +784,9 @@
             "Principal": [
                 ""
             ],
+            "Principal_": [
+                "Principal"
+            ],
             "pt": [
                 ""
             ],
@@ -856,6 +874,9 @@
             "Row": [
                 ""
             ],
+            "Row and Column Points": [
+                ""
+            ],
             "Row and Column Profiles": [
                 ""
             ],
@@ -865,8 +886,14 @@
             "Row Plot": [
                 ""
             ],
+            "Row Points for": [
+                ""
+            ],
             "Row Principal": [
                 ""
+            ],
+            "Row Principal_": [
+                "Row Principal"
             ],
             "Row Profiles": [
                 ""
@@ -973,6 +1000,9 @@
             "Standard": [
                 ""
             ],
+            "Standard_": [
+                "Standard"
+            ],
             "Standardize Values": [
                 ""
             ],
@@ -994,6 +1024,9 @@
             "Supplement": [
                 ""
             ],
+            "Supplementary": [
+                ""
+            ],
             "Supplementary Columns": [
                 ""
             ],
@@ -1004,7 +1037,10 @@
                 ""
             ],
             "Symetric": [
-                ""
+                "Symetrical"
+            ],
+            "Symetric_": [
+                "Symetrical"
             ],
             "Table": [
                 ""
@@ -1069,25 +1105,16 @@
             "White": [
                 ""
             ],
-            "White (Hidden)": [
-                ""
-            ],
             "Width": [
                 ""
             ],
             "X-Axis": [
                 ""
             ],
-            "X-axis": [
-                ""
-            ],
             "X-Axis is a date": [
                 ""
             ],
             "Y-Axis": [
-                ""
-            ],
-            "Y-axis": [
                 ""
             ],
             "Y-axis (with groups)": [

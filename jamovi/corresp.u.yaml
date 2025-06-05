@@ -104,27 +104,27 @@ children:
                 name: normalization_principal
                 optionName: normalization
                 optionPart: principal
-                label: Principal
+                label: Principal_
               - type: RadioButton
                 name: normalization_symbiplot
                 optionName: normalization
                 optionPart: symbiplot
-                label: Symetric
+                label: Symetric_
               - type: RadioButton
                 name: normalization_rowprincipal
                 optionName: normalization
                 optionPart: rowprincipal
-                label: Row Principal
+                label: Row Principal_
               - type: RadioButton
                 name: normalization_colprincipal
                 optionName: normalization
                 optionPart: colprincipal
-                label: Column Principal
+                label: Column Principal_
               - type: RadioButton
                 name: normalization_standard
                 optionName: normalization
                 optionPart: standard
-                label: Standard
+                label: Standard_
   - type: LayoutBox
     margin: large
     style: inline

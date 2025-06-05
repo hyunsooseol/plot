@@ -52,10 +52,16 @@
 
 ![](img/qqplot.jpg)
 
+## Correspondence Plot
+
+![](img/correspondence.jpg)
+
+
 ## Version history
 
-### 2025-03-01 / 0.8.1 (beta)
+### 2025-06-05 / 0.9.0 (beta)
 
+-   Correspondence (analysis) Plot
 -   Improve text size computation for Likert Plot
 
 ### 2025-03-01 / 0.8.0 (beta)

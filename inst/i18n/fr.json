@@ -22,11 +22,23 @@
             "{detrendStr}{distribStr} {typeStr} Plot of {varStr}": [
                 "Diagramme {typeStr} {distribStr} {detrendStr}de {varStr}"
             ],
+            "{normalization} normalization": [
+                "Normalisation {normalization}"
+            ],
             "{stdStr}Sample Quantiles": [
                 "Quantiles observés{stdStr}"
             ],
             "{stdStr}Sample Quantiles Deviation": [
                 "Écarts des quantiles observés{stdStr}"
+            ],
+            "* : Supplementary columns": [
+                "* : Colonnes supplémentaires"
+            ],
+            "* : Supplementary rows": [
+                "* : Lignes supplémentaires"
+            ],
+            "* : Supplementary rows/columns": [
+                "* : Lignes et colonnes supplémentaires"
             ],
             "# of rows/columns": [
                 "Nbre de lignes/colonnes"
@@ -50,7 +62,7 @@
                 "% d'observations"
             ],
             "% of Inertia": [
-                ""
+                "% d'inertie"
             ],
             "% of Responses": [
                 "% de réponses"
@@ -112,6 +124,9 @@
             "A demonstration dataset for vijPlots module.": [
                 "Fichier de démonstration du module vijPlots."
             ],
+            "A demonstration dataset for vijPlots/Correspondence plot.": [
+                ""
+            ],
             "A demonstration dataset for vijPlots/Raincloud plot.": [
                 ""
             ],
@@ -123,6 +138,9 @@
             ],
             "Accent": [
                 ""
+            ],
+            "Active Margin": [
+                "Marge active"
             ],
             "Add plot frame": [
                 "Ajouter un cadre au graphique"
@@ -155,19 +173,13 @@
                 "Taille des bâtons"
             ],
             "Biplot": [
-                ""
+                "Graphique double"
             ],
             "Black": [
                 "Noir"
             ],
             "Blue": [
                 "Bleu"
-            ],
-            "Blue & Pink": [
-                ""
-            ],
-            "Blue & Red": [
-                ""
             ],
             "Blue to Green": [
                 "Bleu à vert"
@@ -233,16 +245,25 @@
                 "Colonne"
             ],
             "Column Plot": [
-                ""
+                "Graphique des colonnes"
+            ],
+            "Column Points for": [
+                "Graphique des colonnes pour"
+            ],
+            "Column Principal": [
+                "principale en colonne"
+            ],
+            "Column Principal_": [
+                "Princ. en colonne"
             ],
             "Column Profiles": [
-                ""
+                "Profils colonnes"
             ],
             "Column Summary": [
-                ""
+                "Résumé des colonnes"
             ],
             "Columns": [
-                ""
+                "Colonnes"
             ],
             "Columns (Groups)": [
                 "Colonnes (groupes)"
@@ -254,7 +275,7 @@
                 "Méthodes de calcul de l'IC"
             ],
             "Contingency Table": [
-                ""
+                "Tableau de contingence"
             ],
             "Continuous": [
                 "Variables quantitatives"
@@ -262,11 +283,11 @@
             "Convert variables to integer": [
                 "Convertir les variables en entiers"
             ],
-            "Correspondence Plot": [
-                ""
+            "Coordinates†": [
+                "Coordonnées†"
             ],
-            "Correspondence Plot 2": [
-                ""
+            "Correspondence Plot": [
+                "Graphique des correspondances"
             ],
             "Count": [
                 "Effectif"
@@ -278,7 +299,7 @@
                 "Effectifs"
             ],
             "Counts (optional)": [
-                ""
+                "Effectifs (optionnel)"
             ],
             "Credit Cards": [
                 ""
@@ -296,12 +317,9 @@
                 "Tableau croisé (% des réponses)"
             ],
             "Cumulative %": [
-                ""
+                "% cumulés"
             ],
             "Dark 2": [
-                ""
-            ],
-            "Dark Blue & Red": [
                 ""
             ],
             "Data Transform": [
@@ -309,9 +327,6 @@
             ],
             "Date Breaks": [
                 "Intervalle"
-            ],
-            "Debug": [
-                ""
             ],
             "Decreasing": [
                 "Décroissant"
@@ -375,6 +390,9 @@
             ],
             "Fill": [
                 "Remplissage"
+            ],
+            "Fixed X/Y Ratio": [
+                "Ratio X/Y fixe"
             ],
             "For Border": [
                 "Pour les bordures"
@@ -458,10 +476,10 @@
                 "Croissant"
             ],
             "Inertia": [
-                ""
+                "Inertie"
             ],
             "Inertia Summary": [
-                ""
+                "Récapitulatif de l'inertie"
             ],
             "Input Format": [
                 "Entrée"
@@ -574,8 +592,8 @@
             "Main statistical charts (histogram, boxplot, point, bar, line, raincloud...) with many options along with Likert and multiple response barplots. Project source is available at  <a href=\"https://github.com/vjalby/vijPlots\" target=\"_blank\">Github</a>.": [
                 ""
             ],
-            "Margin": [
-                ""
+            "Mass": [
+                "Masse"
             ],
             "Max": [
                 ""
@@ -631,6 +649,9 @@
             "Normal": [
                 "Normale"
             ],
+            "Normalization": [
+                "Normalisation"
+            ],
             "Notch Width": [
                 "Largeur de l'encoche"
             ],
@@ -647,7 +668,7 @@
                 "Nombre d'observations :"
             ],
             "Number of dimensions": [
-                ""
+                "Nombre de dimensions"
             ],
             "One variable": [
                 "Une variable"
@@ -663,9 +684,6 @@
             ],
             "Orange": [
                 "Orange"
-            ],
-            "Orange & Green": [
-                ""
             ],
             "Orange and Purple": [
                 "Orange à violet"
@@ -763,14 +781,17 @@
             "Prevent overlap": [
                 "Empêcher la superposition"
             ],
+            "Principal": [
+                "principale"
+            ],
+            "Principal_": [
+                "Principale"
+            ],
             "pt": [
                 "pt"
             ],
             "Purple": [
                 "Violet"
-            ],
-            "Purple & Green": [
-                ""
             ],
             "Purple and Green": [
                 "Violet et vert"
@@ -853,23 +874,35 @@
             "Row": [
                 "Ligne"
             ],
+            "Row and Column Points": [
+                "Graphique double"
+            ],
             "Row and Column Profiles": [
-                ""
+                "Profils lignes et colonnes"
             ],
             "Row and Column Summaries": [
-                ""
+                "Résumés des lignes et colonnes"
             ],
             "Row Plot": [
-                ""
+                "Graphique des lignes"
+            ],
+            "Row Points for": [
+                "Graphique des lignes pour"
+            ],
+            "Row Principal": [
+                "principale en ligne"
+            ],
+            "Row Principal_": [
+                "Princ. en ligne"
             ],
             "Row Profiles": [
-                ""
+                "Profils lignes"
             ],
             "Row Summary": [
-                ""
+                "Résumé des lignes"
             ],
             "Rows": [
-                ""
+                "Lignes"
             ],
             "Rows (Options)": [
                 "Lignes (Options)"
@@ -938,10 +971,13 @@
                 "Juxtaposé 2"
             ],
             "Singular Value": [
-                ""
+                "Valeur singulière"
             ],
             "Small (300x200)": [
                 "Petit (300x200)"
+            ],
+            "Smoking": [
+                ""
             ],
             "Solution": [
                 ""
@@ -961,6 +997,12 @@
             "Stacked 100%": [
                 "Empilé à 100 %"
             ],
+            "Standard": [
+                "standard"
+            ],
+            "Standard_": [
+                "Standard"
+            ],
             "Standardize Values": [
                 "Valeurs standadisées"
             ],
@@ -977,13 +1019,28 @@
                 ""
             ],
             "Summary": [
-                ""
+                "Résumé"
+            ],
+            "Supplement": [
+                "Supplémentaire"
+            ],
+            "Supplementary": [
+                "Supplémentaires"
             ],
             "Supplementary Columns": [
-                ""
+                "Colonnes supplémentaires"
+            ],
+            "Supplementary Points": [
+                "Points supplémentaires"
             ],
             "Supplementary Rows": [
-                ""
+                "Lignes supplémentaires"
+            ],
+            "Symetric": [
+                "symétrique"
+            ],
+            "Symetric_": [
+                "Symétrique"
             ],
             "Table": [
                 "Table"
@@ -1054,17 +1111,11 @@
             "X-Axis": [
                 "Axe X"
             ],
-            "X-axis": [
-                ""
-            ],
             "X-Axis is a date": [
                 "L'axe X est une date"
             ],
             "Y-Axis": [
                 "Axe Y"
-            ],
-            "Y-axis": [
-                ""
             ],
             "Y-axis (with groups)": [
                 "Axe Y (avec groupes)"

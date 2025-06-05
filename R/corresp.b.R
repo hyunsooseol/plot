@@ -260,7 +260,7 @@ correspClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                 }
             }
             if (!is.null(supplementaryRows) || !is.null(supplementaryCols))
-                self$results$contingency$setNote("supp","* : Supplementary rows/columns")
+                self$results$contingency$setNote("supp",.("* : Supplementary rows/columns"))
 
             #### Row and Column Profile Tables ####
 
@@ -277,7 +277,7 @@ correspClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                 }
                 self$results$rowProfiles$addFormat(rowNo = nrow(rowProfiles), 1, Cell.BEGIN_END_GROUP)
                 if (!is.null(supplementaryRows) || !is.null(supplementaryCols))
-                    self$results$rowProfiles$setNote("supp","* : Supplementary rows/columns")
+                    self$results$rowProfiles$setNote("supp",.("* : Supplementary rows/columns"))
                 # Column Profiles
                 colProfiles <- t(private$.getProfile(t(contingencyTable),supplementaryCols, supplementaryRows))
                 self$results$colProfiles$addColumn(rowVarName, type = "text")
@@ -290,7 +290,7 @@ correspClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                 }
                 self$results$colProfiles$addFormat(rowNo = nrow(colProfiles), 1, Cell.BEGIN_END_GROUP)
                 if (!is.null(supplementaryRows) || !is.null(supplementaryCols))
-                    self$results$colProfiles$setNote("supp","* : Supplementary rows/columns")
+                    self$results$colProfiles$setNote("supp",.("* : Supplementary rows/columns"))
             }
 
             #### Chi-Squared test ####
@@ -358,7 +358,7 @@ correspClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                 self$results$rowSummary$addColumn(name = "row", title = rowVarName, type = "text")
                 self$results$rowSummary$addColumn(name = "margin", title = "Mass", type = "number", format = "zto")
                 for (i in seq(nDim))
-                    self$results$rowSummary$addColumn(name = paste0("score",i), title = paste("Dim",i), superTitle = "Coordinates†", type = "number", format = "zto")
+                    self$results$rowSummary$addColumn(name = paste0("score",i), title = paste("Dim",i), superTitle = .("Coordinates†"), type = "number", format = "zto")
                 self$results$rowSummary$addColumn(name = "inertia", title = "Inertia", type = "number", format = "zto")
                 for (i in seq(nDim))
                     self$results$rowSummary$addColumn(name = paste0("contrib",i), title = paste("Dim",i), superTitle = "Contributions", type = "number", format = "zto")
@@ -381,7 +381,7 @@ correspClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                     self$results$rowSummary$addRow(i, values = theValues)
                 }
                 if (!is.null(supplementaryRows))
-                    self$results$rowSummary$setNote("supp","* : Supplementary rows")
+                    self$results$rowSummary$setNote("supp",.("* : Supplementary rows"))
                 self$results$rowSummary$setNote("norm", paste("† :", normalizationString))
 
                 # Column Summary Table
@@ -389,7 +389,7 @@ correspClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                 self$results$colSummary$addColumn(name = "col", title = colVarName, type = "text")
                 self$results$colSummary$addColumn(name = "margin", title = "Mass", type = "number", format = "zto")
                 for (i in seq_len(nDim))
-                    self$results$colSummary$addColumn(name = paste0("score",i), title = paste("Dim",i), superTitle = "Coordinates†", type = "number", format = "zto")
+                    self$results$colSummary$addColumn(name = paste0("score",i), title = paste("Dim",i), superTitle = .("Coordinates†"), type = "number", format = "zto")
                 self$results$colSummary$addColumn(name = "inertia", title = "Inertia", type = "number", format = "zto")
                 for (i in seq_len(nDim))
                     self$results$colSummary$addColumn(name = paste0("contrib",i), title = paste("Dim",i), superTitle = "Contributions", type = "number", format = "zto")
@@ -412,7 +412,7 @@ correspClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                     self$results$colSummary$addRow(i, values = theValues)
                 }
                 if (!is.null(supplementaryCols))
-                    self$results$colSummary$setNote("supp","* : Supplementary columns")
+                    self$results$colSummary$setNote("supp",.("* : Supplementary columns"))
                 self$results$colSummary$setNote("norm", paste("† :", normalizationString))
             }
             # Plots
@@ -497,7 +497,7 @@ correspClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
                 plot <- plot + scale_color_manual(
                     values=c("1" = self$options$supColor, "2" = self$options$rowColor, "3" = self$options$colColor),
                     breaks=c("2","3","1"),
-                    labels = c(self$options$rows, self$options$cols, "Supplementary")) + labs(color = "") +
+                    labels = c(self$options$rows, self$options$cols, .("Supplementary"))) + labs(color = "") +
                     theme(legend.text = element_text(size=10))
             } else{
                 plot <- plot + scale_color_manual(

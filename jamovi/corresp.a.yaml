@@ -90,31 +90,31 @@ options:
 
     - name: xaxis
       type: Number
-      title: "X-axis"
+      title: "X-Axis"
       min: 1
       max: 10
       default: 1
 
     - name: yaxis
       type: Number
-      title: "Y-axis"
+      title: "Y-Axis"
       min: 1
       max: 10
       default: 2
 
     - name: normalization
-      title: Normalisation
+      title: Normalization
       type: List
       options:
-        - title: Principal
+        - title: Principal_
           name:  principal
-        - title: Symetric
+        - title: Symetric_
           name:  symbiplot
-        - title: Row Principal
+        - title: Row Principal_
           name:  rowprincipal
-        - title: Column Principal
+        - title: Column Principal_
           name:  colprincipal
-        - title: Standard
+        - title: Standard_
           name:  standard
       default: principal
 

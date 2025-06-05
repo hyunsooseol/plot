@@ -34,6 +34,18 @@ msgstr ""
 msgid "{stdStr}Sample Quantiles Deviation"
 msgstr ""
 
+#: R/corresp.b.R
+msgid "* : Supplementary columns"
+msgstr ""
+
+#: R/corresp.b.R
+msgid "* : Supplementary rows"
+msgstr ""
+
+#: R/corresp.b.R
+msgid "* : Supplementary rows/columns"
+msgstr ""
+
 #: barplot/options/facetNumber.title
 #: histogram/options/facetNumber.title
 #: lollipop/options/facetNumber.title
@@ -474,10 +486,18 @@ msgstr ""
 msgid "Column Plot"
 msgstr ""
 
-#: corresp/options/normalization/colprincipal.title
+#: R/corresp.b.R
+msgid "Column Points for"
+msgstr ""
+
+#: R/corresp.b.R
 #: corresp/ui[3][0][0]/normalization_colprincipal.label
 msgid "Column Principal"
 msgstr ""
+
+#: corresp/options/normalization/colprincipal.title
+msgid "Column Principal_"
+msgstr "Column Principal"
 
 #: corresp/results/colProfiles.title
 msgid "Column Profiles"
@@ -527,6 +547,10 @@ msgstr ""
 
 #: likertplot/options/toInteger.title
 msgid "Convert variables to integer"
+msgstr ""
+
+#: R/corresp.b.R
+msgid "Coordinates†"
 msgstr ""
 
 #: package/analyses/corresp.title
@@ -1281,9 +1305,6 @@ msgid "Normal"
 msgstr ""
 
 #: corresp/options/normalization.title
-msgid "Normalisation"
-msgstr ""
-
 #: corresp/ui[3][0].label
 msgid "Normalization"
 msgstr ""
@@ -1594,10 +1615,14 @@ msgstr ""
 msgid "Prevent overlap"
 msgstr ""
 
-#: corresp/options/normalization/principal.title
+#: R/corresp.b.R
 #: corresp/ui[3][0][0]/normalization_principal.label
 msgid "Principal"
 msgstr ""
+
+#: corresp/options/normalization/principal.title
+msgid "Principal_"
+msgstr "Principal"
 
 #: likertplot/ui[2][1][0]/textSize.suffix
 #: qqplot/ui[4][0][0][0][0]/textSize.suffix
@@ -1873,6 +1898,10 @@ msgstr ""
 msgid "Row"
 msgstr ""
 
+#: R/corresp.b.R
+msgid "Row and Column Points"
+msgstr ""
+
 #: corresp/options/showProfiles.title
 msgid "Row and Column Profiles"
 msgstr ""
@@ -1886,10 +1915,18 @@ msgstr ""
 msgid "Row Plot"
 msgstr ""
 
-#: corresp/options/normalization/rowprincipal.title
+#: R/corresp.b.R
+msgid "Row Points for"
+msgstr ""
+
+#: R/corresp.b.R
 #: corresp/ui[3][0][0]/normalization_rowprincipal.label
 msgid "Row Principal"
 msgstr ""
+
+#: corresp/options/normalization/rowprincipal.title
+msgid "Row Principal_"
+msgstr "Row Principal"
 
 #: corresp/results/rowProfiles.title
 msgid "Row Profiles"
@@ -2095,10 +2132,14 @@ msgstr ""
 msgid "Stacked 100%"
 msgstr ""
 
-#: corresp/options/normalization/standard.title
+#: R/corresp.b.R
 #: corresp/ui[3][0][0]/normalization_standard.label
 msgid "Standard"
 msgstr ""
+
+#: corresp/options/normalization/standard.title
+msgid "Standard_"
+msgstr "Standard"
 
 #: qqplot/options/standardize.title
 msgid "Standardize Values"
@@ -2128,6 +2169,10 @@ msgstr ""
 msgid "Supplement"
 msgstr ""
 
+#: R/corresp.b.R
+msgid "Supplementary"
+msgstr ""
+
 #: corresp/options/supplementaryCols.title
 msgid "Supplementary Columns"
 msgstr ""
@@ -2140,10 +2185,14 @@ msgstr ""
 msgid "Supplementary Rows"
 msgstr ""
 
-#: corresp/options/normalization/symbiplot.title
+#: R/corresp.b.R
 #: corresp/ui[3][0][0]/normalization_symbiplot.label
 msgid "Symetric"
-msgstr ""
+msgstr "Symetrical"
+
+#: corresp/options/normalization/symbiplot.title
+msgid "Symetric_"
+msgstr "Symetrical"
 
 #: mrcrosstabs/ui[2][0][0].label
 #: mrfrequencies/ui[2][0][0].label
@@ -2284,6 +2333,7 @@ msgstr ""
 
 #: barplot/options/borderColor/white.title
 #: barplot/options/textColor/white.title
+#: corresp/options/supColor/white.title
 #: histogram/options/fillColor/white.title
 #: histogram/options/borderColor/white.title
 #: lollipop/options/dotColor/white.title
@@ -2291,10 +2341,6 @@ msgstr ""
 #: piechart/options/borderColor/white.title
 #: piechart/options/textColor/white.title
 msgid "White"
-msgstr ""
-
-#: corresp/options/supColor/white.title
-msgid "White (Hidden)"
 msgstr ""
 
 #: areachart/options/plotWidth.title
@@ -2317,6 +2363,7 @@ msgstr ""
 #: areachart/ui/mode/oneVariable[0][0][0].label
 #: areachart/ui/mode/severalVariables[0][0][0].label
 #: areachart/ui[1][1][0].label
+#: corresp/options/xaxis.title
 #: linechart/options/timeVar.title
 #: linechart/ui[0][0].label
 #: linechart/ui[1][1][0].label
@@ -2327,25 +2374,18 @@ msgstr ""
 msgid "X-Axis"
 msgstr ""
 
-#: corresp/options/xaxis.title
-msgid "X-axis"
-msgstr ""
-
 #: areachart/options/isDate.title
 #: linechart/options/isDate.title
 msgid "X-Axis is a date"
 msgstr ""
 
+#: corresp/options/yaxis.title
 #: lollipop/options/yaxis.title
 #: lollipop/ui[2][0][0].label
 #: mrfrequencies/options/yaxis.title
 #: scatterplot/options/yaxis.title
 #: scatterplot/ui[0][1].label
 msgid "Y-Axis"
-msgstr ""
-
-#: corresp/options/yaxis.title
-msgid "Y-axis"
 msgstr ""
 
 #: barplot/ui[2][1][0].label
