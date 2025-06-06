@@ -59,7 +59,7 @@
 
 ## Version history
 
-### 2025-06-05 / 0.9.0 (beta)
+### 2025-06-06 / 0.9.1 (beta)
 
 -   Correspondence (analysis) Plot
 -   Improve text size computation for Likert Plot

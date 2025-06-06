@@ -154,7 +154,7 @@ correspClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             image <- self$results$colplot
             image$setSize(userWidth, userHeight)
             image <- self$results$biplot
-            image$setSize(userWidth + 200, userHeight)
+            image$setSize(userWidth, userHeight)
         },
         .run = function() {
             data <- private$.getData()
@@ -431,13 +431,20 @@ correspClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             results <- image$state
             coord <- ca::cacoord(results, type = self$options$normalization)
             # Supplementary Row & Column Colors
-            # 1 = supp, 2 = row, 3 = column
-            rowcolors <- rep(2, length(results$rownames))
-            rowcolors[results$rowsup] <- 1
-            rowcolors <- factor(rowcolors, levels = c(1,2,3))
-            colcolors <- rep(3, length(results$colnames))
-            colcolors[results$colsup] <- 1
-            colcolors <- factor(colcolors, levels = c(1,2,3))
+            # 1 = row, 2 = rowsup, 3 = column, 4 = colsup
+            if (rows) {
+                coord$rows <- cbind(coord$rows, "sup"=1)
+                coord$rows[results$rowsup,"sup"] <- 2
+                ptcoord <- as.data.frame(coord$rows)
+            } else {
+                ptcoord <- NA
+            }
+            if (cols) {
+                coord$columns <- cbind(coord$columns, "sup"=3)
+                coord$columns[results$colsup,"sup"]<-4
+                ptcoord <- as.data.frame(rbind(ptcoord,coord$columns))
+            }
+            ptcoord$sup <- factor(ptcoord$sup, levels = c(1,2,3,4))
 
             # Plot inertia
             singular <- results$sv
@@ -446,40 +453,23 @@ correspClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             percentInertia <- round(100*inertia / totalInertia, 1)
             # Plot axis
             xaxis <- self$options$xaxis
-            xasisdim <- paste0("Dim", xaxis)
+            xaxisdim <- paste0("Dim", xaxis)
             xaxisstr <- paste0("Dim ",xaxis, " (", percentInertia[xaxis], "%)")
             yaxis <- self$options$yaxis
             yaxisdim <- paste0("Dim", yaxis)
             yaxisstr <- paste0("Dim ",yaxis, " (", percentInertia[yaxis], "%)")
 
-            plot <-  ggplot()
-            if (rows) {
-                plot <- plot + geom_point(
-                            aes(x = coord$rows[,xasisdim], y = coord$rows[,yaxisdim],
-                                color = rowcolors),
-                            #color = self$options$rowColor,
-                            shape = 19)
-                plot <- plot + ggrepel::geom_text_repel(
-                                aes(x = coord$rows[,xasisdim], y = coord$rows[,yaxisdim],
-                                    label = rownames(coord$rows), color = rowcolors), show.legend = FALSE)
-            }
-            if (cols) {
-                plot <- plot + geom_point(
-                            aes(x = coord$columns[,xasisdim], y = coord$columns[,yaxisdim],
-                                color = colcolors),
-                            #color=self$options$colColor,
-                            shape = 17)
-                plot <- plot + ggrepel::geom_text_repel(
-                            aes(x = coord$columns[,xasisdim], y = coord$columns[,yaxisdim],
-                            label = rownames(coord$columns), color = colcolors), show.legend = FALSE)
-            }
+            # Building the plot
+            plot <-  ggplot(ptcoord, aes(x = ptcoord[,xaxisdim], y = ptcoord[,yaxisdim], color = ptcoord$sup, shape = ptcoord$sup))
+            plot <- plot + geom_point()
+            plot <- plot + ggrepel::geom_text_repel(aes(label = rownames(ptcoord)), show.legend = FALSE)
             plot <- plot + geom_hline(yintercept = 0, linetype = 2) + geom_vline(xintercept = 0, linetype = 2)
 
             # Title
             normalizationString <- private$.normalizationTitle(self$options$normalization)
 
             if (rows & cols)
-                title = .("Row and Column Points")
+                title = paste("Row and Column Points for", self$options$rows, "and", self$options$cols)
             else if (rows)
                 title = paste(.("Row Points for"), self$options$rows)
             else
@@ -487,23 +477,22 @@ correspClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
 
             plot <- plot + labs(x = xaxisstr, y = yaxisstr, title = title, subtitle = normalizationString)
 
+
             # Fixed X/Y ratio
             if (self$options$fixedRatio)
                 plot <- plot + coord_fixed()
             # Apply jmv theme
             plot <- plot + ggtheme
             # Set point colors
-            if (rows & cols) {
-                plot <- plot + scale_color_manual(
-                    values=c("1" = self$options$supColor, "2" = self$options$rowColor, "3" = self$options$colColor),
-                    breaks=c("2","3","1"),
-                    labels = c(self$options$rows, self$options$cols, .("Supplementary"))) + labs(color = "") +
+            plot <- plot +
+                    scale_color_manual(
+                        values=c("1" = self$options$rowColor, "2" = self$options$supColor, "3" = self$options$colColor, "4" = self$options$supColor),
+                        breaks=c("1", "3", "2", "4"),
+                        labels = c(self$options$rows, self$options$cols, .("Suppl. Row"), .("Suppl. Column"))) + labs(color = "") +
+                    scale_shape_manual(values = c(19, 19, 17, 17), breaks = c("1","2","3","4")) +
                     theme(legend.text = element_text(size=10))
-            } else{
-                plot <- plot + scale_color_manual(
-                    values=c("1" = self$options$supColor, "2" = self$options$rowColor, "3" = self$options$colColor)) +
-                    guides(color="none")
-            }
+            plot <- plot + guides(color = "none", shape = "none")
+
             plot <- plot + theme(plot.subtitle=element_text(size=12, hjust = 0.5, margin = margin(0, 0, 15, 0)),
                                  plot.title=element_text(margin = margin(0, 0, 10, 0)))
             return(plot)
