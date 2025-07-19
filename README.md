@@ -59,6 +59,12 @@
 
 ## Version history
 
+### 2025-07-10 / 0.9.5 (beta)
+
+-   Table and tests (KW, post hoc) added to Likert Plot
+-   Improve data handling for Likert Plot
+-   Principal Component Plot
+
 ### 2025-06-06 / 0.9.1 (beta)
 
 -   Correspondence (analysis) Plot

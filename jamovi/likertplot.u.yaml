@@ -32,18 +32,15 @@ children:
         stretchFactor: 1
         children:
           - type: Label
-            label: Plot Type
+            label: Data
             children:
-              - type: RadioButton
-                name: type_stacked
-                optionName: type
-                optionPart: stacked
-                label: Stacked
-              - type: RadioButton
-                name: type_centered
-                optionName: type
-                optionPart: centered
-                label: Centered
+              - type: CheckBox
+                name: tidyUp
+              - type: CheckBox
+                name: toInteger
+              - type: CheckBox
+                name: ignoreNA
+                enable: (!(!group))
       - type: LayoutBox
         cell:
           column: 1
@@ -51,7 +48,7 @@ children:
         stretchFactor: 1
         children:
           - type: Label
-            label: Sorting
+            label: Sort Variables by Median
             children:
               - type: RadioButton
                 name: sorting_none
@@ -68,77 +65,306 @@ children:
                 optionName: sorting
                 optionPart: ascending
                 label: Ascending
-      - type: LayoutBox
-        cell:
-          column: 2
-          row: 0
-        stretchFactor: 1
-        children:
-          - type: Label
-            label: Group
-            children:
-              - type: RadioButton
-                name: groupBy_variable
-                optionName: groupBy
-                optionPart: variable
-                label: By Variable
-              - type: RadioButton
-                name: groupBy_group
-                optionName: groupBy
-                optionPart: group
-                label: By Group
-  - type: LayoutBox
-    margin: large
+  - type: CollapseBox
+    label: Table
+    collapsed: true
     stretchFactor: 1
     children:
       - type: LayoutBox
-        cell:
-          column: 0
-          row: 0
+        margin: large
         stretchFactor: 1
         children:
-          - type: Label
-            label: Plot Options
+          - type: LayoutBox
+            cell:
+              column: 0
+              row: 0
+            stretchFactor: 1
             children:
-              - type: CheckBox
-                name: ignoreNA
-                enable: (!(!group))
-              - type: CheckBox
-                name: addLabels
-              - type: CheckBox
-                name: addTotals
-                enable: (type_centered)
-              - type: CheckBox
-                name: addMedianLine
-                enable: (type_stacked)
-              - type: CheckBox
-                name: reverseLikert
-                enable: (!toInteger)
-              - type: CheckBox
-                name: toInteger
-                enable: (!reverseLikert)
+              - type: Label
+                label: Table
+                children:
+                  - type: CheckBox
+                    name: frequencyTable
+                  - type: CheckBox
+                    name: showMedian
+                    enable: (frequencyTable)
+                  - type: CheckBox
+                    name: showMean
+                    enable: (frequencyTable)
+          - type: LayoutBox
+            cell:
+              column: 1
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: Frequency Type
+                children:
+                  - type: RadioButton
+                    name: frequencies_counts
+                    optionName: frequencies
+                    optionPart: counts
+                    label: Counts
+                    enable: (frequencyTable)
+                  - type: RadioButton
+                    name: frequencies_percentages
+                    optionName: frequencies
+                    optionPart: percentages
+                    label: Percentages
+                    enable: (frequencyTable)
+  - type: CollapseBox
+    label: Comparison Tests
+    collapsed: true
+    stretchFactor: 1
+    children:
       - type: LayoutBox
-        cell:
-          column: 1
-          row: 0
+        margin: large
         stretchFactor: 1
         children:
-          - type: Label
-            label: Plot Size & Color
+          - type: LayoutBox
+            cell:
+              column: 0
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: Tests
+                children:
+                  - type: CheckBox
+                    name: showMannU
+                  - type: CheckBox
+                    name: showKW
+                  - type: CheckBox
+                    name: showPostHoc
+          - type: LayoutBox
+            cell:
+              column: 1
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: Post Hoc Tests
+                children:
+#                  - type: RadioButton
+#                    name: postHoc_mannwhitney
+#                    optionName: postHoc
+#                    optionPart: mannwhitney
+#                    label: "Mann-Whitney U"
+#                    enable: (showPostHoc)
+                  - type: RadioButton
+                    name: postHoc_dunn
+                    optionName: postHoc
+                    optionPart: dunn
+                    label: Dunn
+                    enable: (showPostHoc)
+                  - type: RadioButton
+                    name: postHoc_conover
+                    optionName: postHoc
+                    optionPart: conover
+                    label: Conover
+                    enable: (showPostHoc)
+                  - type: RadioButton
+                    name: postHoc_dscf
+                    optionName: postHoc
+                    optionPart: dscf
+                    label: DSCF
+                    enable: (showPostHoc)
+          - type: LayoutBox
+            cell:
+              column: 2
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: p-Value Adjustment
+                children:
+                  - type: RadioButton
+                    name: pValue_none
+                    optionName: pValue
+                    optionPart: none
+                    label: None
+                    enable: (showKW || showMannU || showPostHoc)
+                  - type: RadioButton
+                    name: pValue_group
+                    optionName: pValue
+                    optionPart: group
+                    label: Groupwise
+                    enable: (showPostHoc)
+                  - type: RadioButton
+                    name: pValue_overall
+                    optionName: pValue
+                    optionPart: overall
+                    label: Overall
+                    enable: (showKW || showMannU || showPostHoc)
+              - type: ComboBox
+                name: adjustMethod
+                enable: ((pValue_group || pValue_overall) && (showKW || showMannU || showPostHoc))
+  - type: CollapseBox
+    label: Plot
+    collapsed: false
+    stretchFactor: 1
+    children:
+      - type: LayoutBox
+        margin: large
+        stretchFactor: 1
+        children:
+          - type: LayoutBox
+            cell:
+              column: 0
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: Type
+                children:
+                  - type: RadioButton
+                    name: type_stacked
+                    optionName: type
+                    optionPart: stacked
+                    label: Stacked
+                  - type: RadioButton
+                    name: type_centered
+                    optionName: type
+                    optionPart: centered
+                    label: Centered
+          - type: LayoutBox
+            cell:
+              column: 1
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: Group
+                children:
+                  - type: RadioButton
+                    name: groupBy_variable
+                    optionName: groupBy
+                    optionPart: variable
+                    label: By Variable
+                    enable: (!(!group))
+                  - type: RadioButton
+                    name: groupBy_group
+                    optionName: groupBy
+                    optionPart: group
+                    label: By Group
+                    enable: (!(!group))
+          - type: LayoutBox
+            cell:
+              column: 2
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: '% Accuracy'
+                children:
+                  - type: RadioButton
+                    name: accuracy_1
+                    optionName: accuracy
+                    optionPart: '1'
+                    label: '1'
+                  - type: RadioButton
+                    name: accuracy_01
+                    optionName: accuracy
+                    optionPart: '0.1'
+                    label: '0.1'
+      - type: LayoutBox
+        margin: large
+        stretchFactor: 1
+        children:
+          - type: LayoutBox
+            cell:
+              column: 0
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: '% Labels'
+                children:
+                  - type: CheckBox
+                    name: addLabels
+                  - type: CheckBox
+                    name: hideLabelsBelow
+                    enable: (addLabels)
+                  - type: CheckBox
+                    name: addTotals
+                    enable: (type_centered)
+          - type: LayoutBox
+            cell:
+              column: 1
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: Options
+                children:
+                  - type: CheckBox
+                    name: addMedianLine
+                    enable: (type_stacked)
+                  - type: CheckBox
+                    name: reverseLikert
+      - type: LayoutBox
+        margin: large
+        stretchFactor: 1
+        children:
+          - type: LayoutBox
+            cell:
+              column: 0
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: Label Size
+                children:
+                  - type: ComboBox
+                    name: hLabelWrap
+                  - type: ComboBox
+                    name: vLabelWrap
+                    enable: (!(!group))
+          - type: LayoutBox
+            cell:
+              column: 1
+              row: 0
+            stretchFactor: 1
+            children:
+              - type: Label
+                label: Plot Color
+                children:
+                  - type: ComboBox
+                    name: plotColor
+                  - type: ComboBox
+                    name: labelColor
+                    enable: (addLabels)
+      - type: Label
+        label: Plot Size
+        stretchFactor: 1
+        children:
+          - type: LayoutBox
+            cell:
+              column: 0
+              row: 0
+            stretchFactor: 1
             children:
               - type: TextBox
                 name: plotWidth
                 format: number
                 suffix: px
+          - type: LayoutBox
+            cell:
+              column: 1
+              row: 0
+            stretchFactor: 1
+            children:
               - type: TextBox
                 name: plotHeight
                 format: number
                 suffix: px
+          - type: LayoutBox
+            cell:
+              column: 2
+              row: 0
+            stretchFactor: 1
+            children:
               - type: TextBox
                 name: textSize
                 format: number
                 suffix: pt
-              - type: ComboBox
-                name: accuracy
-              - type: ComboBox
-                name: plotColor

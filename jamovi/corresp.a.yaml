@@ -2,7 +2,7 @@
 name:  corresp
 title: Correspondence Plot
 menuGroup: vijPlots
-menuSubgroup: Categorical
+menuSubgroup: Multivariate
 version: '1.0.0'
 jas: '1.2'
 

@@ -5,6 +5,33 @@
             "1": [
                 ""
             ],
+            "10": [
+                ""
+            ],
+            "15": [
+                ""
+            ],
+            "20": [
+                ""
+            ],
+            "25": [
+                ""
+            ],
+            "30": [
+                ""
+            ],
+            "35": [
+                ""
+            ],
+            "40": [
+                ""
+            ],
+            "50": [
+                ""
+            ],
+            "80": [
+                ""
+            ],
             "2035": [
                 ""
             ],
@@ -58,6 +85,12 @@
             "% by row": [
                 "% par ligne"
             ],
+            "% Label Color": [
+                "Couleur des %"
+            ],
+            "% Labels": [
+                "Etiquettes des %"
+            ],
             "% of Cases": [
                 "% d'observations"
             ],
@@ -69,6 +102,9 @@
             ],
             "% within": [
                 "% dans"
+            ],
+            "<style> .block { border: 2px solid gray; border-radius: 15px; background-color: WhiteSmoke; padding: 0px 20px; text-align: justify; } </style> <div class=\"block\"> <h2>Likert Plot Help</h2> <h3>Data & Sorting</h3>\n<ul> <li>Likert variables must be of ordinal measure-type</li> <li>If you plan to compute mean/median/sd or to use comparison tests, they must be of integer data-type.</li> <li><strong>Tidy up levels:</strong> when checked, try to fix the labels order in table and graph (when some variables miss some levels).</li> <li><strong>Convert variables to integer:</strong> when checked, the level labels are ignored and only integer values are used.</li> <li><strong>Sort Variables by Median:</strong> orders the list of Likert variables by median.</li> </ul>\n<h3>Comparison Tests</h3> When using a group variable, several tests are available: <ul> <li><strong>Mann-Whitney U:</strong> Two group comparison</li> <li><strong>Kruskal-Wallis:</strong> n group comparison</li> <li><strong>Post Hoc Tests:</strong> Dunn, Conover and Dwass-Steel-Critchlow-Fligner (DSCF) paiwise comparisons tests.</li> </ul>\n<p>p-Values can be adjusted <strong>groupwise</strong> (for each question) for post hoc tests or <strong>overall</strong> (groupwise and questionwise) for MannWithney U, Kruskal-Wallis and post hoc tests. DSCF p-values are already adjusted (groupwise); no other adjustment is possible.</p> </div>": [
+                ""
             ],
             "0.01": [
                 ""
@@ -142,8 +178,14 @@
             "Active Margin": [
                 "Marge active"
             ],
+            "Add Median Line (Stacked Only)": [
+                "Ajouter la ligne médiane"
+            ],
             "Add plot frame": [
                 "Ajouter un cadre au graphique"
+            ],
+            "Adj. p": [
+                "p corr."
             ],
             "Alpha": [
                 ""
@@ -164,6 +206,9 @@
                 "Type de barres"
             ],
             "Beta": [
+                ""
+            ],
+            "BH": [
                 ""
             ],
             "Bin Color": [
@@ -190,6 +235,9 @@
             "Blues": [
                 "Bleus"
             ],
+            "Bonferroni": [
+                ""
+            ],
             "Boostrap": [
                 ""
             ],
@@ -207,6 +255,9 @@
             ],
             "Brown and Green": [
                 "Marron à vert"
+            ],
+            "BY": [
+                ""
             ],
             "By Group": [
                 "Par groupe"
@@ -268,11 +319,20 @@
             "Columns (Groups)": [
                 "Colonnes (groupes)"
             ],
+            "Comparison Tests": [
+                "Tests de comparaison"
+            ],
             "Confidence Band": [
                 "Bande de confiance (IC)"
             ],
             "Confidence Band Methods": [
                 "Méthodes de calcul de l'IC"
+            ],
+            "Conover": [
+                ""
+            ],
+            "Conover's Pairwise Comparisons": [
+                "Comparaisons par paires de Conover"
             ],
             "Contingency Table": [
                 "Tableau de contingence"
@@ -322,6 +382,9 @@
             "Dark 2": [
                 ""
             ],
+            "Data": [
+                "Données"
+            ],
             "Data Transform": [
                 "Tranformation des données"
             ],
@@ -343,6 +406,9 @@
             "Detrended Plot": [
                 "Diagramme redressé"
             ],
+            "df": [
+                "ddl"
+            ],
             "Dimension": [
                 ""
             ],
@@ -360,6 +426,21 @@
             ],
             "Draw staples": [
                 "Tracer les agrafes"
+            ],
+            "DSCF": [
+                ""
+            ],
+            "DSCF p-values are adjusted groupwise.": [
+                "Les probabilités critiques DSCF sont corrigées par groupe"
+            ],
+            "Dunn": [
+                ""
+            ],
+            "Dunn's Pairwise Comparisons": [
+                "Comparaisons par paires de Dunn"
+            ],
+            "Dwass-Steel-Critchlow-Fligner Pairwise Comparisons": [
+                "Comparaisons par paires de Dwass-Steel-Critchlow-Fligner"
             ],
             "en_US.utf-8": [
                 "fr_FR.utf-8"
@@ -406,6 +487,12 @@
             "Frequency Plot": [
                 "Graphique"
             ],
+            "Frequency Table": [
+                "Table des fréquences"
+            ],
+            "Frequency Type": [
+                "Type de fréquences"
+            ],
             "Gamma": [
                 ""
             ],
@@ -420,6 +507,9 @@
             ],
             "Greens": [
                 "Verts"
+            ],
+            "Grey": [
+                ""
             ],
             "Greys": [
                 "Gris"
@@ -448,11 +538,29 @@
             "Grouping Variable": [
                 "Grouper par"
             ],
+            "Groupwise": [
+                "Par groupe"
+            ],
             "Height": [
                 "Hauteur"
             ],
+            "Hide % Labels Below 5%": [
+                "Masquer les % inférieurs à 5 %"
+            ],
             "Histogram": [
                 "Histogramme"
+            ],
+            "Hochberg": [
+                ""
+            ],
+            "Holm": [
+                ""
+            ],
+            "Hommel": [
+                ""
+            ],
+            "Horizontal Label Wrap": [
+                "Largeur des étiquettes horizontales"
             ],
             "Horizontal line at": [
                 "Ligne horizontale à "
@@ -471,6 +579,9 @@
             ],
             "Ignore NA": [
                 "Ignorer les NA"
+            ],
+            "Ignore NA groups": [
+                "Ignorer les groupes manquants"
             ],
             "Increasing": [
                 "Croissant"
@@ -517,8 +628,17 @@
             "Kolmogorov-Smirnov": [
                 ""
             ],
+            "Kruskal-Wallis": [
+                ""
+            ],
+            "Kruskal-Wallis Tests": [
+                "Tests de Kruskal-Wallis"
+            ],
             "Label": [
                 "Etiquette"
+            ],
+            "Label Size": [
+                "Taille des étiquettes"
             ],
             "Labels": [
                 "Etiquettes"
@@ -589,8 +709,14 @@
             "Lollipop Size": [
                 "Taille des lollipop"
             ],
-            "Main statistical charts (histogram, boxplot, point, bar, line, raincloud...) with many options along with Likert and multiple response barplots. Project source is available at  <a href=\"https://github.com/vjalby/vijPlots\" target=\"_blank\">Github</a>.": [
+            "Main statistical charts (histogram, boxplot, point, bar, line, raincloud...) with many options along with Likert, multiple response barplots, Correspondance plot. Project source is available at  <a href=\"https://github.com/vjalby/vijPlots\" target=\"_blank\">Github</a>.": [
                 ""
+            ],
+            "Mann-Whitney U": [
+                ""
+            ],
+            "Mann-Whitney U Tests": [
+                "Tests U de Mann-Whitney"
             ],
             "Mass": [
                 "Masse"
@@ -607,6 +733,9 @@
             "Mean": [
                 "Moyenne"
             ],
+            "Mean & SD": [
+                "Moyenne et écart-type"
+            ],
             "Mean of": [
                 "Moyenne de"
             ],
@@ -618,6 +747,9 @@
             ],
             "Medium (400x300)": [
                 "Moyen (400x300)"
+            ],
+            "Method": [
+                "Méthode"
             ],
             "Method of moments (MME)": [
                 "Méthode des moments (MME)"
@@ -698,7 +830,7 @@
                 "Autres options"
             ],
             "Overall": [
-                "Ensemble"
+                "Globalement"
             ],
             "Overall (all groups)": [
                 "Ensemble des groupes"
@@ -706,14 +838,32 @@
             "Overlapping": [
                 "Superposé"
             ],
+            "p": [
+                ""
+            ],
             "P-P": [
                 ""
             ],
             "P-P Plot": [
                 "Graphique P-P"
             ],
+            "p-Value Adjustment": [
+                "Correction des p-valeurs"
+            ],
+            "p-values are adjusted groupwise using {method} method.": [
+                "Les probabilités critiques sont corrigées par groupe selon la méthode {method}."
+            ],
+            "p-values are adjusted overall using {method} method.": [
+                "Les probabilités critiques sont corrigées globalement selon la méthode {method}."
+            ],
+            "p-values are adjusted using {method} method.": [
+                "Les probabilités critiques sont corrigées selon la méthode {method}."
+            ],
             "Paired": [
                 ""
+            ],
+            "Pairwise Comparisons": [
+                "Comparaisons par paires"
             ],
             "Palette": [
                 "Palette"
@@ -739,6 +889,9 @@
             "Percent": [
                 "Pourcent"
             ],
+            "Percentages": [
+                "Pourcentages"
+            ],
             "Pie Chart": [
                 "Diagramme en secteurs"
             ],
@@ -751,14 +904,14 @@
             "Plot": [
                 "Graphique"
             ],
+            "Plot Color": [
+                "Couleurs du graphique"
+            ],
             "Plot Options": [
                 "Options du graphique"
             ],
             "Plot Size": [
                 "Taille du graphique"
-            ],
-            "Plot Size & Color": [
-                "Taille et couleur du graphique"
             ],
             "Plot Type": [
                 "Type de graphique"
@@ -777,6 +930,12 @@
             ],
             "Position": [
                 "Origine"
+            ],
+            "Post Hoc": [
+                "Post-hoc"
+            ],
+            "Post Hoc Tests": [
+                "Tests Post-hoc"
             ],
             "Prevent overlap": [
                 "Empêcher la superposition"
@@ -822,6 +981,9 @@
             ],
             "Q-Q Plot": [
                 "Diagramme Q-Q"
+            ],
+            "Questions": [
+                ""
             ],
             "Raincloud": [
                 ""
@@ -874,9 +1036,6 @@
             "Row": [
                 "Ligne"
             ],
-            "Row and Column Points": [
-                "Graphique double"
-            ],
             "Row and Column Profiles": [
                 "Profils lignes et colonnes"
             ],
@@ -919,6 +1078,9 @@
             "Scatter Plot": [
                 "Nuage de points"
             ],
+            "SD": [
+                "Ecart-type"
+            ],
             "Set 1": [
                 ""
             ],
@@ -933,9 +1095,6 @@
             ],
             "Show % Labels": [
                 "Afficher les %"
-            ],
-            "Show 50% Line (Stacked Only)": [
-                "Afficher la ligne de 50 % (empilées)"
             ],
             "Show count labels": [
                 "Afficher les effectifs"
@@ -982,6 +1141,9 @@
             "Solution": [
                 ""
             ],
+            "Sort Variables by Median": [
+                "Trier les variable selon la médiane"
+            ],
             "Sorting": [
                 "Tri"
             ],
@@ -1021,11 +1183,14 @@
             "Summary": [
                 "Résumé"
             ],
+            "Suppl. Column": [
+                "Colonne sup."
+            ],
+            "Suppl. Row": [
+                "Ligne sup."
+            ],
             "Supplement": [
                 "Supplémentaire"
-            ],
-            "Supplementary": [
-                "Supplémentaires"
             ],
             "Supplementary Columns": [
                 "Colonnes supplémentaires"
@@ -1051,6 +1216,9 @@
             "Tail-Sensitive (Normal)": [
                 ""
             ],
+            "Tests": [
+                ""
+            ],
             "Text": [
                 "Texte"
             ],
@@ -1060,6 +1228,9 @@
             "Theoretical Quantiles": [
                 "Quantiles théoriques"
             ],
+            "Tidy up levels": [
+                "Corriger les niveaux"
+            ],
             "Time Series": [
                 "Séries temporelles"
             ],
@@ -1068,6 +1239,12 @@
             ],
             "Total Row": [
                 "Ligne Total"
+            ],
+            "Type": [
+                ""
+            ],
+            "U": [
+                ""
             ],
             "Uniform": [
                 "Uniforme"
@@ -1089,6 +1266,9 @@
             ],
             "Variables": [
                 "Variables"
+            ],
+            "Vertical Label Wrap": [
+                "Hauteur des étiquettes verticales"
             ],
             "Vertical line at": [
                 "Ligne verticale à"
@@ -1140,6 +1320,9 @@
             ],
             "Yellow to Red": [
                 "Jaune à rouge"
+            ],
+            "χ²": [
+                ""
             ]
         }
     },

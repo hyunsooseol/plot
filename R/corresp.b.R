@@ -578,7 +578,7 @@ correspClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             <p>Four normalizations (scaling of row and column scores before plotting) are avalaible :
             <ul>
                 <li><strong>Principal:</strong> Row an columns scores are scaled by eigenvalues.</li>
-                <li><strong>Symetric:</strong> Row an columns scores are scaled by the squar eroot of eigenvalues. </li>
+                <li><strong>Symetric:</strong> Row an columns scores are scaled by the square root of eigenvalues. </li>
                 <li><strong>Row Principal:</strong> Only row scores are scaled by eigenvalues.</li>
                 <li><strong>Column Principal:</strong> Only column scores are scaled by eigenvalues.</li>
                 <li><strong>Standard:</strong> The raw coordinates without normalization.</li>

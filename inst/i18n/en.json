@@ -5,6 +5,33 @@
             "1": [
                 ""
             ],
+            "10": [
+                ""
+            ],
+            "15": [
+                ""
+            ],
+            "20": [
+                ""
+            ],
+            "25": [
+                ""
+            ],
+            "30": [
+                ""
+            ],
+            "35": [
+                ""
+            ],
+            "40": [
+                ""
+            ],
+            "50": [
+                ""
+            ],
+            "80": [
+                ""
+            ],
             "2035": [
                 ""
             ],
@@ -58,6 +85,12 @@
             "% by row": [
                 ""
             ],
+            "% Label Color": [
+                ""
+            ],
+            "% Labels": [
+                ""
+            ],
             "% of Cases": [
                 ""
             ],
@@ -68,6 +101,9 @@
                 ""
             ],
             "% within": [
+                ""
+            ],
+            "<style> .block { border: 2px solid gray; border-radius: 15px; background-color: WhiteSmoke; padding: 0px 20px; text-align: justify; } </style> <div class=\"block\"> <h2>Likert Plot Help</h2> <h3>Data & Sorting</h3>\n<ul> <li>Likert variables must be of ordinal measure-type</li> <li>If you plan to compute mean/median/sd or to use comparison tests, they must be of integer data-type.</li> <li><strong>Tidy up levels:</strong> when checked, try to fix the labels order in table and graph (when some variables miss some levels).</li> <li><strong>Convert variables to integer:</strong> when checked, the level labels are ignored and only integer values are used.</li> <li><strong>Sort Variables by Median:</strong> orders the list of Likert variables by median.</li> </ul>\n<h3>Comparison Tests</h3> When using a group variable, several tests are available: <ul> <li><strong>Mann-Whitney U:</strong> Two group comparison</li> <li><strong>Kruskal-Wallis:</strong> n group comparison</li> <li><strong>Post Hoc Tests:</strong> Dunn, Conover and Dwass-Steel-Critchlow-Fligner (DSCF) paiwise comparisons tests.</li> </ul>\n<p>p-Values can be adjusted <strong>groupwise</strong> (for each question) for post hoc tests or <strong>overall</strong> (groupwise and questionwise) for MannWithney U, Kruskal-Wallis and post hoc tests. DSCF p-values are already adjusted (groupwise); no other adjustment is possible.</p> </div>": [
                 ""
             ],
             "0.01": [
@@ -142,7 +178,13 @@
             "Active Margin": [
                 ""
             ],
+            "Add Median Line (Stacked Only)": [
+                ""
+            ],
             "Add plot frame": [
+                ""
+            ],
+            "Adj. p": [
                 ""
             ],
             "Alpha": [
@@ -164,6 +206,9 @@
                 ""
             ],
             "Beta": [
+                ""
+            ],
+            "BH": [
                 ""
             ],
             "Bin Color": [
@@ -190,6 +235,9 @@
             "Blues": [
                 ""
             ],
+            "Bonferroni": [
+                ""
+            ],
             "Boostrap": [
                 ""
             ],
@@ -206,6 +254,9 @@
                 ""
             ],
             "Brown and Green": [
+                ""
+            ],
+            "BY": [
                 ""
             ],
             "By Group": [
@@ -268,10 +319,19 @@
             "Columns (Groups)": [
                 ""
             ],
+            "Comparison Tests": [
+                ""
+            ],
             "Confidence Band": [
                 ""
             ],
             "Confidence Band Methods": [
+                ""
+            ],
+            "Conover": [
+                ""
+            ],
+            "Conover's Pairwise Comparisons": [
                 ""
             ],
             "Contingency Table": [
@@ -322,6 +382,9 @@
             "Dark 2": [
                 ""
             ],
+            "Data": [
+                ""
+            ],
             "Data Transform": [
                 ""
             ],
@@ -343,6 +406,9 @@
             "Detrended Plot": [
                 ""
             ],
+            "df": [
+                ""
+            ],
             "Dimension": [
                 ""
             ],
@@ -359,6 +425,21 @@
                 ""
             ],
             "Draw staples": [
+                ""
+            ],
+            "DSCF": [
+                ""
+            ],
+            "DSCF p-values are adjusted groupwise.": [
+                ""
+            ],
+            "Dunn": [
+                ""
+            ],
+            "Dunn's Pairwise Comparisons": [
+                ""
+            ],
+            "Dwass-Steel-Critchlow-Fligner Pairwise Comparisons": [
                 ""
             ],
             "en_US.utf-8": [
@@ -406,6 +487,12 @@
             "Frequency Plot": [
                 ""
             ],
+            "Frequency Table": [
+                ""
+            ],
+            "Frequency Type": [
+                ""
+            ],
             "Gamma": [
                 ""
             ],
@@ -419,6 +506,9 @@
                 ""
             ],
             "Greens": [
+                ""
+            ],
+            "Grey": [
                 ""
             ],
             "Greys": [
@@ -448,10 +538,28 @@
             "Grouping Variable": [
                 ""
             ],
+            "Groupwise": [
+                ""
+            ],
             "Height": [
                 ""
             ],
+            "Hide % Labels Below 5%": [
+                ""
+            ],
             "Histogram": [
+                ""
+            ],
+            "Hochberg": [
+                ""
+            ],
+            "Holm": [
+                ""
+            ],
+            "Hommel": [
+                ""
+            ],
+            "Horizontal Label Wrap": [
                 ""
             ],
             "Horizontal line at": [
@@ -470,6 +578,9 @@
                 ""
             ],
             "Ignore NA": [
+                ""
+            ],
+            "Ignore NA groups": [
                 ""
             ],
             "Increasing": [
@@ -517,7 +628,16 @@
             "Kolmogorov-Smirnov": [
                 ""
             ],
+            "Kruskal-Wallis": [
+                ""
+            ],
+            "Kruskal-Wallis Tests": [
+                ""
+            ],
             "Label": [
+                ""
+            ],
+            "Label Size": [
                 ""
             ],
             "Labels": [
@@ -589,7 +709,13 @@
             "Lollipop Size": [
                 ""
             ],
-            "Main statistical charts (histogram, boxplot, point, bar, line, raincloud...) with many options along with Likert and multiple response barplots. Project source is available at  <a href=\"https://github.com/vjalby/vijPlots\" target=\"_blank\">Github</a>.": [
+            "Main statistical charts (histogram, boxplot, point, bar, line, raincloud...) with many options along with Likert, multiple response barplots, Correspondance plot. Project source is available at  <a href=\"https://github.com/vjalby/vijPlots\" target=\"_blank\">Github</a>.": [
+                ""
+            ],
+            "Mann-Whitney U": [
+                ""
+            ],
+            "Mann-Whitney U Tests": [
                 ""
             ],
             "Mass": [
@@ -607,6 +733,9 @@
             "Mean": [
                 ""
             ],
+            "Mean & SD": [
+                ""
+            ],
             "Mean of": [
                 ""
             ],
@@ -617,6 +746,9 @@
                 ""
             ],
             "Medium (400x300)": [
+                ""
+            ],
+            "Method": [
                 ""
             ],
             "Method of moments (MME)": [
@@ -706,13 +838,31 @@
             "Overlapping": [
                 ""
             ],
+            "p": [
+                ""
+            ],
             "P-P": [
                 ""
             ],
             "P-P Plot": [
                 ""
             ],
+            "p-Value Adjustment": [
+                ""
+            ],
+            "p-values are adjusted groupwise using {method} method.": [
+                ""
+            ],
+            "p-values are adjusted overall using {method} method.": [
+                ""
+            ],
+            "p-values are adjusted using {method} method.": [
+                ""
+            ],
             "Paired": [
+                ""
+            ],
+            "Pairwise Comparisons": [
                 ""
             ],
             "Palette": [
@@ -739,6 +889,9 @@
             "Percent": [
                 ""
             ],
+            "Percentages": [
+                ""
+            ],
             "Pie Chart": [
                 ""
             ],
@@ -751,13 +904,13 @@
             "Plot": [
                 ""
             ],
+            "Plot Color": [
+                ""
+            ],
             "Plot Options": [
                 ""
             ],
             "Plot Size": [
-                ""
-            ],
-            "Plot Size & Color": [
                 ""
             ],
             "Plot Type": [
@@ -776,6 +929,12 @@
                 ""
             ],
             "Position": [
+                ""
+            ],
+            "Post Hoc": [
+                ""
+            ],
+            "Post Hoc Tests": [
                 ""
             ],
             "Prevent overlap": [
@@ -821,6 +980,9 @@
                 ""
             ],
             "Q-Q Plot": [
+                ""
+            ],
+            "Questions": [
                 ""
             ],
             "Raincloud": [
@@ -874,9 +1036,6 @@
             "Row": [
                 ""
             ],
-            "Row and Column Points": [
-                ""
-            ],
             "Row and Column Profiles": [
                 ""
             ],
@@ -919,6 +1078,9 @@
             "Scatter Plot": [
                 ""
             ],
+            "SD": [
+                ""
+            ],
             "Set 1": [
                 ""
             ],
@@ -932,9 +1094,6 @@
                 ""
             ],
             "Show % Labels": [
-                ""
-            ],
-            "Show 50% Line (Stacked Only)": [
                 ""
             ],
             "Show count labels": [
@@ -982,6 +1141,9 @@
             "Solution": [
                 ""
             ],
+            "Sort Variables by Median": [
+                ""
+            ],
             "Sorting": [
                 ""
             ],
@@ -1021,10 +1183,13 @@
             "Summary": [
                 ""
             ],
-            "Supplement": [
+            "Suppl. Column": [
                 ""
             ],
-            "Supplementary": [
+            "Suppl. Row": [
+                ""
+            ],
+            "Supplement": [
                 ""
             ],
             "Supplementary Columns": [
@@ -1051,6 +1216,9 @@
             "Tail-Sensitive (Normal)": [
                 ""
             ],
+            "Tests": [
+                ""
+            ],
             "Text": [
                 ""
             ],
@@ -1060,6 +1228,9 @@
             "Theoretical Quantiles": [
                 ""
             ],
+            "Tidy up levels": [
+                ""
+            ],
             "Time Series": [
                 ""
             ],
@@ -1067,6 +1238,12 @@
                 ""
             ],
             "Total Row": [
+                ""
+            ],
+            "Type": [
+                ""
+            ],
+            "U": [
                 ""
             ],
             "Uniform": [
@@ -1088,6 +1265,9 @@
                 ""
             ],
             "Variables": [
+                ""
+            ],
+            "Vertical Label Wrap": [
                 ""
             ],
             "Vertical line at": [
@@ -1139,6 +1319,9 @@
                 ""
             ],
             "Yellow to Red": [
+                ""
+            ],
+            "χ²": [
                 ""
             ]
         }

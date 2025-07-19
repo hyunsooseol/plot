@@ -1,0 +1,174 @@
+---
+name:  principal
+title: Principal Component Plot
+jrs:   '1.1'
+refs:
+    - psych
+
+items:
+    - name:  text
+      title: Principal Component Plot
+      type:  Preformatted
+
+    - name: summaryTable
+      title: Summary
+      visible: (showSummary)
+      type: Table
+      clearWith:
+        - vars
+        - dimNum
+        - rotation
+        - missingValues
+      columns:
+        - name: comp
+          title: 'Component'
+          type: 'text'
+        - name: eigenvalue
+          title: Eigenvalue
+          superTitle: Initial Eigenvalues
+          type: number
+          format: "zto"
+        - name: initVarProp
+          title: '% of Variance'
+          superTitle: Initial Eigenvalues
+          type: number
+          format: pc
+        - name: initVarCum
+          title: 'Cumulative %'
+          superTitle: Initial Eigenvalues
+          type: number
+          format: pc
+        - name: loadings
+          title: SS Loadings
+          superTitle: Extration Sums of Squared Loadings
+          type: number
+          format: "zto"
+        - name: varProp
+          title: '% of Variance'
+          superTitle: Extration Sums of Squared Loadings
+          type: number
+          format: pc
+        - name: varCum
+          title: 'Cumulative %'
+          superTitle: Extration Sums of Squared Loadings
+          type: number
+          format: pc
+
+    - name: kmoTable
+      title: KMO & Bartlett's Test
+      visible: (showKMO)
+      type: Table
+      columns:
+        - name: test
+          title: ''
+          type: 'text'
+        - name: statistic
+          title: Statistic
+          type: number
+        - name: df
+          title: df
+          type: integer
+        - name: p
+          title: p
+          type: number
+          format: "zto"
+      rows: 2
+      clearWith:
+        - vars
+        - missingValues
+
+    - name: loadingTable
+      title: Loadings
+      type: Table
+      visible: (showLoadings)
+      rows: (vars)
+      clearWith:
+        - vars
+        - rotation
+        - dimNum
+        - xaxis
+        - yaxis
+        - missingValues
+      columns:
+        - name: var
+          title: ""
+          type: text
+          content: ($key)
+
+    - name: obsTable
+      title: Observations
+      type: Table
+      visible: (showObservations)
+      clearWith:
+        - vars
+        - labelVar
+        - rotation
+        - dimNum
+        - xaxis
+        - yaxis
+        - missingValues
+        - stdScores
+      columns: []
+
+    - name: screePlot
+      title: "Scree Plot"
+      type: Image
+      width:  500
+      height: 300
+      visible: (showScreePlot)
+      renderFun: .screeplot
+      clearWith:
+        - vars
+        - missingValues
+
+    - name: varPlot
+      title: "Loading Plot"
+      type: Image
+      width:  600
+      height: 600
+      visible: (showVarPlot)
+      renderFun: .varplot
+      clearWith:
+        - vars
+        - rotation
+        - dimNum
+        - xaxis
+        - yaxis
+        - missingValues
+
+    - name: obsPlot
+      title: "Observation Plot"
+      type: Image
+      width:  600
+      height: 600
+      visible: (showObsPlot)
+      renderFun: .obsplot
+      clearWith:
+        - vars
+        - labelVar
+        - rotation
+        - dimNum
+        - xaxis
+        - yaxis
+        - missingValues
+        - groupVar
+        - stdScores
+
+    - name: biPlot
+      title: "Biplot"
+      type: Image
+      width:  600
+      height: 600
+      visible: (showBiplot)
+      renderFun: .biplot
+      clearWith:
+        - vars
+        - labelVar
+        - rotation
+        - dimNum
+        - xaxis
+        - yaxis
+        - missingValues
+        - groupVar
+        - stdScores
+...

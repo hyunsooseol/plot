@@ -1,12 +1,12 @@
 ---
 title: 'vijPlots: Yet Another jamovi Plotting Module'
 name: vijPlots
-version: 0.9.1
+version: 0.9.5
 jms: '1.0'
 authors:
   - Vincent Jalby
 maintainer: Vincent Jalby <vincent.jalby@unilim.fr>
-date: '2025-06-06'
+date: '2025-06-22'
 type: R
 description: >-
   Main statistical charts (histogram, boxplot, point, bar, line, raincloud...)
@@ -105,12 +105,19 @@ analyses:
     menuTitle: Q-Q & P-P Plots
     menuSubgroup: Continuous
     category: analyses
+  - title: Principal Component Plot
+    name: principal
+    ns: vijPlots
+    menuGroup: vijPlots
+    menuTitle: Principal Component Plot
+    menuSubgroup: Multivariate
+    category: analyses
   - title: Correspondence Plot
     name: corresp
     ns: vijPlots
     menuGroup: vijPlots
+    menuSubgroup: Multivariate
     menuTitle: Correspondence Plot
-    menuSubgroup: Categorical
     category: analyses
 usesNative: true
 minApp: 1.0.8

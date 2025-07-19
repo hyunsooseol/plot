@@ -8,4 +8,5 @@
 .httr-oauth
 .DS_Store
 .quarto
+workfile*
 build/

@@ -18,6 +18,7 @@ options:
         - ordinal
       permitted:
         - factor
+        - numeric
 
     - name: group
       title: Grouping Variable
@@ -38,7 +39,7 @@ options:
       default: centered
 
     - name: sorting
-      title: Sorting
+      title: Sort Variables by Median
       type: List
       options:
         - title: None
@@ -64,13 +65,18 @@ options:
       type: Bool
       default: true
 
+    - name: hideLabelsBelow
+      title: "Hide % Labels Below 5%"
+      type: Bool
+      default: false
+
     - name: addTotals
       title: Show Totals (Centered Only)
       type: Bool
       default: true
 
     - name: addMedianLine
-      title: Show 50% Line (Stacked Only)
+      title: Add Median Line (Stacked Only)
       type: Bool
       default: true
 
@@ -84,8 +90,13 @@ options:
       type: Bool
       default: false
 
+    - name: tidyUp
+      title: Tidy up levels
+      type: Bool
+      default: false
+
     - name: ignoreNA
-      title: Ignore NA
+      title: Ignore NA groups
       type: Bool
       default: true
 
@@ -118,9 +129,43 @@ options:
           name:  "1"
         - title: "0.1"
           name:  "0.1"
-        - title: "0.01"
-          name: "0.01"
       default: "1"
+
+    - name: vLabelWrap
+      title: "Vertical Label Wrap"
+      type: List
+      options:
+        - title: "10"
+          name:  "10"
+        - title: "15"
+          name:  "15"
+        - title: "20"
+          name: "20"
+        - title: "25"
+          name:  "25"
+        - title: "30"
+          name:  "30"
+        - title: "35"
+          name: "35"
+      default: "20"
+
+    - name: hLabelWrap
+      title: "Horizontal Label Wrap"
+      type: List
+      options:
+        - title: "10"
+          name:  "10"
+        - title: "20"
+          name:  "20"
+        - title: "30"
+          name: "30"
+        - title: "40"
+          name:  "40"
+        - title: "50"
+          name:  "60"
+        - title: "80"
+          name: "80"
+      default: "30"
 
     - name: plotColor
       title: "Palette"
@@ -145,5 +190,103 @@ options:
         - title: Spectral
           name:  Spectral
       default: BrBG
+
+    - name: labelColor
+      title: "% Label Color"
+      type: List
+      options:
+        - title: Auto
+          name:  auto
+        - title: Black
+          name:  black
+        - title: Grey
+          name:  darkgrey
+        - title: White
+          name:  white
+      default: auto
+
+    - name: frequencyTable
+      title: "Frequency Table"
+      type: Bool
+      default: false
+
+    - name: showMedian
+      title: "Median"
+      type: Bool
+      default: false
+
+    - name: showMean
+      title: "Mean & SD"
+      type: Bool
+      default: false
+
+    - name: frequencies
+      title: "Frequencies"
+      type: List
+      options:
+        - title: Counts
+          name:  counts
+        - title: Percentages
+          name:  percentages
+      default: counts
+
+    - name: showMannU
+      title: "Mann-Whitney U"
+      type: Bool
+      default: false
+
+    - name: showKW
+      title: "Kruskal-Wallis"
+      type: Bool
+      default: false
+
+    - name: showPostHoc
+      title: "Post Hoc"
+      type: Bool
+      default: false
+
+    - name: postHoc
+      title: Post Hoc Tests
+      type: List
+      options:
+#        - title: Mann-Whitney U
+#          name:  mannwhitney
+        - title: Conover
+          name:  conover
+        - title: Dunn
+          name:  dunn
+        - title: DSCF
+          name:  dscf
+      default: dunn
+
+    - name: pValue
+      title: p-Value Adjustment
+      type: List
+      options:
+        - title: None
+          name:  none
+        - title: Groupwise
+          name:  group
+        - title: Overall
+          name:  overall
+      default: none
+
+    - name: adjustMethod
+      title: Method
+      type: List
+      options:
+        - title: Bonferroni
+          name:  bonferroni
+        - title: Holm
+          name:  holm
+        - title: Hochberg
+          name:  hochberg
+        - title: Hommel
+          name:  hommel
+        - title: BH
+          name:  BH
+        - title: BY
+          name:  BY
+      default: holm
 
 ...

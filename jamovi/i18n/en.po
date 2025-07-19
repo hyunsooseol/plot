@@ -65,6 +65,7 @@ msgid "% accuracy"
 msgstr ""
 
 #: barplot/ui[2][2][0].label
+#: likertplot/ui[4][0][2][0].label
 #: piechart/ui[2][0][2][0].label
 msgid "% Accuracy"
 msgstr ""
@@ -75,6 +76,14 @@ msgstr ""
 
 #: mrcrosstabs/ui[2][1][0]/computedValues_options.label
 msgid "% by row"
+msgstr ""
+
+#: likertplot/options/labelColor.title
+msgid "% Label Color"
+msgstr ""
+
+#: likertplot/ui[4][1][0][0].label
+msgid "% Labels"
 msgstr ""
 
 #: R/mrcrosstabs.b.R
@@ -107,9 +116,15 @@ msgstr ""
 msgid "% within"
 msgstr ""
 
+#: likertplot/results/helpMessage.content
+msgid "<style> .block { border: 2px solid gray; border-radius: 15px; background-color: WhiteSmoke; padding: 0px 20px; text-align: justify; } </style> <div class=\"block\"> <h2>Likert Plot Help</h2> <h3>Data & Sorting</h3>\n"
+"<ul> <li>Likert variables must be of ordinal measure-type</li> <li>If you plan to compute mean/median/sd or to use comparison tests, they must be of integer data-type.</li> <li><strong>Tidy up levels:</strong> when checked, try to fix the labels order in table and graph (when some variables miss some levels).</li> <li><strong>Convert variables to integer:</strong> when checked, the level labels are ignored and only integer values are used.</li> <li><strong>Sort Variables by Median:</strong> orders the list of Likert variables by median.</li> </ul>\n"
+"<h3>Comparison Tests</h3> When using a group variable, several tests are available: <ul> <li><strong>Mann-Whitney U:</strong> Two group comparison</li> <li><strong>Kruskal-Wallis:</strong> n group comparison</li> <li><strong>Post Hoc Tests:</strong> Dunn, Conover and Dwass-Steel-Critchlow-Fligner (DSCF) paiwise comparisons tests.</li> </ul>\n"
+"<p>p-Values can be adjusted <strong>groupwise</strong> (for each question) for post hoc tests or <strong>overall</strong> (groupwise and questionwise) for MannWithney U, Kruskal-Wallis and post hoc tests. DSCF p-values are already adjusted (groupwise); no other adjustment is possible.</p> </div>"
+msgstr ""
+
 #: barplot/options/accuracy/0.01.title
 #: barplot/ui[2][2][0][0]/accuracy_001.label
-#: likertplot/options/accuracy/0.01.title
 #: piechart/options/accuracy/0.01.title
 #: piechart/ui[2][0][2][0][0]/accuracy_001.label
 msgid "0.01"
@@ -118,6 +133,7 @@ msgstr ""
 #: barplot/options/accuracy/0.1.title
 #: barplot/ui[2][2][0][0]/accuracy_01.label
 #: likertplot/options/accuracy/0.1.title
+#: likertplot/ui[4][0][2][0]/accuracy_01.label
 #: piechart/options/accuracy/0.1.title
 #: piechart/ui[2][0][2][0][0]/accuracy_01.label
 msgid "0.1"
@@ -131,6 +147,7 @@ msgstr ""
 #: barplot/options/accuracy/1.title
 #: barplot/ui[2][2][0][0]/accuracy_1.label
 #: likertplot/options/accuracy/1.title
+#: likertplot/ui[4][0][2][0]/accuracy_1.label
 #: piechart/options/accuracy/1.title
 #: piechart/ui[2][0][2][0][0]/accuracy_1.label
 msgid "1"
@@ -156,14 +173,28 @@ msgstr ""
 msgid "1 year"
 msgstr ""
 
+#: likertplot/options/vLabelWrap/10.title
+#: likertplot/options/hLabelWrap/10.title
+msgid "10"
+msgstr ""
+
 #: areachart/options/dateBreak/10 year.title
 #: linechart/options/dateBreak/10 year.title
 msgid "10 years"
 msgstr ""
 
+#: likertplot/options/vLabelWrap/15.title
+msgid "15"
+msgstr ""
+
 #: areachart/options/dateBreak/2 week.title
 #: linechart/options/dateBreak/2 week.title
 msgid "2 weeks"
+msgstr ""
+
+#: likertplot/options/vLabelWrap/20.title
+#: likertplot/options/hLabelWrap/20.title
+msgid "20"
 msgstr ""
 
 #: areachart/options/displayFormat/%e %B %Y.title
@@ -196,14 +227,39 @@ msgstr ""
 msgid "2035-06-20"
 msgstr ""
 
+#: likertplot/options/vLabelWrap/25.title
+msgid "25"
+msgstr ""
+
 #: areachart/options/dateBreak/3 month.title
 #: linechart/options/dateBreak/3 month.title
 msgid "3 months"
 msgstr ""
 
+#: likertplot/options/vLabelWrap/30.title
+#: likertplot/options/hLabelWrap/30.title
+msgid "30"
+msgstr ""
+
+#: likertplot/options/vLabelWrap/35.title
+msgid "35"
+msgstr ""
+
+#: likertplot/options/hLabelWrap/40.title
+msgid "40"
+msgstr ""
+
+#: likertplot/options/hLabelWrap/60.title
+msgid "50"
+msgstr ""
+
 #: areachart/options/dateBreak/6 month.title
 #: linechart/options/dateBreak/6 month.title
 msgid "6 months"
+msgstr ""
+
+#: likertplot/options/hLabelWrap/80.title
+msgid "80"
 msgstr ""
 
 #: package/datasets/Likert.description
@@ -247,8 +303,16 @@ msgstr ""
 msgid "Active Margin"
 msgstr ""
 
+#: likertplot/options/addMedianLine.title
+msgid "Add Median Line (Stacked Only)"
+msgstr ""
+
 #: scatterplot/options/plotBorder.title
 msgid "Add plot frame"
+msgstr ""
+
+#: R/likertplot.b.R
+msgid "Adj. p"
 msgstr ""
 
 #: raincloud/options/alphaC.title
@@ -270,6 +334,7 @@ msgstr ""
 
 #: areachart/options/dateFormat/auto.title
 #: barplot/options/textColor/auto.title
+#: likertplot/options/labelColor/auto.title
 #: linechart/options/dateFormat/auto.title
 #: piechart/options/textColor/auto.title
 msgid "Auto"
@@ -293,6 +358,10 @@ msgstr ""
 msgid "Beta"
 msgstr ""
 
+#: likertplot/options/adjustMethod/BH.title
+msgid "BH"
+msgstr ""
+
 #: histogram/ui[2][2][0].label
 msgid "Bin Color"
 msgstr ""
@@ -311,6 +380,7 @@ msgstr ""
 #: corresp/options/supColor/black.title
 #: histogram/options/fillColor/black.title
 #: histogram/options/borderColor/black.title
+#: likertplot/options/labelColor/black.title
 #: lollipop/options/dotColor/black.title
 #: lollipop/options/lineColor/black.title
 #: piechart/options/borderColor/black.title
@@ -365,6 +435,10 @@ msgstr ""
 msgid "Blues"
 msgstr ""
 
+#: likertplot/options/adjustMethod/bonferroni.title
+msgid "Bonferroni"
+msgstr ""
+
 #: qqplot/options/methodQQ/boot.title
 #: qqplot/options/methodPP/boot.title
 msgid "Boostrap"
@@ -408,11 +482,15 @@ msgstr ""
 msgid "Brown and Green"
 msgstr ""
 
-#: likertplot/ui[1][2][0]/groupBy_group.label
+#: likertplot/options/adjustMethod/BY.title
+msgid "BY"
+msgstr ""
+
+#: likertplot/ui[4][0][1][0]/groupBy_group.label
 msgid "By Group"
 msgstr ""
 
-#: likertplot/ui[1][2][0]/groupBy_variable.label
+#: likertplot/ui[4][0][1][0]/groupBy_variable.label
 msgid "By Variable"
 msgstr ""
 
@@ -437,7 +515,7 @@ msgid "Cauchy"
 msgstr ""
 
 #: likertplot/options/type/centered.title
-#: likertplot/ui[1][0][0]/type_centered.label
+#: likertplot/ui[4][0][0][0]/type_centered.label
 msgid "Centered"
 msgstr ""
 
@@ -491,11 +569,11 @@ msgid "Column Points for"
 msgstr ""
 
 #: R/corresp.b.R
-#: corresp/ui[3][0][0]/normalization_colprincipal.label
 msgid "Column Principal"
 msgstr ""
 
 #: corresp/options/normalization/colprincipal.title
+#: corresp/ui[3][0][0]/normalization_colprincipal.label
 msgid "Column Principal_"
 msgstr "Column Principal"
 
@@ -517,12 +595,26 @@ msgstr ""
 msgid "Columns (Groups)"
 msgstr ""
 
+#: likertplot/ui[3].label
+#: likertplot/results/comp.title
+msgid "Comparison Tests"
+msgstr ""
+
 #: qqplot/options/band.title
 msgid "Confidence Band"
 msgstr ""
 
 #: qqplot/ui[4][0][1][0].label
 msgid "Confidence Band Methods"
+msgstr ""
+
+#: likertplot/options/postHoc/conover.title
+#: likertplot/ui[3][0][1][0]/postHoc_conover.label
+msgid "Conover"
+msgstr ""
+
+#: R/likertplot.b.R
+msgid "Conover's Pairwise Comparisons"
 msgstr ""
 
 #: corresp/options/showContingency.title
@@ -581,6 +673,8 @@ msgid "Counted Value"
 msgstr ""
 
 #: R/mrfrequencies.b.R
+#: likertplot/options/frequencies/counts.title
+#: likertplot/ui[2][0][1][0]/frequencies_counts.label
 #: mrfrequencies/options/showCounts.title
 #: mrfrequencies/options/yaxis/counts.title
 #: mrfrequencies/ui[2][2][0]/yaxis_counts.label
@@ -633,6 +727,10 @@ msgstr ""
 msgid "Dark 2"
 msgstr ""
 
+#: likertplot/ui[1][0][0].label
+msgid "Data"
+msgstr ""
+
 #: qqplot/ui[2][0][1].label
 msgid "Data Transform"
 msgstr ""
@@ -674,6 +772,10 @@ msgstr ""
 msgid "Detrended Plot"
 msgstr ""
 
+#: likertplot/results/comp/kwTable.columns.title
+msgid "df"
+msgstr ""
+
 #: corresp/results/eigenvalues.columns.title
 msgid "Dimension"
 msgstr ""
@@ -698,6 +800,28 @@ msgstr ""
 
 #: boxplot/options/staple.title
 msgid "Draw staples"
+msgstr ""
+
+#: likertplot/options/postHoc/dscf.title
+#: likertplot/ui[3][0][1][0]/postHoc_dscf.label
+msgid "DSCF"
+msgstr ""
+
+#: R/likertplot.b.R
+msgid "DSCF p-values are adjusted groupwise."
+msgstr ""
+
+#: likertplot/options/postHoc/dunn.title
+#: likertplot/ui[3][0][1][0]/postHoc_dunn.label
+msgid "Dunn"
+msgstr ""
+
+#: R/likertplot.b.R
+msgid "Dunn's Pairwise Comparisons"
+msgstr ""
+
+#: R/likertplot.b.R
+msgid "Dwass-Steel-Critchlow-Fligner Pairwise Comparisons"
 msgstr ""
 
 #: R/areachart.b.R
@@ -782,6 +906,7 @@ msgstr ""
 
 #: package/analyses/mrfrequencies.title
 #: package/analyses/mrfrequencies.menuTitle
+#: likertplot/options/frequencies.title
 #: mrfrequencies/options.title
 #: mrfrequencies/results/responses.title
 msgid "Frequencies"
@@ -789,6 +914,15 @@ msgstr ""
 
 #: mrfrequencies/results/plot.title
 msgid "Frequency Plot"
+msgstr ""
+
+#: likertplot/options/frequencyTable.title
+#: likertplot/results/frequencies.title
+msgid "Frequency Table"
+msgstr ""
+
+#: likertplot/ui[2][0][1][0].label
+msgid "Frequency Type"
 msgstr ""
 
 #: qqplot/options/distrib/gamma.title
@@ -839,6 +973,10 @@ msgstr ""
 msgid "Greens"
 msgstr ""
 
+#: likertplot/options/labelColor/darkgrey.title
+msgid "Grey"
+msgstr ""
+
 #: areachart/options/colorPalette/Greys.title
 #: barplot/options/colorPalette/Greys.title
 #: boxplot/options/colorPalette/Greys.title
@@ -861,7 +999,7 @@ msgstr ""
 #: histogram/options/group.title
 #: histogram/ui[0][1].label
 #: likertplot/options/groupBy/group.title
-#: likertplot/ui[1][2][0].label
+#: likertplot/ui[4][0][1][0].label
 #: linechart/options/group.title
 #: linechart/ui[0][2].label
 #: lollipop/options/group.title
@@ -908,6 +1046,11 @@ msgstr ""
 msgid "Grouping Variable"
 msgstr ""
 
+#: likertplot/options/pValue/group.title
+#: likertplot/ui[3][0][2][0]/pValue_group.label
+msgid "Groupwise"
+msgstr ""
+
 #: areachart/options/plotHeight.title
 #: barplot/options/plotHeight.title
 #: boxplot/options/plotHeight.title
@@ -922,6 +1065,10 @@ msgstr ""
 msgid "Height"
 msgstr ""
 
+#: likertplot/options/hideLabelsBelow.title
+msgid "Hide % Labels Below 5%"
+msgstr ""
+
 #: package/analyses/histogram.title
 #: package/analyses/histogram.menuTitle
 #: histogram/options.title
@@ -930,6 +1077,22 @@ msgstr ""
 #: histogram/ui[2][0][0].label
 #: histogram/results.title
 msgid "Histogram"
+msgstr ""
+
+#: likertplot/options/adjustMethod/hochberg.title
+msgid "Hochberg"
+msgstr ""
+
+#: likertplot/options/adjustMethod/holm.title
+msgid "Holm"
+msgstr ""
+
+#: likertplot/options/adjustMethod/hommel.title
+msgid "Hommel"
+msgstr ""
+
+#: likertplot/options/hLabelWrap.title
+msgid "Horizontal Label Wrap"
 msgstr ""
 
 #: scatterplot/options/hline.title
@@ -959,8 +1122,11 @@ msgstr ""
 
 #: barplot/options/ignoreNA.title
 #: boxplot/options/ignoreNA.title
-#: likertplot/options/ignoreNA.title
 msgid "Ignore NA"
+msgstr ""
+
+#: likertplot/options/ignoreNA.title
+msgid "Ignore NA groups"
 msgstr ""
 
 #: barplot/options/order/increasing.title
@@ -1056,12 +1222,24 @@ msgstr ""
 msgid "Kolmogorov-Smirnov"
 msgstr ""
 
+#: likertplot/options/showKW.title
+msgid "Kruskal-Wallis"
+msgstr ""
+
+#: likertplot/results/comp/kwTable.title
+msgid "Kruskal-Wallis Tests"
+msgstr ""
+
 #: boxplot/options/label.title
 #: boxplot/ui[0][2].label
 #: piechart/options/textColor.title
 #: scatterplot/options/labelVar.title
 #: scatterplot/ui[0][3].label
 msgid "Label"
+msgstr ""
+
+#: likertplot/ui[4][2][0][0].label
+msgid "Label Size"
 msgstr ""
 
 #: piechart/options/labels.title
@@ -1193,7 +1371,15 @@ msgid "Lollipop Size"
 msgstr ""
 
 #: package.description
-msgid "Main statistical charts (histogram, boxplot, point, bar, line, raincloud...) with many options along with Likert and multiple response barplots. Project source is available at  <a href=\"https://github.com/vjalby/vijPlots\" target=\"_blank\">Github</a>."
+msgid "Main statistical charts (histogram, boxplot, point, bar, line, raincloud...) with many options along with Likert, multiple response barplots, Correspondance plot. Project source is available at  <a href=\"https://github.com/vjalby/vijPlots\" target=\"_blank\">Github</a>."
+msgstr ""
+
+#: likertplot/options/showMannU.title
+msgid "Mann-Whitney U"
+msgstr ""
+
+#: likertplot/results/comp/uTestTable.title
+msgid "Mann-Whitney U Tests"
 msgstr ""
 
 #: R/corresp.b.R
@@ -1219,10 +1405,16 @@ msgstr ""
 msgid "Mean"
 msgstr ""
 
+#: likertplot/options/showMean.title
+msgid "Mean & SD"
+msgstr ""
+
 #: R/lollipop.b.R
 msgid "Mean of"
 msgstr ""
 
+#: R/likertplot.b.R
+#: likertplot/options/showMedian.title
 #: lollipop/options/yaxis/median.title
 #: lollipop/ui[2][0][0][0]/yaxis_median.label
 msgid "Median"
@@ -1235,6 +1427,10 @@ msgstr ""
 #: mrcrosstabs/options/size/medium.title
 #: mrfrequencies/options/size/medium.title
 msgid "Medium (400x300)"
+msgstr ""
+
+#: likertplot/options/adjustMethod.title
+msgid "Method"
 msgstr ""
 
 #: qqplot/options/paramEstMethod/mme.title
@@ -1287,7 +1483,9 @@ msgstr ""
 #: histogram/options/grouping/none.title
 #: histogram/ui[3][0][0][0]/grouping_none.label
 #: likertplot/options/sorting/none.title
+#: likertplot/options/pValue/none.title
 #: likertplot/ui[1][1][0]/sorting_none.label
+#: likertplot/ui[3][0][2][0]/pValue_none.label
 #: lollipop/options/order/none.title
 #: lollipop/ui[2][1][0][0]/order_none.label
 #: mrcrosstabs/options/order/none.title
@@ -1352,6 +1550,7 @@ msgstr ""
 msgid "Option Variables"
 msgstr ""
 
+#: likertplot/ui[4][1][1][0].label
 #: mrcrosstabs/options/optionname.default
 #: mrcrosstabs/results/crosstab.columns.title
 #: mrfrequencies/options/optionname.default
@@ -1412,6 +1611,8 @@ msgid "Other Options"
 msgstr ""
 
 #: R/mrcrosstabs.b.R
+#: likertplot/options/pValue/overall.title
+#: likertplot/ui[3][0][2][0]/pValue_overall.label
 msgid "Overall"
 msgstr ""
 
@@ -1425,6 +1626,11 @@ msgstr ""
 msgid "Overlapping"
 msgstr ""
 
+#: likertplot/results/comp/uTestTable.columns.title
+#: likertplot/results/comp/kwTable.columns.title
+msgid "p"
+msgstr ""
+
 #: R/qqplot.b.R
 #: qqplot/options/methodPP.title
 msgid "P-P"
@@ -1433,6 +1639,23 @@ msgstr ""
 #: qqplot/options/type/PP.title
 #: qqplot/ui[2][0][0]/type_PP.label
 msgid "P-P Plot"
+msgstr ""
+
+#: likertplot/options/pValue.title
+#: likertplot/ui[3][0][2][0].label
+msgid "p-Value Adjustment"
+msgstr ""
+
+#: R/likertplot.b.R
+msgid "p-values are adjusted groupwise using {method} method."
+msgstr ""
+
+#: R/likertplot.b.R
+msgid "p-values are adjusted overall using {method} method."
+msgstr ""
+
+#: R/likertplot.b.R
+msgid "p-values are adjusted using {method} method."
 msgstr ""
 
 #: areachart/options/colorPalette/Paired.title
@@ -1446,6 +1669,10 @@ msgstr ""
 #: raincloud/options/colorPalette/Paired.title
 #: scatterplot/options/colorPalette/Paired.title
 msgid "Paired"
+msgstr ""
+
+#: likertplot/results/comp/pwTable.title
+msgid "Pairwise Comparisons"
 msgstr ""
 
 #: areachart/options/colorPalette.title
@@ -1513,6 +1740,11 @@ msgstr ""
 msgid "Percent"
 msgstr ""
 
+#: likertplot/options/frequencies/percentages.title
+#: likertplot/ui[2][0][1][0]/frequencies_percentages.label
+msgid "Percentages"
+msgstr ""
+
 #: package/analyses/piechart.title
 #: package/analyses/piechart.menuTitle
 #: piechart/options.title
@@ -1543,8 +1775,14 @@ msgstr ""
 msgid "Pink and Green"
 msgstr ""
 
+#: likertplot/ui[4].label
+#: likertplot/results/plot.title
 #: mrfrequencies/ui[2][2][0].label
 msgid "Plot"
+msgstr ""
+
+#: likertplot/ui[4][2][1][0].label
+msgid "Plot Color"
 msgstr ""
 
 #: areachart/ui[1][0][0].label
@@ -1552,7 +1790,6 @@ msgstr ""
 #: boxplot/ui[1][0][0].label
 #: boxplot/ui[2][0][1][0].label
 #: corresp/ui[5].label
-#: likertplot/ui[2][0][0].label
 #: linechart/ui[1][0][0].label
 #: piechart/ui[1][0][0].label
 #: qqplot/ui[2][1][0].label
@@ -1566,6 +1803,7 @@ msgstr ""
 #: boxplot/ui[2][0][0][0].label
 #: corresp/ui[5][0][0][0].label
 #: histogram/ui[4][0][0][0].label
+#: likertplot/ui[4][3].label
 #: linechart/ui[2][0][0][0].label
 #: lollipop/ui[3][0][0][0].label
 #: mrcrosstabs/ui[3][0][2][0].label
@@ -1576,12 +1814,7 @@ msgstr ""
 msgid "Plot Size"
 msgstr ""
 
-#: likertplot/ui[2][1][0].label
-msgid "Plot Size & Color"
-msgstr ""
-
 #: likertplot/options/type.title
-#: likertplot/ui[1][0][0].label
 #: qqplot/options/type.title
 #: qqplot/ui[2][0][0].label
 msgid "Plot Type"
@@ -1611,20 +1844,29 @@ msgstr ""
 msgid "Position"
 msgstr ""
 
+#: likertplot/options/showPostHoc.title
+msgid "Post Hoc"
+msgstr ""
+
+#: likertplot/options/postHoc.title
+#: likertplot/ui[3][0][1][0].label
+msgid "Post Hoc Tests"
+msgstr ""
+
 #: scatterplot/options/overlap.title
 msgid "Prevent overlap"
 msgstr ""
 
 #: R/corresp.b.R
-#: corresp/ui[3][0][0]/normalization_principal.label
 msgid "Principal"
 msgstr ""
 
 #: corresp/options/normalization/principal.title
+#: corresp/ui[3][0][0]/normalization_principal.label
 msgid "Principal_"
 msgstr "Principal"
 
-#: likertplot/ui[2][1][0]/textSize.suffix
+#: likertplot/ui[4][3][2]/textSize.suffix
 #: qqplot/ui[4][0][0][0][0]/textSize.suffix
 msgid "pt"
 msgstr ""
@@ -1714,8 +1956,8 @@ msgstr ""
 #: corresp/ui[5][0][0][0][0]/plotHeight.suffix
 #: histogram/ui[4][0][0][0][0]/plotWidth.suffix
 #: histogram/ui[4][0][0][0][0]/plotHeight.suffix
-#: likertplot/ui[2][1][0]/plotWidth.suffix
-#: likertplot/ui[2][1][0]/plotHeight.suffix
+#: likertplot/ui[4][3][0]/plotWidth.suffix
+#: likertplot/ui[4][3][1]/plotHeight.suffix
 #: linechart/ui[2][0][0][0][0]/plotWidth.suffix
 #: linechart/ui[2][0][0][0][0]/plotHeight.suffix
 #: linechart/ui[2][0][1][0][0]/dotSize.suffix
@@ -1754,6 +1996,12 @@ msgstr ""
 #: qqplot/options/type/QQ.title
 #: qqplot/ui[2][0][0]/type_QQ.label
 msgid "Q-Q Plot"
+msgstr ""
+
+#: likertplot/results/frequencies.columns.title
+#: likertplot/results/comp/uTestTable.columns.title
+#: likertplot/results/comp/kwTable.columns.title
+msgid "Questions"
 msgstr ""
 
 #: package/datasets/Raincloud.name
@@ -1898,10 +2146,6 @@ msgstr ""
 msgid "Row"
 msgstr ""
 
-#: R/corresp.b.R
-msgid "Row and Column Points"
-msgstr ""
-
 #: corresp/options/showProfiles.title
 msgid "Row and Column Profiles"
 msgstr ""
@@ -1920,11 +2164,11 @@ msgid "Row Points for"
 msgstr ""
 
 #: R/corresp.b.R
-#: corresp/ui[3][0][0]/normalization_rowprincipal.label
 msgid "Row Principal"
 msgstr ""
 
 #: corresp/options/normalization/rowprincipal.title
+#: corresp/ui[3][0][0]/normalization_rowprincipal.label
 msgid "Row Principal_"
 msgstr "Row Principal"
 
@@ -1965,6 +2209,10 @@ msgstr ""
 #: scatterplot/ui.title
 #: scatterplot/results.title
 msgid "Scatter Plot"
+msgstr ""
+
+#: R/likertplot.b.R
+msgid "SD"
 msgstr ""
 
 #: areachart/options/colorPalette/Set1.title
@@ -2012,10 +2260,6 @@ msgstr ""
 
 #: likertplot/options/addLabels.title
 msgid "Show % Labels"
-msgstr ""
-
-#: likertplot/options/addMedianLine.title
-msgid "Show 50% Line (Stacked Only)"
 msgstr ""
 
 #: barplot/options/showLabels.title
@@ -2082,10 +2326,13 @@ msgstr ""
 msgid "Solution"
 msgstr ""
 
-#: barplot/options/order.title
-#: barplot/ui[1][1][0].label
 #: likertplot/options/sorting.title
 #: likertplot/ui[1][1][0].label
+msgid "Sort Variables by Median"
+msgstr ""
+
+#: barplot/options/order.title
+#: barplot/ui[1][1][0].label
 #: lollipop/options/order.title
 #: lollipop/ui[2][1][0].label
 #: mrcrosstabs/options/order.title
@@ -2120,7 +2367,7 @@ msgstr ""
 #: histogram/options/grouping/stack.title
 #: histogram/ui[3][0][0][0]/grouping_stack.label
 #: likertplot/options/type/stacked.title
-#: likertplot/ui[1][0][0]/type_stacked.label
+#: likertplot/ui[4][0][0][0]/type_stacked.label
 #: mrcrosstabs/options/bartype/stack.title
 #: mrcrosstabs/ui[3][0][0][0]/bartype_stack.label
 msgid "Stacked"
@@ -2133,11 +2380,11 @@ msgid "Stacked 100%"
 msgstr ""
 
 #: R/corresp.b.R
-#: corresp/ui[3][0][0]/normalization_standard.label
 msgid "Standard"
 msgstr ""
 
 #: corresp/options/normalization/standard.title
+#: corresp/ui[3][0][0]/normalization_standard.label
 msgid "Standard_"
 msgstr "Standard"
 
@@ -2165,12 +2412,16 @@ msgstr ""
 msgid "Summary"
 msgstr ""
 
-#: corresp/options/supColor.title
-msgid "Supplement"
+#: R/corresp.b.R
+msgid "Suppl. Column"
 msgstr ""
 
 #: R/corresp.b.R
-msgid "Supplementary"
+msgid "Suppl. Row"
+msgstr ""
+
+#: corresp/options/supColor.title
+msgid "Supplement"
 msgstr ""
 
 #: corresp/options/supplementaryCols.title
@@ -2186,14 +2437,16 @@ msgid "Supplementary Rows"
 msgstr ""
 
 #: R/corresp.b.R
-#: corresp/ui[3][0][0]/normalization_symbiplot.label
 msgid "Symetric"
 msgstr "Symetrical"
 
 #: corresp/options/normalization/symbiplot.title
+#: corresp/ui[3][0][0]/normalization_symbiplot.label
 msgid "Symetric_"
 msgstr "Symetrical"
 
+#: likertplot/ui[2].label
+#: likertplot/ui[2][0][0][0].label
 #: mrcrosstabs/ui[2][0][0].label
 #: mrfrequencies/ui[2][0][0].label
 msgid "Table"
@@ -2205,6 +2458,10 @@ msgstr ""
 
 #: qqplot/options/methodQQ/ts.title
 msgid "Tail-Sensitive (Normal)"
+msgstr ""
+
+#: likertplot/ui[3][0][0][0].label
+msgid "Tests"
 msgstr ""
 
 #: barplot/options/textColor.title
@@ -2221,6 +2478,10 @@ msgstr ""
 msgid "Theoretical Quantiles"
 msgstr ""
 
+#: likertplot/options/tidyUp.title
+msgid "Tidy up levels"
+msgstr ""
+
 #: package/analyses/linechart.menuSubgroup
 #: package/analyses/areachart.menuSubgroup
 #: package/datasets/Time Series.name
@@ -2235,6 +2496,14 @@ msgstr ""
 
 #: mrcrosstabs/options/totalRow.title
 msgid "Total Row"
+msgstr ""
+
+#: likertplot/ui[4][0][0][0].label
+msgid "Type"
+msgstr ""
+
+#: likertplot/results/comp/uTestTable.columns.title
+msgid "U"
 msgstr ""
 
 #: qqplot/options/distrib/unif.title
@@ -2287,6 +2556,10 @@ msgstr ""
 msgid "Variables"
 msgstr ""
 
+#: likertplot/options/vLabelWrap.title
+msgid "Vertical Label Wrap"
+msgstr ""
+
 #: scatterplot/options/vline.title
 msgid "Vertical line at"
 msgstr ""
@@ -2336,6 +2609,7 @@ msgstr ""
 #: corresp/options/supColor/white.title
 #: histogram/options/fillColor/white.title
 #: histogram/options/borderColor/white.title
+#: likertplot/options/labelColor/white.title
 #: lollipop/options/dotColor/white.title
 #: lollipop/options/lineColor/white.title
 #: piechart/options/borderColor/white.title
@@ -2458,4 +2732,8 @@ msgstr ""
 #: raincloud/options/colorPalette/YlOrRd.title
 #: scatterplot/options/colorPalette/YlOrRd.title
 msgid "Yellow to Red"
+msgstr ""
+
+#: likertplot/results/comp/kwTable.columns.title
+msgid "χ²"
 msgstr ""

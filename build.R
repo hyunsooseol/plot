@@ -22,7 +22,7 @@ jmvtools::addAnalysis(name='areachart', title='Area Chart')
 jmvtools::addAnalysis(name='raincloud', title='Raincloud Plot')
 jmvtools::addAnalysis(name='qqplot', title='Q-Q & P-P Plots')
 jmvtools::addAnalysis(name='corresp', title='Correspondence Plot')
-jmvtools::addAnalysis(name='corresp2', title='Correspondence Plot 2')
+jmvtools::addAnalysis(name='principal', title='Principal Component Plot')
 
 # Install module
 

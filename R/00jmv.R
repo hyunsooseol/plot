@@ -22,4 +22,11 @@
         `year`=2020, 
         `title`="ca: Simple, Multiple and Joint Correspondence Analysis", 
         `publisher`="[R package]. Retrieved from https://CRAN.R-project.org/package=ca", 
-        `url`="https://CRAN.R-project.org/package=ca"))
+        `url`="https://CRAN.R-project.org/package=ca"), 
+    `psych`=list(
+        `type`="software", 
+        `author`="Revelle, W.", 
+        `year`=2025, 
+        `title`="psych: Procedures for Psychological, Psychometric, and Personality Research", 
+        `publisher`="[R package]. Retrieved from https://cran.r-project.org/package=psych", 
+        `url`="https://cran.r-project.org/package=psych"))

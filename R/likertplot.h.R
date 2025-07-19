@@ -12,16 +12,31 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             sorting = "none",
             groupBy = "variable",
             addLabels = TRUE,
+            hideLabelsBelow = FALSE,
             addTotals = TRUE,
             addMedianLine = TRUE,
             reverseLikert = FALSE,
             toInteger = FALSE,
+            tidyUp = FALSE,
             ignoreNA = TRUE,
             plotWidth = 600,
             plotHeight = 400,
             textSize = 12,
             accuracy = "1",
-            plotColor = "BrBG", ...) {
+            vLabelWrap = "20",
+            hLabelWrap = "30",
+            plotColor = "BrBG",
+            labelColor = "auto",
+            frequencyTable = FALSE,
+            showMedian = FALSE,
+            showMean = FALSE,
+            frequencies = "counts",
+            showMannU = FALSE,
+            showKW = FALSE,
+            showPostHoc = FALSE,
+            postHoc = "dunn",
+            pValue = "none",
+            adjustMethod = "holm", ...) {
 
             super$initialize(
                 package="vijPlots",
@@ -36,7 +51,8 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 suggested=list(
                     "ordinal"),
                 permitted=list(
-                    "factor"))
+                    "factor",
+                    "numeric"))
             private$..group <- jmvcore::OptionVariable$new(
                 "group",
                 group,
@@ -70,6 +86,10 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 "addLabels",
                 addLabels,
                 default=TRUE)
+            private$..hideLabelsBelow <- jmvcore::OptionBool$new(
+                "hideLabelsBelow",
+                hideLabelsBelow,
+                default=FALSE)
             private$..addTotals <- jmvcore::OptionBool$new(
                 "addTotals",
                 addTotals,
@@ -85,6 +105,10 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             private$..toInteger <- jmvcore::OptionBool$new(
                 "toInteger",
                 toInteger,
+                default=FALSE)
+            private$..tidyUp <- jmvcore::OptionBool$new(
+                "tidyUp",
+                tidyUp,
                 default=FALSE)
             private$..ignoreNA <- jmvcore::OptionBool$new(
                 "ignoreNA",
@@ -113,9 +137,30 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 accuracy,
                 options=list(
                     "1",
-                    "0.1",
-                    "0.01"),
+                    "0.1"),
                 default="1")
+            private$..vLabelWrap <- jmvcore::OptionList$new(
+                "vLabelWrap",
+                vLabelWrap,
+                options=list(
+                    "10",
+                    "15",
+                    "20",
+                    "25",
+                    "30",
+                    "35"),
+                default="20")
+            private$..hLabelWrap <- jmvcore::OptionList$new(
+                "hLabelWrap",
+                hLabelWrap,
+                options=list(
+                    "10",
+                    "20",
+                    "30",
+                    "40",
+                    "60",
+                    "80"),
+                default="30")
             private$..plotColor <- jmvcore::OptionList$new(
                 "plotColor",
                 plotColor,
@@ -130,6 +175,73 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "RdYlGn",
                     "Spectral"),
                 default="BrBG")
+            private$..labelColor <- jmvcore::OptionList$new(
+                "labelColor",
+                labelColor,
+                options=list(
+                    "auto",
+                    "black",
+                    "darkgrey",
+                    "white"),
+                default="auto")
+            private$..frequencyTable <- jmvcore::OptionBool$new(
+                "frequencyTable",
+                frequencyTable,
+                default=FALSE)
+            private$..showMedian <- jmvcore::OptionBool$new(
+                "showMedian",
+                showMedian,
+                default=FALSE)
+            private$..showMean <- jmvcore::OptionBool$new(
+                "showMean",
+                showMean,
+                default=FALSE)
+            private$..frequencies <- jmvcore::OptionList$new(
+                "frequencies",
+                frequencies,
+                options=list(
+                    "counts",
+                    "percentages"),
+                default="counts")
+            private$..showMannU <- jmvcore::OptionBool$new(
+                "showMannU",
+                showMannU,
+                default=FALSE)
+            private$..showKW <- jmvcore::OptionBool$new(
+                "showKW",
+                showKW,
+                default=FALSE)
+            private$..showPostHoc <- jmvcore::OptionBool$new(
+                "showPostHoc",
+                showPostHoc,
+                default=FALSE)
+            private$..postHoc <- jmvcore::OptionList$new(
+                "postHoc",
+                postHoc,
+                options=list(
+                    "conover",
+                    "dunn",
+                    "dscf"),
+                default="dunn")
+            private$..pValue <- jmvcore::OptionList$new(
+                "pValue",
+                pValue,
+                options=list(
+                    "none",
+                    "group",
+                    "overall"),
+                default="none")
+            private$..adjustMethod <- jmvcore::OptionList$new(
+                "adjustMethod",
+                adjustMethod,
+                options=list(
+                    "bonferroni",
+                    "holm",
+                    "hochberg",
+                    "hommel",
+                    "BH",
+                    "BY"),
+                default="holm")
 
             self$.addOption(private$..liks)
             self$.addOption(private$..group)
@@ -137,16 +249,31 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             self$.addOption(private$..sorting)
             self$.addOption(private$..groupBy)
             self$.addOption(private$..addLabels)
+            self$.addOption(private$..hideLabelsBelow)
             self$.addOption(private$..addTotals)
             self$.addOption(private$..addMedianLine)
             self$.addOption(private$..reverseLikert)
             self$.addOption(private$..toInteger)
+            self$.addOption(private$..tidyUp)
             self$.addOption(private$..ignoreNA)
             self$.addOption(private$..plotWidth)
             self$.addOption(private$..plotHeight)
             self$.addOption(private$..textSize)
             self$.addOption(private$..accuracy)
+            self$.addOption(private$..vLabelWrap)
+            self$.addOption(private$..hLabelWrap)
             self$.addOption(private$..plotColor)
+            self$.addOption(private$..labelColor)
+            self$.addOption(private$..frequencyTable)
+            self$.addOption(private$..showMedian)
+            self$.addOption(private$..showMean)
+            self$.addOption(private$..frequencies)
+            self$.addOption(private$..showMannU)
+            self$.addOption(private$..showKW)
+            self$.addOption(private$..showPostHoc)
+            self$.addOption(private$..postHoc)
+            self$.addOption(private$..pValue)
+            self$.addOption(private$..adjustMethod)
         }),
     active = list(
         liks = function() private$..liks$value,
@@ -155,16 +282,31 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         sorting = function() private$..sorting$value,
         groupBy = function() private$..groupBy$value,
         addLabels = function() private$..addLabels$value,
+        hideLabelsBelow = function() private$..hideLabelsBelow$value,
         addTotals = function() private$..addTotals$value,
         addMedianLine = function() private$..addMedianLine$value,
         reverseLikert = function() private$..reverseLikert$value,
         toInteger = function() private$..toInteger$value,
+        tidyUp = function() private$..tidyUp$value,
         ignoreNA = function() private$..ignoreNA$value,
         plotWidth = function() private$..plotWidth$value,
         plotHeight = function() private$..plotHeight$value,
         textSize = function() private$..textSize$value,
         accuracy = function() private$..accuracy$value,
-        plotColor = function() private$..plotColor$value),
+        vLabelWrap = function() private$..vLabelWrap$value,
+        hLabelWrap = function() private$..hLabelWrap$value,
+        plotColor = function() private$..plotColor$value,
+        labelColor = function() private$..labelColor$value,
+        frequencyTable = function() private$..frequencyTable$value,
+        showMedian = function() private$..showMedian$value,
+        showMean = function() private$..showMean$value,
+        frequencies = function() private$..frequencies$value,
+        showMannU = function() private$..showMannU$value,
+        showKW = function() private$..showKW$value,
+        showPostHoc = function() private$..showPostHoc$value,
+        postHoc = function() private$..postHoc$value,
+        pValue = function() private$..pValue$value,
+        adjustMethod = function() private$..adjustMethod$value),
     private = list(
         ..liks = NA,
         ..group = NA,
@@ -172,22 +314,40 @@ likertplotOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         ..sorting = NA,
         ..groupBy = NA,
         ..addLabels = NA,
+        ..hideLabelsBelow = NA,
         ..addTotals = NA,
         ..addMedianLine = NA,
         ..reverseLikert = NA,
         ..toInteger = NA,
+        ..tidyUp = NA,
         ..ignoreNA = NA,
         ..plotWidth = NA,
         ..plotHeight = NA,
         ..textSize = NA,
         ..accuracy = NA,
-        ..plotColor = NA)
+        ..vLabelWrap = NA,
+        ..hLabelWrap = NA,
+        ..plotColor = NA,
+        ..labelColor = NA,
+        ..frequencyTable = NA,
+        ..showMedian = NA,
+        ..showMean = NA,
+        ..frequencies = NA,
+        ..showMannU = NA,
+        ..showKW = NA,
+        ..showPostHoc = NA,
+        ..postHoc = NA,
+        ..pValue = NA,
+        ..adjustMethod = NA)
 )
 
 likertplotResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
     "likertplotResults",
     inherit = jmvcore::Group,
     active = list(
+        helpMessage = function() private$.items[["helpMessage"]],
+        frequencies = function() private$.items[["frequencies"]],
+        comp = function() private$.items[["comp"]],
         plot = function() private$.items[["plot"]]),
     private = list(),
     public=list(
@@ -198,10 +358,126 @@ likertplotResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 title="Likert Plot",
                 refs=list(
                     "ggplots"))
+            self$add(jmvcore::Html$new(
+                options=options,
+                name="helpMessage",
+                title="",
+                visible=TRUE,
+                content=" <style> .block { border: 2px solid gray; border-radius: 15px; background-color: WhiteSmoke; padding: 0px 20px; text-align: justify; } </style> <div class=\"block\"> <h2>Likert Plot Help</h2> <h3>Data & Sorting</h3>\n<ul> <li>Likert variables must be of ordinal measure-type. (Continuous measure-type works as well.)</li> <li>If you plan to compute mean/median/sd or to use comparison tests, they must be of integer data-type.</li> <li><strong>Tidy up levels:</strong> when checked, try to fix the labels order in table and graph (when some variables miss some levels).</li> <li><strong>Convert variables to integer:</strong> when checked, the level labels are ignored and only integer values are used.</li> <li><strong>Sort Variables by Median:</strong> orders the list of Likert variables by median.</li> </ul>\n<h3>Comparison Tests</h3> When using a group variable, several tests are available: <ul> <li><strong>Mann-Whitney U:</strong> Two group comparison</li> <li><strong>Kruskal-Wallis:</strong> n group comparison</li> <li><strong>Post Hoc Tests:</strong> Dunn, Conover and Dwass-Steel-Critchlow-Fligner (DSCF) paiwise comparisons tests.</li> </ul>\n<p>p-Values can be adjusted <strong>groupwise</strong> (for each question) for post hoc tests or <strong>overall</strong> (groupwise and questionwise) for MannWithney U, Kruskal-Wallis and post hoc tests. DSCF p-values are already adjusted (groupwise); no other adjustment is possible.</p> </div>"))
+            self$add(jmvcore::Table$new(
+                options=options,
+                name="frequencies",
+                title="Frequency Table",
+                visible="(frequencyTable)",
+                rows=0,
+                columns=list(
+                    list(
+                        `name`="ques", 
+                        `title`="Questions", 
+                        `type`="text")),
+                clearWith=list(
+                    "liks",
+                    "group",
+                    "type",
+                    "frequencies",
+                    "showMean",
+                    "frequencyTable",
+                    "toInteger",
+                    "tidyUp")))
+            self$add(R6::R6Class(
+                inherit = jmvcore::Group,
+                active = list(
+                    uTestTable = function() private$.items[["uTestTable"]],
+                    kwTable = function() private$.items[["kwTable"]],
+                    pwTable = function() private$.items[["pwTable"]]),
+                private = list(),
+                public=list(
+                    initialize=function(options) {
+                        super$initialize(
+                            options=options,
+                            name="comp",
+                            title="Comparison Tests")
+                        self$add(jmvcore::Table$new(
+                            options=options,
+                            name="uTestTable",
+                            title="Mann-Whitney U Tests",
+                            rows="(liks)",
+                            visible="(showMannU)",
+                            columns=list(
+                                list(
+                                    `name`="ques", 
+                                    `title`="Questions", 
+                                    `type`="text", 
+                                    `content`="($key)"),
+                                list(
+                                    `name`="statistic", 
+                                    `title`="U", 
+                                    `type`="number"),
+                                list(
+                                    `name`="p.value", 
+                                    `title`="p", 
+                                    `type`="number", 
+                                    `format`="zto,pvalue")),
+                            clearWith=list(
+                                "liks",
+                                "group",
+                                "adjustMethod",
+                                "pValue")))
+                        self$add(jmvcore::Table$new(
+                            options=options,
+                            name="kwTable",
+                            title="Kruskal-Wallis Tests",
+                            rows="(liks)",
+                            visible="(showKW)",
+                            columns=list(
+                                list(
+                                    `name`="ques", 
+                                    `title`="Questions", 
+                                    `type`="text", 
+                                    `content`="($key)"),
+                                list(
+                                    `name`="statistic", 
+                                    `title`="\u03C7\u00B2", 
+                                    `type`="number"),
+                                list(
+                                    `name`="parameter", 
+                                    `title`="df", 
+                                    `type`="integer"),
+                                list(
+                                    `name`="p.value", 
+                                    `title`="p", 
+                                    `type`="number", 
+                                    `format`="zto,pvalue")),
+                            clearWith=list(
+                                "liks",
+                                "group",
+                                "adjustMethod",
+                                "pValue")))
+                        self$add(jmvcore::Table$new(
+                            options=options,
+                            name="pwTable",
+                            title="Pairwise Comparisons",
+                            rows=0,
+                            visible="(showPostHoc)",
+                            columns=list(
+                                list(
+                                    `name`="group1", 
+                                    `title`="", 
+                                    `type`="text"),
+                                list(
+                                    `name`="group2", 
+                                    `title`="", 
+                                    `type`="text")),
+                            clearWith=list(
+                                "liks",
+                                "group",
+                                "adjustMethod",
+                                "postHoc",
+                                "pValue")))}))$new(options=options))
             self$add(jmvcore::Image$new(
                 options=options,
                 name="plot",
-                title="",
+                title="Plot",
                 width=600,
                 height=400,
                 renderFun=".plot",
@@ -212,16 +488,21 @@ likertplotResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "type",
                     "sorting",
                     "addLabels",
+                    "hideLabelsBelow",
                     "addTotals",
                     "addMedianLine",
                     "reverseLikert",
                     "toInteger",
+                    "tidyUp",
                     "ignoreNA",
                     "plotWidth",
                     "plotHeight",
                     "textSize",
                     "accuracy",
-                    "plotColor")))}))
+                    "plotColor",
+                    "labelColor",
+                    "vLabelWrap",
+                    "hLabelWrap")))}))
 
 likertplotBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
     "likertplotBase",
@@ -254,20 +535,46 @@ likertplotBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
 #' @param sorting .
 #' @param groupBy .
 #' @param addLabels .
+#' @param hideLabelsBelow .
 #' @param addTotals .
 #' @param addMedianLine .
 #' @param reverseLikert .
 #' @param toInteger .
+#' @param tidyUp .
 #' @param ignoreNA .
 #' @param plotWidth .
 #' @param plotHeight .
 #' @param textSize .
 #' @param accuracy .
+#' @param vLabelWrap .
+#' @param hLabelWrap .
 #' @param plotColor .
+#' @param labelColor .
+#' @param frequencyTable .
+#' @param showMedian .
+#' @param showMean .
+#' @param frequencies .
+#' @param showMannU .
+#' @param showKW .
+#' @param showPostHoc .
+#' @param postHoc .
+#' @param pValue .
+#' @param adjustMethod .
 #' @return A results object containing:
 #' \tabular{llllll}{
+#'   \code{results$helpMessage} \tab \tab \tab \tab \tab a html \cr
+#'   \code{results$frequencies} \tab \tab \tab \tab \tab a table \cr
+#'   \code{results$comp$uTestTable} \tab \tab \tab \tab \tab a table \cr
+#'   \code{results$comp$kwTable} \tab \tab \tab \tab \tab a table \cr
+#'   \code{results$comp$pwTable} \tab \tab \tab \tab \tab a table \cr
 #'   \code{results$plot} \tab \tab \tab \tab \tab an image \cr
 #' }
+#'
+#' Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
+#'
+#' \code{results$frequencies$asDF}
+#'
+#' \code{as.data.frame(results$frequencies)}
 #'
 #' @export
 likertplot <- function(
@@ -278,16 +585,31 @@ likertplot <- function(
     sorting = "none",
     groupBy = "variable",
     addLabels = TRUE,
+    hideLabelsBelow = FALSE,
     addTotals = TRUE,
     addMedianLine = TRUE,
     reverseLikert = FALSE,
     toInteger = FALSE,
+    tidyUp = FALSE,
     ignoreNA = TRUE,
     plotWidth = 600,
     plotHeight = 400,
     textSize = 12,
     accuracy = "1",
-    plotColor = "BrBG") {
+    vLabelWrap = "20",
+    hLabelWrap = "30",
+    plotColor = "BrBG",
+    labelColor = "auto",
+    frequencyTable = FALSE,
+    showMedian = FALSE,
+    showMean = FALSE,
+    frequencies = "counts",
+    showMannU = FALSE,
+    showKW = FALSE,
+    showPostHoc = FALSE,
+    postHoc = "dunn",
+    pValue = "none",
+    adjustMethod = "holm") {
 
     if ( ! requireNamespace("jmvcore", quietly=TRUE))
         stop("likertplot requires jmvcore to be installed (restart may be required)")
@@ -300,7 +622,6 @@ likertplot <- function(
             `if`( ! missing(liks), liks, NULL),
             `if`( ! missing(group), group, NULL))
 
-    for (v in liks) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
     for (v in group) if (v %in% names(data)) data[[v]] <- as.factor(data[[v]])
 
     options <- likertplotOptions$new(
@@ -310,16 +631,31 @@ likertplot <- function(
         sorting = sorting,
         groupBy = groupBy,
         addLabels = addLabels,
+        hideLabelsBelow = hideLabelsBelow,
         addTotals = addTotals,
         addMedianLine = addMedianLine,
         reverseLikert = reverseLikert,
         toInteger = toInteger,
+        tidyUp = tidyUp,
         ignoreNA = ignoreNA,
         plotWidth = plotWidth,
         plotHeight = plotHeight,
         textSize = textSize,
         accuracy = accuracy,
-        plotColor = plotColor)
+        vLabelWrap = vLabelWrap,
+        hLabelWrap = hLabelWrap,
+        plotColor = plotColor,
+        labelColor = labelColor,
+        frequencyTable = frequencyTable,
+        showMedian = showMedian,
+        showMean = showMean,
+        frequencies = frequencies,
+        showMannU = showMannU,
+        showKW = showKW,
+        showPostHoc = showPostHoc,
+        postHoc = postHoc,
+        pValue = pValue,
+        adjustMethod = adjustMethod)
 
     analysis <- likertplotClass$new(
         options = options,

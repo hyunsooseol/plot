@@ -1,0 +1,136 @@
+---
+name:  principal
+title: Principal Component Plot
+menuGroup: vijPlots
+menuSubgroup: Multivariate
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+
+    - name: vars
+      title: Variables
+      type: Variables
+      suggested:
+        - ordinal
+        - continuous
+      permitted:
+        - numeric
+
+    - name: labelVar
+      title: Label
+      type: Variable
+      suggested:
+        - nominal
+        - id
+      permitted:
+        - id
+        - factor
+
+    - name: groupVar
+      title: Group
+      type: Variable
+      suggested:
+        - nominal
+        - ordinal
+      permitted:
+        - factor
+
+    - name: rotation
+      title: Rotation
+      type: List
+      options:
+        - title: None
+          name: none
+        - title: Varimax
+          name: varimax
+        - title: Quartimax
+          name: quartimax
+        - title: Promax
+          name: promax
+        - title: Oblimin
+          name: oblimin
+        - title: Simplimax
+          name: simplimax
+      default: none
+
+    - name: dimNum
+      type: Number
+      title: "Number of dimensions"
+      min: 2
+      max: 99
+      default: 2
+
+    - name: xaxis
+      type: Number
+      title: "X-Axis"
+      min: 1
+      max: 99
+      default: 1
+
+    - name: yaxis
+      type: Number
+      title: "Y-Axis"
+      min: 1
+      max: 99
+      default: 2
+
+    - name: showSummary
+      title: Summary
+      type: Bool
+      default: true
+
+    - name: showKMO
+      title: KMO & Bartlett's Test
+      type: Bool
+      default: false
+
+    - name: showLoadings
+      title: Loadings
+      type: Bool
+      default: false
+
+    - name: showObservations
+      title: Observations
+      type: Bool
+      default: false
+
+    - name: showScreePlot
+      title: Scree Plot
+      type: Bool
+      default: true
+
+    - name: showVarPlot
+      title: Loadings
+      type: Bool
+      default: true
+
+    - name: showObsPlot
+      title: Observations
+      type: Bool
+      default: true
+
+    - name: showBiplot
+      title: Biplot
+      type: Bool
+      default: false
+
+    - name: missingValues
+      title: Missing Values
+      type: List
+      options:
+        - title: Exclude listwise
+          name:  listwise
+        - title: Exclude pairwise
+          name:  pairwise
+        - title: Replace with mean
+          name:  mean
+      default: listwise
+
+    - name: stdScores
+      title: Standardize Scores
+      type: Bool
+      default: true
+...
